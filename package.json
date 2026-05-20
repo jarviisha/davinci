@@ -1,0 +1,26 @@
+{
+  "name": "design-system",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "turbo dev --filter=@davinci/playground",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "test": "turbo test",
+    "tokens:build": "pnpm --filter @davinci/token-builder build",
+    "clean": "turbo clean && rm -rf node_modules",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "turbo build --filter='./packages/*' && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.31.0",
+    "@types/node": "^22.15.21",
+    "@vitest/coverage-v8": "^4.1.6",
+    "turbo": "^2.5.3",
+    "typescript": "^5.8.3",
+    "vitest": "^4.1.6"
+  },
+  "packageManager": "pnpm@10.11.0"
+}

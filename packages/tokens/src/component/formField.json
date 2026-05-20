@@ -1,0 +1,20 @@
+{
+  "component": {
+    "formField": {
+      "gap": {
+        "$type": "dimension",
+        "$value": "{spacing.075}"
+      },
+      "label": {
+        "foreground": { "$type": "color", "$value": "{semantic.color.foreground}" },
+        "requiredForeground": { "$type": "color", "$value": "{semantic.color.destructive}" }
+      },
+      "help": {
+        "foreground": { "$type": "color", "$value": "{semantic.color.textSubtle}" }
+      },
+      "error": {
+        "foreground": { "$type": "color", "$value": "{semantic.color.destructive}" }
+      }
+    }
+  }
+}

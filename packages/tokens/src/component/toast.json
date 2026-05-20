@@ -1,0 +1,40 @@
+{
+  "component": {
+    "toast": {
+      "radius": { "$type": "dimension", "$value": "{radius.lg}" },
+      "padding": { "$type": "dimension", "$value": "{spacing.200}" },
+      "gap": { "$type": "dimension", "$value": "{spacing.100}" },
+      "maxWidth": { "$type": "dimension", "$value": "24rem" },
+      "shadow": { "$type": "shadow", "$value": "{semantic.shadow.overlay}" },
+      "viewport": {
+        "gap": { "$type": "dimension", "$value": "{spacing.150}" },
+        "padding": { "$type": "dimension", "$value": "{spacing.300}" }
+      },
+      "zIndex": { "$type": "number", "$value": "1100" },
+      "info": {
+        "background": { "$type": "color", "$value": "{semantic.color.surfaceRaised}" },
+        "foreground": { "$type": "color", "$value": "{semantic.color.foreground}" },
+        "border": { "$type": "color", "$value": "{semantic.color.border}" },
+        "accent": { "$type": "color", "$value": "{semantic.color.information}" }
+      },
+      "success": {
+        "background": { "$type": "color", "$value": "{semantic.color.surfaceRaised}" },
+        "foreground": { "$type": "color", "$value": "{semantic.color.foreground}" },
+        "border": { "$type": "color", "$value": "{semantic.color.border}" },
+        "accent": { "$type": "color", "$value": "{semantic.color.success}" }
+      },
+      "warning": {
+        "background": { "$type": "color", "$value": "{semantic.color.surfaceRaised}" },
+        "foreground": { "$type": "color", "$value": "{semantic.color.foreground}" },
+        "border": { "$type": "color", "$value": "{semantic.color.border}" },
+        "accent": { "$type": "color", "$value": "{semantic.color.warning}" }
+      },
+      "error": {
+        "background": { "$type": "color", "$value": "{semantic.color.surfaceRaised}" },
+        "foreground": { "$type": "color", "$value": "{semantic.color.foreground}" },
+        "border": { "$type": "color", "$value": "{semantic.color.border}" },
+        "accent": { "$type": "color", "$value": "{semantic.color.destructive}" }
+      }
+    }
+  }
+}

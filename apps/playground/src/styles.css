@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.davinci-focus-ring:focus-visible {
+  outline: var(--davinci-focus-ring-width) var(--davinci-focus-ring-style) var(--davinci-focus-ring-color);
+  outline-offset: var(--davinci-focus-ring-offset);
+}

@@ -1,0 +1,38 @@
+{
+  "name": "@jarviisha/davinci-tokens",
+  "version": "0.1.0",
+  "description": "Design tokens (CSS variables and typed JS export) for the Davinci design system.",
+  "license": "MIT",
+  "author": "jarviisha",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jarviisha/davinci.git",
+    "directory": "packages/tokens"
+  },
+  "homepage": "https://github.com/jarviisha/davinci#readme",
+  "bugs": "https://github.com/jarviisha/davinci/issues",
+  "keywords": ["design-system", "design-tokens", "css-variables", "davinci"],
+  "type": "module",
+  "sideEffects": ["./dist/css/*.css"],
+  "exports": {
+    "./css/variables.css": "./dist/css/variables.css",
+    "./css/light.css": "./dist/css/light.css",
+    "./css/dark.css": "./dist/css/dark.css",
+    "./js/tokens": {
+      "types": "./dist/js/tokens.d.ts",
+      "default": "./dist/js/tokens.js"
+    }
+  },
+  "files": ["dist", "LICENSE"],
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "pnpm --filter @davinci/token-builder build",
+    "prepack": "pnpm build",
+    "clean": "rm -rf dist"
+  }
+}

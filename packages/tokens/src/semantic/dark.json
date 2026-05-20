@@ -1,0 +1,168 @@
+{
+  "semantic": {
+    "color": {
+      "background": {
+        "$type": "color",
+        "$value": "{color.darkNeutral.0}"
+      },
+      "surface": {
+        "$type": "color",
+        "$value": "{color.darkNeutral.200}"
+      },
+      "surfaceRaised": {
+        "$type": "color",
+        "$value": "{color.darkNeutral.300}"
+      },
+      "backgroundHovered": {
+        "$type": "color",
+        "$value": "{color.darkNeutral.350}"
+      },
+      "backgroundPressed": {
+        "$type": "color",
+        "$value": "{color.darkNeutral.400}"
+      },
+      "backgroundSelected": {
+        "$type": "color",
+        "$value": "{color.blue.850}"
+      },
+      "backgroundDisabled": {
+        "$type": "color",
+        "$value": "{color.darkNeutral.200}"
+      },
+      "foreground": {
+        "$type": "color",
+        "$value": "{color.darkNeutral.1100}"
+      },
+      "textSubtle": {
+        "$type": "color",
+        "$value": "{color.darkNeutral.900}"
+      },
+      "textMuted": {
+        "$type": "color",
+        "$value": "{color.darkNeutral.700}"
+      },
+      "textInverse": {
+        "$type": "color",
+        "$value": "{color.darkNeutral.deepest}"
+      },
+      "textDisabled": {
+        "$type": "color",
+        "$value": "{color.darkNeutral.500}"
+      },
+      "link": {
+        "$type": "color",
+        "$value": "{color.blue.300}"
+      },
+      "primary": {
+        "$type": "color",
+        "$value": "{color.blue.400}"
+      },
+      "primaryHovered": {
+        "$type": "color",
+        "$value": "{color.blue.300}"
+      },
+      "primaryPressed": {
+        "$type": "color",
+        "$value": "{color.blue.200}"
+      },
+      "primaryForeground": {
+        "$type": "color",
+        "$value": "{color.darkNeutral.deepest}"
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{color.darkNeutralAlpha.300}"
+      },
+      "borderBold": {
+        "$type": "color",
+        "$value": "{color.darkNeutralAlpha.500}"
+      },
+      "borderDisabled": {
+        "$type": "color",
+        "$value": "{color.darkNeutralAlpha.200}"
+      },
+      "borderFocused": {
+        "$type": "color",
+        "$value": "{color.blue.400}"
+      },
+      "muted": {
+        "$type": "color",
+        "$value": "{color.darkNeutral.350}"
+      },
+      "mutedHovered": {
+        "$type": "color",
+        "$value": "{color.darkNeutral.400}"
+      },
+      "mutedPressed": {
+        "$type": "color",
+        "$value": "{color.darkNeutral.500}"
+      },
+      "destructive": {
+        "$type": "color",
+        "$value": "{color.red.400}"
+      },
+      "destructiveHovered": {
+        "$type": "color",
+        "$value": "{color.red.300}"
+      },
+      "destructivePressed": {
+        "$type": "color",
+        "$value": "{color.red.200}"
+      },
+      "destructiveForeground": {
+        "$type": "color",
+        "$value": "{color.darkNeutral.deepest}"
+      },
+      "success": {
+        "$type": "color",
+        "$value": "{color.green.400}"
+      },
+      "successForeground": {
+        "$type": "color",
+        "$value": "{color.darkNeutral.deepest}"
+      },
+      "warning": {
+        "$type": "color",
+        "$value": "{color.orange.300}"
+      },
+      "warningForeground": {
+        "$type": "color",
+        "$value": "{color.darkNeutral.deepest}"
+      },
+      "information": {
+        "$type": "color",
+        "$value": "{color.blue.400}"
+      },
+      "informationForeground": {
+        "$type": "color",
+        "$value": "{color.darkNeutral.deepest}"
+      },
+      "discovery": {
+        "$type": "color",
+        "$value": "{color.purple.400}"
+      },
+      "discoveryForeground": {
+        "$type": "color",
+        "$value": "{color.darkNeutral.deepest}"
+      }
+    },
+    "shadow": {
+      "none": {
+        "$type": "shadow",
+        "$value": "{shadow.none}"
+      },
+      "card": {
+        "$type": "shadow",
+        "$value": "{shadow.dark.card}"
+      },
+      "raised": {
+        "$type": "shadow",
+        "$value": "{shadow.dark.raised}"
+      },
+      "overlay": {
+        "$type": "shadow",
+        "$value": "{shadow.dark.overlay}"
+      }
+    }
+  }
+}

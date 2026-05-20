@@ -1,0 +1,48 @@
+{
+  "name": "@jarviisha/davinci-react-ui",
+  "version": "0.1.0",
+  "description": "React UI components styled with Davinci CSS tokens (no Tailwind required).",
+  "license": "MIT",
+  "author": "jarviisha",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jarviisha/davinci.git",
+    "directory": "packages/react-ui"
+  },
+  "homepage": "https://github.com/jarviisha/davinci#readme",
+  "bugs": "https://github.com/jarviisha/davinci/issues",
+  "keywords": ["react", "ui", "components", "design-system", "davinci"],
+  "type": "module",
+  "sideEffects": ["./dist/styles.css", "**/*.css"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "files": ["dist", "LICENSE"],
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node -e \"require('node:fs').copyFileSync('src/styles.css','dist/styles.css')\"",
+    "prepack": "pnpm build",
+    "lint": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "peerDependencies": {
+    "@jarviisha/davinci-tokens": "^0.1.0",
+    "react": "^18.3.1 || ^19.0.0",
+    "react-dom": "^18.3.1 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@jarviisha/davinci-tokens": "workspace:*",
+    "@types/react": "^19.1.5",
+    "@types/react-dom": "^19.1.5",
+    "typescript": "^5.8.3"
+  }
+}

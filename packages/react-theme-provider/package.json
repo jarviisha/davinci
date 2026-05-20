@@ -1,0 +1,62 @@
+{
+  "name": "@jarviisha/davinci-react-theme-provider",
+  "version": "0.1.0",
+  "description": "React theme provider (light/dark/system) for the Davinci design system.",
+  "license": "MIT",
+  "author": "jarviisha",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jarviisha/davinci.git",
+    "directory": "packages/react-theme-provider"
+  },
+  "homepage": "https://github.com/jarviisha/davinci#readme",
+  "bugs": "https://github.com/jarviisha/davinci/issues",
+  "keywords": [
+    "react",
+    "theme-provider",
+    "dark-mode",
+    "design-system",
+    "davinci"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepack": "pnpm build",
+    "lint": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "clean": "rm -rf dist"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1 || ^19.0.0",
+    "react-dom": "^18.3.1 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "jsdom": "^29.1.1",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "typescript": "^5.8.3",
+    "vitest": "^4.1.6"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "component": {
+    "nav": {
+      "gap": {
+        "$type": "dimension",
+        "$value": "{spacing.025}"
+      },
+      "group": {
+        "gap": { "$type": "dimension", "$value": "{spacing.025}" },
+        "header": {
+          "minHeight": { "$type": "dimension", "$value": "2rem" },
+          "paddingX": { "$type": "dimension", "$value": "{spacing.150}" },
+          "gap": { "$type": "dimension", "$value": "{spacing.100}" },
+          "radius": { "$type": "dimension", "$value": "{radius.control}" },
+          "fontSize": { "$type": "dimension", "$value": "0.75rem" },
+          "fontWeight": { "$type": "fontWeight", "$value": "{font.weight.semibold}" },
+          "letterSpacing": { "$type": "dimension", "$value": "0.05em" },
+          "background": { "$type": "color", "$value": "transparent" },
+          "backgroundHovered": { "$type": "color", "$value": "{semantic.color.muted}" },
+          "foreground": { "$type": "color", "$value": "{semantic.color.textMuted}" },
+          "foregroundHovered": { "$type": "color", "$value": "{semantic.color.foreground}" }
+        },
+        "items": {
+          "paddingStart": { "$type": "dimension", "$value": "{spacing.150}" }
+        },
+        "chevron": {
+          "size": { "$type": "dimension", "$value": "0.875rem" }
+        }
+      },
+      "item": {
+        "minHeight": { "$type": "dimension", "$value": "2.5rem" },
+        "paddingX": { "$type": "dimension", "$value": "{spacing.150}" },
+        "gap": { "$type": "dimension", "$value": "{spacing.100}" },
+        "radius": { "$type": "dimension", "$value": "{radius.control}" },
+        "fontWeight": { "$type": "fontWeight", "$value": "{font.weight.medium}" },
+        "background": { "$type": "color", "$value": "transparent" },
+        "backgroundHovered": { "$type": "color", "$value": "{semantic.color.muted}" },
+        "border": { "$type": "color", "$value": "transparent" },
+        "foreground": { "$type": "color", "$value": "{semantic.color.textSubtle}" },
+        "foregroundHovered": { "$type": "color", "$value": "{semantic.color.foreground}" },
+        "active": {
+          "background": { "$type": "color", "$value": "transparent" },
+          "border": { "$type": "color", "$value": "transparent" },
+          "foreground": { "$type": "color", "$value": "{semantic.color.primary}" },
+          "fontWeight": { "$type": "fontWeight", "$value": "{font.weight.semibold}" }
+        }
+      }
+    }
+  }
+}

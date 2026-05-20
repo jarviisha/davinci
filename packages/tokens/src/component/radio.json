@@ -1,0 +1,39 @@
+{
+  "component": {
+    "radio": {
+      "size": {
+        "sm": { "$type": "dimension", "$value": "1rem" },
+        "md": { "$type": "dimension", "$value": "1.125rem" }
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{spacing.100}"
+      },
+      "background": {
+        "$type": "color",
+        "$value": "{semantic.color.background}"
+      },
+      "backgroundHovered": {
+        "$type": "color",
+        "$value": "{semantic.color.backgroundHovered}"
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{semantic.color.borderBold}"
+      },
+      "checked": {
+        "background": { "$type": "color", "$value": "{semantic.color.background}" },
+        "border": { "$type": "color", "$value": "{semantic.color.primary}" },
+        "dot": { "$type": "color", "$value": "{semantic.color.primary}" }
+      },
+      "invalid": {
+        "border": { "$type": "color", "$value": "{semantic.color.destructive}" }
+      },
+      "disabled": {
+        "background": { "$type": "color", "$value": "{semantic.color.backgroundDisabled}" },
+        "border": { "$type": "color", "$value": "{semantic.color.borderDisabled}" },
+        "dot": { "$type": "color", "$value": "{semantic.color.textDisabled}" }
+      }
+    }
+  }
+}

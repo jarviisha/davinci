@@ -1,0 +1,44 @@
+{
+  "component": {
+    "checkbox": {
+      "size": {
+        "sm": { "$type": "dimension", "$value": "1rem" },
+        "md": { "$type": "dimension", "$value": "1.125rem" }
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.sm}"
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{spacing.100}"
+      },
+      "background": {
+        "$type": "color",
+        "$value": "{semantic.color.background}"
+      },
+      "backgroundHovered": {
+        "$type": "color",
+        "$value": "{semantic.color.backgroundHovered}"
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{semantic.color.borderBold}"
+      },
+      "checked": {
+        "background": { "$type": "color", "$value": "{semantic.color.primary}" },
+        "backgroundHovered": { "$type": "color", "$value": "{semantic.color.primaryHovered}" },
+        "border": { "$type": "color", "$value": "{semantic.color.primary}" },
+        "foreground": { "$type": "color", "$value": "{semantic.color.primaryForeground}" }
+      },
+      "invalid": {
+        "border": { "$type": "color", "$value": "{semantic.color.destructive}" }
+      },
+      "disabled": {
+        "background": { "$type": "color", "$value": "{semantic.color.backgroundDisabled}" },
+        "border": { "$type": "color", "$value": "{semantic.color.borderDisabled}" },
+        "foreground": { "$type": "color", "$value": "{semantic.color.textDisabled}" }
+      }
+    }
+  }
+}

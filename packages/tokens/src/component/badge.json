@@ -1,0 +1,52 @@
+{
+  "component": {
+    "badge": {
+      "height": {
+        "$type": "dimension",
+        "$value": "1.5rem"
+      },
+      "paddingX": {
+        "$type": "dimension",
+        "$value": "{spacing.100}"
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.pill}"
+      },
+      "fontWeight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.medium}"
+      },
+      "neutral": {
+        "background": { "$type": "color", "$value": "{semantic.color.muted}" },
+        "foreground": { "$type": "color", "$value": "{semantic.color.foreground}" },
+        "border": { "$type": "color", "$value": "transparent" }
+      },
+      "primary": {
+        "background": { "$type": "color", "$value": "{semantic.color.backgroundSelected}" },
+        "foreground": { "$type": "color", "$value": "{semantic.color.link}" },
+        "border": { "$type": "color", "$value": "transparent" }
+      },
+      "success": {
+        "background": { "$type": "color", "$value": "{semantic.color.success}" },
+        "foreground": { "$type": "color", "$value": "{semantic.color.successForeground}" },
+        "border": { "$type": "color", "$value": "transparent" }
+      },
+      "warning": {
+        "background": { "$type": "color", "$value": "{semantic.color.warning}" },
+        "foreground": { "$type": "color", "$value": "{semantic.color.warningForeground}" },
+        "border": { "$type": "color", "$value": "transparent" }
+      },
+      "destructive": {
+        "background": { "$type": "color", "$value": "{semantic.color.destructive}" },
+        "foreground": { "$type": "color", "$value": "{semantic.color.destructiveForeground}" },
+        "border": { "$type": "color", "$value": "transparent" }
+      },
+      "discovery": {
+        "background": { "$type": "color", "$value": "{semantic.color.discovery}" },
+        "foreground": { "$type": "color", "$value": "{semantic.color.discoveryForeground}" },
+        "border": { "$type": "color", "$value": "transparent" }
+      }
+    }
+  }
+}

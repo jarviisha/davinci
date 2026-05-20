@@ -1,0 +1,29 @@
+# Dependencies
+node_modules
+
+# Build outputs
+dist
+*.tsbuildinfo
+
+# Caches
+.turbo
+.vite
+coverage
+
+# Logs
+*.log
+
+# Env files
+.env
+.env.*
+!.env.example
+
+# Pack artifacts
+*.tgz
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+
+# Other
+RELEASING.md

@@ -1,0 +1,120 @@
+/**
+ * Davinci Tailwind v4 theme.
+ *
+ * Drop this file into a Tailwind v4 CSS-first project to expose every Davinci
+ * semantic role, spacing step, radius, typography token and shadow as Tailwind
+ * utilities (bg-primary, text-foreground, gap-200, rounded-card, …).
+ *
+ * Usage:
+ *   @import "@jarviisha/davinci-tokens/css/variables.css";
+ *   @import "@jarviisha/davinci-tokens/css/light.css";
+ *   @import "@jarviisha/davinci-tokens/css/dark.css";
+ *   @import "tailwindcss";
+ *   @import "@jarviisha/davinci-tailwind-preset/theme.css";
+ */
+
+@theme inline {
+  /* Colors — semantic roles */
+  --color-background: var(--davinci-semantic-color-background);
+  --color-surface: var(--davinci-semantic-color-surface);
+  --color-surface-raised: var(--davinci-semantic-color-surface-raised);
+  --color-background-hovered: var(--davinci-semantic-color-background-hovered);
+  --color-background-pressed: var(--davinci-semantic-color-background-pressed);
+  --color-background-selected: var(--davinci-semantic-color-background-selected);
+  --color-background-disabled: var(--davinci-semantic-color-background-disabled);
+  --color-foreground: var(--davinci-semantic-color-foreground);
+  --color-text-subtle: var(--davinci-semantic-color-text-subtle);
+  --color-text-muted: var(--davinci-semantic-color-text-muted);
+  --color-text-inverse: var(--davinci-semantic-color-text-inverse);
+  --color-text-disabled: var(--davinci-semantic-color-text-disabled);
+  --color-link: var(--davinci-semantic-color-link);
+  --color-primary: var(--davinci-semantic-color-primary);
+  --color-primary-hovered: var(--davinci-semantic-color-primary-hovered);
+  --color-primary-pressed: var(--davinci-semantic-color-primary-pressed);
+  --color-primary-foreground: var(--davinci-semantic-color-primary-foreground);
+  --color-border: var(--davinci-semantic-color-border);
+  --color-border-bold: var(--davinci-semantic-color-border-bold);
+  --color-border-disabled: var(--davinci-semantic-color-border-disabled);
+  --color-border-focused: var(--davinci-semantic-color-border-focused);
+  --color-muted: var(--davinci-semantic-color-muted);
+  --color-destructive: var(--davinci-semantic-color-destructive);
+  --color-destructive-hovered: var(--davinci-semantic-color-destructive-hovered);
+  --color-destructive-pressed: var(--davinci-semantic-color-destructive-pressed);
+  --color-destructive-foreground: var(--davinci-semantic-color-destructive-foreground);
+  --color-success: var(--davinci-semantic-color-success);
+  --color-success-foreground: var(--davinci-semantic-color-success-foreground);
+  --color-warning: var(--davinci-semantic-color-warning);
+  --color-warning-foreground: var(--davinci-semantic-color-warning-foreground);
+  --color-information: var(--davinci-semantic-color-information);
+  --color-information-foreground: var(--davinci-semantic-color-information-foreground);
+  --color-discovery: var(--davinci-semantic-color-discovery);
+  --color-discovery-foreground: var(--davinci-semantic-color-discovery-foreground);
+
+  /* Radius */
+  --radius-none: var(--davinci-radius-none);
+  --radius-sm: var(--davinci-radius-sm);
+  --radius-md: var(--davinci-radius-md);
+  --radius-lg: var(--davinci-radius-lg);
+  --radius-xl: var(--davinci-radius-xl);
+  --radius-full: var(--davinci-radius-full);
+  --radius-control: var(--davinci-radius-control);
+  --radius-card: var(--davinci-radius-card);
+  --radius-panel: var(--davinci-radius-panel);
+  --radius-pill: var(--davinci-radius-pill);
+
+  /* Typography */
+  --font-sans: var(--davinci-font-family-sans);
+  --font-mono: var(--davinci-font-family-mono);
+
+  --text-body: var(--davinci-typography-body-font-size);
+  --text-body--line-height: var(--davinci-typography-body-line-height);
+  --text-body-sm: var(--davinci-typography-body-small-font-size);
+  --text-body-sm--line-height: var(--davinci-typography-body-small-line-height);
+  --text-label: var(--davinci-typography-label-font-size);
+  --text-label--line-height: var(--davinci-typography-label-line-height);
+  --text-heading-sm: var(--davinci-typography-heading-sm-font-size);
+  --text-heading-sm--line-height: var(--davinci-typography-heading-sm-line-height);
+  --text-heading-md: var(--davinci-typography-heading-md-font-size);
+  --text-heading-md--line-height: var(--davinci-typography-heading-md-line-height);
+  --text-heading-lg: var(--davinci-typography-heading-lg-font-size);
+  --text-heading-lg--line-height: var(--davinci-typography-heading-lg-line-height);
+  --text-code: var(--davinci-typography-code-font-size);
+  --text-code--line-height: var(--davinci-typography-code-line-height);
+
+  --font-weight-regular: var(--davinci-font-weight-regular);
+  --font-weight-medium: var(--davinci-font-weight-medium);
+  --font-weight-semibold: var(--davinci-font-weight-semibold);
+  --font-weight-bold: var(--davinci-font-weight-bold);
+
+  --tracking-normal: var(--davinci-font-letter-spacing-normal);
+  --tracking-wide: var(--davinci-font-letter-spacing-wide);
+
+  --leading-100: var(--davinci-font-line-height-100);
+  --leading-200: var(--davinci-font-line-height-200);
+  --leading-300: var(--davinci-font-line-height-300);
+  --leading-400: var(--davinci-font-line-height-400);
+  --leading-500: var(--davinci-font-line-height-500);
+  --leading-600: var(--davinci-font-line-height-600);
+  --leading-700: var(--davinci-font-line-height-700);
+
+  /* Spacing */
+  --spacing-025: var(--davinci-spacing-025);
+  --spacing-050: var(--davinci-spacing-050);
+  --spacing-075: var(--davinci-spacing-075);
+  --spacing-100: var(--davinci-spacing-100);
+  --spacing-150: var(--davinci-spacing-150);
+  --spacing-200: var(--davinci-spacing-200);
+  --spacing-250: var(--davinci-spacing-250);
+  --spacing-300: var(--davinci-spacing-300);
+  --spacing-400: var(--davinci-spacing-400);
+  --spacing-500: var(--davinci-spacing-500);
+  --spacing-600: var(--davinci-spacing-600);
+  --spacing-800: var(--davinci-spacing-800);
+  --spacing-1000: var(--davinci-spacing-1000);
+
+  /* Shadows */
+  --shadow-none: var(--davinci-semantic-shadow-none);
+  --shadow-card: var(--davinci-semantic-shadow-card);
+  --shadow-raised: var(--davinci-semantic-shadow-raised);
+  --shadow-overlay: var(--davinci-semantic-shadow-overlay);
+}

@@ -1,0 +1,168 @@
+{
+  "semantic": {
+    "color": {
+      "background": {
+        "$type": "color",
+        "$value": "{color.neutral.0}"
+      },
+      "surface": {
+        "$type": "color",
+        "$value": "{color.neutral.100}"
+      },
+      "surfaceRaised": {
+        "$type": "color",
+        "$value": "{color.neutral.0}"
+      },
+      "backgroundHovered": {
+        "$type": "color",
+        "$value": "{color.neutral.200}"
+      },
+      "backgroundPressed": {
+        "$type": "color",
+        "$value": "{color.neutral.300}"
+      },
+      "backgroundSelected": {
+        "$type": "color",
+        "$value": "{color.blue.100}"
+      },
+      "backgroundDisabled": {
+        "$type": "color",
+        "$value": "{color.neutral.100}"
+      },
+      "foreground": {
+        "$type": "color",
+        "$value": "{color.neutral.1100}"
+      },
+      "textSubtle": {
+        "$type": "color",
+        "$value": "{color.neutral.800}"
+      },
+      "textMuted": {
+        "$type": "color",
+        "$value": "{color.neutral.700}"
+      },
+      "textInverse": {
+        "$type": "color",
+        "$value": "{color.neutral.0}"
+      },
+      "textDisabled": {
+        "$type": "color",
+        "$value": "{color.neutral.500}"
+      },
+      "link": {
+        "$type": "color",
+        "$value": "{color.blue.700}"
+      },
+      "primary": {
+        "$type": "color",
+        "$value": "{color.blue.700}"
+      },
+      "primaryHovered": {
+        "$type": "color",
+        "$value": "{color.blue.800}"
+      },
+      "primaryPressed": {
+        "$type": "color",
+        "$value": "{color.blue.900}"
+      },
+      "primaryForeground": {
+        "$type": "color",
+        "$value": "{color.neutral.0}"
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{color.neutral.300}"
+      },
+      "borderBold": {
+        "$type": "color",
+        "$value": "{color.neutral.500}"
+      },
+      "borderDisabled": {
+        "$type": "color",
+        "$value": "{color.neutral.200}"
+      },
+      "borderFocused": {
+        "$type": "color",
+        "$value": "{color.blue.600}"
+      },
+      "muted": {
+        "$type": "color",
+        "$value": "{color.neutral.200}"
+      },
+      "mutedHovered": {
+        "$type": "color",
+        "$value": "{color.neutral.300}"
+      },
+      "mutedPressed": {
+        "$type": "color",
+        "$value": "{color.neutral.400}"
+      },
+      "destructive": {
+        "$type": "color",
+        "$value": "{color.red.700}"
+      },
+      "destructiveHovered": {
+        "$type": "color",
+        "$value": "{color.red.800}"
+      },
+      "destructivePressed": {
+        "$type": "color",
+        "$value": "{color.red.900}"
+      },
+      "destructiveForeground": {
+        "$type": "color",
+        "$value": "{color.neutral.0}"
+      },
+      "success": {
+        "$type": "color",
+        "$value": "{color.green.700}"
+      },
+      "successForeground": {
+        "$type": "color",
+        "$value": "{color.neutral.0}"
+      },
+      "warning": {
+        "$type": "color",
+        "$value": "{color.orange.400}"
+      },
+      "warningForeground": {
+        "$type": "color",
+        "$value": "{color.neutral.1100}"
+      },
+      "information": {
+        "$type": "color",
+        "$value": "{color.blue.700}"
+      },
+      "informationForeground": {
+        "$type": "color",
+        "$value": "{color.neutral.0}"
+      },
+      "discovery": {
+        "$type": "color",
+        "$value": "{color.purple.700}"
+      },
+      "discoveryForeground": {
+        "$type": "color",
+        "$value": "{color.neutral.0}"
+      }
+    },
+    "shadow": {
+      "none": {
+        "$type": "shadow",
+        "$value": "{shadow.none}"
+      },
+      "card": {
+        "$type": "shadow",
+        "$value": "{shadow.light.card}"
+      },
+      "raised": {
+        "$type": "shadow",
+        "$value": "{shadow.light.raised}"
+      },
+      "overlay": {
+        "$type": "shadow",
+        "$value": "{shadow.light.overlay}"
+      }
+    }
+  }
+}

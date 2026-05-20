@@ -1,0 +1,32 @@
+{
+  "component": {
+    "card": {
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.card}"
+      },
+      "padding": {
+        "$type": "dimension",
+        "$value": "{spacing.300}"
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{spacing.200}"
+      },
+      "foreground": {
+        "$type": "color",
+        "$value": "{semantic.color.foreground}"
+      },
+      "elevated": {
+        "background": { "$type": "color", "$value": "{semantic.color.surfaceRaised}" },
+        "border": { "$type": "color", "$value": "{semantic.color.border}" },
+        "shadow": { "$type": "shadow", "$value": "{semantic.shadow.card}" }
+      },
+      "outlined": {
+        "background": { "$type": "color", "$value": "{semantic.color.background}" },
+        "border": { "$type": "color", "$value": "{semantic.color.borderBold}" },
+        "shadow": { "$type": "shadow", "$value": "{semantic.shadow.none}" }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "component": {
+    "switch": {
+      "trackWidth": {
+        "sm": { "$type": "dimension", "$value": "1.75rem" },
+        "md": { "$type": "dimension", "$value": "2.25rem" }
+      },
+      "trackHeight": {
+        "sm": { "$type": "dimension", "$value": "1rem" },
+        "md": { "$type": "dimension", "$value": "1.25rem" }
+      },
+      "thumbSize": {
+        "sm": { "$type": "dimension", "$value": "0.75rem" },
+        "md": { "$type": "dimension", "$value": "1rem" }
+      },
+      "thumbInset": {
+        "$type": "dimension",
+        "$value": "0.125rem"
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{spacing.100}"
+      },
+      "track": {
+        "background": { "$type": "color", "$value": "{semantic.color.muted}" },
+        "backgroundHovered": { "$type": "color", "$value": "{semantic.color.backgroundPressed}" }
+      },
+      "checked": {
+        "background": { "$type": "color", "$value": "{semantic.color.primary}" },
+        "backgroundHovered": { "$type": "color", "$value": "{semantic.color.primaryHovered}" }
+      },
+      "thumb": {
+        "background": { "$type": "color", "$value": "{semantic.color.background}" }
+      },
+      "disabled": {
+        "background": { "$type": "color", "$value": "{semantic.color.backgroundDisabled}" },
+        "thumb": { "$type": "color", "$value": "{semantic.color.borderDisabled}" }
+      }
+    }
+  }
+}

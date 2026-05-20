@@ -1,0 +1,24 @@
+{
+  "spacing": {
+    "0": { "$type": "dimension", "$value": "0px" },
+    "025": { "$type": "dimension", "$value": "0.125rem" },
+    "050": { "$type": "dimension", "$value": "0.25rem" },
+    "075": { "$type": "dimension", "$value": "0.375rem" },
+    "100": { "$type": "dimension", "$value": "0.5rem" },
+    "150": { "$type": "dimension", "$value": "0.75rem" },
+    "200": { "$type": "dimension", "$value": "1rem" },
+    "250": { "$type": "dimension", "$value": "1.25rem" },
+    "300": { "$type": "dimension", "$value": "1.5rem" },
+    "400": { "$type": "dimension", "$value": "2rem" },
+    "500": { "$type": "dimension", "$value": "2.5rem" },
+    "600": { "$type": "dimension", "$value": "3rem" },
+    "800": { "$type": "dimension", "$value": "4rem" },
+    "1000": { "$type": "dimension", "$value": "5rem" },
+    "1": { "$type": "dimension", "$value": "{spacing.050}" },
+    "2": { "$type": "dimension", "$value": "{spacing.100}" },
+    "3": { "$type": "dimension", "$value": "{spacing.150}" },
+    "4": { "$type": "dimension", "$value": "{spacing.200}" },
+    "6": { "$type": "dimension", "$value": "{spacing.300}" },
+    "8": { "$type": "dimension", "$value": "{spacing.400}" }
+  }
+}

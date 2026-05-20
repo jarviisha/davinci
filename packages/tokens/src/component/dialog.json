@@ -1,0 +1,27 @@
+{
+  "component": {
+    "dialog": {
+      "backdrop": {
+        "background": { "$type": "color", "$value": "rgba(9, 30, 66, 0.54)" }
+      },
+      "panel": {
+        "background": { "$type": "color", "$value": "{semantic.color.surfaceRaised}" },
+        "border": { "$type": "color", "$value": "{semantic.color.border}" },
+        "foreground": { "$type": "color", "$value": "{semantic.color.foreground}" },
+        "radius": { "$type": "dimension", "$value": "{radius.panel}" },
+        "shadow": { "$type": "shadow", "$value": "{semantic.shadow.overlay}" },
+        "padding": { "$type": "dimension", "$value": "{spacing.300}" },
+        "gap": { "$type": "dimension", "$value": "{spacing.200}" }
+      },
+      "maxWidth": {
+        "sm": { "$type": "dimension", "$value": "24rem" },
+        "md": { "$type": "dimension", "$value": "32rem" },
+        "lg": { "$type": "dimension", "$value": "48rem" }
+      },
+      "zIndex": {
+        "$type": "number",
+        "$value": "1000"
+      }
+    }
+  }
+}

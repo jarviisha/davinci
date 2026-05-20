@@ -1,0 +1,57 @@
+{
+  "component": {
+    "button": {
+      "height": {
+        "sm": { "$type": "dimension", "$value": "2rem" },
+        "md": { "$type": "dimension", "$value": "2.5rem" },
+        "lg": { "$type": "dimension", "$value": "3rem" }
+      },
+      "paddingX": {
+        "sm": { "$type": "dimension", "$value": "{spacing.150}" },
+        "md": { "$type": "dimension", "$value": "{spacing.200}" },
+        "lg": { "$type": "dimension", "$value": "{spacing.300}" }
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.control}"
+      },
+      "fontWeight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.medium}"
+      },
+      "primary": {
+        "background": { "$type": "color", "$value": "{semantic.color.primary}" },
+        "backgroundHovered": { "$type": "color", "$value": "{semantic.color.primaryHovered}" },
+        "backgroundPressed": { "$type": "color", "$value": "{semantic.color.primaryPressed}" },
+        "border": { "$type": "color", "$value": "{semantic.color.primary}" },
+        "foreground": { "$type": "color", "$value": "{semantic.color.primaryForeground}" }
+      },
+      "secondary": {
+        "background": { "$type": "color", "$value": "{semantic.color.background}" },
+        "backgroundHovered": { "$type": "color", "$value": "{semantic.color.backgroundHovered}" },
+        "backgroundPressed": { "$type": "color", "$value": "{semantic.color.backgroundPressed}" },
+        "border": { "$type": "color", "$value": "{semantic.color.borderBold}" },
+        "foreground": { "$type": "color", "$value": "{semantic.color.foreground}" }
+      },
+      "destructive": {
+        "background": { "$type": "color", "$value": "{semantic.color.destructive}" },
+        "backgroundHovered": { "$type": "color", "$value": "{semantic.color.destructiveHovered}" },
+        "backgroundPressed": { "$type": "color", "$value": "{semantic.color.destructivePressed}" },
+        "border": { "$type": "color", "$value": "{semantic.color.destructive}" },
+        "foreground": { "$type": "color", "$value": "{semantic.color.destructiveForeground}" }
+      },
+      "muted": {
+        "background": { "$type": "color", "$value": "{semantic.color.muted}" },
+        "backgroundHovered": { "$type": "color", "$value": "{semantic.color.mutedHovered}" },
+        "backgroundPressed": { "$type": "color", "$value": "{semantic.color.mutedPressed}" },
+        "border": { "$type": "color", "$value": "{semantic.color.muted}" },
+        "foreground": { "$type": "color", "$value": "{semantic.color.foreground}" }
+      },
+      "disabled": {
+        "background": { "$type": "color", "$value": "{semantic.color.backgroundDisabled}" },
+        "border": { "$type": "color", "$value": "{semantic.color.borderDisabled}" },
+        "foreground": { "$type": "color", "$value": "{semantic.color.textDisabled}" }
+      }
+    }
+  }
+}
