@@ -1,5 +1,8 @@
 # Design Token System
 
+> **Using these packages in your own project?** See [USAGE.md](./USAGE.md) (English) or [USAGE.vn.md](./USAGE.vn.md) (Tiếng Việt).
+> **Cutting a release?** See [RELEASING.md](./RELEASING.md).
+
 Monorepo scaffold for a three-layer design token system:
 
 1. `primitive`: raw values such as color, spacing, radius, typography.
