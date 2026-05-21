@@ -1,6 +1,6 @@
 {
   "name": "@jarviisha/davinci-react-ui",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "React UI components styled with Davinci CSS tokens (no Tailwind required).",
   "license": "MIT",
   "author": "jarviisha",
@@ -11,9 +11,18 @@
   },
   "homepage": "https://github.com/jarviisha/davinci#readme",
   "bugs": "https://github.com/jarviisha/davinci/issues",
-  "keywords": ["react", "ui", "components", "design-system", "davinci"],
+  "keywords": [
+    "react",
+    "ui",
+    "components",
+    "design-system",
+    "davinci"
+  ],
   "type": "module",
-  "sideEffects": ["./dist/styles.css", "**/*.css"],
+  "sideEffects": [
+    "./dist/styles.css",
+    "**/*.css"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -21,7 +30,10 @@
     },
     "./styles.css": "./dist/styles.css"
   },
-  "files": ["dist", "LICENSE"],
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
   "engines": {
     "node": ">=20"
   },
