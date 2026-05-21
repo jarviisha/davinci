@@ -26,6 +26,15 @@
         "background": { "$type": "color", "$value": "{semantic.color.background}" },
         "border": { "$type": "color", "$value": "{semantic.color.borderBold}" },
         "shadow": { "$type": "shadow", "$value": "{semantic.shadow.none}" }
+      },
+      "filled": {
+        "background": { "$type": "color", "$value": "{semantic.color.surface}" },
+        "shadow": { "$type": "shadow", "$value": "{semantic.shadow.none}" }
+      },
+      "floating": {
+        "background": { "$type": "color", "$value": "{semantic.color.surfaceRaised}" },
+        "border": { "$type": "color", "$value": "{semantic.color.border}" },
+        "shadow": { "$type": "shadow", "$value": "{semantic.shadow.raised}" }
       }
     }
   }

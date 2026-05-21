@@ -15,7 +15,7 @@ export function ToastPanel() {
 
   return (
     <Stack gap="300">
-      <Card>
+      <Card variant="filled">
         <CardHeader>
           <CardTitle>Toast variants</CardTitle>
           <CardDescription>
@@ -47,7 +47,7 @@ export function ToastPanel() {
         </CardContent>
       </Card>
 
-      <Card>
+      <Card variant="filled">
         <CardHeader>
           <CardTitle>With action button</CardTitle>
           <CardDescription>Use the action slot for a single follow-up (e.g. Undo, Retry).</CardDescription>
@@ -88,7 +88,7 @@ export function ToastPanel() {
         </CardContent>
       </Card>
 
-      <Card>
+      <Card variant="filled">
         <CardHeader>
           <CardTitle>Stack multiple</CardTitle>
           <CardDescription>Toasts queue vertically in the viewport.</CardDescription>

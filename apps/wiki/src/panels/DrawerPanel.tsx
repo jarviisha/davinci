@@ -25,7 +25,7 @@ export function DrawerPanel() {
 
   return (
     <>
-      <Card>
+      <Card variant="filled">
         <CardHeader>
           <CardTitle>Drawer</CardTitle>
           <CardDescription>Side panel for detail views and compact edit forms.</CardDescription>

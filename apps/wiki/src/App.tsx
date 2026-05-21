@@ -18,6 +18,7 @@ import { AvatarPanel } from "./panels/AvatarPanel";
 import { BadgePanel } from "./panels/BadgePanel";
 import { BreadcrumbsPanel } from "./panels/BreadcrumbsPanel";
 import { ButtonPanel } from "./panels/ButtonPanel";
+import { CardPanel } from "./panels/CardPanel";
 import { CheckboxPanel } from "./panels/CheckboxPanel";
 import { ComboboxPanel } from "./panels/ComboboxPanel";
 import { ColorPanel } from "./panels/ColorPanel";
@@ -50,6 +51,7 @@ type TabId =
   | "radius-focus"
   | "elevation"
   | "button"
+  | "card"
   | "badge"
   | "table"
   | "dropdown-menu"
@@ -104,6 +106,7 @@ const tabGroups: TabGroup[] = [
     label: "Components",
     tabs: [
       { id: "button", label: "Button" },
+      { id: "card", label: "Card" },
       { id: "badge", label: "Badge" },
       { id: "table", label: "Table" },
       { id: "dropdown-menu", label: "DropdownMenu" },
@@ -151,6 +154,7 @@ const tabDescription: Record<TabId, string> = {
   "radius-focus": "Shape tokens and keyboard focus ring behavior.",
   elevation: "Theme-aware shadows and layered surface depth.",
   button: "Button variants, sizes, and disabled states backed by component tokens.",
+  card: "Container surface with variants, semantic tones, interactive and selected states.",
   badge: "Badge variants for status and metadata labels.",
   table: "Composable table primitives for dense SaaS dashboard data.",
   "dropdown-menu": "Action menus for account controls, filters, and row actions.",
@@ -309,6 +313,7 @@ export default function App() {
               {activeTab === "radius-focus" ? <RadiusFocusPanel /> : null}
               {activeTab === "elevation" ? <ElevationPanel /> : null}
               {activeTab === "button" ? <ButtonPanel /> : null}
+              {activeTab === "card" ? <CardPanel /> : null}
               {activeTab === "badge" ? <BadgePanel /> : null}
               {activeTab === "table" ? <TablePanel /> : null}
               {activeTab === "dropdown-menu" ? <DropdownMenuPanel /> : null}

@@ -18,7 +18,7 @@ export function SwitchPanel() {
 
   return (
     <Stack gap="300">
-      <Card>
+      <Card variant="filled">
         <CardHeader>
           <CardTitle>Switch</CardTitle>
           <CardDescription>
@@ -45,7 +45,7 @@ export function SwitchPanel() {
         </CardContent>
       </Card>
 
-      <Card>
+      <Card variant="filled">
         <CardHeader>
           <CardTitle>Inside FormField</CardTitle>
           <CardDescription>FormField context provides id + describedby wiring.</CardDescription>

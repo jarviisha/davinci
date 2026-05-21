@@ -20,7 +20,7 @@ export function RadioPanel() {
 
   return (
     <Stack gap="300">
-      <Card>
+      <Card variant="filled">
         <CardHeader>
           <CardTitle>RadioGroup (vertical)</CardTitle>
           <CardDescription>Group manages name + value; child Radio reads from context.</CardDescription>
@@ -38,7 +38,7 @@ export function RadioPanel() {
         </CardContent>
       </Card>
 
-      <Card>
+      <Card variant="filled">
         <CardHeader>
           <CardTitle>Horizontal layout</CardTitle>
           <CardDescription>Use orientation=&ldquo;horizontal&rdquo; for inline radio choices.</CardDescription>
@@ -51,7 +51,7 @@ export function RadioPanel() {
         </CardContent>
       </Card>
 
-      <Card>
+      <Card variant="filled">
         <CardHeader>
           <CardTitle>Inside FormField</CardTitle>
           <CardDescription>Invalid state propagates to all radios in the group.</CardDescription>

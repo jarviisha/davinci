@@ -11,7 +11,7 @@ import {
 
 export function SkeletonPanel() {
   return (
-    <Card>
+    <Card variant="filled">
       <CardHeader>
         <CardTitle>Skeleton</CardTitle>
         <CardDescription>Loading placeholders for dashboard cards, lists, and tables.</CardDescription>

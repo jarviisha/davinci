@@ -11,7 +11,7 @@ import {
 
 export function AvatarPanel() {
   return (
-    <Card>
+    <Card variant="filled">
       <CardHeader>
         <CardTitle>Avatar</CardTitle>
         <CardDescription>User identity primitive with image fallback and generated initials.</CardDescription>

@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle, IconButton, 
 
 export function IconButtonPanel() {
   return (
-    <Card>
+    <Card variant="filled">
       <CardHeader>
         <CardTitle>IconButton</CardTitle>
         <CardDescription>Icon-only action button with enforced accessible label.</CardDescription>

@@ -21,7 +21,7 @@ export function FormFieldPanel() {
 
   return (
     <Stack gap="300">
-      <Card>
+      <Card variant="filled">
         <CardHeader>
           <CardTitle>Label</CardTitle>
           <CardDescription>Standalone label with size variants and required indicator.</CardDescription>
@@ -36,7 +36,7 @@ export function FormFieldPanel() {
         </CardContent>
       </Card>
 
-      <Card>
+      <Card variant="filled">
         <CardHeader>
           <CardTitle>Sizes</CardTitle>
           <CardDescription>Input, Select and Textarea all expose the same sm / md / lg API.</CardDescription>
@@ -74,7 +74,7 @@ export function FormFieldPanel() {
         </CardContent>
       </Card>
 
-      <Card>
+      <Card variant="filled">
         <CardHeader>
           <CardTitle>Input types</CardTitle>
           <CardDescription>Standard HTML types — all share border, radius, focus ring and disabled state.</CardDescription>
@@ -109,7 +109,7 @@ export function FormFieldPanel() {
         </CardContent>
       </Card>
 
-      <Card>
+      <Card variant="filled">
         <CardHeader>
           <CardTitle>FormField composite</CardTitle>
           <CardDescription>
@@ -176,7 +176,7 @@ export function FormFieldPanel() {
         </CardContent>
       </Card>
 
-      <Card>
+      <Card variant="filled">
         <CardHeader>
           <CardTitle>Full form example</CardTitle>
           <CardDescription>How the pieces compose into a real settings or signup flow.</CardDescription>

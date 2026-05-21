@@ -2,7 +2,7 @@ import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle, Inli
 
 export function ButtonPanel() {
   return (
-    <Card>
+    <Card variant="filled">
       <CardHeader>
         <CardTitle>Button</CardTitle>
         <CardDescription>Button treatment variants combine with semantic color tones.</CardDescription>

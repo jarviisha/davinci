@@ -1,5 +1,6 @@
 import { forwardRef, type InputHTMLAttributes } from "react";
 import { useFormFieldContext } from "./form-field-context.js";
+import { SearchIcon, XIcon } from "./icons/index.js";
 import { cn } from "./utils.js";
 
 export type SearchInputSize = "sm" | "md" | "lg";
@@ -39,9 +40,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(functi
 
   return (
     <span className={cn("davinci-search-input", sizeClass[size], className)}>
-      <span aria-hidden="true" className="davinci-search-input__icon">
-        ⌕
-      </span>
+      <SearchIcon className="davinci-search-input__icon" />
       <input
         aria-describedby={ariaDescribedBy ?? ctx?.describedBy}
         aria-invalid={ariaInvalid ?? ctx?.invalid}
@@ -64,7 +63,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(functi
           tabIndex={-1}
           type="button"
         >
-          ×
+          <XIcon />
         </button>
       ) : null}
     </span>

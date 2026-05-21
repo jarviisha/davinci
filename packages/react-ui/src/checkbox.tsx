@@ -7,6 +7,7 @@ import {
   type ReactNode
 } from "react";
 import { useFormFieldContext } from "./form-field-context.js";
+import { CheckIcon, MinusIcon } from "./icons/index.js";
 import { cn } from "./utils.js";
 
 export type CheckboxSize = "sm" | "md";
@@ -66,12 +67,8 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Che
         {...props}
       />
       <span aria-hidden="true" className="davinci-checkbox__visual">
-        <svg className="davinci-checkbox__check" fill="none" viewBox="0 0 16 16">
-          <path d="M3 8.5l3 3 7-7" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-        </svg>
-        <svg className="davinci-checkbox__mixed" fill="none" viewBox="0 0 16 16">
-          <path d="M3.5 8h9" stroke="currentColor" strokeLinecap="round" strokeWidth="2" />
-        </svg>
+        <CheckIcon className="davinci-checkbox__check" />
+        <MinusIcon className="davinci-checkbox__mixed" />
       </span>
       {label !== undefined && <span className="davinci-checkbox__label">{label}</span>}
     </label>

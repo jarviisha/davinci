@@ -25,7 +25,7 @@ export function CheckboxPanel() {
 
   return (
     <Stack gap="300">
-      <Card>
+      <Card variant="filled">
         <CardHeader>
           <CardTitle>Checkbox</CardTitle>
           <CardDescription>Native checkbox wrapped with token-driven custom styling.</CardDescription>
@@ -42,7 +42,7 @@ export function CheckboxPanel() {
         </CardContent>
       </Card>
 
-      <Card>
+      <Card variant="filled">
         <CardHeader>
           <CardTitle>Indeterminate state</CardTitle>
           <CardDescription>Parent toggles indeterminate when only some children are checked.</CardDescription>
@@ -76,7 +76,7 @@ export function CheckboxPanel() {
         </CardContent>
       </Card>
 
-      <Card>
+      <Card variant="filled">
         <CardHeader>
           <CardTitle>Inside FormField</CardTitle>
           <CardDescription>Inherits invalid + required state from FormField context.</CardDescription>

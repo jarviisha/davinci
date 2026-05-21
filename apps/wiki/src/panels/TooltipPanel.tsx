@@ -11,7 +11,7 @@ import {
 
 export function TooltipPanel() {
   return (
-    <Card>
+    <Card variant="filled">
       <CardHeader>
         <CardTitle>Tooltip</CardTitle>
         <CardDescription>Short contextual help for compact dashboard controls.</CardDescription>

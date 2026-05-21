@@ -23,7 +23,7 @@ export function ComboboxPanel() {
   const [owner, setOwner] = useState("mina");
 
   return (
-    <Card>
+    <Card variant="filled">
       <CardHeader>
         <CardTitle>Combobox</CardTitle>
         <CardDescription>Filterable single-select input for users, projects, and tags.</CardDescription>

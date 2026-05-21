@@ -14,7 +14,7 @@ import {
 
 export function BreadcrumbsPanel() {
   return (
-    <Card>
+    <Card variant="filled">
       <CardHeader>
         <CardTitle>Breadcrumbs</CardTitle>
         <CardDescription>Hierarchical navigation for nested dashboard pages.</CardDescription>

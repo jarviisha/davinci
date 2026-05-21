@@ -37,7 +37,7 @@ export {
   CardHeader,
   CardTitle
 } from "./card.js";
-export type { CardProps, CardVariant } from "./card.js";
+export type { CardProps, CardTone, CardVariant } from "./card.js";
 export { Checkbox } from "./checkbox.js";
 export type { CheckboxProps, CheckboxSize } from "./checkbox.js";
 export { Combobox } from "./combobox.js";

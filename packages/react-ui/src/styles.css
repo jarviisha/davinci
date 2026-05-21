@@ -377,6 +377,12 @@
   flex-shrink: 0;
 }
 
+.davinci-search-input__icon,
+.davinci-search-input__clear svg {
+  block-size: 1rem;
+  inline-size: 1rem;
+}
+
 .davinci-search-input__control {
   appearance: none;
   background: transparent;
@@ -568,6 +574,72 @@
   background: var(--davinci-component-card-outlined-background);
   border-color: var(--davinci-component-card-outlined-border);
   box-shadow: var(--davinci-component-card-outlined-shadow);
+}
+
+.davinci-card--filled {
+  background: var(--davinci-component-card-filled-background);
+  border-color: transparent;
+  box-shadow: var(--davinci-component-card-filled-shadow);
+}
+
+.davinci-card--flat {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.davinci-card--floating {
+  background: var(--davinci-component-card-floating-background);
+  border-color: var(--davinci-component-card-floating-border);
+  box-shadow: var(--davinci-component-card-floating-shadow);
+}
+
+.davinci-card--tone-info {
+  --davinci-card-accent: var(--davinci-semantic-color-information);
+}
+
+.davinci-card--tone-success {
+  --davinci-card-accent: var(--davinci-semantic-color-success);
+}
+
+.davinci-card--tone-warning {
+  --davinci-card-accent: var(--davinci-semantic-color-warning);
+}
+
+.davinci-card--tone-danger {
+  --davinci-card-accent: var(--davinci-semantic-color-destructive);
+}
+
+.davinci-card--tone-info,
+.davinci-card--tone-success,
+.davinci-card--tone-warning,
+.davinci-card--tone-danger {
+  background: color-mix(in srgb, var(--davinci-card-accent) 8%, var(--davinci-semantic-color-background));
+  border-color: color-mix(in srgb, var(--davinci-card-accent) 30%, var(--davinci-semantic-color-border));
+}
+
+.davinci-card--interactive {
+  cursor: pointer;
+  transition: background 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.davinci-card--interactive:hover {
+  background: var(--davinci-semantic-color-background-hovered);
+}
+
+.davinci-card--interactive.davinci-card--elevated:hover,
+.davinci-card--interactive.davinci-card--floating:hover {
+  box-shadow: var(--davinci-semantic-shadow-raised);
+}
+
+.davinci-card--interactive:focus-visible {
+  outline: 2px solid var(--davinci-semantic-color-border-focused);
+  outline-offset: 2px;
+}
+
+.davinci-card--selected {
+  background: color-mix(in srgb, var(--davinci-semantic-color-primary) 8%, var(--davinci-semantic-color-background));
+  border-color: var(--davinci-semantic-color-border-focused);
 }
 
 .davinci-card__header,

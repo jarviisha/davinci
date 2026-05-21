@@ -2,7 +2,7 @@ import { Badge, Card, CardContent, CardDescription, CardHeader, CardTitle, Inlin
 
 export function BadgePanel() {
   return (
-    <Card>
+    <Card variant="filled">
       <CardHeader>
         <CardTitle>Badge</CardTitle>
         <CardDescription>Status and metadata labels rendered from component badge tokens.</CardDescription>

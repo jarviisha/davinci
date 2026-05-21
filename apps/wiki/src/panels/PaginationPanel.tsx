@@ -13,7 +13,7 @@ export function PaginationPanel() {
   const [page, setPage] = useState(6);
 
   return (
-    <Card>
+    <Card variant="filled">
       <CardHeader>
         <CardTitle>Pagination</CardTitle>
         <CardDescription>Controlled pagination for tables and search result lists.</CardDescription>

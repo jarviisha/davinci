@@ -13,7 +13,7 @@ export function SearchInputPanel() {
   const [query, setQuery] = useState("invoice");
 
   return (
-    <Card>
+    <Card variant="filled">
       <CardHeader>
         <CardTitle>SearchInput</CardTitle>
         <CardDescription>Search field with leading icon and optional clear action.</CardDescription>

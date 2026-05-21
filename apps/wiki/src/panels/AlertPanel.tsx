@@ -11,7 +11,7 @@ import {
 
 export function AlertPanel() {
   return (
-    <Card>
+    <Card variant="filled">
       <CardHeader>
         <CardTitle>Alert</CardTitle>
         <CardDescription>Persistent status messages for billing, sync, permissions, and system notices.</CardDescription>

@@ -10,7 +10,7 @@ import {
 
 export function EmptyStatePanel() {
   return (
-    <Card>
+    <Card variant="filled">
       <CardHeader>
         <CardTitle>EmptyState</CardTitle>
         <CardDescription>Reusable empty, no results, and first-run states.</CardDescription>

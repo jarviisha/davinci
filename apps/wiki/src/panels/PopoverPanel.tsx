@@ -15,7 +15,7 @@ import {
 
 export function PopoverPanel() {
   return (
-    <Card>
+    <Card variant="filled">
       <CardHeader>
         <CardTitle>Popover</CardTitle>
         <CardDescription>Generic anchored panel for filters, quick settings, and compact forms.</CardDescription>

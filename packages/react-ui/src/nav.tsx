@@ -6,6 +6,7 @@ import {
   type HTMLAttributes,
   type ReactNode
 } from "react";
+import { ChevronRightIcon } from "./icons/index.js";
 import { cn } from "./utils.js";
 
 export type NavOrientation = "vertical" | "horizontal";
@@ -112,18 +113,7 @@ export const NavGroup = forwardRef<HTMLDivElement, NavGroupProps>(function NavGr
         type="button"
       >
         <span className="davinci-nav-group__label">{label}</span>
-        <svg
-          aria-hidden="true"
-          className="davinci-nav-group__chevron"
-          fill="none"
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="1.5"
-          viewBox="0 0 16 16"
-        >
-          <path d="M6 4l4 4-4 4" />
-        </svg>
+        <ChevronRightIcon className="davinci-nav-group__chevron" />
       </button>
       <div className="davinci-nav-group__items" hidden={!open} id={itemsId}>
         {children}

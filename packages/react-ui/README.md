@@ -51,7 +51,7 @@ export function Example() {
 - **Actions** — `Button`, `IconButton` (variants: `solid` / `outline` / `ghost` / `soft`; tones: `primary` / `neutral` / `danger`; sizes: `sm` / `md` / `lg`)
 - **Navigation** — `Breadcrumbs`, `BreadcrumbsList`, `BreadcrumbsItem`, `BreadcrumbsLink`, `BreadcrumbsCurrent`, `Pagination`, `Nav`, `NavGroup`, `NavItem`, `Tabs`, `TabsList`, `TabsTrigger`, `TabsContent`
 - **Forms** — `FormField`, `Label`, `Input`, `SearchInput`, `Select`, `Combobox`, `Textarea`, `Checkbox`, `RadioGroup`, `Radio`, `Switch`
-- **Surfaces** — `Card`, `CardHeader`, `CardTitle`, `CardDescription`, `CardContent`, `CardFooter`
+- **Surfaces** — `Card` (variants: `elevated` / `outlined` / `filled` / `flat` / `floating`; tones: `info` / `success` / `warning` / `danger`; modifiers: `interactive`, `selected`), `CardHeader`, `CardTitle`, `CardDescription`, `CardContent`, `CardFooter`
 - **Data display** — `Avatar`, `EmptyState`, `Skeleton`, `Table`, `TableContainer`, `TableHeader`, `TableBody`, `TableFooter`, `TableRow`, `TableHead`, `TableCell`, `TableCaption`
 - **Status** — `Alert`, `Badge` (variants: `neutral` / `primary` / `success` / `warning` / `destructive` / `discovery`)
 - **Overlays** — `Dialog`, `Drawer`, `DropdownMenu`, `Popover`, `Tooltip`, `ToastProvider`, `useToast`

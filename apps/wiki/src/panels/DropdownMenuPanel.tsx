@@ -14,7 +14,7 @@ import {
 
 export function DropdownMenuPanel() {
   return (
-    <Card>
+    <Card variant="filled">
       <CardHeader>
         <CardTitle>DropdownMenu</CardTitle>
         <CardDescription>Action menu for account controls, row actions, filters, and bulk operations.</CardDescription>

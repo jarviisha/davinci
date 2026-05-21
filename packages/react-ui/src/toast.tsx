@@ -10,6 +10,7 @@ import {
   type ReactNode
 } from "react";
 import { createPortal } from "react-dom";
+import { XIcon } from "./icons/index.js";
 import { cn } from "./utils.js";
 
 export type ToastVariant = "info" | "success" | "warning" | "error";
@@ -187,9 +188,7 @@ function ToastItem({ toast, onDismiss }: ToastItemProps) {
         onClick={() => setClosing(true)}
         type="button"
       >
-        <svg aria-hidden="true" fill="none" viewBox="0 0 16 16">
-          <path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" />
-        </svg>
+        <XIcon />
       </button>
     </li>
   );

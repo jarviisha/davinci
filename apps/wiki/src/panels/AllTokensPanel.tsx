@@ -162,7 +162,7 @@ export function AllTokensPanel({ resolvedTheme }: { resolvedTheme: ResolvedTheme
       ))}
 
       {filteredSections.length === 0 ? (
-        <Card>
+        <Card variant="filled">
           <CardContent>
             <p className="text-sm text-text-subtle">No tokens match "{query}".</p>
           </CardContent>
@@ -182,7 +182,7 @@ function SectionBlock({
   children: ReactNode;
 }) {
   return (
-    <Card>
+    <Card variant="filled">
       <CardHeader>
         <CardTitle>{title}</CardTitle>
         {description ? <p className="text-sm text-text-subtle">{description}</p> : null}

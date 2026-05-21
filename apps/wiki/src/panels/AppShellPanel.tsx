@@ -19,7 +19,7 @@ import {
 
 export function AppShellPanel() {
   return (
-    <Card>
+    <Card variant="filled">
       <CardHeader>
         <CardTitle>AppShell</CardTitle>
         <CardDescription>Dashboard layout primitive with sidebar, header, and main content slots.</CardDescription>

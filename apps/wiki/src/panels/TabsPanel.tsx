@@ -16,7 +16,7 @@ export function TabsPanel() {
   const [value, setValue] = useState("overview");
 
   return (
-    <Card>
+    <Card variant="filled">
       <CardHeader>
         <CardTitle>Tabs</CardTitle>
         <CardDescription>Controlled tabs for settings screens and dashboard detail views.</CardDescription>

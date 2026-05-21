@@ -28,7 +28,7 @@ export function DialogPanel() {
 
   return (
     <Stack gap="300">
-      <Card>
+      <Card variant="filled">
         <CardHeader>
           <CardTitle>Dialog sizes</CardTitle>
           <CardDescription>

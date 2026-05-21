@@ -23,7 +23,7 @@ const invoices = [
 
 export function TablePanel() {
   return (
-    <Card>
+    <Card variant="filled">
       <CardHeader>
         <CardTitle>Table</CardTitle>
         <CardDescription>Composable table primitives for dense dashboard data.</CardDescription>
