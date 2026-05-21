@@ -16,10 +16,11 @@
     "@jarviisha/davinci-tokens": "workspace:*",
     "@tailwindcss/vite": "^4.1.7",
     "@vitejs/plugin-react": "^4.4.1",
-    "vite": "^6.3.5",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "tailwindcss": "^4.1.7"
+    "react-router-dom": "^7.15.1",
+    "tailwindcss": "^4.1.7",
+    "vite": "^6.3.5"
   },
   "devDependencies": {
     "@types/react": "^19.1.5",
