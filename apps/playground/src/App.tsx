@@ -207,7 +207,7 @@ export default function App() {
 
   return (
     <main className="min-h-screen bg-background font-sans text-foreground">
-      <aside className="border-b border-border px-6 py-6 lg:fixed lg:inset-y-0 lg:left-0 lg:z-10 lg:w-80 lg:overflow-y-auto lg:border-b-0 lg:border-r lg:bg-background lg:px-6 lg:py-8">
+      <aside className="davinci-scrollbar border-b border-border px-6 py-6 lg:fixed lg:inset-y-0 lg:left-0 lg:z-10 lg:w-80 lg:overflow-y-auto lg:border-b-0 lg:border-r lg:bg-background lg:px-6 lg:py-8">
             <Stack gap="300">
               <div>
                 <h2 className="text-xl font-semibold tracking-normal">Davinci</h2>

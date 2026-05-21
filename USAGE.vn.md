@@ -216,6 +216,39 @@ Components có sẵn (xem chi tiết types khi import):
 - **Data**: `Table` (`TableHeader`, `TableBody`, `TableRow`, …).
 - **Hook**: `useFocusTrap`.
 
+### Thanh scrollbar thon, ẩn cho đến khi hover
+
+`@jarviisha/davinci-react-ui/styles.css` cung cấp sẵn utility class cho scrollbar thon, fade-in khi hover. Thumb trong suốt lúc nghỉ, fade-in khi container được hover hoặc nhận focus. Màu và kích thước lấy từ token `--davinci-component-scrollbar-*` nên tự đổi theo light / dark.
+
+Đã tự động áp dụng cho `AppShellSidebar`, `AppShellMain`, `Dialog`, `Drawer`, listbox của `Combobox`, và `TableContainer` — không cần thêm class.
+
+Để bật cho các vùng scroll khác, thêm class `davinci-scrollbar`:
+
+```tsx
+<aside className="davinci-scrollbar" style={{ overflow: "auto" }}>
+  {/* sidebar items */}
+</aside>
+```
+
+Thêm `davinci-scrollbar--always` nếu muốn thumb luôn hiện (không cần hover):
+
+```tsx
+<div className="davinci-scrollbar davinci-scrollbar--always">{/* … */}</div>
+```
+
+Override token ở cấp app:
+
+```css
+:root {
+  --davinci-component-scrollbar-size: 0.625rem;
+  --davinci-component-scrollbar-thumb-background: var(--davinci-semantic-color-border-bold);
+}
+```
+
+> Firefox chỉ hỗ trợ `scrollbar-width: thin` (không chỉnh được size chính xác) nên size token chính xác trên Chromium / WebKit, gần đúng trên Firefox.
+
+---
+
 Toast cần một `ToastProvider` đặt gần root:
 
 ```tsx

@@ -216,6 +216,39 @@ Available components (full props show up via TypeScript on import):
 - **Data**: `Table` (`TableHeader`, `TableBody`, `TableRow`, …).
 - **Hook**: `useFocusTrap`.
 
+### Thin hover-reveal scrollbar
+
+`@jarviisha/davinci-react-ui/styles.css` ships a thin, hover-reveal scrollbar utility. The thumb is transparent at rest and fades in when the container is hovered or receives focus, using `--davinci-component-scrollbar-*` tokens so it follows light / dark automatically.
+
+Already auto-applied to `AppShellSidebar`, `AppShellMain`, `Dialog`, `Drawer`, `Combobox`'s listbox, and `TableContainer` — no extra class needed.
+
+Opt in on any other scroll container with the `davinci-scrollbar` class:
+
+```tsx
+<aside className="davinci-scrollbar" style={{ overflow: "auto" }}>
+  {/* sidebar items */}
+</aside>
+```
+
+Add `davinci-scrollbar--always` if you want the thumb visible at rest:
+
+```tsx
+<div className="davinci-scrollbar davinci-scrollbar--always">{/* … */}</div>
+```
+
+Override per app by redefining the tokens:
+
+```css
+:root {
+  --davinci-component-scrollbar-size: 0.625rem;
+  --davinci-component-scrollbar-thumb-background: var(--davinci-semantic-color-border-bold);
+}
+```
+
+> Firefox supports only `scrollbar-width: thin` (no precise sizing), so the size token is honored on Chromium / WebKit and approximated on Firefox.
+
+---
+
 Toast needs a `ToastProvider` near the root:
 
 ```tsx

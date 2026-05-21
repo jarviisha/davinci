@@ -1,0 +1,34 @@
+{
+  "component": {
+    "scrollbar": {
+      "size": {
+        "$type": "dimension",
+        "$value": "0.5rem"
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.full}"
+      },
+      "track": {
+        "background": {
+          "$type": "color",
+          "$value": "transparent"
+        }
+      },
+      "thumb": {
+        "background": {
+          "$type": "color",
+          "$value": "{semantic.color.border}"
+        },
+        "backgroundHovered": {
+          "$type": "color",
+          "$value": "{semantic.color.borderBold}"
+        },
+        "backgroundActive": {
+          "$type": "color",
+          "$value": "{semantic.color.textMuted}"
+        }
+      }
+    }
+  }
+}

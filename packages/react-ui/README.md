@@ -59,6 +59,37 @@ export function Example() {
 
 All components forward refs and spread extra props onto the underlying DOM element. Add your own `className` to extend styles.
 
+## Scrollbar
+
+A thin, hover-reveal scrollbar style is shipped as a utility class. The thumb is transparent at rest and fades in when the container is hovered or receives focus, with `:hover` and `:active` states for direct thumb interaction. Colors and size are driven by the `--davinci-component-scrollbar-*` tokens, so they follow light / dark themes automatically.
+
+Auto-applied (no extra class needed) to internal scroll containers: `AppShellSidebar`, `AppShellMain`, `Dialog`, `Drawer`, `Combobox` listbox, `TableContainer`.
+
+Opt in elsewhere with `davinci-scrollbar`:
+
+```tsx
+<div className="davinci-scrollbar" style={{ maxBlockSize: "20rem", overflow: "auto" }}>
+  {/* long content */}
+</div>
+```
+
+Use the `davinci-scrollbar--always` modifier if you want the thumb visible at rest instead of only on hover:
+
+```tsx
+<div className="davinci-scrollbar davinci-scrollbar--always">{/* … */}</div>
+```
+
+Override per app by redefining the tokens at any layer:
+
+```css
+:root {
+  --davinci-component-scrollbar-size: 0.625rem;
+  --davinci-component-scrollbar-thumb-background: var(--davinci-semantic-color-border-bold);
+}
+```
+
+> Firefox can only render `scrollbar-width: thin` (3-step `auto | thin | none`), so the size token is honored on Chromium / WebKit and approximated on Firefox.
+
 ## Overriding styles
 
 Component styles are wrapped in `@layer davinci.components`, so any unlayered CSS or higher layer you author wins without specificity tricks:

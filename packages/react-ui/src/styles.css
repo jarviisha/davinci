@@ -2218,4 +2218,155 @@
 .davinci-tooltip[data-placement="bottom"]::after {
   inset-block-start: -0.25rem;
 }
+
+/* ----- Scrollbar -----
+ * Hover-reveal thin scrollbar. The thumb is transparent at rest and fades in
+ * when the container is hovered or receives focus. Auto-applied to internal
+ * scroll containers (app shell, dialog, drawer, combobox listbox); consumers
+ * can opt in elsewhere via the `davinci-scrollbar` class. Use the
+ * `davinci-scrollbar--always` modifier to keep the thumb visible at rest.
+ */
+
+:where(
+  .davinci-scrollbar,
+  .davinci-app-shell__sidebar,
+  .davinci-app-shell__main,
+  .davinci-dialog,
+  .davinci-drawer,
+  .davinci-combobox__listbox,
+  .davinci-table-container
+) {
+  scrollbar-color: transparent transparent;
+  scrollbar-width: thin;
+  transition: scrollbar-color 200ms ease;
+}
+
+:where(
+  .davinci-scrollbar,
+  .davinci-app-shell__sidebar,
+  .davinci-app-shell__main,
+  .davinci-dialog,
+  .davinci-drawer,
+  .davinci-combobox__listbox,
+  .davinci-table-container
+):hover,
+:where(
+  .davinci-scrollbar,
+  .davinci-app-shell__sidebar,
+  .davinci-app-shell__main,
+  .davinci-dialog,
+  .davinci-drawer,
+  .davinci-combobox__listbox,
+  .davinci-table-container
+):focus-within {
+  scrollbar-color: var(--davinci-component-scrollbar-thumb-background)
+    var(--davinci-component-scrollbar-track-background);
+}
+
+:where(
+  .davinci-scrollbar,
+  .davinci-app-shell__sidebar,
+  .davinci-app-shell__main,
+  .davinci-dialog,
+  .davinci-drawer,
+  .davinci-combobox__listbox,
+  .davinci-table-container
+)::-webkit-scrollbar {
+  block-size: var(--davinci-component-scrollbar-size);
+  inline-size: var(--davinci-component-scrollbar-size);
+}
+
+:where(
+  .davinci-scrollbar,
+  .davinci-app-shell__sidebar,
+  .davinci-app-shell__main,
+  .davinci-dialog,
+  .davinci-drawer,
+  .davinci-combobox__listbox,
+  .davinci-table-container
+)::-webkit-scrollbar-track {
+  background: var(--davinci-component-scrollbar-track-background);
+}
+
+:where(
+  .davinci-scrollbar,
+  .davinci-app-shell__sidebar,
+  .davinci-app-shell__main,
+  .davinci-dialog,
+  .davinci-drawer,
+  .davinci-combobox__listbox,
+  .davinci-table-container
+)::-webkit-scrollbar-thumb {
+  background-clip: padding-box;
+  background-color: transparent;
+  border: 2px solid transparent;
+  border-radius: var(--davinci-component-scrollbar-radius);
+  transition: background-color 200ms ease;
+}
+
+:where(
+  .davinci-scrollbar,
+  .davinci-app-shell__sidebar,
+  .davinci-app-shell__main,
+  .davinci-dialog,
+  .davinci-drawer,
+  .davinci-combobox__listbox,
+  .davinci-table-container
+):hover::-webkit-scrollbar-thumb,
+:where(
+  .davinci-scrollbar,
+  .davinci-app-shell__sidebar,
+  .davinci-app-shell__main,
+  .davinci-dialog,
+  .davinci-drawer,
+  .davinci-combobox__listbox,
+  .davinci-table-container
+):focus-within::-webkit-scrollbar-thumb {
+  background-color: var(--davinci-component-scrollbar-thumb-background);
+}
+
+:where(
+  .davinci-scrollbar,
+  .davinci-app-shell__sidebar,
+  .davinci-app-shell__main,
+  .davinci-dialog,
+  .davinci-drawer,
+  .davinci-combobox__listbox,
+  .davinci-table-container
+)::-webkit-scrollbar-thumb:hover {
+  background-color: var(--davinci-component-scrollbar-thumb-background-hovered);
+}
+
+:where(
+  .davinci-scrollbar,
+  .davinci-app-shell__sidebar,
+  .davinci-app-shell__main,
+  .davinci-dialog,
+  .davinci-drawer,
+  .davinci-combobox__listbox,
+  .davinci-table-container
+)::-webkit-scrollbar-thumb:active {
+  background-color: var(--davinci-component-scrollbar-thumb-background-active);
+}
+
+:where(
+  .davinci-scrollbar,
+  .davinci-app-shell__sidebar,
+  .davinci-app-shell__main,
+  .davinci-dialog,
+  .davinci-drawer,
+  .davinci-combobox__listbox,
+  .davinci-table-container
+)::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.davinci-scrollbar--always {
+  scrollbar-color: var(--davinci-component-scrollbar-thumb-background)
+    var(--davinci-component-scrollbar-track-background);
+}
+
+.davinci-scrollbar--always::-webkit-scrollbar-thumb {
+  background-color: var(--davinci-component-scrollbar-thumb-background);
+}
 }
