@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "turbo dev --filter=@davinci/playground",
+    "dev:playground": "turbo dev --filter=@davinci/playground",
+    "dev:wiki": "turbo dev --filter=@davinci/wiki",
     "build": "turbo build",
     "lint": "turbo lint",
     "test": "turbo test",

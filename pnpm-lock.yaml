@@ -70,6 +70,49 @@ importers:
         specifier: ^5.8.3
         version: 5.9.3
 
+  apps/wiki:
+    dependencies:
+      '@jarviisha/davinci-react-theme-provider':
+        specifier: workspace:*
+        version: link:../../packages/react-theme-provider
+      '@jarviisha/davinci-react-ui':
+        specifier: workspace:*
+        version: link:../../packages/react-ui
+      '@jarviisha/davinci-tailwind-preset':
+        specifier: workspace:*
+        version: link:../../packages/tailwind-preset
+      '@jarviisha/davinci-tokens':
+        specifier: workspace:*
+        version: link:../../packages/tokens
+      '@tailwindcss/vite':
+        specifier: ^4.1.7
+        version: 4.3.0(vite@6.4.2(@types/node@22.19.19)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.22.2)(yaml@2.9.0))
+      '@vitejs/plugin-react':
+        specifier: ^4.4.1
+        version: 4.7.0(vite@6.4.2(@types/node@22.19.19)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.22.2)(yaml@2.9.0))
+      react:
+        specifier: ^19.1.0
+        version: 19.2.6
+      react-dom:
+        specifier: ^19.1.0
+        version: 19.2.6(react@19.2.6)
+      tailwindcss:
+        specifier: ^4.1.7
+        version: 4.3.0
+      vite:
+        specifier: ^6.3.5
+        version: 6.4.2(@types/node@22.19.19)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.22.2)(yaml@2.9.0)
+    devDependencies:
+      '@types/react':
+        specifier: ^19.1.5
+        version: 19.2.14
+      '@types/react-dom':
+        specifier: ^19.1.5
+        version: 19.2.3(@types/react@19.2.14)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
   packages/react-theme-provider:
     devDependencies:
       '@testing-library/dom':
