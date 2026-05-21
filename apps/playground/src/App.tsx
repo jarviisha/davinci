@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTheme, type Theme } from "@jarviisha/davinci-react-theme-provider";
 import {
   Badge,
@@ -134,6 +134,15 @@ const tabGroups: TabGroup[] = [
 ];
 
 const tabs: Tab[] = tabGroups.flatMap((group) => group.tabs);
+const DEFAULT_APP_RADIUS = 6;
+const RADIUS_STORAGE_KEY = "davinci-playground-radius";
+
+const appRadiusVars = [
+  ["--davinci-radius-sm", 2 / 3],
+  ["--davinci-radius-md", 1],
+  ["--davinci-radius-lg", 4 / 3],
+  ["--davinci-radius-xl", 2]
+] as const;
 
 const tabDescription: Record<TabId, string> = {
   color: "Primitive palette, semantic roles, and active theme mapping.",
@@ -177,10 +186,24 @@ function nextTheme(theme: Theme): Theme {
 export default function App() {
   const { theme, resolvedTheme, setTheme } = useTheme();
   const [activeTab, setActiveTab] = useState<TabId>("color");
+  const [appRadius, setAppRadius] = useState(readInitialRadius);
   const semanticPrefix = "semantic.color.";
   const semanticEntries = themeTokenEntries(resolvedTheme).filter(
     (token) => token.name.startsWith(semanticPrefix) && !token.name.endsWith("Foreground")
   );
+
+  useEffect(() => {
+    const root = document.documentElement;
+
+    for (const [name, multiplier] of appRadiusVars) {
+      root.style.setProperty(name, formatRadiusValue(appRadius * multiplier));
+    }
+
+    root.style.setProperty("--davinci-radius-control", "var(--davinci-radius-md)");
+    root.style.setProperty("--davinci-radius-card", "var(--davinci-radius-lg)");
+    root.style.setProperty("--davinci-radius-panel", "var(--davinci-radius-xl)");
+    window.localStorage.setItem(RADIUS_STORAGE_KEY, String(appRadius));
+  }, [appRadius]);
 
   return (
     <main className="min-h-screen bg-background font-sans text-foreground">
@@ -219,6 +242,42 @@ export default function App() {
                 </Inline>
                 <Button onClick={() => setTheme(nextTheme(theme))} tone="neutral" variant="outline">
                   Switch to {nextTheme(theme)}
+                </Button>
+              </Stack>
+
+              <Stack gap="200">
+                <Divider />
+                <Inline align="center" justify="between">
+                  <span className="text-sm font-medium">Radius</span>
+                  <Badge variant="neutral">{formatRadiusValue(appRadius)}</Badge>
+                </Inline>
+                <label className="sr-only" htmlFor="app-radius">
+                  App radius
+                </label>
+                <input
+                  className="w-full"
+                  id="app-radius"
+                  max="20"
+                  min="0"
+                  onChange={(event) => setAppRadius(Number(event.currentTarget.value))}
+                  step="1"
+                  style={{ accentColor: "var(--davinci-semantic-color-primary)" }}
+                  type="range"
+                  value={appRadius}
+                />
+                <div className="grid grid-cols-3 gap-2">
+                  <div className="h-9 border border-border bg-surface-raised" style={{ borderRadius: "var(--davinci-radius-control)" }} />
+                  <div className="h-9 border border-border bg-surface-raised" style={{ borderRadius: "var(--davinci-radius-card)" }} />
+                  <div className="h-9 border border-border bg-surface-raised" style={{ borderRadius: "var(--davinci-radius-panel)" }} />
+                </div>
+                <Button
+                  disabled={appRadius === DEFAULT_APP_RADIUS}
+                  onClick={() => setAppRadius(DEFAULT_APP_RADIUS)}
+                  size="sm"
+                  tone="neutral"
+                  variant="outline"
+                >
+                  Reset radius
                 </Button>
               </Stack>
             </Stack>
@@ -284,4 +343,19 @@ export default function App() {
 
 function activeLabel(activeTab: TabId): string {
   return tabs.find((tab) => tab.id === activeTab)?.label ?? "Playground";
+}
+
+function readInitialRadius(): number {
+  const stored = window.localStorage.getItem(RADIUS_STORAGE_KEY);
+  const parsed = Number(stored);
+
+  if (!Number.isFinite(parsed) || parsed < 0 || parsed > 20) {
+    return DEFAULT_APP_RADIUS;
+  }
+
+  return parsed;
+}
+
+function formatRadiusValue(value: number): string {
+  return `${Number(value.toFixed(2))}px`;
 }
