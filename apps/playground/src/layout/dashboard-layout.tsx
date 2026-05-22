@@ -2,9 +2,11 @@ import { useMemo } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import {
   AppShell,
+  AppShellAside,
   AppShellHeader,
   AppShellMain,
   AppShellSidebar,
+  AppShellTopBar,
   Avatar,
   Badge,
   Button,
@@ -14,10 +16,12 @@ import {
   CardHeader,
   CardTitle,
   Divider,
+  IconButton,
   Inline,
   Nav,
   NavGroup,
   NavItem,
+  SearchInput,
   Stack
 } from "@jarviisha/davinci-react-ui";
 import { useTheme, type Theme } from "@jarviisha/davinci-react-theme-provider";
@@ -43,6 +47,13 @@ function isEntryActive(entry: NavEntry, pathname: string) {
   return pathname === entry.to || pathname.startsWith(`${entry.to}/`);
 }
 
+const recentActivity = [
+  { id: 1, name: "Ada Lovelace", action: "closed deal", target: "Orbit Studio" },
+  { id: 2, name: "Mina Park", action: "updated forecast for", target: "Q2 pipeline" },
+  { id: 3, name: "Lin Chen", action: "flagged risk on", target: "Northstar Labs" },
+  { id: 4, name: "Grace Hopper", action: "opened", target: "Acme renewal" }
+];
+
 export function DashboardLayout() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -53,13 +64,28 @@ export function DashboardLayout() {
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
       <AppShell className="min-h-screen">
+        <AppShellTopBar>
+          <Inline align="center" gap="200">
+            <p className="m-0 text-base font-semibold tracking-normal">Pulseboard</p>
+            <Badge variant="neutral">workspace</Badge>
+          </Inline>
+          <div className="hidden flex-1 md:block" style={{ maxInlineSize: "28rem" }}>
+            <SearchInput placeholder="Search accounts, deals, people…" size="sm" />
+          </div>
+          <Inline align="center" gap="100">
+            <Badge variant={resolvedTheme === "dark" ? "discovery" : "primary"}>{resolvedTheme}</Badge>
+            <Button onClick={() => setTheme(nextTheme(theme))} size="sm" tone="neutral" variant="outline">
+              Switch to {nextTheme(theme)}
+            </Button>
+            <IconButton aria-label="Notifications" variant="ghost">
+              ●
+            </IconButton>
+            <Avatar name="Mina Park" size="sm" />
+          </Inline>
+        </AppShellTopBar>
+
         <AppShellSidebar className="davinci-scrollbar">
           <Stack gap="300">
-            <div>
-              <p className="text-base font-semibold tracking-normal">Pulseboard</p>
-              <p className="mt-1 text-sm leading-6 text-text-subtle">Revenue workspace</p>
-            </div>
-
             <Nav aria-label="Primary">
               <NavGroup defaultOpen label="Workspace">
                 {workspaceNav.map((entry) => (
@@ -84,9 +110,30 @@ export function DashboardLayout() {
                 ))}
               </NavGroup>
             </Nav>
+          </Stack>
+        </AppShellSidebar>
 
-            <Divider />
+        <AppShellHeader>
+          <div className="min-w-0">
+            <p className="m-0 text-xs font-medium uppercase tracking-wide text-text-subtle">
+              {pageMeta.eyebrow}
+            </p>
+            <h1 className="m-0 mt-1 text-xl font-semibold tracking-normal">{pageMeta.title}</h1>
+          </div>
+          <Inline align="center" gap="100">
+            <Button size="sm" tone="neutral" variant="outline">
+              Export
+            </Button>
+            <Button size="sm">New report</Button>
+          </Inline>
+        </AppShellHeader>
 
+        <AppShellMain className="davinci-scrollbar">
+          <Outlet />
+        </AppShellMain>
+
+        <AppShellAside className="davinci-scrollbar">
+          <Stack gap="300">
             <Card variant="outlined">
               <CardHeader>
                 <CardTitle>Q2 target</CardTitle>
@@ -102,28 +149,30 @@ export function DashboardLayout() {
                 </Inline>
               </CardContent>
             </Card>
+
+            <Stack gap="150">
+              <Inline align="center" justify="between">
+                <strong className="text-sm">Recent activity</strong>
+                <span className="text-xs text-text-subtle">last 24h</span>
+              </Inline>
+              <Divider />
+              <Stack gap="200">
+                {recentActivity.map((event) => (
+                  <Inline align="start" gap="150" key={event.id}>
+                    <Avatar name={event.name} size="sm" />
+                    <div className="min-w-0">
+                      <p className="m-0 text-sm">
+                        <span className="font-medium">{event.name}</span>{" "}
+                        <span className="text-text-subtle">{event.action}</span>{" "}
+                        <span className="font-medium">{event.target}</span>
+                      </p>
+                    </div>
+                  </Inline>
+                ))}
+              </Stack>
+            </Stack>
           </Stack>
-        </AppShellSidebar>
-
-        <AppShellHeader>
-          <div className="min-w-0">
-            <p className="m-0 text-xs font-medium uppercase tracking-wide text-text-subtle">
-              {pageMeta.eyebrow}
-            </p>
-            <h1 className="m-0 mt-1 text-xl font-semibold tracking-normal">{pageMeta.title}</h1>
-          </div>
-          <Inline align="center" gap="150">
-            <Badge variant={resolvedTheme === "dark" ? "discovery" : "primary"}>{resolvedTheme}</Badge>
-            <Button onClick={() => setTheme(nextTheme(theme))} size="sm" tone="neutral" variant="outline">
-              Switch to {nextTheme(theme)}
-            </Button>
-            <Avatar name="Mina Park" size="sm" />
-          </Inline>
-        </AppShellHeader>
-
-        <AppShellMain className="davinci-scrollbar">
-          <Outlet />
-        </AppShellMain>
+        </AppShellAside>
       </AppShell>
     </div>
   );
