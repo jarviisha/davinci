@@ -12,7 +12,7 @@ import type { PanelMeta } from "./types";
 export const surfacePanelMeta: PanelMeta = {
   id: "surface",
   label: "Surface",
-  group: "Surfaces & Feedback",
+  group: "Foundations",
   description: "Semantic surface, border, muted, and status roles in context."
 };
 

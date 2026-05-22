@@ -6,7 +6,7 @@ import type { PanelMeta } from "./types";
 export const tabsPanelMeta: PanelMeta = {
   id: "tabs",
   label: "Tabs",
-  group: "Components",
+  group: "Navigation",
   description: "Controlled tab primitives for settings and detail pages."
 };
 

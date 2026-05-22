@@ -15,7 +15,7 @@ import type { PanelMeta } from "./types";
 export const cardPanelMeta: PanelMeta = {
   id: "card",
   label: "Card",
-  group: "Components",
+  group: "Data display",
   description: "Container surface with variants, semantic tones, interactive and selected states."
 };
 

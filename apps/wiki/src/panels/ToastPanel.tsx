@@ -5,7 +5,7 @@ import type { PanelMeta } from "./types";
 export const toastPanelMeta: PanelMeta = {
   id: "toast",
   label: "Toast",
-  group: "Surfaces & Feedback",
+  group: "Overlays",
   description: "Imperative toast notifications via the useToast hook."
 };
 

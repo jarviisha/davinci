@@ -20,7 +20,7 @@ import type { PanelMeta } from "./types";
 export const dialogPanelMeta: PanelMeta = {
   id: "dialog",
   label: "Dialog",
-  group: "Surfaces & Feedback",
+  group: "Overlays",
   description: "Modal dialog with portal, focus trap, ESC and click-outside dismiss."
 };
 

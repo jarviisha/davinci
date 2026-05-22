@@ -5,7 +5,7 @@ import type { PanelMeta } from "./types";
 export const tooltipPanelMeta: PanelMeta = {
   id: "tooltip",
   label: "Tooltip",
-  group: "Components",
+  group: "Overlays",
   description: "Contextual help for compact controls and dense dashboard UI."
 };
 

@@ -5,7 +5,7 @@ import type { PanelMeta } from "./types";
 export const skeletonPanelMeta: PanelMeta = {
   id: "skeleton",
   label: "Skeleton",
-  group: "Components",
+  group: "Data display",
   description: "Loading placeholders for dashboard cards, lists, and tables."
 };
 

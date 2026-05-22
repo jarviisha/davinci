@@ -6,7 +6,7 @@ import type { PanelMeta } from "./types";
 export const searchInputPanelMeta: PanelMeta = {
   id: "search-input",
   label: "SearchInput",
-  group: "Components",
+  group: "Inputs",
   description: "Search field with leading icon and optional clear action."
 };
 

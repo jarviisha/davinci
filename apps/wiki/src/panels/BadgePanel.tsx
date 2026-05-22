@@ -5,7 +5,7 @@ import type { PanelMeta } from "./types";
 export const badgePanelMeta: PanelMeta = {
   id: "badge",
   label: "Badge",
-  group: "Components",
+  group: "Data display",
   description: "Badge variants for status and metadata labels."
 };
 

@@ -6,7 +6,7 @@ import type { PanelMeta } from "./types";
 export const comboboxPanelMeta: PanelMeta = {
   id: "combobox",
   label: "Combobox",
-  group: "Components",
+  group: "Inputs",
   description: "Filterable single-select input for users, projects, and tags."
 };
 

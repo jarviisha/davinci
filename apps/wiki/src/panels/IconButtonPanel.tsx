@@ -5,7 +5,7 @@ import type { PanelMeta } from "./types";
 export const iconButtonPanelMeta: PanelMeta = {
   id: "icon-button",
   label: "IconButton",
-  group: "Components",
+  group: "Inputs",
   description: "Icon-only action button with enforced accessible label."
 };
 

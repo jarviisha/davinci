@@ -5,7 +5,7 @@ import type { PanelMeta } from "./types";
 export const emptyStatePanelMeta: PanelMeta = {
   id: "empty-state",
   label: "EmptyState",
-  group: "Components",
+  group: "Data display",
   description: "Empty, no-results, and first-run states with optional actions."
 };
 

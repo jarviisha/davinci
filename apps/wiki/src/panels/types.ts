@@ -1,4 +1,10 @@
-export type PanelGroup = "Foundations" | "Surfaces & Feedback" | "Components" | "Reference";
+export type PanelGroup =
+  | "Foundations"
+  | "Inputs"
+  | "Data display"
+  | "Navigation"
+  | "Overlays"
+  | "Reference";
 
 export type PanelMeta = {
   id: string;

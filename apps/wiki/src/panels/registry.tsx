@@ -51,36 +51,40 @@ export const panels: readonly PanelEntry[] = [
   { ...spacingPanelMeta, render: () => <SpacingPanel /> },
   { ...radiusFocusPanelMeta, render: () => <RadiusFocusPanel /> },
   { ...elevationPanelMeta, render: () => <ElevationPanel /> },
-
-  // Surfaces & Feedback
   { ...surfacePanelMeta, render: () => <SurfacePanel /> },
-  { ...dialogPanelMeta, render: () => <DialogPanel /> },
-  { ...toastPanelMeta, render: () => <ToastPanel /> },
 
-  // Components
+  // Inputs
   { ...buttonPanelMeta, render: () => <ButtonPanel /> },
-  { ...cardPanelMeta, render: () => <CardPanel /> },
-  { ...badgePanelMeta, render: () => <BadgePanel /> },
-  { ...tablePanelMeta, render: () => <TablePanel /> },
-  { ...dropdownMenuPanelMeta, render: () => <DropdownMenuPanel /> },
-  { ...tabsPanelMeta, render: () => <TabsPanel /> },
-  { ...tooltipPanelMeta, render: () => <TooltipPanel /> },
-  { ...skeletonPanelMeta, render: () => <SkeletonPanel /> },
-  { ...emptyStatePanelMeta, render: () => <EmptyStatePanel /> },
-  { ...appShellPanelMeta, render: () => <AppShellPanel /> },
-  { ...avatarPanelMeta, render: () => <AvatarPanel /> },
-  { ...paginationPanelMeta, render: () => <PaginationPanel /> },
-  { ...breadcrumbsPanelMeta, render: () => <BreadcrumbsPanel /> },
-  { ...alertPanelMeta, render: () => <AlertPanel /> },
-  { ...popoverPanelMeta, render: () => <PopoverPanel /> },
-  { ...comboboxPanelMeta, render: () => <ComboboxPanel /> },
-  { ...drawerPanelMeta, render: () => <DrawerPanel /> },
   { ...iconButtonPanelMeta, render: () => <IconButtonPanel /> },
-  { ...searchInputPanelMeta, render: () => <SearchInputPanel /> },
   { ...formFieldPanelMeta, render: () => <FormFieldPanel /> },
   { ...checkboxPanelMeta, render: () => <CheckboxPanel /> },
   { ...radioPanelMeta, render: () => <RadioPanel /> },
   { ...switchPanelMeta, render: () => <SwitchPanel /> },
+  { ...searchInputPanelMeta, render: () => <SearchInputPanel /> },
+  { ...comboboxPanelMeta, render: () => <ComboboxPanel /> },
+
+  // Data display
+  { ...cardPanelMeta, render: () => <CardPanel /> },
+  { ...badgePanelMeta, render: () => <BadgePanel /> },
+  { ...avatarPanelMeta, render: () => <AvatarPanel /> },
+  { ...tablePanelMeta, render: () => <TablePanel /> },
+  { ...skeletonPanelMeta, render: () => <SkeletonPanel /> },
+  { ...emptyStatePanelMeta, render: () => <EmptyStatePanel /> },
+
+  // Navigation
+  { ...appShellPanelMeta, render: () => <AppShellPanel /> },
+  { ...tabsPanelMeta, render: () => <TabsPanel /> },
+  { ...breadcrumbsPanelMeta, render: () => <BreadcrumbsPanel /> },
+  { ...paginationPanelMeta, render: () => <PaginationPanel /> },
+  { ...dropdownMenuPanelMeta, render: () => <DropdownMenuPanel /> },
+
+  // Overlays
+  { ...alertPanelMeta, render: () => <AlertPanel /> },
+  { ...dialogPanelMeta, render: () => <DialogPanel /> },
+  { ...drawerPanelMeta, render: () => <DrawerPanel /> },
+  { ...popoverPanelMeta, render: () => <PopoverPanel /> },
+  { ...toastPanelMeta, render: () => <ToastPanel /> },
+  { ...tooltipPanelMeta, render: () => <TooltipPanel /> },
 
   // Reference
   { ...allTokensPanelMeta, render: (ctx) => <AllTokensPanel resolvedTheme={ctx.resolvedTheme} /> }
@@ -88,7 +92,14 @@ export const panels: readonly PanelEntry[] = [
 
 export const panelIds = panels.map((panel) => panel.id) as readonly string[];
 
-const GROUP_ORDER: readonly PanelGroup[] = ["Foundations", "Surfaces & Feedback", "Components", "Reference"];
+const GROUP_ORDER: readonly PanelGroup[] = [
+  "Foundations",
+  "Inputs",
+  "Data display",
+  "Navigation",
+  "Overlays",
+  "Reference"
+];
 
 export const panelGroups: ReadonlyArray<{ label: PanelGroup; panels: ReadonlyArray<PanelEntry> }> = GROUP_ORDER.map(
   (label) => ({

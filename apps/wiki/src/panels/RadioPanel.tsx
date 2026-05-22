@@ -14,7 +14,7 @@ import type { PanelMeta } from "./types";
 export const radioPanelMeta: PanelMeta = {
   id: "radio",
   label: "Radio",
-  group: "Components",
+  group: "Inputs",
   description: "RadioGroup + Radio with horizontal and vertical orientations."
 };
 

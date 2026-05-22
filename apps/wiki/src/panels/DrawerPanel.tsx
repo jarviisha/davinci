@@ -20,7 +20,7 @@ import type { PanelMeta } from "./types";
 export const drawerPanelMeta: PanelMeta = {
   id: "drawer",
   label: "Drawer",
-  group: "Components",
+  group: "Overlays",
   description: "Side panel for detail views and compact edit forms."
 };
 

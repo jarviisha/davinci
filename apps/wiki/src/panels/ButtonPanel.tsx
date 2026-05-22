@@ -5,7 +5,7 @@ import type { PanelMeta } from "./types";
 export const buttonPanelMeta: PanelMeta = {
   id: "button",
   label: "Button",
-  group: "Components",
+  group: "Inputs",
   description: "Button variants, sizes, and disabled states backed by component tokens."
 };
 

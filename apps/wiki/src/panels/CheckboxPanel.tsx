@@ -13,7 +13,7 @@ import type { PanelMeta } from "./types";
 export const checkboxPanelMeta: PanelMeta = {
   id: "checkbox",
   label: "Checkbox",
-  group: "Components",
+  group: "Inputs",
   description: "Checkbox with checked, indeterminate, disabled, and invalid states."
 };
 

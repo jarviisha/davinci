@@ -5,7 +5,7 @@ import type { PanelMeta } from "./types";
 export const avatarPanelMeta: PanelMeta = {
   id: "avatar",
   label: "Avatar",
-  group: "Components",
+  group: "Data display",
   description: "User identity primitive with image fallback and generated initials."
 };
 

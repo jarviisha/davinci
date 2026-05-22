@@ -5,7 +5,7 @@ import type { PanelMeta } from "./types";
 export const popoverPanelMeta: PanelMeta = {
   id: "popover",
   label: "Popover",
-  group: "Components",
+  group: "Overlays",
   description: "Generic anchored panel for filters, quick settings, and compact forms."
 };
 

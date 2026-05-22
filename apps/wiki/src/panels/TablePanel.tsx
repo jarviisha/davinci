@@ -15,7 +15,7 @@ import type { PanelMeta } from "./types";
 export const tablePanelMeta: PanelMeta = {
   id: "table",
   label: "Table",
-  group: "Components",
+  group: "Data display",
   description: "Composable table primitives for dense SaaS dashboard data."
 };
 

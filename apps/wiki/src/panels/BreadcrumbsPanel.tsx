@@ -12,7 +12,7 @@ import type { PanelMeta } from "./types";
 export const breadcrumbsPanelMeta: PanelMeta = {
   id: "breadcrumbs",
   label: "Breadcrumbs",
-  group: "Components",
+  group: "Navigation",
   description: "Hierarchical navigation for nested dashboard pages."
 };
 

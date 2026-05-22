@@ -22,7 +22,7 @@ import type { PanelMeta } from "./types";
 export const appShellPanelMeta: PanelMeta = {
   id: "app-shell",
   label: "AppShell",
-  group: "Components",
+  group: "Navigation",
   description: "Dashboard layout primitive with sidebar, header, and main content regions."
 };
 

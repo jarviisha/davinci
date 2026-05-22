@@ -6,7 +6,7 @@ import type { PanelMeta } from "./types";
 export const paginationPanelMeta: PanelMeta = {
   id: "pagination",
   label: "Pagination",
-  group: "Components",
+  group: "Navigation",
   description: "Controlled pagination for tables and search result lists."
 };
 

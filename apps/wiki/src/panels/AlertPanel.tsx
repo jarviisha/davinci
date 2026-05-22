@@ -5,7 +5,7 @@ import type { PanelMeta } from "./types";
 export const alertPanelMeta: PanelMeta = {
   id: "alert",
   label: "Alert",
-  group: "Components",
+  group: "Overlays",
   description: "Persistent status messages for billing, sync, permissions, and system notices."
 };
 

@@ -15,7 +15,7 @@ import type { PanelMeta } from "./types";
 export const formFieldPanelMeta: PanelMeta = {
   id: "form-field",
   label: "FormField",
-  group: "Components",
+  group: "Inputs",
   description: "Label + FormField composite with Input, Select, Textarea and auto-wired aria attributes."
 };
 

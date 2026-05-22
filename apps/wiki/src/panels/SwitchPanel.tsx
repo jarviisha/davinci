@@ -6,7 +6,7 @@ import type { PanelMeta } from "./types";
 export const switchPanelMeta: PanelMeta = {
   id: "switch",
   label: "Switch",
-  group: "Components",
+  group: "Inputs",
   description: "Toggle switch backed by a native checkbox with role=switch."
 };
 

@@ -12,7 +12,7 @@ import type { PanelMeta } from "./types";
 export const dropdownMenuPanelMeta: PanelMeta = {
   id: "dropdown-menu",
   label: "DropdownMenu",
-  group: "Components",
+  group: "Navigation",
   description: "Action menus for account controls, filters, and row actions."
 };
 
