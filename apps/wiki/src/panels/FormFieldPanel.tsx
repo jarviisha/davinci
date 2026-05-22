@@ -81,28 +81,22 @@ export function FormFieldPanel() {
         </CardHeader>
         <CardContent>
           <div className="grid gap-6 lg:grid-cols-2">
-            <FormField>
-              <Label>Email</Label>
+            <FormField label="Email">
               <Input placeholder="team@example.com" type="email" />
             </FormField>
-            <FormField>
-              <Label>Password</Label>
+            <FormField label="Password">
               <Input placeholder="••••••••" type="password" />
             </FormField>
-            <FormField>
-              <Label>Number</Label>
+            <FormField label="Number">
               <Input placeholder="42" type="number" />
             </FormField>
-            <FormField>
-              <Label>Search</Label>
+            <FormField label="Search">
               <Input placeholder="Search projects" type="search" />
             </FormField>
-            <FormField>
-              <Label>URL</Label>
+            <FormField label="URL">
               <Input placeholder="https://example.com" type="url" />
             </FormField>
-            <FormField>
-              <Label>Date</Label>
+            <FormField label="Date">
               <Input type="date" />
             </FormField>
           </div>
@@ -111,9 +105,11 @@ export function FormFieldPanel() {
 
       <Card variant="filled">
         <CardHeader>
-          <CardTitle>FormField composite</CardTitle>
+          <CardTitle>FormField composition (escape hatch)</CardTitle>
           <CardDescription>
-            Auto-wires id / aria-describedby / aria-invalid between Label, control, help and error text.
+            Compose <code>Label</code>, <code>FormHelpText</code>, and <code>FormErrorText</code> as children directly
+            when the shortcut props are not enough — custom icons inside the label, extra slots between rows,
+            non-standard ordering. The id / aria wiring is identical to the prop-driven form.
           </CardDescription>
         </CardHeader>
         <CardContent>
