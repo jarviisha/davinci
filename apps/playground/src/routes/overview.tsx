@@ -80,7 +80,7 @@ export default function OverviewRoute() {
 
 function MetricCard({ delta, label, tone, value }: Metric) {
   return (
-    <Card variant="elevated">
+    <Card variant="surface">
       <CardContent>
         <Inline align="center" justify="between">
           <span className="text-sm font-medium text-text-subtle">{label}</span>

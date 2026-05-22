@@ -35,7 +35,7 @@ export function ColorPanel({ resolvedTheme, semanticEntries, semanticPrefix }: C
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {semanticPreviews.map((item) => (
             <button
-              className="flex min-h-28 flex-col justify-between rounded-md border border-border p-3 text-left shadow-sm"
+              className="flex min-h-28 flex-col justify-between rounded-md border border-border p-3 text-left"
               key={item.token}
               onClick={() => void copyText(`var(${item.token})`)}
               style={{

@@ -473,8 +473,8 @@
 }
 
 .davinci-combobox__listbox {
-  background: var(--davinci-component-card-elevated-background);
-  border: 1px solid var(--davinci-component-card-elevated-border);
+  background: var(--davinci-component-card-surface-background);
+  border: 1px solid var(--davinci-component-card-surface-border);
   border-radius: var(--davinci-radius-md);
   box-shadow: var(--davinci-semantic-shadow-overlay);
   display: flex;
@@ -563,12 +563,6 @@
   flex-direction: column;
   gap: var(--davinci-component-card-gap);
   padding: var(--davinci-component-card-padding);
-}
-
-.davinci-card--elevated {
-  background: var(--davinci-component-card-elevated-background);
-  border-color: var(--davinci-component-card-elevated-border);
-  box-shadow: var(--davinci-component-card-elevated-shadow);
 }
 
 .davinci-card--surface {
@@ -2378,8 +2372,8 @@
 }
 
 .davinci-dropdown-menu__content {
-  background: var(--davinci-component-card-elevated-background);
-  border: 1px solid var(--davinci-component-card-elevated-border);
+  background: var(--davinci-component-card-surface-background);
+  border: 1px solid var(--davinci-component-card-surface-border);
   border-radius: var(--davinci-radius-md);
   box-shadow: var(--davinci-semantic-shadow-overlay);
   color: var(--davinci-semantic-color-foreground);
@@ -2444,8 +2438,8 @@
 /* ----- Popover ----- */
 
 .davinci-popover {
-  background: var(--davinci-component-card-elevated-background);
-  border: 1px solid var(--davinci-component-card-elevated-border);
+  background: var(--davinci-component-card-surface-background);
+  border: 1px solid var(--davinci-component-card-surface-border);
   border-radius: var(--davinci-radius-lg);
   box-shadow: var(--davinci-semantic-shadow-overlay);
   color: var(--davinci-semantic-color-foreground);

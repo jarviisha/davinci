@@ -32,9 +32,9 @@ export function SurfacePanel() {
             <h4 className="text-sm font-semibold">Surface</h4>
             <p className="mt-2 text-sm text-text-subtle">Grouped content area.</p>
           </article>
-          <article className="rounded-lg border border-border bg-surface-raised p-5 shadow-sm">
+          <article className="rounded-lg border border-border bg-surface-raised p-5">
             <h4 className="text-sm font-semibold">Surface raised</h4>
-            <p className="mt-2 text-sm text-text-subtle">Elevated content area.</p>
+            <p className="mt-2 text-sm text-text-subtle">Raised content area for grouped panels.</p>
           </article>
         </div>
       </PanelSection>
@@ -43,37 +43,28 @@ export function SurfacePanel() {
         title="Card variants"
         description={
           <>
-            <code className="font-mono text-foreground">elevated</code> uses raised background + shadow.{" "}
-            <code className="font-mono text-foreground">surface</code> uses raised background without shadow.{" "}
-            <code className="font-mono text-foreground">outlined</code> sits on the base background and uses a bold border.
+            <code className="font-mono text-foreground">surface</code> uses a raised background for grouped content.{" "}
+            <code className="font-mono text-foreground">outlined</code> sits on the base background with a bold border.
+            Shadow is reserved for floating panels and overlays — page-level surfaces stay flat for dense product UI.
           </>
         }
       >
-        <div className="grid gap-4 lg:grid-cols-3">
-          <Card variant="elevated">
-            <CardHeader>
-              <CardTitle>Elevated card</CardTitle>
-              <CardDescription>Default — raised surface + shadow lift the card above the page.</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-text-subtle">Pair with light backgrounds where luminance steps read well.</p>
-            </CardContent>
-          </Card>
+        <div className="grid gap-4 lg:grid-cols-2">
           <Card variant="surface">
             <CardHeader>
               <CardTitle>Surface card</CardTitle>
-              <CardDescription>Raised surface without shadow for quieter grouped content.</CardDescription>
+              <CardDescription>Raised background, no shadow — quiet grouped content.</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-text-subtle">
-                Use when background contrast is enough and shadow would feel heavy.
+                The default Card treatment. Pair with the base background for two-tier hierarchy.
               </p>
             </CardContent>
           </Card>
           <Card variant="outlined">
             <CardHeader>
               <CardTitle>Outlined card</CardTitle>
-              <CardDescription>Bold border + flat background — flat aesthetic, useful in dense layouts.</CardDescription>
+              <CardDescription>Bold border + flat background — flat aesthetic for dense layouts.</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-text-subtle">
