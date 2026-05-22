@@ -17,16 +17,16 @@ import {
 const RADIUS_STORAGE_KEY = "davinci-playground-radius";
 
 const radiusPresets = {
-  none: { sm: 0, md: 0, lg: 0, xl: 0 },
-  subtle: { sm: 2, md: 3, lg: 4, xl: 6 },
-  default: { sm: 4, md: 6, lg: 8, xl: 12 },
+  minimum: { sm: 4, md: 4, lg: 4, xl: 4 },
+  subtle: { sm: 4, md: 4, lg: 8, xl: 8 },
+  default: { sm: 4, md: 8, lg: 12, xl: 16 },
   bold: { sm: 8, md: 12, lg: 16, xl: 24 }
 } as const;
 
 type RadiusPreset = keyof typeof radiusPresets;
 const DEFAULT_PRESET: RadiusPreset = "default";
 const PRESET_LABELS: Record<RadiusPreset, string> = {
-  none: "None",
+  minimum: "Minimum",
   subtle: "Subtle",
   default: "Default",
   bold: "Bold"
