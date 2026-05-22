@@ -1,11 +1,20 @@
 export { Badge } from "./badge.js";
 export type { BadgeProps, BadgeVariant } from "./badge.js";
-export { AppShell, AppShellHeader, AppShellMain, AppShellSidebar } from "./app-shell.js";
+export {
+  AppShell,
+  AppShellAside,
+  AppShellHeader,
+  AppShellMain,
+  AppShellSidebar,
+  AppShellTopBar
+} from "./app-shell.js";
 export type {
+  AppShellAsideProps,
   AppShellHeaderProps,
   AppShellMainProps,
   AppShellProps,
-  AppShellSidebarProps
+  AppShellSidebarProps,
+  AppShellTopBarProps
 } from "./app-shell.js";
 export { Avatar } from "./avatar.js";
 export type { AvatarProps, AvatarSize } from "./avatar.js";

@@ -1082,7 +1082,11 @@
   justify-content: center;
 }
 
-/* ----- AppShell ----- */
+/* ----- AppShell -----
+ * Slots: top-bar (global), sidebar (left), header, main, aside (right rail).
+ * Sidebar/header/main are always rendered; top-bar and aside are optional and
+ * the grid auto-adjusts via `:has()` when their slot elements are present.
+ */
 
 .davinci-app-shell {
   background: var(--davinci-semantic-color-background);
@@ -1094,6 +1098,43 @@
   grid-template-columns: minmax(14rem, 17.5rem) minmax(0, 1fr);
   grid-template-rows: auto minmax(0, 1fr);
   min-block-size: 100dvh;
+}
+
+.davinci-app-shell:has(> .davinci-app-shell__top-bar):not(:has(> .davinci-app-shell__aside)) {
+  grid-template-areas:
+    "top-bar top-bar"
+    "sidebar header"
+    "sidebar main";
+  grid-template-rows: auto auto minmax(0, 1fr);
+}
+
+.davinci-app-shell:has(> .davinci-app-shell__aside):not(:has(> .davinci-app-shell__top-bar)) {
+  grid-template-areas:
+    "sidebar header aside"
+    "sidebar main   aside";
+  grid-template-columns: minmax(14rem, 17.5rem) minmax(0, 1fr) minmax(16rem, 22rem);
+}
+
+.davinci-app-shell:has(> .davinci-app-shell__top-bar):has(> .davinci-app-shell__aside) {
+  grid-template-areas:
+    "top-bar top-bar top-bar"
+    "sidebar header  aside"
+    "sidebar main    aside";
+  grid-template-columns: minmax(14rem, 17.5rem) minmax(0, 1fr) minmax(16rem, 22rem);
+  grid-template-rows: auto auto minmax(0, 1fr);
+}
+
+.davinci-app-shell__top-bar {
+  align-items: center;
+  background: var(--davinci-semantic-color-background);
+  border-block-end: 1px solid var(--davinci-semantic-color-border);
+  display: flex;
+  gap: var(--davinci-spacing-200);
+  grid-area: top-bar;
+  justify-content: space-between;
+  min-block-size: 3.5rem;
+  min-inline-size: 0;
+  padding: var(--davinci-spacing-150) var(--davinci-spacing-300);
 }
 
 .davinci-app-shell__sidebar {
@@ -1125,14 +1166,86 @@
   padding: var(--davinci-spacing-300);
 }
 
+.davinci-app-shell__aside {
+  background: var(--davinci-semantic-color-background);
+  border-inline-start: 1px solid var(--davinci-semantic-color-border);
+  grid-area: aside;
+  min-inline-size: 0;
+  overflow: auto;
+  padding: var(--davinci-spacing-300);
+}
+
+@media (max-width: 1023px) {
+  .davinci-app-shell:has(> .davinci-app-shell__aside):not(:has(> .davinci-app-shell__top-bar)),
+  .davinci-app-shell:has(> .davinci-app-shell__aside):has(> .davinci-app-shell__top-bar) {
+    grid-template-columns: minmax(14rem, 17.5rem) minmax(0, 1fr);
+  }
+
+  .davinci-app-shell:has(> .davinci-app-shell__aside):not(:has(> .davinci-app-shell__top-bar)) {
+    grid-template-areas:
+      "sidebar header"
+      "sidebar main"
+      "aside   aside";
+    grid-template-rows: auto minmax(0, 1fr) auto;
+  }
+
+  .davinci-app-shell:has(> .davinci-app-shell__aside):has(> .davinci-app-shell__top-bar) {
+    grid-template-areas:
+      "top-bar top-bar"
+      "sidebar header"
+      "sidebar main"
+      "aside   aside";
+    grid-template-rows: auto auto minmax(0, 1fr) auto;
+  }
+
+  .davinci-app-shell__aside {
+    border-block-start: 1px solid var(--davinci-semantic-color-border);
+    border-inline-start: 0;
+  }
+}
+
 @media (max-width: 767px) {
+  .davinci-app-shell,
+  .davinci-app-shell:has(> .davinci-app-shell__top-bar):not(:has(> .davinci-app-shell__aside)),
+  .davinci-app-shell:has(> .davinci-app-shell__aside):not(:has(> .davinci-app-shell__top-bar)),
+  .davinci-app-shell:has(> .davinci-app-shell__top-bar):has(> .davinci-app-shell__aside) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .davinci-app-shell {
     grid-template-areas:
       "header"
       "sidebar"
       "main";
-    grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto auto minmax(0, 1fr);
+  }
+
+  .davinci-app-shell:has(> .davinci-app-shell__top-bar):not(:has(> .davinci-app-shell__aside)) {
+    grid-template-areas:
+      "top-bar"
+      "header"
+      "sidebar"
+      "main";
+    grid-template-rows: auto auto auto minmax(0, 1fr);
+  }
+
+  .davinci-app-shell:has(> .davinci-app-shell__aside):not(:has(> .davinci-app-shell__top-bar)) {
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main"
+      "aside";
+    grid-template-rows: auto auto minmax(0, 1fr) auto;
+  }
+
+  .davinci-app-shell:has(> .davinci-app-shell__top-bar):has(> .davinci-app-shell__aside) {
+    grid-template-areas:
+      "top-bar"
+      "header"
+      "sidebar"
+      "main"
+      "aside";
+    grid-template-rows: auto auto auto minmax(0, 1fr) auto;
   }
 
   .davinci-app-shell__sidebar {
@@ -2334,6 +2447,7 @@
   .davinci-scrollbar,
   .davinci-app-shell__sidebar,
   .davinci-app-shell__main,
+  .davinci-app-shell__aside,
   .davinci-dialog,
   .davinci-drawer,
   .davinci-combobox__listbox,
@@ -2348,6 +2462,7 @@
   .davinci-scrollbar,
   .davinci-app-shell__sidebar,
   .davinci-app-shell__main,
+  .davinci-app-shell__aside,
   .davinci-dialog,
   .davinci-drawer,
   .davinci-combobox__listbox,
@@ -2357,6 +2472,7 @@
   .davinci-scrollbar,
   .davinci-app-shell__sidebar,
   .davinci-app-shell__main,
+  .davinci-app-shell__aside,
   .davinci-dialog,
   .davinci-drawer,
   .davinci-combobox__listbox,
@@ -2370,6 +2486,7 @@
   .davinci-scrollbar,
   .davinci-app-shell__sidebar,
   .davinci-app-shell__main,
+  .davinci-app-shell__aside,
   .davinci-dialog,
   .davinci-drawer,
   .davinci-combobox__listbox,
@@ -2383,6 +2500,7 @@
   .davinci-scrollbar,
   .davinci-app-shell__sidebar,
   .davinci-app-shell__main,
+  .davinci-app-shell__aside,
   .davinci-dialog,
   .davinci-drawer,
   .davinci-combobox__listbox,
@@ -2395,6 +2513,7 @@
   .davinci-scrollbar,
   .davinci-app-shell__sidebar,
   .davinci-app-shell__main,
+  .davinci-app-shell__aside,
   .davinci-dialog,
   .davinci-drawer,
   .davinci-combobox__listbox,
@@ -2411,6 +2530,7 @@
   .davinci-scrollbar,
   .davinci-app-shell__sidebar,
   .davinci-app-shell__main,
+  .davinci-app-shell__aside,
   .davinci-dialog,
   .davinci-drawer,
   .davinci-combobox__listbox,
@@ -2420,6 +2540,7 @@
   .davinci-scrollbar,
   .davinci-app-shell__sidebar,
   .davinci-app-shell__main,
+  .davinci-app-shell__aside,
   .davinci-dialog,
   .davinci-drawer,
   .davinci-combobox__listbox,
@@ -2432,6 +2553,7 @@
   .davinci-scrollbar,
   .davinci-app-shell__sidebar,
   .davinci-app-shell__main,
+  .davinci-app-shell__aside,
   .davinci-dialog,
   .davinci-drawer,
   .davinci-combobox__listbox,
@@ -2444,6 +2566,7 @@
   .davinci-scrollbar,
   .davinci-app-shell__sidebar,
   .davinci-app-shell__main,
+  .davinci-app-shell__aside,
   .davinci-dialog,
   .davinci-drawer,
   .davinci-combobox__listbox,
@@ -2456,6 +2579,7 @@
   .davinci-scrollbar,
   .davinci-app-shell__sidebar,
   .davinci-app-shell__main,
+  .davinci-app-shell__aside,
   .davinci-dialog,
   .davinci-drawer,
   .davinci-combobox__listbox,
