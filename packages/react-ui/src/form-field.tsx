@@ -1,5 +1,6 @@
-import { forwardRef, useId, useMemo, type HTMLAttributes } from "react";
+import { forwardRef, useId, useMemo, type HTMLAttributes, type ReactNode } from "react";
 import { FormFieldContext, type FormFieldContextValue, useFormFieldContext } from "./form-field-context.js";
+import { Label, type LabelSize } from "./label.js";
 import { cn } from "./utils.js";
 
 export type FormFieldProps = HTMLAttributes<HTMLDivElement> & {
@@ -7,10 +8,26 @@ export type FormFieldProps = HTMLAttributes<HTMLDivElement> & {
   invalid?: boolean;
   disabled?: boolean;
   required?: boolean;
+  label?: ReactNode;
+  labelSize?: LabelSize;
+  helpText?: ReactNode;
+  errorText?: ReactNode;
 };
 
 export const FormField = forwardRef<HTMLDivElement, FormFieldProps>(function FormField(
-  { children, className, disabled = false, id, invalid = false, required = false, ...props },
+  {
+    children,
+    className,
+    disabled = false,
+    errorText,
+    helpText,
+    id,
+    invalid = false,
+    label,
+    labelSize,
+    required = false,
+    ...props
+  },
   ref
 ) {
   const generatedId = useId();
@@ -41,7 +58,10 @@ export const FormField = forwardRef<HTMLDivElement, FormFieldProps>(function For
         ref={ref}
         {...props}
       >
+        {label != null ? <Label size={labelSize}>{label}</Label> : null}
         {children}
+        {helpText != null ? <FormHelpText>{helpText}</FormHelpText> : null}
+        {errorText != null ? <FormErrorText>{errorText}</FormErrorText> : null}
       </div>
     </FormFieldContext.Provider>
   );

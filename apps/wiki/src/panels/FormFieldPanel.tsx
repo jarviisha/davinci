@@ -178,6 +178,50 @@ export function FormFieldPanel() {
 
       <Card variant="filled">
         <CardHeader>
+          <CardTitle>FormField shortcut props</CardTitle>
+          <CardDescription>
+            Pass <code>label</code>, <code>helpText</code>, and <code>errorText</code> directly on FormField instead of
+            composing Label / FormHelpText / FormErrorText children. Render order is fixed (label → control → help →
+            error); switch to composition when you need icons, custom layout, or extra slots.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="grid gap-6 lg:grid-cols-2">
+            <FormField helpText="We'll never share your email." label="Email" required>
+              <Input placeholder="team@example.com" type="email" />
+            </FormField>
+
+            <FormField
+              errorText="Email must contain &ldquo;@&rdquo;."
+              helpText="Type without @ to see the error."
+              invalid={emailInvalid}
+              label="Email (live validation)"
+            >
+              <Input
+                onChange={(event) => setEmail(event.target.value)}
+                placeholder="team@example.com"
+                type="email"
+                value={email}
+              />
+            </FormField>
+
+            <FormField helpText="Pick where this issue belongs." label="Project">
+              <Select defaultValue="design">
+                <option value="design">Design system</option>
+                <option value="platform">Platform</option>
+                <option value="playground">Playground</option>
+              </Select>
+            </FormField>
+
+            <FormField disabled helpText="FormField passes disabled down to control." label="Disabled input">
+              <Input placeholder="Cannot edit" />
+            </FormField>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card variant="filled">
+        <CardHeader>
           <CardTitle>Full form example</CardTitle>
           <CardDescription>How the pieces compose into a real settings or signup flow.</CardDescription>
         </CardHeader>
@@ -187,14 +231,11 @@ export function FormFieldPanel() {
             onSubmit={(event) => event.preventDefault()}
             style={{ maxInlineSize: "32rem" }}
           >
-            <FormField required>
-              <Label>Workspace name</Label>
+            <FormField helpText="Shown to all members in the sidebar." label="Workspace name" required>
               <Input placeholder="Acme Inc." />
-              <FormHelpText>Shown to all members in the sidebar.</FormHelpText>
             </FormField>
 
-            <FormField required>
-              <Label>Plan</Label>
+            <FormField label="Plan" required>
               <Select defaultValue="pro">
                 <option value="starter">Starter — $9/mo</option>
                 <option value="pro">Pro — $29/mo</option>
@@ -202,10 +243,8 @@ export function FormFieldPanel() {
               </Select>
             </FormField>
 
-            <FormField>
-              <Label>Description</Label>
+            <FormField helpText="Optional, used in workspace listings." label="Description">
               <Textarea placeholder="What is this workspace for?" size="sm" />
-              <FormHelpText>Optional, used in workspace listings.</FormHelpText>
             </FormField>
           </form>
         </CardContent>
