@@ -34,6 +34,7 @@
   --color-primary-foreground: var(--davinci-semantic-color-primary-foreground);
   --color-border: var(--davinci-semantic-color-border);
   --color-border-bold: var(--davinci-semantic-color-border-bold);
+  --color-border-strong: var(--davinci-semantic-color-border-strong);
   --color-border-disabled: var(--davinci-semantic-color-border-disabled);
   --color-border-focused: var(--davinci-semantic-color-border-focused);
   --color-muted: var(--davinci-semantic-color-muted);

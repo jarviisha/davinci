@@ -1,11 +1,13 @@
 import { forwardRef, type HTMLAttributes } from "react";
 import { cn } from "./utils.js";
 
-export type CardVariant = "elevated" | "outlined" | "filled" | "flat" | "floating";
+export type CardVariant = "elevated" | "surface" | "outlined" | "filled" | "flat" | "floating";
+export type CardOutlineWeight = "subtle" | "default" | "bold";
 export type CardTone = "neutral" | "info" | "success" | "warning" | "danger";
 
 export type CardProps = HTMLAttributes<HTMLDivElement> & {
   interactive?: boolean;
+  outlineWeight?: CardOutlineWeight;
   selected?: boolean;
   tone?: CardTone;
   variant?: CardVariant;
@@ -13,10 +15,17 @@ export type CardProps = HTMLAttributes<HTMLDivElement> & {
 
 const variantClass: Record<CardVariant, string> = {
   elevated: "davinci-card--elevated",
+  surface: "davinci-card--surface",
   outlined: "davinci-card--outlined",
   filled: "davinci-card--filled",
   flat: "davinci-card--flat",
   floating: "davinci-card--floating"
+};
+
+const outlineWeightClass: Record<CardOutlineWeight, string> = {
+  subtle: "davinci-card--outline-subtle",
+  default: "davinci-card--outline-default",
+  bold: "davinci-card--outline-bold"
 };
 
 const toneClass: Record<CardTone, string | undefined> = {
@@ -28,7 +37,15 @@ const toneClass: Record<CardTone, string | undefined> = {
 };
 
 export const Card = forwardRef<HTMLDivElement, CardProps>(function Card(
-  { className, interactive = false, selected = false, tone = "neutral", variant = "elevated", ...props },
+  {
+    className,
+    interactive = false,
+    outlineWeight = "default",
+    selected = false,
+    tone = "neutral",
+    variant = "elevated",
+    ...props
+  },
   ref
 ) {
   return (
@@ -36,6 +53,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(function Card(
       className={cn(
         "davinci-card",
         variantClass[variant],
+        variant === "outlined" && outlineWeightClass[outlineWeight],
         toneClass[tone],
         interactive && "davinci-card--interactive",
         selected && "davinci-card--selected",

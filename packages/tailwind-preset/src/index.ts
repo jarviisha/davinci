@@ -23,6 +23,7 @@ const preset = {
         "primary-foreground": "var(--davinci-semantic-color-primary-foreground)",
         border: "var(--davinci-semantic-color-border)",
         "border-bold": "var(--davinci-semantic-color-border-bold)",
+        "border-strong": "var(--davinci-semantic-color-border-strong)",
         "border-disabled": "var(--davinci-semantic-color-border-disabled)",
         "border-focused": "var(--davinci-semantic-color-border-focused)",
         muted: "var(--davinci-semantic-color-muted)",

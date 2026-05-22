@@ -571,10 +571,28 @@
   box-shadow: var(--davinci-component-card-elevated-shadow);
 }
 
+.davinci-card--surface {
+  background: var(--davinci-component-card-surface-background);
+  border-color: var(--davinci-component-card-surface-border);
+  box-shadow: var(--davinci-component-card-surface-shadow);
+}
+
 .davinci-card--outlined {
   background: var(--davinci-component-card-outlined-background);
   border-color: var(--davinci-component-card-outlined-border);
   box-shadow: var(--davinci-component-card-outlined-shadow);
+}
+
+.davinci-card--outlined.davinci-card--outline-subtle {
+  border-color: var(--davinci-component-card-outlined-border-subtle);
+}
+
+.davinci-card--outlined.davinci-card--outline-default {
+  border-color: var(--davinci-component-card-outlined-border);
+}
+
+.davinci-card--outlined.davinci-card--outline-bold {
+  border-color: var(--davinci-component-card-outlined-border-bold);
 }
 
 .davinci-card--filled {
@@ -628,6 +646,14 @@
   background: var(--davinci-semantic-color-background-hovered);
 }
 
+.davinci-card--interactive.davinci-card--tone-info:hover,
+.davinci-card--interactive.davinci-card--tone-success:hover,
+.davinci-card--interactive.davinci-card--tone-warning:hover,
+.davinci-card--interactive.davinci-card--tone-danger:hover {
+  background: color-mix(in srgb, var(--davinci-card-accent) 12%, var(--davinci-semantic-color-background-hovered));
+  border-color: color-mix(in srgb, var(--davinci-card-accent) 38%, var(--davinci-semantic-color-border-hovered));
+}
+
 .davinci-card--interactive.davinci-card--floating:hover {
   box-shadow: var(--davinci-semantic-shadow-raised);
 }
@@ -639,6 +665,11 @@
 
 .davinci-card--selected {
   background: color-mix(in srgb, var(--davinci-semantic-color-primary) 8%, var(--davinci-semantic-color-background));
+  border-color: var(--davinci-semantic-color-border-focused);
+}
+
+.davinci-card--interactive.davinci-card--selected:hover {
+  background: color-mix(in srgb, var(--davinci-semantic-color-primary) 12%, var(--davinci-semantic-color-background-hovered));
   border-color: var(--davinci-semantic-color-border-focused);
 }
 

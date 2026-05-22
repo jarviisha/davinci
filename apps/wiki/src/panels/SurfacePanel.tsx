@@ -38,10 +38,11 @@ export function SurfacePanel() {
           <h3 className="text-base font-semibold">Card variants</h3>
           <p className="mt-1 text-sm text-text-subtle">
             <code className="font-mono text-foreground">elevated</code> uses raised background + shadow.{" "}
+            <code className="font-mono text-foreground">surface</code> uses raised background without shadow.{" "}
             <code className="font-mono text-foreground">outlined</code> sits on the base background and uses a bold border.
           </p>
         </div>
-        <div className="grid gap-4 lg:grid-cols-2">
+        <div className="grid gap-4 lg:grid-cols-3">
           <Card variant="elevated">
             <CardHeader>
               <CardTitle>Elevated card</CardTitle>
@@ -49,6 +50,15 @@ export function SurfacePanel() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-text-subtle">Pair with light backgrounds where luminance steps read well.</p>
+            </CardContent>
+          </Card>
+          <Card variant="surface">
+            <CardHeader>
+              <CardTitle>Surface card</CardTitle>
+              <CardDescription>Raised surface without shadow for quieter grouped content.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-text-subtle">Use when background contrast is enough and shadow would feel heavy.</p>
             </CardContent>
           </Card>
           <Card variant="outlined">

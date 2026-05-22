@@ -81,6 +81,10 @@
         "$type": "color",
         "$value": "{color.darkNeutral.700}"
       },
+      "borderStrong": {
+        "$type": "color",
+        "$value": "{color.darkNeutral.900}"
+      },
       "borderDisabled": {
         "$type": "color",
         "$value": "{color.darkNeutralAlpha.200}"

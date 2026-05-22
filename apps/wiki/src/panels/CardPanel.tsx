@@ -16,12 +16,15 @@ export function CardPanel() {
       <Card variant="filled">
         <CardHeader>
           <CardTitle>Variants</CardTitle>
-          <CardDescription>Surface treatments — elevated, outlined, filled, flat, floating.</CardDescription>
+          <CardDescription>Surface treatments — elevated, surface, outlined, filled, flat, floating.</CardDescription>
         </CardHeader>
         <CardContent>
           <Inline gap="200" wrap>
             <Card variant="elevated">
               <CardContent>Elevated</CardContent>
+            </Card>
+            <Card variant="surface">
+              <CardContent>Surface</CardContent>
             </Card>
             <Card variant="outlined">
               <CardContent>Outlined</CardContent>
@@ -34,6 +37,26 @@ export function CardPanel() {
             </Card>
             <Card variant="floating">
               <CardContent>Floating</CardContent>
+            </Card>
+          </Inline>
+        </CardContent>
+      </Card>
+
+      <Card variant="filled">
+        <CardHeader>
+          <CardTitle>Outlined border weight</CardTitle>
+          <CardDescription>Outlined cards can use subtle, default, or bold border emphasis.</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Inline gap="200" wrap>
+            <Card outlineWeight="subtle" variant="outlined">
+              <CardContent>Subtle</CardContent>
+            </Card>
+            <Card outlineWeight="default" variant="outlined">
+              <CardContent>Default</CardContent>
+            </Card>
+            <Card outlineWeight="bold" variant="outlined">
+              <CardContent>Bold</CardContent>
             </Card>
           </Inline>
         </CardContent>
