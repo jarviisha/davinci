@@ -48,7 +48,7 @@ export default function AccountsRoute() {
   }, [healthFilter, query]);
 
   return (
-    <Card variant="elevated">
+    <Card variant="filled">
       <CardHeader>
         <Inline align="start" justify="between" wrap>
           <div>

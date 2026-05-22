@@ -627,7 +627,6 @@
   background: var(--davinci-semantic-color-background-hovered);
 }
 
-.davinci-card--interactive.davinci-card--elevated:hover,
 .davinci-card--interactive.davinci-card--floating:hover {
   box-shadow: var(--davinci-semantic-shadow-raised);
 }

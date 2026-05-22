@@ -20,7 +20,7 @@
       "elevated": {
         "background": { "$type": "color", "$value": "{semantic.color.surfaceRaised}" },
         "border": { "$type": "color", "$value": "{semantic.color.border}" },
-        "shadow": { "$type": "shadow", "$value": "{semantic.shadow.card}" }
+        "shadow": { "$type": "shadow", "$value": "{semantic.shadow.none}" }
       },
       "outlined": {
         "background": { "$type": "color", "$value": "{semantic.color.background}" },
