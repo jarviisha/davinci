@@ -62,7 +62,7 @@ export function DashboardLayout() {
   const pageMeta = useMemo(() => resolvePageMeta(location.pathname), [location.pathname]);
 
   return (
-    <div className="min-h-screen bg-background font-sans text-foreground">
+    <div className="min-h-screen bg-surface font-sans text-foreground">
       <AppShell className="min-h-screen">
         <AppShellTopBar>
           <Inline align="center" gap="200">

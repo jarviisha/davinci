@@ -21,7 +21,7 @@ export default function App() {
   const activePanel = findPanel(activeId) ?? findPanel(DEFAULT_PANEL_ID);
 
   return (
-    <main className="min-h-screen bg-background font-sans text-foreground">
+    <main className="min-h-screen bg-surface font-sans text-foreground">
       <WikiSidebar
         activeId={activeId}
         groups={panelGroups}

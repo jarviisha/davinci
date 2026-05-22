@@ -21,20 +21,26 @@ export function SurfacePanel() {
     <Stack gap="300">
       <PanelSection
         title="Semantic tiers"
-        description="Three background levels carry hierarchy via luminance steps."
+        description="Three luminance tiers form the surface elevation system. Page chrome (top-bar, sidebar, header, aside) sits on background; the main page canvas sits on surface; cards lift above the canvas on surface-raised."
       >
         <div className="grid gap-4 lg:grid-cols-3">
           <article className="rounded-lg border border-border bg-background p-5">
             <h4 className="text-sm font-semibold">Background</h4>
-            <p className="mt-2 text-sm text-text-subtle">Base application canvas.</p>
+            <p className="mt-2 text-sm text-text-subtle">
+              Chrome layer — sidebar, header, top bar, aside. Distinct from the page canvas.
+            </p>
           </article>
           <article className="rounded-lg border border-border bg-surface p-5">
             <h4 className="text-sm font-semibold">Surface</h4>
-            <p className="mt-2 text-sm text-text-subtle">Grouped content area.</p>
+            <p className="mt-2 text-sm text-text-subtle">
+              Page canvas — the main content area where cards and other surfaces sit.
+            </p>
           </article>
           <article className="rounded-lg border border-border bg-surface-raised p-5">
             <h4 className="text-sm font-semibold">Surface raised</h4>
-            <p className="mt-2 text-sm text-text-subtle">Raised content area for grouped panels.</p>
+            <p className="mt-2 text-sm text-text-subtle">
+              Elevated content — Card <code className="font-mono">surface</code> variant and floating panels.
+            </p>
           </article>
         </div>
       </PanelSection>

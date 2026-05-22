@@ -1083,7 +1083,7 @@
  */
 
 .davinci-app-shell {
-  background: var(--davinci-semantic-color-background);
+  background: var(--davinci-semantic-color-surface);
   color: var(--davinci-semantic-color-foreground);
   display: grid;
   grid-template-areas:
