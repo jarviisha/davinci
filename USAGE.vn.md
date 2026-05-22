@@ -209,7 +209,7 @@ export function Example() {
 Components có sẵn (xem chi tiết types khi import):
 
 - **Form**: `Button`, `IconButton`, `Input`, `Textarea`, `Select`, `Checkbox`, `Radio`, `Switch`, `Combobox`, `SearchInput`, `Label`, `FormField`, `FormHelpText`, `FormErrorText`.
-- **Layout**: `AppShell`, `Container`, `Stack`, `Inline`, `Divider`, `Card`.
+- **Layout**: `AppShell` (slots: `AppShellTopBar`, `AppShellSidebar`, `AppShellHeader`, `AppShellMain`, `AppShellAside`), `DetailLayout` (`DetailLayoutMain` + `DetailLayoutAside`), `Container`, `Stack`, `Inline`, `Divider`, `Card`.
 - **Navigation**: `Nav`, `Breadcrumbs`, `Pagination`, `Tabs`, `DropdownMenu`.
 - **Overlay**: `Dialog`, `Drawer`, `Popover`, `Tooltip`, `Toast` (qua `ToastProvider` + `useToast`).
 - **Feedback**: `Alert`, `Badge`, `Skeleton`, `EmptyState`, `Avatar`.
@@ -220,7 +220,7 @@ Components có sẵn (xem chi tiết types khi import):
 
 `@jarviisha/davinci-react-ui/styles.css` cung cấp sẵn utility class cho scrollbar thon, fade-in khi hover. Thumb trong suốt lúc nghỉ, fade-in khi container được hover hoặc nhận focus. Màu và kích thước lấy từ token `--davinci-component-scrollbar-*` nên tự đổi theo light / dark.
 
-Đã tự động áp dụng cho `AppShellSidebar`, `AppShellMain`, `Dialog`, `Drawer`, listbox của `Combobox`, và `TableContainer` — không cần thêm class.
+Đã tự động áp dụng cho `AppShellSidebar`, `AppShellMain`, `AppShellAside`, `Dialog`, `Drawer`, listbox của `Combobox`, và `TableContainer` — không cần thêm class.
 
 Để bật cho các vùng scroll khác, thêm class `davinci-scrollbar`:
 

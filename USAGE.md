@@ -209,7 +209,7 @@ export function Example() {
 Available components (full props show up via TypeScript on import):
 
 - **Form**: `Button`, `IconButton`, `Input`, `Textarea`, `Select`, `Checkbox`, `Radio`, `Switch`, `Combobox`, `SearchInput`, `Label`, `FormField`, `FormHelpText`, `FormErrorText`.
-- **Layout**: `AppShell`, `Container`, `Stack`, `Inline`, `Divider`, `Card`.
+- **Layout**: `AppShell` (slots: `AppShellTopBar`, `AppShellSidebar`, `AppShellHeader`, `AppShellMain`, `AppShellAside`), `DetailLayout` (`DetailLayoutMain` + `DetailLayoutAside`), `Container`, `Stack`, `Inline`, `Divider`, `Card`.
 - **Navigation**: `Nav`, `Breadcrumbs`, `Pagination`, `Tabs`, `DropdownMenu`.
 - **Overlay**: `Dialog`, `Drawer`, `Popover`, `Tooltip`, `Toast` (via `ToastProvider` + `useToast`).
 - **Feedback**: `Alert`, `Badge`, `Skeleton`, `EmptyState`, `Avatar`.
@@ -220,7 +220,7 @@ Available components (full props show up via TypeScript on import):
 
 `@jarviisha/davinci-react-ui/styles.css` ships a thin, hover-reveal scrollbar utility. The thumb is transparent at rest and fades in when the container is hovered or receives focus, using `--davinci-component-scrollbar-*` tokens so it follows light / dark automatically.
 
-Already auto-applied to `AppShellSidebar`, `AppShellMain`, `Dialog`, `Drawer`, `Combobox`'s listbox, and `TableContainer` — no extra class needed.
+Already auto-applied to `AppShellSidebar`, `AppShellMain`, `AppShellAside`, `Dialog`, `Drawer`, `Combobox`'s listbox, and `TableContainer` — no extra class needed.
 
 Opt in on any other scroll container with the `davinci-scrollbar` class:
 

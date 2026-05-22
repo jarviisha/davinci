@@ -47,11 +47,11 @@ export function Example() {
 
 ## Components
 
-- **Layout** — `AppShell`, `AppShellSidebar`, `AppShellHeader`, `AppShellMain`, `Container`, `Stack`, `Inline`
+- **Layout** — `AppShell`, `AppShellTopBar`, `AppShellSidebar`, `AppShellHeader`, `AppShellMain`, `AppShellAside`, `DetailLayout`, `DetailLayoutMain`, `DetailLayoutAside`, `Container`, `Stack`, `Inline`
 - **Actions** — `Button`, `IconButton` (variants: `solid` / `outline` / `ghost` / `soft`; tones: `primary` / `neutral` / `danger`; sizes: `sm` / `md` / `lg`)
 - **Navigation** — `Breadcrumbs`, `BreadcrumbsList`, `BreadcrumbsItem`, `BreadcrumbsLink`, `BreadcrumbsCurrent`, `Pagination`, `Nav`, `NavGroup`, `NavItem`, `Tabs`, `TabsList`, `TabsTrigger`, `TabsContent`
 - **Forms** — `FormField`, `Label`, `Input`, `SearchInput`, `Select`, `Combobox`, `Textarea`, `Checkbox`, `RadioGroup`, `Radio`, `Switch`
-- **Surfaces** — `Card` (variants: `elevated` / `surface` / `outlined` / `filled` / `flat` / `floating`; `outlineWeight`: `subtle` / `default` / `bold`; tones: `info` / `success` / `warning` / `danger`; modifiers: `interactive`, `selected`), `CardHeader`, `CardTitle`, `CardDescription`, `CardContent`, `CardFooter`
+- **Surfaces** — `Card` (variants: `surface` / `outlined` / `filled` / `flat` / `floating`; `outlineWeight`: `subtle` / `default` / `bold`; tones: `info` / `success` / `warning` / `danger`; modifiers: `interactive`, `selected`), `CardHeader`, `CardTitle`, `CardDescription`, `CardContent`, `CardFooter`
 - **Data display** — `Avatar`, `EmptyState`, `Skeleton`, `Table`, `TableContainer`, `TableHeader`, `TableBody`, `TableFooter`, `TableRow`, `TableHead`, `TableCell`, `TableCaption`
 - **Status** — `Alert`, `Badge` (variants: `neutral` / `primary` / `success` / `warning` / `destructive` / `discovery`)
 - **Overlays** — `Dialog`, `Drawer`, `DropdownMenu`, `Popover`, `Tooltip`, `ToastProvider`, `useToast`
@@ -63,7 +63,7 @@ All components forward refs and spread extra props onto the underlying DOM eleme
 
 A thin, hover-reveal scrollbar style is shipped as a utility class. The thumb is transparent at rest and fades in when the container is hovered or receives focus, with `:hover` and `:active` states for direct thumb interaction. Colors and size are driven by the `--davinci-component-scrollbar-*` tokens, so they follow light / dark themes automatically.
 
-Auto-applied (no extra class needed) to internal scroll containers: `AppShellSidebar`, `AppShellMain`, `Dialog`, `Drawer`, `Combobox` listbox, `TableContainer`.
+Auto-applied (no extra class needed) to internal scroll containers: `AppShellSidebar`, `AppShellMain`, `AppShellAside`, `Dialog`, `Drawer`, `Combobox` listbox, `TableContainer`.
 
 Opt in elsewhere with `davinci-scrollbar`:
 
