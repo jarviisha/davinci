@@ -1,5 +1,15 @@
+import { Stack } from "@jarviisha/davinci-react-ui";
+import { PanelSection } from "../components/PanelSection";
 import { copyText, tokensByPrefix, tokenStep, typographyStyle, varValue } from "../lib/tokens";
 import { TokenTable } from "./TokenTable";
+import type { PanelMeta } from "./types";
+
+export const spacingPanelMeta: PanelMeta = {
+  id: "spacing",
+  label: "Spacing",
+  group: "Foundations",
+  description: "Spacing scale for layout rhythm, padding, and gaps."
+};
 
 export function SpacingPanel() {
   const spacingTokens = tokensByPrefix("spacing.").filter(
@@ -7,17 +17,11 @@ export function SpacingPanel() {
   );
 
   return (
-    <section className="flex flex-col gap-6">
-      <div>
-        <h2 className="font-semibold" style={typographyStyle("heading-md")}>
-          Spacing
-        </h2>
-        <p className="mt-2 text-text-subtle" style={typographyStyle("body")}>
-          Platform spacing scale for layout gaps, padding, and component rhythm.
-        </p>
-      </div>
-
-      <div className="rounded-lg border border-border bg-surface-raised p-(--davinci-spacing-300) shadow-sm">
+    <Stack gap="300">
+      <PanelSection
+        title="Scale preview"
+        description="Platform spacing scale for layout gaps, padding, and component rhythm."
+      >
         <div className="grid gap-(--davinci-spacing-200)">
           {spacingTokens.map((token) => (
             <button
@@ -29,16 +33,21 @@ export function SpacingPanel() {
               <span className="font-mono text-text-muted" style={typographyStyle("code")}>
                 {tokenStep(token.name)}
               </span>
-              <span className="h-(--davinci-spacing-300) rounded-sm bg-primary" style={{ width: varValue(token.cssVar) }} />
+              <span
+                className="h-(--davinci-spacing-300) rounded-sm bg-primary"
+                style={{ width: varValue(token.cssVar) }}
+              />
               <span className="truncate text-text-subtle" style={typographyStyle("body-small")}>
                 {token.value}
               </span>
             </button>
           ))}
         </div>
-      </div>
+      </PanelSection>
 
-      <TokenTable title="Spacing tokens" tokens={spacingTokens} />
-    </section>
+      <PanelSection title="Tokens" description="Full spacing token list.">
+        <TokenTable title="Spacing tokens" tokens={spacingTokens} />
+      </PanelSection>
+    </Stack>
   );
 }

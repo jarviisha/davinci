@@ -1,5 +1,15 @@
+import { Stack } from "@jarviisha/davinci-react-ui";
+import { PanelSection } from "../components/PanelSection";
 import { tokensByPrefix, typographySamples, typographyStyle } from "../lib/tokens";
 import { TokenTable } from "./TokenTable";
+import type { PanelMeta } from "./types";
+
+export const typographyPanelMeta: PanelMeta = {
+  id: "typography",
+  label: "Typography",
+  group: "Foundations",
+  description: "Text roles, font scale, line height, weight, and letter spacing."
+};
 
 export function TypographyPanel() {
   const typographyTokens = tokensByPrefix("typography.");
@@ -11,17 +21,11 @@ export function TypographyPanel() {
   ];
 
   return (
-    <section className="flex flex-col gap-6">
-      <div>
-        <h2 className="font-semibold" style={typographyStyle("heading-md")}>
-          Typography
-        </h2>
-        <p className="mt-2 text-text-subtle" style={typographyStyle("body")}>
-          Text roles are composed from primitive font size, line height, weight, and letter spacing tokens.
-        </p>
-      </div>
-
-      <div className="rounded-lg border border-border bg-surface-raised p-(--davinci-spacing-300) shadow-sm">
+    <Stack gap="300">
+      <PanelSection
+        title="Type roles"
+        description="Text roles are composed from primitive font size, line height, weight, and letter spacing tokens."
+      >
         <div className="flex flex-col gap-(--davinci-spacing-300)">
           {typographySamples.map((sample) => (
             <div
@@ -40,10 +44,15 @@ export function TypographyPanel() {
             </div>
           ))}
         </div>
-      </div>
+      </PanelSection>
 
-      <TokenTable title="Typography role tokens" tokens={typographyTokens} />
-      <TokenTable title="Primitive font tokens" tokens={fontTokens} />
-    </section>
+      <PanelSection title="Typography role tokens" description="Composed role tokens.">
+        <TokenTable title="Typography role tokens" tokens={typographyTokens} />
+      </PanelSection>
+
+      <PanelSection title="Primitive font tokens" description="Source font primitives composing the roles above.">
+        <TokenTable title="Primitive font tokens" tokens={fontTokens} />
+      </PanelSection>
+    </Stack>
   );
 }

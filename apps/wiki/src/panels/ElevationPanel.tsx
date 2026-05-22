@@ -1,5 +1,15 @@
+import { Stack } from "@jarviisha/davinci-react-ui";
+import { PanelSection } from "../components/PanelSection";
 import { copyText, themeTokensByPrefix, tokensByPrefix, typographyStyle, varValue } from "../lib/tokens";
 import { TokenTable } from "./TokenTable";
+import type { PanelMeta } from "./types";
+
+export const elevationPanelMeta: PanelMeta = {
+  id: "elevation",
+  label: "Elevation",
+  group: "Foundations",
+  description: "Theme-aware shadows and layered surface depth."
+};
 
 const elevationPreviews = [
   {
@@ -24,40 +34,41 @@ export function ElevationPanel() {
   const semanticShadowTokens = themeTokensByPrefix("light", "semantic.shadow.");
 
   return (
-    <section className="flex flex-col gap-6">
-      <div>
-        <h2 className="font-semibold" style={typographyStyle("heading-md")}>
-          Elevation
-        </h2>
-        <p className="mt-2 text-text-subtle" style={typographyStyle("body")}>
-          Theme-aware shadows for layered surfaces. Values resolve through semantic shadow tokens.
-        </p>
-      </div>
+    <Stack gap="300">
+      <PanelSection
+        title="Elevation"
+        description="Theme-aware shadows for layered surfaces. Values resolve through semantic shadow tokens."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {elevationPreviews.map((item) => (
+            <button
+              className="rounded-panel border border-border bg-surface-raised p-300 text-left"
+              key={item.token}
+              onClick={() => void copyText(`var(${item.token})`)}
+              style={{ boxShadow: varValue(item.token) }}
+              type="button"
+            >
+              <span className="block font-semibold" style={typographyStyle("heading-sm")}>
+                {item.label}
+              </span>
+              <span className="mt-2 block text-text-subtle" style={typographyStyle("body-small")}>
+                {item.description}
+              </span>
+              <span className="mt-4 block truncate font-mono text-text-muted" style={typographyStyle("code")}>
+                {item.token}
+              </span>
+            </button>
+          ))}
+        </div>
+      </PanelSection>
 
-      <div className="grid gap-4 lg:grid-cols-3">
-        {elevationPreviews.map((item) => (
-          <button
-            className="rounded-panel border border-border bg-surface-raised p-300 text-left"
-            key={item.token}
-            onClick={() => void copyText(`var(${item.token})`)}
-            style={{ boxShadow: varValue(item.token) }}
-            type="button"
-          >
-            <span className="block font-semibold" style={typographyStyle("heading-sm")}>
-              {item.label}
-            </span>
-            <span className="mt-2 block text-text-subtle" style={typographyStyle("body-small")}>
-              {item.description}
-            </span>
-            <span className="mt-4 block truncate font-mono text-text-muted" style={typographyStyle("code")}>
-              {item.token}
-            </span>
-          </button>
-        ))}
-      </div>
+      <PanelSection title="Semantic shadow tokens" description="Active theme resolves these to primitive shadow values.">
+        <TokenTable title="Semantic shadow tokens" tokens={semanticShadowTokens} />
+      </PanelSection>
 
-      <TokenTable title="Semantic shadow tokens" tokens={semanticShadowTokens} />
-      <TokenTable title="Primitive shadow tokens" tokens={primitiveShadowTokens} />
-    </section>
+      <PanelSection title="Primitive shadow tokens" description="Theme-agnostic source values.">
+        <TokenTable title="Primitive shadow tokens" tokens={primitiveShadowTokens} />
+      </PanelSection>
+    </Stack>
   );
 }

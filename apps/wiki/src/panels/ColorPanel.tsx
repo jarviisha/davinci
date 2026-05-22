@@ -1,4 +1,6 @@
+import { Stack } from "@jarviisha/davinci-react-ui";
 import type { Theme } from "@jarviisha/davinci-react-theme-provider";
+import { PanelSection } from "../components/PanelSection";
 import {
   copyText,
   paletteGroups,
@@ -8,6 +10,14 @@ import {
   varValue,
   type TokenEntry
 } from "../lib/tokens";
+import type { PanelMeta } from "./types";
+
+export const colorPanelMeta: PanelMeta = {
+  id: "color",
+  label: "Color",
+  group: "Foundations",
+  description: "Primitive palette, semantic roles, and active theme mapping."
+};
 
 type ColorPanelProps = {
   resolvedTheme: Exclude<Theme, "system">;
@@ -17,14 +27,11 @@ type ColorPanelProps = {
 
 export function ColorPanel({ resolvedTheme, semanticEntries, semanticPrefix }: ColorPanelProps) {
   return (
-    <>
-      <section className="flex flex-col gap-4">
-        <div>
-          <h2 className="text-xl font-semibold">Semantic tokens</h2>
-          <p className="mt-2 text-sm leading-6 text-text-subtle">
-            These roles resolve through the active {resolvedTheme} theme.
-          </p>
-        </div>
+    <Stack gap="300">
+      <PanelSection
+        title="Semantic tokens"
+        description={`These roles resolve through the active ${resolvedTheme} theme.`}
+      >
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {semanticPreviews.map((item) => (
             <button
@@ -42,15 +49,12 @@ export function ColorPanel({ resolvedTheme, semanticEntries, semanticPrefix }: C
             </button>
           ))}
         </div>
-      </section>
+      </PanelSection>
 
-      <section className="flex flex-col gap-4">
-        <div>
-          <h2 className="text-xl font-semibold">Semantic mapping</h2>
-          <p className="mt-2 text-sm leading-6 text-text-subtle">
-            Active {resolvedTheme} theme token names and their primitive references.
-          </p>
-        </div>
+      <PanelSection
+        title="Semantic mapping"
+        description={`Active ${resolvedTheme} theme token names and their primitive references.`}
+      >
         <div className="overflow-hidden rounded-lg border border-border bg-surface-raised">
           <div className="grid grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)_minmax(0,1fr)] border-b border-border px-4 py-3 text-xs font-semibold uppercase text-text-muted">
             <span>Name</span>
@@ -70,15 +74,12 @@ export function ColorPanel({ resolvedTheme, semanticEntries, semanticPrefix }: C
             </button>
           ))}
         </div>
-      </section>
+      </PanelSection>
 
-      <section className="flex flex-col gap-5">
-        <div>
-          <h2 className="text-xl font-semibold">Primitive palette</h2>
-          <p className="mt-2 text-sm leading-6 text-text-subtle">
-            Swatches are rendered from generated CSS variables, not direct color values.
-          </p>
-        </div>
+      <PanelSection
+        title="Primitive palette"
+        description="Swatches are rendered from generated CSS variables, not direct color values."
+      >
         <div className="grid gap-4 lg:grid-cols-2">
           {paletteGroups.map((group) => {
             const groupTokens = paletteTokens(group.prefix);
@@ -116,7 +117,7 @@ export function ColorPanel({ resolvedTheme, semanticEntries, semanticPrefix }: C
             );
           })}
         </div>
-      </section>
-    </>
+      </PanelSection>
+    </Stack>
   );
 }

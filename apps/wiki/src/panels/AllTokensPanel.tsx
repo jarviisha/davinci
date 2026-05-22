@@ -1,5 +1,6 @@
 import { useMemo, useState, type ReactNode } from "react";
-import { Card, CardContent, CardHeader, CardTitle, Input, Stack } from "@jarviisha/davinci-react-ui";
+import { Card, CardContent, Input, Stack } from "@jarviisha/davinci-react-ui";
+import { PanelSection } from "../components/PanelSection";
 import {
   themeTokenEntries,
   tokenEntries,
@@ -7,6 +8,14 @@ import {
   type TokenEntry
 } from "../lib/tokens";
 import { TokenTable } from "./TokenTable";
+import type { PanelMeta } from "./types";
+
+export const allTokensPanelMeta: PanelMeta = {
+  id: "all-tokens",
+  label: "All tokens",
+  group: "Reference",
+  description: "Complete token reference grouped by primitives, semantic, typography, and components."
+};
 
 type Section = {
   title: string;
@@ -61,7 +70,9 @@ function matchesQuery(token: TokenEntry, query: string): boolean {
   );
 }
 
-export function AllTokensPanel({ resolvedTheme }: { resolvedTheme: ResolvedTheme }) {
+type AllTokensPanelProps = { resolvedTheme: ResolvedTheme };
+
+export function AllTokensPanel({ resolvedTheme }: AllTokensPanelProps) {
   const [query, setQuery] = useState("");
 
   const sections = useMemo<Section[]>(() => {
@@ -131,7 +142,11 @@ export function AllTokensPanel({ resolvedTheme }: { resolvedTheme: ResolvedTheme
   }, [sections, query]);
 
   const totalTokens = useMemo(
-    () => filteredSections.reduce((sum, section) => sum + section.groups.reduce((s, g) => s + g.tokens.length, 0), 0),
+    () =>
+      filteredSections.reduce(
+        (sum, section) => sum + section.groups.reduce((s, g) => s + g.tokens.length, 0),
+        0
+      ),
     [filteredSections]
   );
 
@@ -182,12 +197,8 @@ function SectionBlock({
   children: ReactNode;
 }) {
   return (
-    <Card variant="filled">
-      <CardHeader>
-        <CardTitle>{title}</CardTitle>
-        {description ? <p className="text-sm text-text-subtle">{description}</p> : null}
-      </CardHeader>
-      <CardContent>{children}</CardContent>
-    </Card>
+    <PanelSection title={title} description={description}>
+      {children}
+    </PanelSection>
   );
 }

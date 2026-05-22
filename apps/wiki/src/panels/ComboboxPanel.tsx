@@ -1,15 +1,14 @@
 import { useState } from "react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-  Combobox,
-  FormField,
-  FormHelpText,
-  Label
-} from "@jarviisha/davinci-react-ui";
+import { Combobox, FormField, FormHelpText, Label } from "@jarviisha/davinci-react-ui";
+import { PanelSection } from "../components/PanelSection";
+import type { PanelMeta } from "./types";
+
+export const comboboxPanelMeta: PanelMeta = {
+  id: "combobox",
+  label: "Combobox",
+  group: "Components",
+  description: "Filterable single-select input for users, projects, and tags."
+};
 
 const owners = [
   { label: "Ada Lovelace", value: "ada" },
@@ -23,18 +22,12 @@ export function ComboboxPanel() {
   const [owner, setOwner] = useState("mina");
 
   return (
-    <Card variant="filled">
-      <CardHeader>
-        <CardTitle>Combobox</CardTitle>
-        <CardDescription>Filterable single-select input for users, projects, and tags.</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <FormField>
-          <Label>Owner</Label>
-          <Combobox onValueChange={setOwner} options={owners} placeholder="Select owner" value={owner} />
-          <FormHelpText>Type to filter, use arrow keys, then press Enter.</FormHelpText>
-        </FormField>
-      </CardContent>
-    </Card>
+    <PanelSection title="Combobox" description={comboboxPanelMeta.description}>
+      <FormField>
+        <Label>Owner</Label>
+        <Combobox onValueChange={setOwner} options={owners} placeholder="Select owner" value={owner} />
+        <FormHelpText>Type to filter, use arrow keys, then press Enter.</FormHelpText>
+      </FormField>
+    </PanelSection>
   );
 }

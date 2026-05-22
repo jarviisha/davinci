@@ -1,11 +1,6 @@
 import { useState } from "react";
 import {
   Button,
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
   Drawer,
   DrawerContent,
   DrawerDescription,
@@ -19,21 +14,26 @@ import {
   Label,
   Stack
 } from "@jarviisha/davinci-react-ui";
+import { PanelSection } from "../components/PanelSection";
+import type { PanelMeta } from "./types";
+
+export const drawerPanelMeta: PanelMeta = {
+  id: "drawer",
+  label: "Drawer",
+  group: "Components",
+  description: "Side panel for detail views and compact edit forms."
+};
 
 export function DrawerPanel() {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      <Card variant="filled">
-        <CardHeader>
-          <CardTitle>Drawer</CardTitle>
-          <CardDescription>Side panel for detail views and compact edit forms.</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Button onClick={() => setOpen(true)} tone="neutral" variant="outline">Open drawer</Button>
-        </CardContent>
-      </Card>
+      <PanelSection title="Drawer" description={drawerPanelMeta.description}>
+        <Button onClick={() => setOpen(true)} tone="neutral" variant="outline">
+          Open drawer
+        </Button>
+      </PanelSection>
 
       <Drawer onOpenChange={setOpen} open={open}>
         <DrawerHeader>
@@ -55,7 +55,9 @@ export function DrawerPanel() {
         </DrawerContent>
         <DrawerFooter>
           <Inline gap="100">
-            <Button onClick={() => setOpen(false)} tone="neutral" variant="soft">Cancel</Button>
+            <Button onClick={() => setOpen(false)} tone="neutral" variant="soft">
+              Cancel
+            </Button>
             <Button onClick={() => setOpen(false)}>Save changes</Button>
           </Inline>
         </DrawerFooter>

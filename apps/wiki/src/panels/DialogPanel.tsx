@@ -1,11 +1,6 @@
 import { useState } from "react";
 import {
   Button,
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
   Dialog,
   DialogContent,
   DialogDescription,
@@ -19,6 +14,15 @@ import {
   Label,
   Stack
 } from "@jarviisha/davinci-react-ui";
+import { PanelSection } from "../components/PanelSection";
+import type { PanelMeta } from "./types";
+
+export const dialogPanelMeta: PanelMeta = {
+  id: "dialog",
+  label: "Dialog",
+  group: "Surfaces & Feedback",
+  description: "Modal dialog with portal, focus trap, ESC and click-outside dismiss."
+};
 
 export function DialogPanel() {
   const [basicOpen, setBasicOpen] = useState(false);
@@ -28,28 +32,27 @@ export function DialogPanel() {
 
   return (
     <Stack gap="300">
-      <Card variant="filled">
-        <CardHeader>
-          <CardTitle>Dialog sizes</CardTitle>
-          <CardDescription>
-            Portal + focus trap + ESC to close + click-outside to dismiss. Try keyboard: Tab cycles within the
-            dialog, focus returns to trigger on close.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Inline gap="150" wrap>
-            <Button onClick={() => setBasicOpen(true)} tone="neutral" variant="outline">
-              Open small (sm)
-            </Button>
-            <Button onClick={() => setConfirmOpen(true)} tone="danger">
-              Open destructive confirm
-            </Button>
-            <Button onClick={() => setLargeOpen(true)} tone="neutral" variant="outline">
-              Open large (lg) with form
-            </Button>
-          </Inline>
-        </CardContent>
-      </Card>
+      <PanelSection
+        title="Dialog sizes"
+        description={
+          <>
+            Portal + focus trap + ESC to close + click-outside to dismiss. Try keyboard: Tab cycles within the dialog,
+            focus returns to trigger on close.
+          </>
+        }
+      >
+        <Inline gap="150" wrap>
+          <Button onClick={() => setBasicOpen(true)} tone="neutral" variant="outline">
+            Open small (sm)
+          </Button>
+          <Button onClick={() => setConfirmOpen(true)} tone="danger">
+            Open destructive confirm
+          </Button>
+          <Button onClick={() => setLargeOpen(true)} tone="neutral" variant="outline">
+            Open large (lg) with form
+          </Button>
+        </Inline>
+      </PanelSection>
 
       <Dialog onOpenChange={setBasicOpen} open={basicOpen} size="sm">
         <DialogHeader>
@@ -60,8 +63,8 @@ export function DialogPanel() {
         </DialogHeader>
         <DialogContent>
           <p style={{ margin: 0 }}>
-            This dialog renders into <code>document.body</code> via a portal. The backdrop animates in and the
-            panel scales up. Focus is trapped — try pressing Tab.
+            This dialog renders into <code>document.body</code> via a portal. The backdrop animates in and the panel
+            scales up. Focus is trapped — try pressing Tab.
           </p>
         </DialogContent>
         <DialogFooter>
