@@ -1254,6 +1254,64 @@
   }
 }
 
+/* ----- DetailLayout -----
+ * Two-column page-level layout: primary content on one side, metadata rail on the other.
+ * Collapses to a single column under 1024px. Add `aside-sticky` to keep the rail in view
+ * while the main column scrolls.
+ */
+
+.davinci-detail-layout {
+  display: grid;
+  gap: var(--davinci-spacing-300);
+  grid-template-columns: minmax(0, 1fr) minmax(14rem, 20rem);
+}
+
+.davinci-detail-layout--aside-start {
+  grid-template-columns: minmax(14rem, 20rem) minmax(0, 1fr);
+}
+
+.davinci-detail-layout__main {
+  grid-column: 1;
+  min-inline-size: 0;
+}
+
+.davinci-detail-layout--aside-start .davinci-detail-layout__main {
+  grid-column: 2;
+}
+
+.davinci-detail-layout__aside {
+  grid-column: 2;
+  min-inline-size: 0;
+}
+
+.davinci-detail-layout--aside-start .davinci-detail-layout__aside {
+  grid-column: 1;
+}
+
+.davinci-detail-layout--aside-sticky .davinci-detail-layout__aside {
+  align-self: start;
+  position: sticky;
+  top: var(--davinci-spacing-300);
+}
+
+@media (max-width: 1023px) {
+  .davinci-detail-layout,
+  .davinci-detail-layout--aside-start {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .davinci-detail-layout__main,
+  .davinci-detail-layout--aside-start .davinci-detail-layout__main,
+  .davinci-detail-layout__aside,
+  .davinci-detail-layout--aside-start .davinci-detail-layout__aside {
+    grid-column: 1;
+  }
+
+  .davinci-detail-layout--aside-sticky .davinci-detail-layout__aside {
+    position: static;
+  }
+}
+
 /* ----- aria-invalid extensions for Input / Select / Textarea ----- */
 
 .davinci-input[aria-invalid="true"],

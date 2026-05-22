@@ -86,6 +86,12 @@ export type {
   SpacingToken,
   StackProps
 } from "./layout.js";
+export { DetailLayout, DetailLayoutAside, DetailLayoutMain } from "./detail-layout.js";
+export type {
+  DetailLayoutAsideProps,
+  DetailLayoutMainProps,
+  DetailLayoutProps
+} from "./detail-layout.js";
 export { Divider } from "./divider.js";
 export type { DividerOrientation, DividerProps } from "./divider.js";
 export {

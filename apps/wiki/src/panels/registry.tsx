@@ -11,6 +11,7 @@ import { CardPanel, cardPanelMeta } from "./CardPanel";
 import { CheckboxPanel, checkboxPanelMeta } from "./CheckboxPanel";
 import { ColorPanel, colorPanelMeta } from "./ColorPanel";
 import { ComboboxPanel, comboboxPanelMeta } from "./ComboboxPanel";
+import { DetailLayoutPanel, detailLayoutPanelMeta } from "./DetailLayoutPanel";
 import { DialogPanel, dialogPanelMeta } from "./DialogPanel";
 import { DrawerPanel, drawerPanelMeta } from "./DrawerPanel";
 import { DropdownMenuPanel, dropdownMenuPanelMeta } from "./DropdownMenuPanel";
@@ -73,6 +74,7 @@ export const panels: readonly PanelEntry[] = [
 
   // Navigation
   { ...appShellPanelMeta, render: () => <AppShellPanel /> },
+  { ...detailLayoutPanelMeta, render: () => <DetailLayoutPanel /> },
   { ...tabsPanelMeta, render: () => <TabsPanel /> },
   { ...breadcrumbsPanelMeta, render: () => <BreadcrumbsPanel /> },
   { ...paginationPanelMeta, render: () => <PaginationPanel /> },
