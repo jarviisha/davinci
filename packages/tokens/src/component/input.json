@@ -28,7 +28,11 @@
       },
       "border": {
         "$type": "color",
-        "$value": "{semantic.color.borderBold}"
+        "$value": "{semantic.color.border}"
+      },
+      "borderHovered": {
+        "$type": "color",
+        "$value": "{semantic.color.borderHovered}"
       },
       "borderFocused": {
         "$type": "color",

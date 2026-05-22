@@ -286,7 +286,7 @@
 .davinci-input:hover:not(:disabled),
 .davinci-select:hover:not(:disabled),
 .davinci-textarea:hover:not(:disabled) {
-  background-color: var(--davinci-component-input-background-hovered);
+  border-color: var(--davinci-component-input-border-hovered);
 }
 
 .davinci-input:focus-visible,
@@ -351,7 +351,7 @@
 }
 
 .davinci-search-input:hover {
-  background-color: var(--davinci-component-input-background-hovered);
+  border-color: var(--davinci-component-input-border-hovered);
 }
 
 .davinci-search-input:focus-within {
@@ -438,6 +438,7 @@
   line-height: var(--davinci-typography-body-line-height);
   outline: none;
   padding-inline: var(--davinci-component-input-padding-x) calc(var(--davinci-component-input-padding-x) * 2 + 1rem);
+  transition: border-color 150ms ease;
   width: 100%;
 }
 
@@ -454,7 +455,7 @@
 }
 
 .davinci-combobox__input:hover:not(:disabled) {
-  background-color: var(--davinci-component-input-background-hovered);
+  border-color: var(--davinci-component-input-border-hovered);
 }
 
 .davinci-combobox__input:focus {
