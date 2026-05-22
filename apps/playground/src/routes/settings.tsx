@@ -58,7 +58,7 @@ export default function SettingsRoute() {
 
   return (
     <Stack gap="300">
-      <Card variant="elevated">
+      <Card>
         <CardHeader>
           <Inline align="start" justify="between" wrap>
             <div>
@@ -93,7 +93,7 @@ export default function SettingsRoute() {
         </CardContent>
       </Card>
 
-      <Card variant="elevated">
+      <Card>
         <CardHeader>
           <Inline align="start" justify="between" wrap>
             <div>

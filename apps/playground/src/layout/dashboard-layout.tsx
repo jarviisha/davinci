@@ -121,7 +121,7 @@ export function DashboardLayout() {
           </Inline>
         </AppShellHeader>
 
-        <AppShellMain className="davinci-scrollbar bg-muted/40">
+        <AppShellMain className="davinci-scrollbar">
           <Outlet />
         </AppShellMain>
       </AppShell>

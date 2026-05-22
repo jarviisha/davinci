@@ -25,7 +25,7 @@ export default function OverviewRoute() {
       </div>
 
       <div className="grid gap-4 xl:grid-cols-[minmax(0,1.45fr)_minmax(18rem,0.75fr)]">
-        <Card variant="elevated">
+        <Card>
           <CardHeader>
             <Inline align="start" justify="between" wrap>
               <div>
@@ -51,7 +51,7 @@ export default function OverviewRoute() {
           </CardContent>
         </Card>
 
-        <Card variant="elevated">
+        <Card>
           <CardHeader>
             <CardTitle>Activity</CardTitle>
             <CardDescription>Latest customer and revenue events.</CardDescription>
