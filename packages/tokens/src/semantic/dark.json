@@ -125,19 +125,19 @@
         "$type": "color",
         "$value": "{color.neutralDark.deepest}"
       },
-      "destructive": {
+      "danger": {
         "$type": "color",
         "$value": "{color.red.400}"
       },
-      "destructiveHovered": {
+      "dangerHovered": {
         "$type": "color",
         "$value": "{color.red.300}"
       },
-      "destructivePressed": {
+      "dangerPressed": {
         "$type": "color",
         "$value": "{color.red.200}"
       },
-      "destructiveForeground": {
+      "dangerForeground": {
         "$type": "color",
         "$value": "{color.neutralDark.deepest}"
       },
@@ -181,19 +181,19 @@
     "shadow": {
       "none": {
         "$type": "shadow",
-        "$value": "{shadow.none}"
+        "$value": "none"
       },
       "card": {
         "$type": "shadow",
-        "$value": "{shadow.dark.card}"
+        "$value": "0 4px 10px rgba(1, 4, 4, 0.44), 0 0 0 1px rgba(227, 228, 242, 0.10)"
       },
       "raised": {
         "$type": "shadow",
-        "$value": "{shadow.dark.raised}"
+        "$value": "0 6px 12px rgba(1, 4, 4, 0.36), 0 0 1px rgba(227, 228, 242, 0.16)"
       },
       "overlay": {
         "$type": "shadow",
-        "$value": "{shadow.dark.overlay}"
+        "$value": "0 12px 24px rgba(1, 4, 4, 0.44), 0 0 1px rgba(227, 228, 242, 0.20)"
       }
     }
   }

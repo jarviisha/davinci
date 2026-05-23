@@ -1,0 +1,31 @@
+{
+  "component": {
+    "appShell": {
+      "topBar": {
+        "minHeight": { "$type": "dimension", "$value": "3.5rem" },
+        "paddingBlock": { "$type": "dimension", "$value": "{spacing.150}" },
+        "paddingInline": { "$type": "dimension", "$value": "{spacing.300}" },
+        "gap": { "$type": "dimension", "$value": "{spacing.200}" }
+      },
+      "sidebar": {
+        "widthMin": { "$type": "dimension", "$value": "14rem" },
+        "widthMax": { "$type": "dimension", "$value": "17.5rem" },
+        "padding": { "$type": "dimension", "$value": "{spacing.300}" }
+      },
+      "header": {
+        "minHeight": { "$type": "dimension", "$value": "4rem" },
+        "paddingBlock": { "$type": "dimension", "$value": "{spacing.200}" },
+        "paddingInline": { "$type": "dimension", "$value": "{spacing.300}" },
+        "gap": { "$type": "dimension", "$value": "{spacing.200}" }
+      },
+      "main": {
+        "padding": { "$type": "dimension", "$value": "{spacing.300}" }
+      },
+      "aside": {
+        "widthMin": { "$type": "dimension", "$value": "16rem" },
+        "widthMax": { "$type": "dimension", "$value": "22rem" },
+        "padding": { "$type": "dimension", "$value": "{spacing.300}" }
+      }
+    }
+  }
+}

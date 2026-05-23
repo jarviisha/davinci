@@ -39,9 +39,9 @@ export function useRadiusPreset(): [RadiusPreset, (preset: RadiusPreset) => void
     root.style.setProperty("--davinci-radius-md", `${values.md}px`);
     root.style.setProperty("--davinci-radius-lg", `${values.lg}px`);
     root.style.setProperty("--davinci-radius-xl", `${values.xl}px`);
-    root.style.setProperty("--davinci-radius-control", "var(--davinci-radius-md)");
-    root.style.setProperty("--davinci-radius-card", "var(--davinci-radius-lg)");
-    root.style.setProperty("--davinci-radius-panel", "var(--davinci-radius-xl)");
+    root.style.setProperty("--davinci-semantic-radius-control", "var(--davinci-radius-md)");
+    root.style.setProperty("--davinci-semantic-radius-card", "var(--davinci-radius-lg)");
+    root.style.setProperty("--davinci-semantic-radius-panel", "var(--davinci-radius-xl)");
     window.localStorage.setItem(STORAGE_KEY, preset);
   }, [preset]);
 

@@ -8,7 +8,7 @@
         "background": { "$type": "color", "$value": "{semantic.color.surfaceRaised}" },
         "border": { "$type": "color", "$value": "{semantic.color.border}" },
         "foreground": { "$type": "color", "$value": "{semantic.color.foreground}" },
-        "radius": { "$type": "dimension", "$value": "{radius.panel}" },
+        "radius": { "$type": "dimension", "$value": "{semantic.radius.panel}" },
         "shadow": { "$type": "shadow", "$value": "{semantic.shadow.overlay}" },
         "padding": { "$type": "dimension", "$value": "{spacing.300}" },
         "gap": { "$type": "dimension", "$value": "{spacing.200}" }
@@ -20,7 +20,7 @@
       },
       "zIndex": {
         "$type": "number",
-        "$value": "1000"
+        "$value": 1000
       }
     }
   }

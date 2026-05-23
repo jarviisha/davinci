@@ -10,6 +10,6 @@ body {
 }
 
 .davinci-focus-ring:focus-visible {
-  outline: var(--davinci-focus-ring-width) var(--davinci-focus-ring-style) var(--davinci-focus-ring-color);
-  outline-offset: var(--davinci-focus-ring-offset);
+  outline: var(--davinci-semantic-focus-ring-width) var(--davinci-semantic-focus-ring-style) var(--davinci-semantic-focus-ring-color);
+  outline-offset: var(--davinci-semantic-focus-ring-offset);
 }

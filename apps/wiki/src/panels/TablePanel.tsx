@@ -51,7 +51,7 @@ export function TablePanel() {
                       invoice.status === "Paid"
                         ? "success"
                         : invoice.status === "Overdue"
-                          ? "destructive"
+                          ? "danger"
                           : "warning"
                     }
                   >

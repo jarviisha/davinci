@@ -1,0 +1,12 @@
+{
+  "component": {
+    "detailLayout": {
+      "gap": { "$type": "dimension", "$value": "{spacing.300}" },
+      "aside": {
+        "widthMin": { "$type": "dimension", "$value": "14rem" },
+        "widthMax": { "$type": "dimension", "$value": "20rem" }
+      },
+      "stickyOffset": { "$type": "dimension", "$value": "{spacing.300}" }
+    }
+  }
+}

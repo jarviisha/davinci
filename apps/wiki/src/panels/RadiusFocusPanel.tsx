@@ -52,13 +52,13 @@ export function RadiusFocusPanel() {
       <PanelSection title="Focus ring" description="Use keyboard focus to inspect ring width, offset, and color.">
         <div className="flex flex-wrap gap-3">
           <button
-            className="davinci-focus-ring inline-flex h-10 items-center justify-center rounded-(--davinci-radius-control) border border-transparent bg-primary px-4 text-sm font-medium leading-none text-primary-foreground outline-none"
+            className="davinci-focus-ring inline-flex h-10 items-center justify-center rounded-(--davinci-semantic-radius-control) border border-transparent bg-primary px-4 text-sm font-medium leading-none text-primary-foreground outline-none"
             type="button"
           >
             Focusable primary
           </button>
           <button
-            className="davinci-focus-ring inline-flex h-10 items-center justify-center rounded-(--davinci-radius-control) border border-border bg-background px-4 text-sm font-medium leading-none text-foreground outline-none"
+            className="davinci-focus-ring inline-flex h-10 items-center justify-center rounded-(--davinci-semantic-radius-control) border border-border bg-background px-4 text-sm font-medium leading-none text-foreground outline-none"
             type="button"
           >
             Focusable secondary

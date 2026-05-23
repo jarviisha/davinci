@@ -46,10 +46,10 @@
   --color-primary-hovered: var(--davinci-semantic-color-primary-hovered);
   --color-primary-pressed: var(--davinci-semantic-color-primary-pressed);
   --color-primary-foreground: var(--davinci-semantic-color-primary-foreground);
-  --color-destructive: var(--davinci-semantic-color-destructive);
-  --color-destructive-hovered: var(--davinci-semantic-color-destructive-hovered);
-  --color-destructive-pressed: var(--davinci-semantic-color-destructive-pressed);
-  --color-destructive-foreground: var(--davinci-semantic-color-destructive-foreground);
+  --color-danger: var(--davinci-semantic-color-danger);
+  --color-danger-hovered: var(--davinci-semantic-color-danger-hovered);
+  --color-danger-pressed: var(--davinci-semantic-color-danger-pressed);
+  --color-danger-foreground: var(--davinci-semantic-color-danger-foreground);
   --color-success: var(--davinci-semantic-color-success);
   --color-success-foreground: var(--davinci-semantic-color-success-foreground);
   --color-warning: var(--davinci-semantic-color-warning);
@@ -67,10 +67,10 @@
   --radius-lg: var(--davinci-radius-lg);
   --radius-xl: var(--davinci-radius-xl);
   --radius-full: var(--davinci-radius-full);
-  --radius-control: var(--davinci-radius-control);
-  --radius-card: var(--davinci-radius-card);
-  --radius-panel: var(--davinci-radius-panel);
-  --radius-pill: var(--davinci-radius-pill);
+  --radius-control: var(--davinci-semantic-radius-control);
+  --radius-card: var(--davinci-semantic-radius-card);
+  --radius-panel: var(--davinci-semantic-radius-panel);
+  --radius-pill: var(--davinci-semantic-radius-pill);
 
   /* Typography */
   --font-sans: var(--davinci-font-family-sans);

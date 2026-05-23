@@ -264,7 +264,7 @@ function Root() {
 
 function SaveButton() {
   const toast = useToast();
-  return <Button onClick={() => toast.show({ title: "Saved" })}>Save</Button>;
+  return <Button onClick={() => toast.success("Saved")}>Save</Button>;
 }
 ```
 
@@ -332,3 +332,37 @@ The changelog lives in each package's GitHub Release, or in the `CHANGELOG.md` f
 ### `peer dependency` warning for React
 
 - React UI requires React 18.3.1+ or 19. Upgrade if your project is on 18.2 or below.
+
+---
+
+## Migration: token naming consistency (major bump)
+
+This major release consolidates vocabulary across the three layers and fixes architectural debt. Run the find-replace table below across your codebase.
+
+### Search & replace
+
+| Old | New | Why |
+| --- | --- | --- |
+| `destructive` (any case in token / class / prop / Tailwind utility) | `danger` | Unifies the red role — previously split between `destructive`, `danger`, and `error` |
+| `toast.error(` | `toast.danger(` | `useToast` API renamed for consistency |
+| `<Toast variant="error">` | `<Toast variant="danger">` | Same |
+| `<Badge variant="destructive">` | `<Badge variant="danger">` | Same |
+| `<Card variant="surface">` | `<Card variant="default">` | `surface` collided with the semantic color role; `default` is also the default value when prop is omitted |
+| `--davinci-focus-ring-color` | `--davinci-semantic-focus-ring-color` | Focus moved from primitive to semantic layer (also `-width`, `-offset`, `-style`) |
+| `--davinci-radius-control` | `--davinci-semantic-radius-control` | Radius semantic aliases moved out of primitive (also `-card`, `-panel`, `-pill`) |
+| `--davinci-component-card-surface-*` | `--davinci-component-card-default-*` | Card variant rename |
+| `--davinci-spacing-1` / `-2` / `-3` / `-4` / `-6` / `-8` | `--davinci-spacing-050` / `-100` / `-150` / `-200` / `-300` / `-400` | Numeric alias shortcuts removed in favor of the explicit scale |
+
+### Tailwind utility renames (handled by the preset)
+
+- `bg-destructive`, `text-destructive`, `border-destructive`, `bg-destructive-hovered`, `bg-destructive-pressed`, `text-destructive-foreground` → swap `destructive` → `danger`.
+- `rounded-control`, `rounded-card`, `rounded-panel`, `rounded-pill` — **unchanged**; the preset re-wires them to the new CSS vars.
+
+### No-op for most users
+
+If you only consume the documented Tailwind utilities and React components and you never wrote `variant="destructive"`, `variant="surface"`, or referenced `--davinci-focus-ring-*` / `--davinci-radius-control` directly, the only change you need is bumping the package versions.
+
+### New tokens worth knowing
+
+- `component.appShell.*` and `component.detailLayout.*` — layout dimensions are now tokenized; override them at `:root` to customize sidebar/aside widths.
+- `component.card.toneInfo/toneSuccess/toneWarning/toneDanger` — Card tone backgrounds and borders are first-class tokens; override per-theme to retune the tint intensity.

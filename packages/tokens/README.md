@@ -50,7 +50,7 @@ Tokens are organized into three layers:
 2. **Semantic** — theme-aware roles (`semantic.color.primary`, `semantic.color.foreground`).
 3. **Component** — component-level decisions (`component.button.height.md`).
 
-The CSS bundles map cleanly onto these layers — primitive + component go into `variables.css`, semantic into `light.css` / `dark.css`.
+The CSS bundles map onto these layers — primitive, component, and theme-independent semantic tokens (focus, radius aliases) go into `variables.css`; theme-aware semantic tokens (color, shadow) go into `light.css` / `dark.css`.
 
 ## License
 

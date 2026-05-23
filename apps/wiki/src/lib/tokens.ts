@@ -82,19 +82,19 @@ export const semanticPreviews: SemanticPreview[] = [
     foreground: "--davinci-semantic-color-primary-foreground"
   },
   {
-    label: "Destructive",
-    token: "--davinci-semantic-color-destructive",
-    foreground: "--davinci-semantic-color-destructive-foreground"
+    label: "Danger",
+    token: "--davinci-semantic-color-danger",
+    foreground: "--davinci-semantic-color-danger-foreground"
   },
   {
-    label: "Destructive hovered",
-    token: "--davinci-semantic-color-destructive-hovered",
-    foreground: "--davinci-semantic-color-destructive-foreground"
+    label: "Danger hovered",
+    token: "--davinci-semantic-color-danger-hovered",
+    foreground: "--davinci-semantic-color-danger-foreground"
   },
   {
-    label: "Destructive pressed",
-    token: "--davinci-semantic-color-destructive-pressed",
-    foreground: "--davinci-semantic-color-destructive-foreground"
+    label: "Danger pressed",
+    token: "--davinci-semantic-color-danger-pressed",
+    foreground: "--davinci-semantic-color-danger-foreground"
   },
   { label: "Success", token: "--davinci-semantic-color-success", foreground: "--davinci-semantic-color-success-foreground" },
   { label: "Warning", token: "--davinci-semantic-color-warning", foreground: "--davinci-semantic-color-warning-foreground" },

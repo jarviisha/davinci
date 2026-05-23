@@ -56,5 +56,5 @@ export const chartBars = [42, 58, 51, 74, 68, 88, 79, 94, 86, 101, 96, 112];
 export function healthVariant(health: AccountHealth) {
   if (health === "Healthy") return "success" as const;
   if (health === "Watch") return "warning" as const;
-  return "destructive" as const;
+  return "danger" as const;
 }

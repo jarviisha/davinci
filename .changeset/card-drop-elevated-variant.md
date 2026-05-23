@@ -9,9 +9,9 @@ After previous releases moved shadow off page-level cards, `elevated` and `surfa
 
 **Breaking changes**
 
-- `CardVariant` no longer includes `"elevated"`. Callers using `<Card variant="elevated">` should switch to `<Card variant="surface">`, which renders identically minus the shadow.
-- The default Card variant is now `"surface"` (previously `"elevated"`).
-- Token block `component.card.elevated.*` is removed from `@jarviisha/davinci-tokens`; the corresponding `--davinci-component-card-elevated-*` CSS variables no longer exist. Components that borrowed them (combobox listbox, dropdown menu, popover) now reference `--davinci-component-card-surface-*` instead — same values, supported name.
+- `CardVariant` no longer includes `"elevated"`. Callers using `<Card variant="elevated">` should switch to `<Card variant="default">`, which renders identically minus the shadow.
+- The default Card variant is now `"default"` (previously `"elevated"`). The literal `"surface"` was never released — the name was avoided to prevent collision with the semantic `surface` color role.
+- Token block `component.card.elevated.*` is removed from `@jarviisha/davinci-tokens`; the corresponding `--davinci-component-card-elevated-*` CSS variables no longer exist. Components that borrowed them (combobox listbox, dropdown menu, popover) now reference `--davinci-component-card-default-*` instead — same values, supported name.
 
 **Why**
 

@@ -27,7 +27,7 @@
         "dot": { "$type": "color", "$value": "{semantic.color.primary}" }
       },
       "invalid": {
-        "border": { "$type": "color", "$value": "{semantic.color.destructive}" }
+        "border": { "$type": "color", "$value": "{semantic.color.danger}" }
       },
       "disabled": {
         "background": { "$type": "color", "$value": "{semantic.color.backgroundDisabled}" },

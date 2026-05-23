@@ -1,0 +1,16 @@
+{
+  "semantic": {
+    "focus": {
+      "ringColor": { "$type": "color", "$value": "{semantic.color.primary}" },
+      "ringWidth": { "$type": "dimension", "$value": "2px" },
+      "ringOffset": { "$type": "dimension", "$value": "2px" },
+      "ringStyle": { "$type": "strokeStyle", "$value": "solid" }
+    },
+    "radius": {
+      "control": { "$type": "dimension", "$value": "{radius.md}" },
+      "card": { "$type": "dimension", "$value": "{radius.lg}" },
+      "panel": { "$type": "dimension", "$value": "{radius.xl}" },
+      "pill": { "$type": "dimension", "$value": "{radius.full}" }
+    }
+  }
+}

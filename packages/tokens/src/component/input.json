@@ -16,7 +16,7 @@
       },
       "radius": {
         "$type": "dimension",
-        "$value": "{radius.control}"
+        "$value": "{semantic.radius.control}"
       },
       "background": {
         "$type": "color",
@@ -40,7 +40,7 @@
       },
       "borderInvalid": {
         "$type": "color",
-        "$value": "{semantic.color.destructive}"
+        "$value": "{semantic.color.danger}"
       },
       "foreground": {
         "$type": "color",

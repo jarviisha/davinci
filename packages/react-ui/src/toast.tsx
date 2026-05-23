@@ -13,7 +13,7 @@ import { createPortal } from "react-dom";
 import { XIcon } from "./icons/index.js";
 import { cn } from "./utils.js";
 
-export type ToastVariant = "info" | "success" | "warning" | "error";
+export type ToastVariant = "info" | "success" | "warning" | "danger";
 
 export type ToastPosition = "bottom-right" | "bottom-left" | "top-right" | "top-left";
 
@@ -154,7 +154,7 @@ function ToastItem({ toast, onDismiss }: ToastItemProps) {
     }
   }
 
-  const isAlert = toast.variant === "error" || toast.variant === "warning";
+  const isAlert = toast.variant === "danger" || toast.variant === "warning";
 
   return (
     <li
@@ -198,7 +198,7 @@ export type UseToastApi = {
   info: (title: ReactNode, options?: ToastOptions) => string;
   success: (title: ReactNode, options?: ToastOptions) => string;
   warning: (title: ReactNode, options?: ToastOptions) => string;
-  error: (title: ReactNode, options?: ToastOptions) => string;
+  danger: (title: ReactNode, options?: ToastOptions) => string;
   dismiss: (id: string) => void;
 };
 
@@ -216,8 +216,8 @@ export function useToast(): UseToastApi {
         push({ variant: "success", title, duration: options?.duration ?? DEFAULT_DURATION, ...options }),
       warning: (title, options) =>
         push({ variant: "warning", title, duration: options?.duration ?? DEFAULT_DURATION, ...options }),
-      error: (title, options) =>
-        push({ variant: "error", title, duration: options?.duration ?? DEFAULT_DURATION, ...options }),
+      danger: (title, options) =>
+        push({ variant: "danger", title, duration: options?.duration ?? DEFAULT_DURATION, ...options }),
       dismiss
     }),
     [push, dismiss]

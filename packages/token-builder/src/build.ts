@@ -66,10 +66,9 @@ const sourceFiles = {
     "primitive/color.json",
     "primitive/spacing.json",
     "primitive/radius.json",
-    "primitive/focus.json",
-    "primitive/shadow.json",
     "primitive/typography.json"
   ],
+  semanticShared: ["semantic/shared.json"],
   semanticLight: ["semantic/light.json"],
   semanticDark: ["semantic/dark.json"]
 } as const;
@@ -201,6 +200,7 @@ function renderTokensDts(buckets: readonly JsBucket[]): string {
 async function build(): Promise<void> {
   const componentFiles = await readComponentFiles();
   const primitive = await readMany(sourceFiles.primitive);
+  const semanticShared = await readMany(sourceFiles.semanticShared);
   const semanticLight = await readMany(sourceFiles.semanticLight);
   const semanticDark = await readMany(sourceFiles.semanticDark);
   const component = await readMany(componentFiles);
@@ -209,10 +209,11 @@ async function build(): Promise<void> {
   validateDocuments(documents);
 
   const primitiveTokens = flattenTokens(primitive, "primitive");
+  const sharedTokens = flattenTokens(semanticShared, "semantic/shared");
   const lightTokens = flattenTokens(semanticLight, "semantic/light");
   const darkTokens = flattenTokens(semanticDark, "semantic/dark");
   const componentTokens = flattenTokens(component, "component");
-  const staticTokens = [...primitiveTokens, ...componentTokens];
+  const staticTokens = [...primitiveTokens, ...sharedTokens, ...componentTokens];
 
   const jsBuckets: JsBucket[] = [
     { exportName: "tokens", tokens: staticTokens },
@@ -258,6 +259,7 @@ async function readComponentFiles(): Promise<string[]> {
 async function readAllDocuments(componentFiles: string[]): Promise<TokenDocument[]> {
   const files = [
     ...sourceFiles.primitive,
+    ...sourceFiles.semanticShared,
     ...sourceFiles.semanticLight,
     ...sourceFiles.semanticDark,
     ...componentFiles

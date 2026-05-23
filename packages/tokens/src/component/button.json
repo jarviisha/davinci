@@ -13,7 +13,7 @@
       },
       "radius": {
         "$type": "dimension",
-        "$value": "{radius.control}"
+        "$value": "{semantic.radius.control}"
       },
       "fontWeight": {
         "$type": "fontWeight",
@@ -33,12 +33,12 @@
         "border": { "$type": "color", "$value": "{semantic.color.borderBold}" },
         "foreground": { "$type": "color", "$value": "{semantic.color.foreground}" }
       },
-      "destructive": {
-        "background": { "$type": "color", "$value": "{semantic.color.destructive}" },
-        "backgroundHovered": { "$type": "color", "$value": "{semantic.color.destructiveHovered}" },
-        "backgroundPressed": { "$type": "color", "$value": "{semantic.color.destructivePressed}" },
-        "border": { "$type": "color", "$value": "{semantic.color.destructive}" },
-        "foreground": { "$type": "color", "$value": "{semantic.color.destructiveForeground}" }
+      "danger": {
+        "background": { "$type": "color", "$value": "{semantic.color.danger}" },
+        "backgroundHovered": { "$type": "color", "$value": "{semantic.color.dangerHovered}" },
+        "backgroundPressed": { "$type": "color", "$value": "{semantic.color.dangerPressed}" },
+        "border": { "$type": "color", "$value": "{semantic.color.danger}" },
+        "foreground": { "$type": "color", "$value": "{semantic.color.dangerForeground}" }
       },
       "muted": {
         "background": { "$type": "color", "$value": "{semantic.color.backgroundSubtle}" },

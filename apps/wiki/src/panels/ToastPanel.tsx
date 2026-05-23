@@ -39,7 +39,7 @@ export function ToastPanel() {
             Warning
           </Button>
           <Button
-            onClick={() => toast.error("Failed to save", { description: "Network error — please retry." })}
+            onClick={() => toast.danger("Failed to save", { description: "Network error — please retry." })}
             tone="danger"
           >
             Error
@@ -69,7 +69,7 @@ export function ToastPanel() {
           </Button>
           <Button
             onClick={() =>
-              toast.error("Upload failed", {
+              toast.danger("Upload failed", {
                 description: "Connection lost mid-upload.",
                 duration: 10000,
                 action: {

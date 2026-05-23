@@ -39,7 +39,7 @@ export function SurfacePanel() {
           <article className="rounded-lg border border-border bg-surface-raised p-5">
             <h4 className="text-sm font-semibold">Surface raised</h4>
             <p className="mt-2 text-sm text-foreground-subtle">
-              Elevated content — Card <code className="font-mono">surface</code> variant and floating panels.
+              Elevated content — Card <code className="font-mono">default</code> variant and floating panels.
             </p>
           </article>
         </div>
@@ -49,14 +49,14 @@ export function SurfacePanel() {
         title="Card variants"
         description={
           <>
-            <code className="font-mono text-foreground">surface</code> uses a raised background for grouped content.{" "}
+            <code className="font-mono text-foreground">default</code> uses a raised background for grouped content.{" "}
             <code className="font-mono text-foreground">outlined</code> sits on the base background with a bold border.
             Shadow is reserved for floating panels and overlays — page-level surfaces stay flat for dense product UI.
           </>
         }
       >
         <div className="grid gap-4 lg:grid-cols-2">
-          <Card variant="surface">
+          <Card variant="default">
             <CardHeader>
               <CardTitle>Surface card</CardTitle>
               <CardDescription>Raised background, no shadow — quiet grouped content.</CardDescription>

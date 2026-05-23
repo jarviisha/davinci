@@ -35,10 +35,10 @@ const preset = {
         "primary-hovered": "var(--davinci-semantic-color-primary-hovered)",
         "primary-pressed": "var(--davinci-semantic-color-primary-pressed)",
         "primary-foreground": "var(--davinci-semantic-color-primary-foreground)",
-        destructive: "var(--davinci-semantic-color-destructive)",
-        "destructive-hovered": "var(--davinci-semantic-color-destructive-hovered)",
-        "destructive-pressed": "var(--davinci-semantic-color-destructive-pressed)",
-        "destructive-foreground": "var(--davinci-semantic-color-destructive-foreground)",
+        danger: "var(--davinci-semantic-color-danger)",
+        "danger-hovered": "var(--davinci-semantic-color-danger-hovered)",
+        "danger-pressed": "var(--davinci-semantic-color-danger-pressed)",
+        "danger-foreground": "var(--davinci-semantic-color-danger-foreground)",
         success: "var(--davinci-semantic-color-success)",
         "success-foreground": "var(--davinci-semantic-color-success-foreground)",
         warning: "var(--davinci-semantic-color-warning)",
@@ -56,10 +56,10 @@ const preset = {
         lg: "var(--davinci-radius-lg)",
         xl: "var(--davinci-radius-xl)",
         full: "var(--davinci-radius-full)",
-        control: "var(--davinci-radius-control)",
-        card: "var(--davinci-radius-card)",
-        panel: "var(--davinci-radius-panel)",
-        pill: "var(--davinci-radius-pill)"
+        control: "var(--davinci-semantic-radius-control)",
+        card: "var(--davinci-semantic-radius-card)",
+        panel: "var(--davinci-semantic-radius-panel)",
+        pill: "var(--davinci-semantic-radius-pill)"
       },
       fontFamily: {
         sans: "var(--davinci-font-family-sans)",
@@ -121,7 +121,7 @@ const preset = {
         "1000": "var(--davinci-spacing-1000)"
       },
       ringColor: {
-        focus: "var(--davinci-focus-ring-color)"
+        focus: "var(--davinci-semantic-focus-ring-color)"
       },
       ringOffsetColor: {
         background: "var(--davinci-semantic-color-background)",
@@ -129,10 +129,10 @@ const preset = {
         "surface-raised": "var(--davinci-semantic-color-surface-raised)"
       },
       ringOffsetWidth: {
-        focus: "var(--davinci-focus-ring-offset)"
+        focus: "var(--davinci-semantic-focus-ring-offset)"
       },
       ringWidth: {
-        focus: "var(--davinci-focus-ring-width)"
+        focus: "var(--davinci-semantic-focus-ring-width)"
       },
       boxShadow: {
         none: "var(--davinci-semantic-shadow-none)",

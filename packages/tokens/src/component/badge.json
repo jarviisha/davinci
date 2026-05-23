@@ -11,7 +11,7 @@
       },
       "radius": {
         "$type": "dimension",
-        "$value": "{radius.pill}"
+        "$value": "{semantic.radius.pill}"
       },
       "fontWeight": {
         "$type": "fontWeight",
@@ -37,9 +37,9 @@
         "foreground": { "$type": "color", "$value": "{semantic.color.warningForeground}" },
         "border": { "$type": "color", "$value": "transparent" }
       },
-      "destructive": {
-        "background": { "$type": "color", "$value": "{semantic.color.destructive}" },
-        "foreground": { "$type": "color", "$value": "{semantic.color.destructiveForeground}" },
+      "danger": {
+        "background": { "$type": "color", "$value": "{semantic.color.danger}" },
+        "foreground": { "$type": "color", "$value": "{semantic.color.dangerForeground}" },
         "border": { "$type": "color", "$value": "transparent" }
       },
       "discovery": {

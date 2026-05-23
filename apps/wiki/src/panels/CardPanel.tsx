@@ -24,11 +24,11 @@ export function CardPanel() {
     <Stack gap="300">
       <PanelSection
         title="Variants"
-        description="Surface treatments — surface, outlined, filled, flat, floating."
+        description="Surface treatments — default, outlined, filled, flat, floating."
       >
         <Inline gap="200" wrap>
-          <Card variant="surface">
-            <CardContent>Surface</CardContent>
+          <Card variant="default">
+            <CardContent>Default</CardContent>
           </Card>
           <Card variant="outlined">
             <CardContent>Outlined</CardContent>
@@ -92,7 +92,7 @@ export function CardPanel() {
         }
       >
         <Inline gap="200" wrap>
-          <Card interactive tabIndex={0} variant="surface">
+          <Card interactive tabIndex={0} variant="default">
             <CardContent>Hover or focus</CardContent>
           </Card>
           <Card interactive tabIndex={0} variant="outlined">
@@ -125,7 +125,7 @@ export function CardPanel() {
         title="Composition"
         description="CardHeader, CardTitle, CardDescription, CardContent, and CardFooter sub-parts."
       >
-        <Card variant="surface">
+        <Card variant="default">
           <CardHeader>
             <CardTitle>Project Phoenix</CardTitle>
             <CardDescription>Cross-team initiative tracker.</CardDescription>

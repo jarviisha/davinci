@@ -23,6 +23,7 @@ Monorepo scaffold for a three-layer design token system:
 ```txt
 apps/
   playground/
+  wiki/
 packages/
   tokens/
   token-builder/
@@ -195,7 +196,7 @@ Then use components directly:
 import { Button } from "@jarviisha/davinci-react-ui";
 
 export function Example() {
-  return <Button variant="primary">Save</Button>;
+  return <Button tone="primary">Save</Button>;
 }
 ```
 

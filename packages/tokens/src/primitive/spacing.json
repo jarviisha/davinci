@@ -13,12 +13,6 @@
     "500": { "$type": "dimension", "$value": "2.5rem" },
     "600": { "$type": "dimension", "$value": "3rem" },
     "800": { "$type": "dimension", "$value": "4rem" },
-    "1000": { "$type": "dimension", "$value": "5rem" },
-    "1": { "$type": "dimension", "$value": "{spacing.050}" },
-    "2": { "$type": "dimension", "$value": "{spacing.100}" },
-    "3": { "$type": "dimension", "$value": "{spacing.150}" },
-    "4": { "$type": "dimension", "$value": "{spacing.200}" },
-    "6": { "$type": "dimension", "$value": "{spacing.300}" },
-    "8": { "$type": "dimension", "$value": "{spacing.400}" }
+    "1000": { "$type": "dimension", "$value": "5rem" }
   }
 }

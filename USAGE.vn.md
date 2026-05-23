@@ -264,7 +264,7 @@ function Root() {
 
 function SaveButton() {
   const toast = useToast();
-  return <Button onClick={() => toast.show({ title: "Đã lưu" })}>Lưu</Button>;
+  return <Button onClick={() => toast.success("Đã lưu")}>Lưu</Button>;
 }
 ```
 
@@ -332,3 +332,37 @@ Changelog xem ở GitHub Release của repo, hoặc file `CHANGELOG.md` trong t�
 ### `peer dependency` warning với react
 
 - React UI yêu cầu React 18.3.1+ hoặc 19. Nếu dự án dùng React 18.2 trở xuống thì nâng lên.
+
+---
+
+## Migration: token naming consistency (major bump)
+
+Bản major này thống nhất từ vựng giữa 3 lớp token và sửa nợ kiến trúc. Áp dụng bảng find-replace dưới đây cho codebase của bạn.
+
+### Search & replace
+
+| Cũ | Mới | Lý do |
+| --- | --- | --- |
+| `destructive` (token / class / prop / Tailwind utility) | `danger` | Thống nhất role màu đỏ — trước đây split giữa `destructive`, `danger`, `error` |
+| `toast.error(` | `toast.danger(` | API `useToast` đổi tên cho đồng nhất |
+| `<Toast variant="error">` | `<Toast variant="danger">` | Như trên |
+| `<Badge variant="destructive">` | `<Badge variant="danger">` | Như trên |
+| `<Card variant="surface">` | `<Card variant="default">` | `surface` trùng với semantic color role; `default` cũng là giá trị mặc định khi không truyền prop |
+| `--davinci-focus-ring-color` | `--davinci-semantic-focus-ring-color` | Focus chuyển từ primitive sang semantic (đồng thời `-width`, `-offset`, `-style`) |
+| `--davinci-radius-control` | `--davinci-semantic-radius-control` | Alias semantic của radius chuyển khỏi primitive (đồng thời `-card`, `-panel`, `-pill`) |
+| `--davinci-component-card-surface-*` | `--davinci-component-card-default-*` | Đổi tên Card variant |
+| `--davinci-spacing-1` / `-2` / `-3` / `-4` / `-6` / `-8` | `--davinci-spacing-050` / `-100` / `-150` / `-200` / `-300` / `-400` | Bỏ alias rút gọn theo số; dùng numeric scale rõ ràng |
+
+### Tailwind utilities (preset đã re-wire)
+
+- `bg-destructive`, `text-destructive`, `border-destructive`, `bg-destructive-hovered`, `bg-destructive-pressed`, `text-destructive-foreground` → đổi `destructive` thành `danger`.
+- `rounded-control`, `rounded-card`, `rounded-panel`, `rounded-pill` — **không cần đổi**; preset tự re-wire sang CSS var mới.
+
+### No-op cho đa số người dùng
+
+Nếu bạn chỉ dùng Tailwind utility theo doc và React component, không tự viết `variant="destructive"`/`variant="surface"` và không tham chiếu trực tiếp `--davinci-focus-ring-*` hay `--davinci-radius-control`, chỉ cần bump phiên bản package.
+
+### Token mới đáng chú ý
+
+- `component.appShell.*` và `component.detailLayout.*` — kích thước layout đã được tokenize; override ở `:root` để tùy chỉnh độ rộng sidebar/aside.
+- `component.card.toneInfo/toneSuccess/toneWarning/toneDanger` — background và border của Card tone đã là token cấp 1; override theo theme để tinh chỉnh độ đậm.

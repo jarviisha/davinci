@@ -97,8 +97,8 @@
 }
 
 .davinci-button:focus-visible {
-  outline: var(--davinci-focus-ring-width) var(--davinci-focus-ring-style) var(--davinci-focus-ring-color);
-  outline-offset: var(--davinci-focus-ring-offset);
+  outline: var(--davinci-semantic-focus-ring-width) var(--davinci-semantic-focus-ring-style) var(--davinci-semantic-focus-ring-color);
+  outline-offset: var(--davinci-semantic-focus-ring-offset);
 }
 
 .davinci-button:disabled {
@@ -170,19 +170,19 @@
 }
 
 .davinci-button--solid.davinci-button--tone-danger {
-  background: var(--davinci-semantic-color-destructive);
-  border-color: var(--davinci-semantic-color-destructive);
-  color: var(--davinci-semantic-color-destructive-foreground);
+  background: var(--davinci-semantic-color-danger);
+  border-color: var(--davinci-semantic-color-danger);
+  color: var(--davinci-semantic-color-danger-foreground);
 }
 
 .davinci-button--solid.davinci-button--tone-danger:hover:not(:disabled) {
-  background: var(--davinci-semantic-color-destructive-hovered);
-  border-color: var(--davinci-semantic-color-destructive-hovered);
+  background: var(--davinci-semantic-color-danger-hovered);
+  border-color: var(--davinci-semantic-color-danger-hovered);
 }
 
 .davinci-button--solid.davinci-button--tone-danger:active:not(:disabled) {
-  background: var(--davinci-semantic-color-destructive-pressed);
-  border-color: var(--davinci-semantic-color-destructive-pressed);
+  background: var(--davinci-semantic-color-danger-pressed);
+  border-color: var(--davinci-semantic-color-danger-pressed);
 }
 
 .davinci-button--outline {
@@ -200,8 +200,8 @@
 }
 
 .davinci-button--outline.davinci-button--tone-danger {
-  border-color: var(--davinci-semantic-color-destructive);
-  color: var(--davinci-semantic-color-destructive);
+  border-color: var(--davinci-semantic-color-danger);
+  color: var(--davinci-semantic-color-danger);
 }
 
 .davinci-button--outline:hover:not(:disabled) {
@@ -226,7 +226,7 @@
 }
 
 .davinci-button--ghost.davinci-button--tone-danger {
-  color: var(--davinci-semantic-color-destructive);
+  color: var(--davinci-semantic-color-danger);
 }
 
 .davinci-button--ghost:hover:not(:disabled) {
@@ -252,8 +252,8 @@
 }
 
 .davinci-button--soft.davinci-button--tone-danger {
-  background: color-mix(in srgb, var(--davinci-semantic-color-destructive) 12%, var(--davinci-semantic-color-background));
-  color: var(--davinci-semantic-color-destructive);
+  background: color-mix(in srgb, var(--davinci-semantic-color-danger) 12%, var(--davinci-semantic-color-background));
+  color: var(--davinci-semantic-color-danger);
 }
 
 .davinci-button--soft:hover:not(:disabled) {
@@ -291,12 +291,12 @@
 
 .davinci-input:focus-visible,
 .davinci-textarea:focus-visible {
-  outline: var(--davinci-focus-ring-width) var(--davinci-focus-ring-style) var(--davinci-focus-ring-color);
+  outline: var(--davinci-semantic-focus-ring-width) var(--davinci-semantic-focus-ring-style) var(--davinci-semantic-focus-ring-color);
   outline-offset: 0;
 }
 
 .davinci-select:focus {
-  outline: var(--davinci-focus-ring-width) var(--davinci-focus-ring-style) var(--davinci-focus-ring-color);
+  outline: var(--davinci-semantic-focus-ring-width) var(--davinci-semantic-focus-ring-style) var(--davinci-semantic-focus-ring-color);
   outline-offset: 0;
 }
 
@@ -355,7 +355,7 @@
 }
 
 .davinci-search-input:focus-within {
-  outline: var(--davinci-focus-ring-width) var(--davinci-focus-ring-style) var(--davinci-focus-ring-color);
+  outline: var(--davinci-semantic-focus-ring-width) var(--davinci-semantic-focus-ring-style) var(--davinci-semantic-focus-ring-color);
   outline-offset: 0;
 }
 
@@ -459,7 +459,7 @@
 }
 
 .davinci-combobox__input:focus {
-  outline: var(--davinci-focus-ring-width) var(--davinci-focus-ring-style) var(--davinci-focus-ring-color);
+  outline: var(--davinci-semantic-focus-ring-width) var(--davinci-semantic-focus-ring-style) var(--davinci-semantic-focus-ring-color);
   outline-offset: 0;
 }
 
@@ -473,8 +473,8 @@
 }
 
 .davinci-combobox__listbox {
-  background: var(--davinci-component-card-surface-background);
-  border: 1px solid var(--davinci-component-card-surface-border);
+  background: var(--davinci-component-card-default-background);
+  border: 1px solid var(--davinci-component-card-default-border);
   border-radius: var(--davinci-radius-md);
   box-shadow: var(--davinci-semantic-shadow-overlay);
   display: flex;
@@ -565,10 +565,10 @@
   padding: var(--davinci-component-card-padding);
 }
 
-.davinci-card--surface {
-  background: var(--davinci-component-card-surface-background);
-  border-color: var(--davinci-component-card-surface-border);
-  box-shadow: var(--davinci-component-card-surface-shadow);
+.davinci-card--default {
+  background: var(--davinci-component-card-default-background);
+  border-color: var(--davinci-component-card-default-border);
+  box-shadow: var(--davinci-component-card-default-shadow);
 }
 
 .davinci-card--outlined {
@@ -608,27 +608,23 @@
 }
 
 .davinci-card--tone-info {
-  --davinci-card-accent: var(--davinci-semantic-color-info);
+  background: var(--davinci-component-card-tone-info-background);
+  border-color: var(--davinci-component-card-tone-info-border);
 }
 
 .davinci-card--tone-success {
-  --davinci-card-accent: var(--davinci-semantic-color-success);
+  background: var(--davinci-component-card-tone-success-background);
+  border-color: var(--davinci-component-card-tone-success-border);
 }
 
 .davinci-card--tone-warning {
-  --davinci-card-accent: var(--davinci-semantic-color-warning);
+  background: var(--davinci-component-card-tone-warning-background);
+  border-color: var(--davinci-component-card-tone-warning-border);
 }
 
 .davinci-card--tone-danger {
-  --davinci-card-accent: var(--davinci-semantic-color-destructive);
-}
-
-.davinci-card--tone-info,
-.davinci-card--tone-success,
-.davinci-card--tone-warning,
-.davinci-card--tone-danger {
-  background: color-mix(in srgb, var(--davinci-card-accent) 8%, var(--davinci-semantic-color-background));
-  border-color: color-mix(in srgb, var(--davinci-card-accent) 30%, var(--davinci-semantic-color-border));
+  background: var(--davinci-component-card-tone-danger-background);
+  border-color: var(--davinci-component-card-tone-danger-border);
 }
 
 .davinci-card--interactive {
@@ -640,12 +636,24 @@
   background: var(--davinci-semantic-color-background-hovered);
 }
 
-.davinci-card--interactive.davinci-card--tone-info:hover,
-.davinci-card--interactive.davinci-card--tone-success:hover,
-.davinci-card--interactive.davinci-card--tone-warning:hover,
+.davinci-card--interactive.davinci-card--tone-info:hover {
+  background: var(--davinci-component-card-tone-info-background-hovered);
+  border-color: var(--davinci-component-card-tone-info-border-hovered);
+}
+
+.davinci-card--interactive.davinci-card--tone-success:hover {
+  background: var(--davinci-component-card-tone-success-background-hovered);
+  border-color: var(--davinci-component-card-tone-success-border-hovered);
+}
+
+.davinci-card--interactive.davinci-card--tone-warning:hover {
+  background: var(--davinci-component-card-tone-warning-background-hovered);
+  border-color: var(--davinci-component-card-tone-warning-border-hovered);
+}
+
 .davinci-card--interactive.davinci-card--tone-danger:hover {
-  background: color-mix(in srgb, var(--davinci-card-accent) 12%, var(--davinci-semantic-color-background-hovered));
-  border-color: color-mix(in srgb, var(--davinci-card-accent) 38%, var(--davinci-semantic-color-border-hovered));
+  background: var(--davinci-component-card-tone-danger-background-hovered);
+  border-color: var(--davinci-component-card-tone-danger-border-hovered);
 }
 
 .davinci-card--interactive.davinci-card--floating:hover {
@@ -658,13 +666,13 @@
 }
 
 .davinci-card--selected {
-  background: color-mix(in srgb, var(--davinci-semantic-color-primary) 8%, var(--davinci-semantic-color-background));
-  border-color: var(--davinci-semantic-color-border-focused);
+  background: var(--davinci-component-card-selected-background);
+  border-color: var(--davinci-component-card-selected-border);
 }
 
 .davinci-card--interactive.davinci-card--selected:hover {
-  background: color-mix(in srgb, var(--davinci-semantic-color-primary) 12%, var(--davinci-semantic-color-background-hovered));
-  border-color: var(--davinci-semantic-color-border-focused);
+  background: var(--davinci-component-card-selected-background-hovered);
+  border-color: var(--davinci-component-card-selected-border);
 }
 
 .davinci-card__header,
@@ -733,10 +741,10 @@
   color: var(--davinci-component-badge-warning-foreground);
 }
 
-.davinci-badge--destructive {
-  background: var(--davinci-component-badge-destructive-background);
-  border-color: var(--davinci-component-badge-destructive-border);
-  color: var(--davinci-component-badge-destructive-foreground);
+.davinci-badge--danger {
+  background: var(--davinci-component-badge-danger-background);
+  border-color: var(--davinci-component-badge-danger-border);
+  color: var(--davinci-component-badge-danger-foreground);
 }
 
 .davinci-badge--discovery {
@@ -922,7 +930,7 @@
 }
 
 .davinci-alert--danger {
-  --davinci-alert-accent: var(--davinci-semantic-color-destructive);
+  --davinci-alert-accent: var(--davinci-semantic-color-danger);
 }
 
 .davinci-alert__icon {
@@ -995,8 +1003,8 @@
 }
 
 .davinci-breadcrumbs__link:focus-visible {
-  outline: var(--davinci-focus-ring-width) var(--davinci-focus-ring-style) var(--davinci-focus-ring-color);
-  outline-offset: var(--davinci-focus-ring-offset);
+  outline: var(--davinci-semantic-focus-ring-width) var(--davinci-semantic-focus-ring-style) var(--davinci-semantic-focus-ring-color);
+  outline-offset: var(--davinci-semantic-focus-ring-offset);
 }
 
 .davinci-breadcrumbs__current {
@@ -1055,8 +1063,8 @@
 }
 
 .davinci-pagination__button:focus-visible {
-  outline: var(--davinci-focus-ring-width) var(--davinci-focus-ring-style) var(--davinci-focus-ring-color);
-  outline-offset: var(--davinci-focus-ring-offset);
+  outline: var(--davinci-semantic-focus-ring-width) var(--davinci-semantic-focus-ring-style) var(--davinci-semantic-focus-ring-color);
+  outline-offset: var(--davinci-semantic-focus-ring-offset);
 }
 
 .davinci-pagination__button[aria-current="page"] {
@@ -1089,7 +1097,7 @@
   grid-template-areas:
     "sidebar header"
     "sidebar main";
-  grid-template-columns: minmax(14rem, 17.5rem) minmax(0, 1fr);
+  grid-template-columns: minmax(var(--davinci-component-app-shell-sidebar-width-min), var(--davinci-component-app-shell-sidebar-width-max)) minmax(0, 1fr);
   grid-template-rows: auto minmax(0, 1fr);
   min-block-size: 100dvh;
 }
@@ -1106,7 +1114,7 @@
   grid-template-areas:
     "sidebar header aside"
     "sidebar main   aside";
-  grid-template-columns: minmax(14rem, 17.5rem) minmax(0, 1fr) minmax(16rem, 22rem);
+  grid-template-columns: minmax(var(--davinci-component-app-shell-sidebar-width-min), var(--davinci-component-app-shell-sidebar-width-max)) minmax(0, 1fr) minmax(var(--davinci-component-app-shell-aside-width-min), var(--davinci-component-app-shell-aside-width-max));
 }
 
 .davinci-app-shell:has(> .davinci-app-shell__top-bar):has(> .davinci-app-shell__aside) {
@@ -1114,7 +1122,7 @@
     "top-bar top-bar top-bar"
     "sidebar header  aside"
     "sidebar main    aside";
-  grid-template-columns: minmax(14rem, 17.5rem) minmax(0, 1fr) minmax(16rem, 22rem);
+  grid-template-columns: minmax(var(--davinci-component-app-shell-sidebar-width-min), var(--davinci-component-app-shell-sidebar-width-max)) minmax(0, 1fr) minmax(var(--davinci-component-app-shell-aside-width-min), var(--davinci-component-app-shell-aside-width-max));
   grid-template-rows: auto auto minmax(0, 1fr);
 }
 
@@ -1123,12 +1131,12 @@
   background: var(--davinci-semantic-color-background);
   border-block-end: 1px solid var(--davinci-semantic-color-border);
   display: flex;
-  gap: var(--davinci-spacing-200);
+  gap: var(--davinci-component-app-shell-top-bar-gap);
   grid-area: top-bar;
   justify-content: space-between;
-  min-block-size: 3.5rem;
+  min-block-size: var(--davinci-component-app-shell-top-bar-min-height);
   min-inline-size: 0;
-  padding: var(--davinci-spacing-150) var(--davinci-spacing-300);
+  padding: var(--davinci-component-app-shell-top-bar-padding-block) var(--davinci-component-app-shell-top-bar-padding-inline);
 }
 
 .davinci-app-shell__sidebar {
@@ -1137,7 +1145,7 @@
   grid-area: sidebar;
   min-inline-size: 0;
   overflow: auto;
-  padding: var(--davinci-spacing-300);
+  padding: var(--davinci-component-app-shell-sidebar-padding);
 }
 
 .davinci-app-shell__header {
@@ -1145,19 +1153,19 @@
   background: var(--davinci-semantic-color-background);
   border-block-end: 1px solid var(--davinci-semantic-color-border);
   display: flex;
-  gap: var(--davinci-spacing-200);
+  gap: var(--davinci-component-app-shell-header-gap);
   grid-area: header;
   justify-content: space-between;
-  min-block-size: 4rem;
+  min-block-size: var(--davinci-component-app-shell-header-min-height);
   min-inline-size: 0;
-  padding: var(--davinci-spacing-200) var(--davinci-spacing-300);
+  padding: var(--davinci-component-app-shell-header-padding-block) var(--davinci-component-app-shell-header-padding-inline);
 }
 
 .davinci-app-shell__main {
   grid-area: main;
   min-inline-size: 0;
   overflow: auto;
-  padding: var(--davinci-spacing-300);
+  padding: var(--davinci-component-app-shell-main-padding);
 }
 
 .davinci-app-shell__aside {
@@ -1166,13 +1174,13 @@
   grid-area: aside;
   min-inline-size: 0;
   overflow: auto;
-  padding: var(--davinci-spacing-300);
+  padding: var(--davinci-component-app-shell-aside-padding);
 }
 
 @media (max-width: 1023px) {
   .davinci-app-shell:has(> .davinci-app-shell__aside):not(:has(> .davinci-app-shell__top-bar)),
   .davinci-app-shell:has(> .davinci-app-shell__aside):has(> .davinci-app-shell__top-bar) {
-    grid-template-columns: minmax(14rem, 17.5rem) minmax(0, 1fr);
+    grid-template-columns: minmax(var(--davinci-component-app-shell-sidebar-width-min), var(--davinci-component-app-shell-sidebar-width-max)) minmax(0, 1fr);
   }
 
   .davinci-app-shell:has(> .davinci-app-shell__aside):not(:has(> .davinci-app-shell__top-bar)) {
@@ -1256,12 +1264,12 @@
 
 .davinci-detail-layout {
   display: grid;
-  gap: var(--davinci-spacing-300);
-  grid-template-columns: minmax(0, 1fr) minmax(14rem, 20rem);
+  gap: var(--davinci-component-detail-layout-gap);
+  grid-template-columns: minmax(0, 1fr) minmax(var(--davinci-component-detail-layout-aside-width-min), var(--davinci-component-detail-layout-aside-width-max));
 }
 
 .davinci-detail-layout--aside-start {
-  grid-template-columns: minmax(14rem, 20rem) minmax(0, 1fr);
+  grid-template-columns: minmax(var(--davinci-component-detail-layout-aside-width-min), var(--davinci-component-detail-layout-aside-width-max)) minmax(0, 1fr);
 }
 
 .davinci-detail-layout__main {
@@ -1285,7 +1293,7 @@
 .davinci-detail-layout--aside-sticky .davinci-detail-layout__aside {
   align-self: start;
   position: sticky;
-  top: var(--davinci-spacing-300);
+  top: var(--davinci-component-detail-layout-sticky-offset);
 }
 
 @media (max-width: 1023px) {
@@ -1458,8 +1466,8 @@
 }
 
 .davinci-checkbox__input:focus-visible ~ .davinci-checkbox__visual {
-  outline: var(--davinci-focus-ring-width) var(--davinci-focus-ring-style) var(--davinci-focus-ring-color);
-  outline-offset: var(--davinci-focus-ring-offset);
+  outline: var(--davinci-semantic-focus-ring-width) var(--davinci-semantic-focus-ring-style) var(--davinci-semantic-focus-ring-color);
+  outline-offset: var(--davinci-semantic-focus-ring-offset);
 }
 
 .davinci-checkbox__input[aria-invalid="true"] ~ .davinci-checkbox__visual {
@@ -1564,8 +1572,8 @@
 }
 
 .davinci-radio__input:focus-visible ~ .davinci-radio__visual {
-  outline: var(--davinci-focus-ring-width) var(--davinci-focus-ring-style) var(--davinci-focus-ring-color);
-  outline-offset: var(--davinci-focus-ring-offset);
+  outline: var(--davinci-semantic-focus-ring-width) var(--davinci-semantic-focus-ring-style) var(--davinci-semantic-focus-ring-color);
+  outline-offset: var(--davinci-semantic-focus-ring-offset);
 }
 
 .davinci-radio__input[aria-invalid="true"] ~ .davinci-radio__visual {
@@ -1676,8 +1684,8 @@
 }
 
 .davinci-switch__input:focus-visible ~ .davinci-switch__track {
-  outline: var(--davinci-focus-ring-width) var(--davinci-focus-ring-style) var(--davinci-focus-ring-color);
-  outline-offset: var(--davinci-focus-ring-offset);
+  outline: var(--davinci-semantic-focus-ring-width) var(--davinci-semantic-focus-ring-style) var(--davinci-semantic-focus-ring-color);
+  outline-offset: var(--davinci-semantic-focus-ring-offset);
 }
 
 .davinci-switch__input:disabled ~ .davinci-switch__track {
@@ -1994,7 +2002,7 @@
 }
 
 .davinci-toast--error {
-  --davinci-toast-accent: var(--davinci-semantic-color-destructive);
+  --davinci-toast-accent: var(--davinci-semantic-color-danger);
 }
 
 .davinci-toast__body {
@@ -2032,8 +2040,8 @@
 }
 
 .davinci-toast__action:focus-visible {
-  outline: var(--davinci-focus-ring-width) var(--davinci-focus-ring-style) var(--davinci-focus-ring-color);
-  outline-offset: var(--davinci-focus-ring-offset);
+  outline: var(--davinci-semantic-focus-ring-width) var(--davinci-semantic-focus-ring-style) var(--davinci-semantic-focus-ring-color);
+  outline-offset: var(--davinci-semantic-focus-ring-offset);
 }
 
 .davinci-toast__close {
@@ -2063,8 +2071,8 @@
 
 .davinci-toast__close:focus-visible {
   opacity: 1;
-  outline: var(--davinci-focus-ring-width) var(--davinci-focus-ring-style) var(--davinci-focus-ring-color);
-  outline-offset: var(--davinci-focus-ring-offset);
+  outline: var(--davinci-semantic-focus-ring-width) var(--davinci-semantic-focus-ring-style) var(--davinci-semantic-focus-ring-color);
+  outline-offset: var(--davinci-semantic-focus-ring-offset);
 }
 
 /* ----- Nav ----- */
@@ -2113,8 +2121,8 @@
 }
 
 .davinci-nav-item:focus-visible {
-  outline: var(--davinci-focus-ring-width) var(--davinci-focus-ring-style) var(--davinci-focus-ring-color);
-  outline-offset: var(--davinci-focus-ring-offset);
+  outline: var(--davinci-semantic-focus-ring-width) var(--davinci-semantic-focus-ring-style) var(--davinci-semantic-focus-ring-color);
+  outline-offset: var(--davinci-semantic-focus-ring-offset);
 }
 
 .davinci-nav-item[aria-current="page"] {
@@ -2183,8 +2191,8 @@
 }
 
 .davinci-nav-group__header:focus-visible {
-  outline: var(--davinci-focus-ring-width) var(--davinci-focus-ring-style) var(--davinci-focus-ring-color);
-  outline-offset: var(--davinci-focus-ring-offset);
+  outline: var(--davinci-semantic-focus-ring-width) var(--davinci-semantic-focus-ring-style) var(--davinci-semantic-focus-ring-color);
+  outline-offset: var(--davinci-semantic-focus-ring-offset);
 }
 
 .davinci-nav-group__label {
@@ -2336,8 +2344,8 @@
 }
 
 .davinci-tabs__trigger:focus-visible {
-  outline: var(--davinci-focus-ring-width) var(--davinci-focus-ring-style) var(--davinci-focus-ring-color);
-  outline-offset: calc(-1 * var(--davinci-focus-ring-width));
+  outline: var(--davinci-semantic-focus-ring-width) var(--davinci-semantic-focus-ring-style) var(--davinci-semantic-focus-ring-color);
+  outline-offset: calc(-1 * var(--davinci-semantic-focus-ring-width));
 }
 
 .davinci-tabs__trigger[aria-selected="true"] {
@@ -2351,8 +2359,8 @@
 }
 
 .davinci-tabs__content:focus-visible {
-  outline: var(--davinci-focus-ring-width) var(--davinci-focus-ring-style) var(--davinci-focus-ring-color);
-  outline-offset: var(--davinci-focus-ring-offset);
+  outline: var(--davinci-semantic-focus-ring-width) var(--davinci-semantic-focus-ring-style) var(--davinci-semantic-focus-ring-color);
+  outline-offset: var(--davinci-semantic-focus-ring-offset);
 }
 
 .davinci-tabs__content[hidden] {
@@ -2372,8 +2380,8 @@
 }
 
 .davinci-dropdown-menu__content {
-  background: var(--davinci-component-card-surface-background);
-  border: 1px solid var(--davinci-component-card-surface-border);
+  background: var(--davinci-component-card-default-background);
+  border: 1px solid var(--davinci-component-card-default-border);
   border-radius: var(--davinci-radius-md);
   box-shadow: var(--davinci-semantic-shadow-overlay);
   color: var(--davinci-semantic-color-foreground);
@@ -2438,8 +2446,8 @@
 /* ----- Popover ----- */
 
 .davinci-popover {
-  background: var(--davinci-component-card-surface-background);
-  border: 1px solid var(--davinci-component-card-surface-border);
+  background: var(--davinci-component-card-default-background);
+  border: 1px solid var(--davinci-component-card-default-border);
   border-radius: var(--davinci-radius-lg);
   box-shadow: var(--davinci-semantic-shadow-overlay);
   color: var(--davinci-semantic-color-foreground);

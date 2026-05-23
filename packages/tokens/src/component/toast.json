@@ -10,7 +10,7 @@
         "gap": { "$type": "dimension", "$value": "{spacing.150}" },
         "padding": { "$type": "dimension", "$value": "{spacing.300}" }
       },
-      "zIndex": { "$type": "number", "$value": "1100" },
+      "zIndex": { "$type": "number", "$value": 1100 },
       "info": {
         "background": { "$type": "color", "$value": "{semantic.color.surfaceRaised}" },
         "foreground": { "$type": "color", "$value": "{semantic.color.foreground}" },
@@ -29,11 +29,11 @@
         "border": { "$type": "color", "$value": "{semantic.color.border}" },
         "accent": { "$type": "color", "$value": "{semantic.color.warning}" }
       },
-      "error": {
+      "danger": {
         "background": { "$type": "color", "$value": "{semantic.color.surfaceRaised}" },
         "foreground": { "$type": "color", "$value": "{semantic.color.foreground}" },
         "border": { "$type": "color", "$value": "{semantic.color.border}" },
-        "accent": { "$type": "color", "$value": "{semantic.color.destructive}" }
+        "accent": { "$type": "color", "$value": "{semantic.color.danger}" }
       }
     }
   }

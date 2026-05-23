@@ -1,7 +1,7 @@
 import { forwardRef, type HTMLAttributes } from "react";
 import { cn } from "./utils.js";
 
-export type CardVariant = "surface" | "outlined" | "filled" | "flat" | "floating";
+export type CardVariant = "default" | "outlined" | "filled" | "flat" | "floating";
 export type CardOutlineWeight = "subtle" | "default" | "bold";
 export type CardTone = "neutral" | "info" | "success" | "warning" | "danger";
 
@@ -14,7 +14,7 @@ export type CardProps = HTMLAttributes<HTMLDivElement> & {
 };
 
 const variantClass: Record<CardVariant, string> = {
-  surface: "davinci-card--surface",
+  default: "davinci-card--default",
   outlined: "davinci-card--outlined",
   filled: "davinci-card--filled",
   flat: "davinci-card--flat",
@@ -42,7 +42,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(function Card(
     outlineWeight = "default",
     selected = false,
     tone = "neutral",
-    variant = "surface",
+    variant = "default",
     ...props
   },
   ref

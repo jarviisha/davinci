@@ -3,7 +3,7 @@
     "card": {
       "radius": {
         "$type": "dimension",
-        "$value": "{radius.card}"
+        "$value": "{semantic.radius.card}"
       },
       "padding": {
         "$type": "dimension",
@@ -17,7 +17,7 @@
         "$type": "color",
         "$value": "{semantic.color.foreground}"
       },
-      "surface": {
+      "default": {
         "background": { "$type": "color", "$value": "{semantic.color.surfaceRaised}" },
         "border": { "$type": "color", "$value": "{semantic.color.border}" },
         "shadow": { "$type": "shadow", "$value": "{semantic.shadow.none}" }
@@ -37,6 +37,35 @@
         "background": { "$type": "color", "$value": "{semantic.color.surfaceRaised}" },
         "border": { "$type": "color", "$value": "{semantic.color.border}" },
         "shadow": { "$type": "shadow", "$value": "{semantic.shadow.raised}" }
+      },
+      "toneInfo": {
+        "background": { "$type": "color", "$value": "color-mix(in srgb, {semantic.color.info} 8%, {semantic.color.background})" },
+        "border": { "$type": "color", "$value": "color-mix(in srgb, {semantic.color.info} 30%, {semantic.color.border})" },
+        "backgroundHovered": { "$type": "color", "$value": "color-mix(in srgb, {semantic.color.info} 12%, {semantic.color.backgroundHovered})" },
+        "borderHovered": { "$type": "color", "$value": "color-mix(in srgb, {semantic.color.info} 38%, {semantic.color.borderHovered})" }
+      },
+      "toneSuccess": {
+        "background": { "$type": "color", "$value": "color-mix(in srgb, {semantic.color.success} 8%, {semantic.color.background})" },
+        "border": { "$type": "color", "$value": "color-mix(in srgb, {semantic.color.success} 30%, {semantic.color.border})" },
+        "backgroundHovered": { "$type": "color", "$value": "color-mix(in srgb, {semantic.color.success} 12%, {semantic.color.backgroundHovered})" },
+        "borderHovered": { "$type": "color", "$value": "color-mix(in srgb, {semantic.color.success} 38%, {semantic.color.borderHovered})" }
+      },
+      "toneWarning": {
+        "background": { "$type": "color", "$value": "color-mix(in srgb, {semantic.color.warning} 8%, {semantic.color.background})" },
+        "border": { "$type": "color", "$value": "color-mix(in srgb, {semantic.color.warning} 30%, {semantic.color.border})" },
+        "backgroundHovered": { "$type": "color", "$value": "color-mix(in srgb, {semantic.color.warning} 12%, {semantic.color.backgroundHovered})" },
+        "borderHovered": { "$type": "color", "$value": "color-mix(in srgb, {semantic.color.warning} 38%, {semantic.color.borderHovered})" }
+      },
+      "toneDanger": {
+        "background": { "$type": "color", "$value": "color-mix(in srgb, {semantic.color.danger} 8%, {semantic.color.background})" },
+        "border": { "$type": "color", "$value": "color-mix(in srgb, {semantic.color.danger} 30%, {semantic.color.border})" },
+        "backgroundHovered": { "$type": "color", "$value": "color-mix(in srgb, {semantic.color.danger} 12%, {semantic.color.backgroundHovered})" },
+        "borderHovered": { "$type": "color", "$value": "color-mix(in srgb, {semantic.color.danger} 38%, {semantic.color.borderHovered})" }
+      },
+      "selected": {
+        "background": { "$type": "color", "$value": "color-mix(in srgb, {semantic.color.primary} 8%, {semantic.color.background})" },
+        "border": { "$type": "color", "$value": "{semantic.color.borderFocused}" },
+        "backgroundHovered": { "$type": "color", "$value": "color-mix(in srgb, {semantic.color.primary} 12%, {semantic.color.backgroundHovered})" }
       }
     }
   }
