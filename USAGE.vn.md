@@ -335,9 +335,9 @@ Changelog xem ở GitHub Release của repo, hoặc file `CHANGELOG.md` trong t�
 
 ---
 
-## Migration: token naming consistency (major bump)
+## Migration: token naming consistency (minor bump khi vẫn ở 0.x, có breaking)
 
-Bản major này thống nhất từ vựng giữa 3 lớp token và sửa nợ kiến trúc. Áp dụng bảng find-replace dưới đây cho codebase của bạn.
+Bản này thống nhất từ vựng giữa 3 lớp token và sửa nợ kiến trúc. Vì các package còn pre-1.0, breaking change được phát hành dưới dạng minor bump theo quy ước semver. Áp dụng bảng find-replace dưới đây cho codebase của bạn.
 
 ### Search & replace
 

@@ -335,9 +335,9 @@ The changelog lives in each package's GitHub Release, or in the `CHANGELOG.md` f
 
 ---
 
-## Migration: token naming consistency (major bump)
+## Migration: token naming consistency (0.x minor with breaking renames)
 
-This major release consolidates vocabulary across the three layers and fixes architectural debt. Run the find-replace table below across your codebase.
+This release consolidates vocabulary across the three layers and fixes architectural debt. While the packages are still pre-1.0, breaking changes ship as a minor bump per semver. Run the find-replace table below across your codebase.
 
 ### Search & replace
 

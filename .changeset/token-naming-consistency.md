@@ -1,7 +1,7 @@
 ---
-"@jarviisha/davinci-tokens": major
-"@jarviisha/davinci-tailwind-preset": major
-"@jarviisha/davinci-react-ui": major
+"@jarviisha/davinci-tokens": minor
+"@jarviisha/davinci-tailwind-preset": minor
+"@jarviisha/davinci-react-ui": minor
 ---
 
 Token naming consistency refactor: align vocabulary, fix layer responsibilities, and tokenize values that were previously hardcoded in CSS.
