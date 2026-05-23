@@ -30,7 +30,7 @@
         "shadow": { "$type": "shadow", "$value": "{semantic.shadow.none}" }
       },
       "filled": {
-        "background": { "$type": "color", "$value": "{semantic.color.surface}" },
+        "background": { "$type": "color", "$value": "{semantic.color.backgroundSubtle}" },
         "shadow": { "$type": "shadow", "$value": "{semantic.shadow.none}" }
       },
       "floating": {
