@@ -32,13 +32,13 @@ export function TypographyPanel() {
               className="grid gap-2 border-b border-border pb-(--davinci-spacing-200) last:border-b-0 last:pb-0"
               key={sample.token}
             >
-              <span className="font-medium text-text-muted" style={typographyStyle("label")}>
+              <span className="font-medium text-foreground-subtlest" style={typographyStyle("label")}>
                 {sample.label}
               </span>
               <p className={sample.role === "code" ? "font-mono" : undefined} style={typographyStyle(sample.role)}>
                 The quick brown fox jumps over the lazy dog.
               </p>
-              <span className="font-mono text-text-subtle" style={typographyStyle("code")}>
+              <span className="font-mono text-foreground-subtle" style={typographyStyle("code")}>
                 {sample.token}
               </span>
             </div>

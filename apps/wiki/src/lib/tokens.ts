@@ -33,8 +33,8 @@ export const paletteGroups: PaletteGroup[] = [
   { label: "Lime", prefix: "color.lime." },
   { label: "Neutral", prefix: "color.neutral." },
   { label: "Neutral Alpha", prefix: "color.neutralAlpha." },
-  { label: "Dark Neutral", prefix: "color.darkNeutral." },
-  { label: "Dark Neutral Alpha", prefix: "color.darkNeutralAlpha." }
+  { label: "Neutral Dark", prefix: "color.neutralDark." },
+  { label: "Neutral Dark Alpha", prefix: "color.neutralDarkAlpha." }
 ];
 
 export const semanticPreviews: SemanticPreview[] = [
@@ -63,9 +63,13 @@ export const semanticPreviews: SemanticPreview[] = [
   {
     label: "Disabled",
     token: "--davinci-semantic-color-background-disabled",
-    foreground: "--davinci-semantic-color-text-disabled"
+    foreground: "--davinci-semantic-color-foreground-disabled"
   },
-  { label: "Muted", token: "--davinci-semantic-color-muted", foreground: "--davinci-semantic-color-foreground" },
+  {
+    label: "Background subtle",
+    token: "--davinci-semantic-color-background-subtle",
+    foreground: "--davinci-semantic-color-foreground"
+  },
   { label: "Primary", token: "--davinci-semantic-color-primary", foreground: "--davinci-semantic-color-primary-foreground" },
   {
     label: "Primary hovered",
@@ -95,9 +99,9 @@ export const semanticPreviews: SemanticPreview[] = [
   { label: "Success", token: "--davinci-semantic-color-success", foreground: "--davinci-semantic-color-success-foreground" },
   { label: "Warning", token: "--davinci-semantic-color-warning", foreground: "--davinci-semantic-color-warning-foreground" },
   {
-    label: "Information",
-    token: "--davinci-semantic-color-information",
-    foreground: "--davinci-semantic-color-information-foreground"
+    label: "Info",
+    token: "--davinci-semantic-color-info",
+    foreground: "--davinci-semantic-color-info-foreground"
   },
   { label: "Discovery", token: "--davinci-semantic-color-discovery", foreground: "--davinci-semantic-color-discovery-foreground" }
 ];

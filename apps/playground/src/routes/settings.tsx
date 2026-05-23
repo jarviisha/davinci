@@ -82,7 +82,7 @@ export default function SettingsRoute() {
                   label={
                     <span className="flex flex-col">
                       <span className="text-sm font-medium">{option.label}</span>
-                      <span className="text-xs text-text-subtle">{option.hint}</span>
+                      <span className="text-xs text-foreground-subtle">{option.hint}</span>
                     </span>
                   }
                   value={option.value}

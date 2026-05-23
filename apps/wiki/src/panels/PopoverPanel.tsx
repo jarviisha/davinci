@@ -49,7 +49,7 @@ export function PopoverPanel() {
         >
           <Stack gap="100" style={{ minWidth: "14rem" }}>
             <strong>Density</strong>
-            <span style={{ color: "var(--davinci-semantic-color-text-subtle)", fontSize: "0.875rem" }}>
+            <span style={{ color: "var(--davinci-semantic-color-foreground-subtle)", fontSize: "0.875rem" }}>
               Compact table layout is enabled for this workspace.
             </span>
           </Stack>

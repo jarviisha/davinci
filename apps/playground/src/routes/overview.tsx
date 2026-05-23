@@ -44,7 +44,7 @@ export default function OverviewRoute() {
                     className="w-full rounded-t-md bg-primary"
                     style={{ height: `${Math.max(18, (value / 112) * 100)}%` }}
                   />
-                  <span className="text-[0.7rem] text-text-muted">{index + 1}</span>
+                  <span className="text-[0.7rem] text-foreground-subtlest">{index + 1}</span>
                 </div>
               ))}
             </div>
@@ -63,7 +63,7 @@ export default function OverviewRoute() {
                   <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-primary" />
                   <div className="min-w-0">
                     <p className="m-0 text-sm font-medium">{item.title}</p>
-                    <p className="m-0 mt-1 text-xs text-text-subtle">{item.time}</p>
+                    <p className="m-0 mt-1 text-xs text-foreground-subtle">{item.time}</p>
                   </div>
                   <Badge className="ml-auto" variant={item.status}>
                     {item.status}
@@ -83,7 +83,7 @@ function MetricCard({ delta, label, tone, value }: Metric) {
     <Card variant="surface">
       <CardContent>
         <Inline align="center" justify="between">
-          <span className="text-sm font-medium text-text-subtle">{label}</span>
+          <span className="text-sm font-medium text-foreground-subtle">{label}</span>
           <Badge variant={tone}>{delta}</Badge>
         </Inline>
         <strong className="text-2xl font-semibold tracking-normal">{value}</strong>

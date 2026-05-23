@@ -17,7 +17,7 @@ export function PanelHeader({ label, description, resolvedTheme }: PanelHeaderPr
         </div>
         <Badge variant={resolvedTheme === "dark" ? "discovery" : "primary"}>{resolvedTheme}</Badge>
       </div>
-      <p className="mt-3 max-w-2xl text-sm leading-6 text-text-subtle">{description}</p>
+      <p className="mt-3 max-w-2xl text-sm leading-6 text-foreground-subtle">{description}</p>
     </header>
   );
 }

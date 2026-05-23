@@ -26,7 +26,7 @@
         "background": { "$type": "color", "$value": "transparent" },
         "borderSubtle": { "$type": "color", "$value": "{semantic.color.border}" },
         "border": { "$type": "color", "$value": "{semantic.color.borderBold}" },
-        "borderBold": { "$type": "color", "$value": "{semantic.color.borderStrong}" },
+        "borderBold": { "$type": "color", "$value": "{semantic.color.borderBoldest}" },
         "shadow": { "$type": "shadow", "$value": "{semantic.shadow.none}" }
       },
       "filled": {

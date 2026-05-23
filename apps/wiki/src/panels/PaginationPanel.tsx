@@ -17,7 +17,7 @@ export function PaginationPanel() {
     <PanelSection title="Pagination" description={paginationPanelMeta.description}>
       <Stack gap="200">
         <Pagination onPageChange={setPage} page={page} pageCount={18} />
-        <span style={{ color: "var(--davinci-semantic-color-text-subtle)", fontSize: "0.875rem" }}>
+        <span style={{ color: "var(--davinci-semantic-color-foreground-subtle)", fontSize: "0.875rem" }}>
           Showing page {page} of 18
         </span>
       </Stack>

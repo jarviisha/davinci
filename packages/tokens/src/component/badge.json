@@ -18,7 +18,7 @@
         "$value": "{font.weight.medium}"
       },
       "neutral": {
-        "background": { "$type": "color", "$value": "{semantic.color.muted}" },
+        "background": { "$type": "color", "$value": "{semantic.color.backgroundSubtle}" },
         "foreground": { "$type": "color", "$value": "{semantic.color.foreground}" },
         "border": { "$type": "color", "$value": "transparent" }
       },

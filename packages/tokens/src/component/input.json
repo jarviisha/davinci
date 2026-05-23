@@ -48,12 +48,12 @@
       },
       "placeholder": {
         "$type": "color",
-        "$value": "{semantic.color.textMuted}"
+        "$value": "{semantic.color.foregroundSubtlest}"
       },
       "disabled": {
         "background": { "$type": "color", "$value": "{semantic.color.backgroundDisabled}" },
         "border": { "$type": "color", "$value": "{semantic.color.borderDisabled}" },
-        "foreground": { "$type": "color", "$value": "{semantic.color.textDisabled}" }
+        "foreground": { "$type": "color", "$value": "{semantic.color.foregroundDisabled}" }
       }
     }
   }

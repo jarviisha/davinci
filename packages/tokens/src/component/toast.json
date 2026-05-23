@@ -15,7 +15,7 @@
         "background": { "$type": "color", "$value": "{semantic.color.surfaceRaised}" },
         "foreground": { "$type": "color", "$value": "{semantic.color.foreground}" },
         "border": { "$type": "color", "$value": "{semantic.color.border}" },
-        "accent": { "$type": "color", "$value": "{semantic.color.information}" }
+        "accent": { "$type": "color", "$value": "{semantic.color.info}" }
       },
       "success": {
         "background": { "$type": "color", "$value": "{semantic.color.surfaceRaised}" },

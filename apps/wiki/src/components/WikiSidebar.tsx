@@ -45,7 +45,7 @@ export function WikiSidebar({
       <Stack gap="300">
         <div>
           <h2 className="text-xl font-semibold tracking-normal">Davinci</h2>
-          <p className="mt-1 text-sm leading-6 text-text-subtle">Component wiki</p>
+          <p className="mt-1 text-sm leading-6 text-foreground-subtle">Component wiki</p>
         </div>
 
         <Nav aria-label="Playground sections">

@@ -26,19 +26,19 @@ export function SurfacePanel() {
         <div className="grid gap-4 lg:grid-cols-3">
           <article className="rounded-lg border border-border bg-background p-5">
             <h4 className="text-sm font-semibold">Background</h4>
-            <p className="mt-2 text-sm text-text-subtle">
+            <p className="mt-2 text-sm text-foreground-subtle">
               Chrome layer — sidebar, header, top bar, aside. Distinct from the page canvas.
             </p>
           </article>
           <article className="rounded-lg border border-border bg-surface p-5">
             <h4 className="text-sm font-semibold">Surface</h4>
-            <p className="mt-2 text-sm text-text-subtle">
+            <p className="mt-2 text-sm text-foreground-subtle">
               Page canvas — the main content area where cards and other surfaces sit.
             </p>
           </article>
           <article className="rounded-lg border border-border bg-surface-raised p-5">
             <h4 className="text-sm font-semibold">Surface raised</h4>
-            <p className="mt-2 text-sm text-text-subtle">
+            <p className="mt-2 text-sm text-foreground-subtle">
               Elevated content — Card <code className="font-mono">surface</code> variant and floating panels.
             </p>
           </article>
@@ -62,7 +62,7 @@ export function SurfacePanel() {
               <CardDescription>Raised background, no shadow — quiet grouped content.</CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-text-subtle">
+              <p className="text-sm text-foreground-subtle">
                 The default Card treatment. Pair with the base background for two-tier hierarchy.
               </p>
             </CardContent>
@@ -73,7 +73,7 @@ export function SurfacePanel() {
               <CardDescription>Bold border + flat background — flat aesthetic for dense layouts.</CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-text-subtle">
+              <p className="text-sm text-foreground-subtle">
                 Shares the parent background so cards visually integrate with the page.
               </p>
             </CardContent>
@@ -92,12 +92,12 @@ export function SurfacePanel() {
           <div className="rounded-md bg-(--davinci-semantic-color-background-selected) px-3 py-2 text-sm font-medium text-foreground">
             Selected
           </div>
-          <div className="rounded-md bg-(--davinci-semantic-color-background-disabled) px-3 py-2 text-sm font-medium text-(--davinci-semantic-color-text-disabled)">
+          <div className="rounded-md bg-(--davinci-semantic-color-background-disabled) px-3 py-2 text-sm font-medium text-(--davinci-semantic-color-foreground-disabled)">
             Disabled
           </div>
           <div className="rounded-md bg-success px-3 py-2 text-sm font-medium text-success-foreground">Success</div>
           <div className="rounded-md bg-warning px-3 py-2 text-sm font-medium text-warning-foreground">Warning</div>
-          <div className="rounded-md bg-information px-3 py-2 text-sm font-medium text-information-foreground">
+          <div className="rounded-md bg-info px-3 py-2 text-sm font-medium text-info-foreground">
             Information
           </div>
           <div className="rounded-md bg-discovery px-3 py-2 text-sm font-medium text-discovery-foreground">

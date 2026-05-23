@@ -59,9 +59,9 @@ describe("token-builder output", () => {
     expect(lightCss).toMatch(/--davinci-semantic-color-primary: var\(--davinci-color-blue-\d+\);/);
   });
 
-  it("renames the negative dark-neutral key to a non-numeric token", () => {
-    expect(variablesCss).toContain("--davinci-color-dark-neutral-deepest:");
-    expect(variablesCss).not.toMatch(/--davinci-color-dark-neutral--\d/);
+  it("renames the negative neutral-dark key to a non-numeric token", () => {
+    expect(variablesCss).toContain("--davinci-color-neutral-dark-deepest:");
+    expect(variablesCss).not.toMatch(/--davinci-color-neutral-dark--\d/);
   });
 
   it("emits three split JS exports (tokens, lightTokens, darkTokens)", () => {

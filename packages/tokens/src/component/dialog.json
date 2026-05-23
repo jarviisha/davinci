@@ -2,7 +2,7 @@
   "component": {
     "dialog": {
       "backdrop": {
-        "background": { "$type": "color", "$value": "rgba(9, 30, 66, 0.54)" }
+        "background": { "$type": "color", "$value": "{semantic.color.overlay}" }
       },
       "panel": {
         "background": { "$type": "color", "$value": "{semantic.color.surfaceRaised}" },

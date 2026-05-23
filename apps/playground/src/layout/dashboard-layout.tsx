@@ -115,7 +115,7 @@ export function DashboardLayout() {
 
         <AppShellHeader>
           <div className="min-w-0">
-            <p className="m-0 text-xs font-medium uppercase tracking-wide text-text-subtle">
+            <p className="m-0 text-xs font-medium uppercase tracking-wide text-foreground-subtle">
               {pageMeta.eyebrow}
             </p>
             <h1 className="m-0 mt-1 text-xl font-semibold tracking-normal">{pageMeta.title}</h1>
@@ -140,11 +140,11 @@ export function DashboardLayout() {
                 <CardDescription>$410k ARR committed</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="h-2 overflow-hidden rounded-full bg-muted">
+                <div className="h-2 overflow-hidden rounded-full bg-background-subtle">
                   <div className="h-full w-[72%] rounded-full bg-primary" />
                 </div>
                 <Inline align="center" justify="between">
-                  <span className="text-sm text-text-subtle">Progress</span>
+                  <span className="text-sm text-foreground-subtle">Progress</span>
                   <span className="text-sm font-medium">72%</span>
                 </Inline>
               </CardContent>
@@ -153,7 +153,7 @@ export function DashboardLayout() {
             <Stack gap="150">
               <Inline align="center" justify="between">
                 <strong className="text-sm">Recent activity</strong>
-                <span className="text-xs text-text-subtle">last 24h</span>
+                <span className="text-xs text-foreground-subtle">last 24h</span>
               </Inline>
               <Divider />
               <Stack gap="200">
@@ -163,7 +163,7 @@ export function DashboardLayout() {
                     <div className="min-w-0">
                       <p className="m-0 text-sm">
                         <span className="font-medium">{event.name}</span>{" "}
-                        <span className="text-text-subtle">{event.action}</span>{" "}
+                        <span className="text-foreground-subtle">{event.action}</span>{" "}
                         <span className="font-medium">{event.target}</span>
                       </p>
                     </div>

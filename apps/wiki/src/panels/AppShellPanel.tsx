@@ -53,7 +53,7 @@ export function AppShellPanel() {
                   <strong>Acme</strong>
                   <p
                     style={{
-                      color: "var(--davinci-semantic-color-text-subtle)",
+                      color: "var(--davinci-semantic-color-foreground-subtle)",
                       fontSize: "0.875rem",
                       margin: "0.25rem 0 0"
                     }}
@@ -75,7 +75,7 @@ export function AppShellPanel() {
                 <strong>Overview</strong>
                 <p
                   style={{
-                    color: "var(--davinci-semantic-color-text-subtle)",
+                    color: "var(--davinci-semantic-color-foreground-subtle)",
                     fontSize: "0.875rem",
                     margin: "0.25rem 0 0"
                   }}
@@ -261,7 +261,7 @@ export function AppShellPanel() {
                 <strong>DAV-1284 · Refactor app shell</strong>
                 <p
                   style={{
-                    color: "var(--davinci-semantic-color-text-subtle)",
+                    color: "var(--davinci-semantic-color-foreground-subtle)",
                     fontSize: "0.875rem",
                     margin: "0.25rem 0 0"
                   }}
@@ -312,7 +312,7 @@ function Metric({ label, value }: { label: string; value: string }) {
   return (
     <Card style={{ minWidth: "11rem" }} variant="outlined">
       <CardContent>
-        <span style={{ color: "var(--davinci-semantic-color-text-subtle)", fontSize: "0.875rem" }}>{label}</span>
+        <span style={{ color: "var(--davinci-semantic-color-foreground-subtle)", fontSize: "0.875rem" }}>{label}</span>
         <strong style={{ fontSize: "1.5rem" }}>{value}</strong>
       </CardContent>
     </Card>
@@ -322,7 +322,7 @@ function Metric({ label, value }: { label: string; value: string }) {
 function MetaRow({ label, value }: { label: string; value: string }) {
   return (
     <Inline align="start" gap="200" justify="between">
-      <span style={{ color: "var(--davinci-semantic-color-text-subtle)", fontSize: "0.875rem" }}>{label}</span>
+      <span style={{ color: "var(--davinci-semantic-color-foreground-subtle)", fontSize: "0.875rem" }}>{label}</span>
       <span style={{ fontSize: "0.875rem", fontWeight: 500 }}>{value}</span>
     </Inline>
   );

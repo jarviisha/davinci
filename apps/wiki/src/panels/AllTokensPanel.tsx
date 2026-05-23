@@ -35,8 +35,8 @@ const palettePrefixes = [
   { label: "Lime", prefix: "color.lime." },
   { label: "Neutral", prefix: "color.neutral." },
   { label: "Neutral Alpha", prefix: "color.neutralAlpha." },
-  { label: "Dark Neutral", prefix: "color.darkNeutral." },
-  { label: "Dark Neutral Alpha", prefix: "color.darkNeutralAlpha." }
+  { label: "Neutral Dark", prefix: "color.neutralDark." },
+  { label: "Neutral Dark Alpha", prefix: "color.neutralDarkAlpha." }
 ];
 
 const componentNames = [
@@ -160,7 +160,7 @@ export function AllTokensPanel({ resolvedTheme }: AllTokensPanelProps) {
           type="search"
           value={query}
         />
-        <p className="text-sm text-text-subtle">
+        <p className="text-sm text-foreground-subtle">
           Showing <span className="font-medium text-foreground">{totalTokens}</span> tokens
           {query ? ` matching "${query}"` : ""}.
         </p>
@@ -179,7 +179,7 @@ export function AllTokensPanel({ resolvedTheme }: AllTokensPanelProps) {
       {filteredSections.length === 0 ? (
         <Card variant="filled">
           <CardContent>
-            <p className="text-sm text-text-subtle">No tokens match "{query}".</p>
+            <p className="text-sm text-foreground-subtle">No tokens match "{query}".</p>
           </CardContent>
         </Card>
       ) : null}

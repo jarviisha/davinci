@@ -62,7 +62,7 @@ export function SpacingPanel() {
             >
               <header>
                 <h3 className="text-sm font-semibold">{category.title}</h3>
-                <p className="mt-1 text-xs text-text-subtle">{category.reach}</p>
+                <p className="mt-1 text-xs text-foreground-subtle">{category.reach}</p>
               </header>
               <div className="grid gap-1.5">
                 {category.steps.map((step) => {
@@ -74,23 +74,23 @@ export function SpacingPanel() {
 
                   return (
                     <button
-                      className="grid grid-cols-[3rem_minmax(0,1fr)_3.5rem] items-center gap-2 rounded-md p-1 text-left hover:bg-muted"
+                      className="grid grid-cols-[3rem_minmax(0,1fr)_3.5rem] items-center gap-2 rounded-md p-1 text-left hover:bg-background-subtle"
                       key={token.name}
                       onClick={() => void copyText(token.name)}
                       type="button"
                     >
-                      <span className="font-mono text-xs text-text-muted">{step}</span>
+                      <span className="font-mono text-xs text-foreground-subtlest">{step}</span>
                       <span
                         className="h-2 rounded-sm bg-primary"
                         style={{ width: varValue(token.cssVar) }}
                       />
-                      <span className="truncate text-right text-xs text-text-subtle">{token.value}</span>
+                      <span className="truncate text-right text-xs text-foreground-subtle">{token.value}</span>
                     </button>
                   );
                 })}
               </div>
-              <p className="text-xs text-text-muted">
-                <span className="font-medium text-text-subtle">e.g.</span> {category.example}
+              <p className="text-xs text-foreground-subtlest">
+                <span className="font-medium text-foreground-subtle">e.g.</span> {category.example}
               </p>
             </article>
           ))}
@@ -104,19 +104,19 @@ export function SpacingPanel() {
         <div className="grid gap-(--davinci-spacing-200)">
           {spacingTokens.map((token) => (
             <button
-              className="grid grid-cols-[5rem_minmax(0,1fr)_7rem] items-center gap-(--davinci-spacing-200) rounded-md p-(--davinci-spacing-100) text-left hover:bg-muted"
+              className="grid grid-cols-[5rem_minmax(0,1fr)_7rem] items-center gap-(--davinci-spacing-200) rounded-md p-(--davinci-spacing-100) text-left hover:bg-background-subtle"
               key={token.name}
               onClick={() => void copyText(token.name)}
               type="button"
             >
-              <span className="font-mono text-text-muted" style={typographyStyle("code")}>
+              <span className="font-mono text-foreground-subtlest" style={typographyStyle("code")}>
                 {tokenStep(token.name)}
               </span>
               <span
                 className="h-(--davinci-spacing-300) rounded-sm bg-primary"
                 style={{ width: varValue(token.cssVar) }}
               />
-              <span className="truncate text-text-subtle" style={typographyStyle("body-small")}>
+              <span className="truncate text-foreground-subtle" style={typographyStyle("body-small")}>
                 {token.value}
               </span>
             </button>

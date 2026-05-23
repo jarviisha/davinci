@@ -522,7 +522,7 @@
         "$value": "#050C1F75"
       }
     },
-    "darkNeutral": {
+    "neutralDark": {
       "0": {
         "$type": "color",
         "$value": "#18191A"
@@ -584,7 +584,7 @@
         "$value": "#111213"
       }
     },
-    "darkNeutralAlpha": {
+    "neutralDarkAlpha": {
       "100": {
         "$type": "color",
         "$value": "#BDBDBD0A"

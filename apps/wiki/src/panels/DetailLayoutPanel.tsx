@@ -45,7 +45,7 @@ export function DetailLayoutPanel() {
                 <div>
                   <p
                     style={{
-                      color: "var(--davinci-semantic-color-text-subtle)",
+                      color: "var(--davinci-semantic-color-foreground-subtle)",
                       fontSize: "0.875rem",
                       margin: 0
                     }}
@@ -78,7 +78,7 @@ export function DetailLayoutPanel() {
                           <span style={{ fontWeight: 500 }}>Ada Lovelace</span>
                           <span
                             style={{
-                              color: "var(--davinci-semantic-color-text-subtle)",
+                              color: "var(--davinci-semantic-color-foreground-subtle)",
                               fontSize: "0.875rem"
                             }}
                           >
@@ -92,7 +92,7 @@ export function DetailLayoutPanel() {
                           <span style={{ fontWeight: 500 }}>Mina Park</span>
                           <span
                             style={{
-                              color: "var(--davinci-semantic-color-text-subtle)",
+                              color: "var(--davinci-semantic-color-foreground-subtle)",
                               fontSize: "0.875rem"
                             }}
                           >
@@ -192,7 +192,7 @@ export function DetailLayoutPanel() {
 function MetaRow({ label, value }: { label: string; value: ReactNode }) {
   return (
     <Inline align="center" gap="200" justify="between">
-      <span style={{ color: "var(--davinci-semantic-color-text-subtle)", fontSize: "0.875rem" }}>{label}</span>
+      <span style={{ color: "var(--davinci-semantic-color-foreground-subtle)", fontSize: "0.875rem" }}>{label}</span>
       <span style={{ fontSize: "0.875rem", fontWeight: 500 }}>{value}</span>
     </Inline>
   );

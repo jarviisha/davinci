@@ -10,7 +10,7 @@
         "requiredForeground": { "$type": "color", "$value": "{semantic.color.destructive}" }
       },
       "help": {
-        "foreground": { "$type": "color", "$value": "{semantic.color.textSubtle}" }
+        "foreground": { "$type": "color", "$value": "{semantic.color.foregroundSubtle}" }
       },
       "error": {
         "foreground": { "$type": "color", "$value": "{semantic.color.destructive}" }

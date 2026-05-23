@@ -56,7 +56,7 @@ export function ColorPanel({ resolvedTheme, semanticEntries, semanticPrefix }: C
         description={`Active ${resolvedTheme} theme token names and their primitive references.`}
       >
         <div className="overflow-hidden rounded-lg border border-border bg-surface-raised">
-          <div className="grid grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)_minmax(0,1fr)] border-b border-border px-4 py-3 text-xs font-semibold uppercase text-text-muted">
+          <div className="grid grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)_minmax(0,1fr)] border-b border-border px-4 py-3 text-xs font-semibold uppercase text-foreground-subtlest">
             <span>Name</span>
             <span>Reference</span>
             <span>CSS variable</span>
@@ -69,8 +69,8 @@ export function ColorPanel({ resolvedTheme, semanticEntries, semanticPrefix }: C
               type="button"
             >
               <span className="truncate font-medium">{token.name.replace(semanticPrefix, "")}</span>
-              <span className="truncate text-text-subtle">{token.value}</span>
-              <span className="truncate text-text-subtle">{token.cssVar}</span>
+              <span className="truncate text-foreground-subtle">{token.value}</span>
+              <span className="truncate text-foreground-subtle">{token.cssVar}</span>
             </button>
           ))}
         </div>
@@ -92,7 +92,7 @@ export function ColorPanel({ resolvedTheme, semanticEntries, semanticPrefix }: C
               <article className="rounded-lg border border-border bg-surface-raised p-4" key={group.prefix}>
                 <div className="mb-3 flex items-center justify-between gap-3">
                   <h3 className="text-sm font-semibold">{group.label}</h3>
-                  <span className="text-xs text-text-muted">{groupTokens.length} tokens</span>
+                  <span className="text-xs text-foreground-subtlest">{groupTokens.length} tokens</span>
                 </div>
                 <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
                   {groupTokens.map((token) => (
@@ -108,7 +108,7 @@ export function ColorPanel({ resolvedTheme, semanticEntries, semanticPrefix }: C
                       />
                       <span className="block p-2">
                         <span className="block text-xs font-semibold">{tokenStep(token.name)}</span>
-                        <span className="block truncate text-xs text-text-subtle">{token.value}</span>
+                        <span className="block truncate text-xs text-foreground-subtle">{token.value}</span>
                       </span>
                     </button>
                   ))}

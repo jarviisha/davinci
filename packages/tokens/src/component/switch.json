@@ -22,7 +22,7 @@
         "$value": "{spacing.100}"
       },
       "track": {
-        "background": { "$type": "color", "$value": "{semantic.color.muted}" },
+        "background": { "$type": "color", "$value": "{semantic.color.backgroundSubtle}" },
         "backgroundHovered": { "$type": "color", "$value": "{semantic.color.backgroundPressed}" }
       },
       "checked": {

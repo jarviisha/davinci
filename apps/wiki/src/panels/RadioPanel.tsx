@@ -36,7 +36,7 @@ export function RadioPanel() {
         </RadioGroup>
         <p
           style={{
-            color: "var(--davinci-semantic-color-text-subtle)",
+            color: "var(--davinci-semantic-color-foreground-subtle)",
             fontSize: "0.875rem",
             marginBlockStart: "0.75rem"
           }}

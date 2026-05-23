@@ -130,7 +130,7 @@ export default function AccountsRoute() {
               </Table>
             </TableContainer>
             <Inline align="center" justify="between">
-              <span className="text-sm text-text-subtle">
+              <span className="text-sm text-foreground-subtle">
                 Showing {filtered.length} of {accounts.length} accounts
               </span>
               <Badge variant="neutral">{summarizeHealth(filtered.map((a) => a.health))}</Badge>

@@ -40,7 +40,7 @@ export function RadiusFocusPanel() {
                 type="button"
               >
                 <span className="block font-medium">{tokenStep(token.name)}</span>
-                <span className="mt-1 block text-text-subtle" style={typographyStyle("body-small")}>
+                <span className="mt-1 block text-foreground-subtle" style={typographyStyle("body-small")}>
                   {token.value}
                 </span>
               </button>

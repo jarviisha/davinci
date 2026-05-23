@@ -51,10 +51,10 @@ export function ElevationPanel() {
               <span className="block font-semibold" style={typographyStyle("heading-sm")}>
                 {item.label}
               </span>
-              <span className="mt-2 block text-text-subtle" style={typographyStyle("body-small")}>
+              <span className="mt-2 block text-foreground-subtle" style={typographyStyle("body-small")}>
                 {item.description}
               </span>
-              <span className="mt-4 block truncate font-mono text-text-muted" style={typographyStyle("code")}>
+              <span className="mt-4 block truncate font-mono text-foreground-subtlest" style={typographyStyle("code")}>
                 {item.token}
               </span>
             </button>

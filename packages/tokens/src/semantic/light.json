@@ -13,6 +13,18 @@
         "$type": "color",
         "$value": "{color.neutral.0}"
       },
+      "backgroundSubtle": {
+        "$type": "color",
+        "$value": "{color.neutral.200}"
+      },
+      "backgroundSubtleHovered": {
+        "$type": "color",
+        "$value": "{color.neutral.300}"
+      },
+      "backgroundSubtlePressed": {
+        "$type": "color",
+        "$value": "{color.neutral.400}"
+      },
       "backgroundHovered": {
         "$type": "color",
         "$value": "{color.neutral.200}"
@@ -33,25 +45,69 @@
         "$type": "color",
         "$value": "{color.neutral.1100}"
       },
-      "textSubtle": {
+      "foregroundSubtle": {
         "$type": "color",
         "$value": "{color.neutral.800}"
       },
-      "textMuted": {
+      "foregroundSubtlest": {
         "$type": "color",
         "$value": "{color.neutral.700}"
       },
-      "textInverse": {
+      "foregroundInverse": {
         "$type": "color",
         "$value": "{color.neutral.0}"
       },
-      "textDisabled": {
+      "foregroundDisabled": {
         "$type": "color",
         "$value": "{color.neutral.500}"
+      },
+      "foregroundSelected": {
+        "$type": "color",
+        "$value": "{color.blue.800}"
+      },
+      "borderSubtle": {
+        "$type": "color",
+        "$value": "{color.neutral.200}"
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{color.neutral.300}"
+      },
+      "borderBold": {
+        "$type": "color",
+        "$value": "{color.neutral.500}"
+      },
+      "borderBoldest": {
+        "$type": "color",
+        "$value": "{color.neutral.800}"
+      },
+      "borderHovered": {
+        "$type": "color",
+        "$value": "{color.neutral.700}"
+      },
+      "borderFocused": {
+        "$type": "color",
+        "$value": "{color.blue.600}"
+      },
+      "borderSelected": {
+        "$type": "color",
+        "$value": "{color.blue.600}"
+      },
+      "borderDisabled": {
+        "$type": "color",
+        "$value": "{color.neutral.200}"
       },
       "link": {
         "$type": "color",
         "$value": "{color.blue.700}"
+      },
+      "linkHovered": {
+        "$type": "color",
+        "$value": "{color.blue.800}"
+      },
+      "linkPressed": {
+        "$type": "color",
+        "$value": "{color.blue.900}"
       },
       "primary": {
         "$type": "color",
@@ -68,42 +124,6 @@
       "primaryForeground": {
         "$type": "color",
         "$value": "{color.neutral.0}"
-      },
-      "border": {
-        "$type": "color",
-        "$value": "{color.neutral.300}"
-      },
-      "borderBold": {
-        "$type": "color",
-        "$value": "{color.neutral.500}"
-      },
-      "borderHovered": {
-        "$type": "color",
-        "$value": "{color.neutral.700}"
-      },
-      "borderStrong": {
-        "$type": "color",
-        "$value": "{color.neutral.800}"
-      },
-      "borderDisabled": {
-        "$type": "color",
-        "$value": "{color.neutral.200}"
-      },
-      "borderFocused": {
-        "$type": "color",
-        "$value": "{color.blue.600}"
-      },
-      "muted": {
-        "$type": "color",
-        "$value": "{color.neutral.200}"
-      },
-      "mutedHovered": {
-        "$type": "color",
-        "$value": "{color.neutral.300}"
-      },
-      "mutedPressed": {
-        "$type": "color",
-        "$value": "{color.neutral.400}"
       },
       "destructive": {
         "$type": "color",
@@ -137,11 +157,11 @@
         "$type": "color",
         "$value": "{color.neutral.1100}"
       },
-      "information": {
+      "info": {
         "$type": "color",
         "$value": "{color.blue.700}"
       },
-      "informationForeground": {
+      "infoForeground": {
         "$type": "color",
         "$value": "{color.neutral.0}"
       },
@@ -152,6 +172,10 @@
       "discoveryForeground": {
         "$type": "color",
         "$value": "{color.neutral.0}"
+      },
+      "overlay": {
+        "$type": "color",
+        "$value": "{color.neutralAlpha.500}"
       }
     },
     "shadow": {
