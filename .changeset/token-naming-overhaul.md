@@ -1,7 +1,7 @@
 ---
-"@jarviisha/davinci-tokens": major
-"@jarviisha/davinci-react-ui": major
-"@jarviisha/davinci-tailwind-preset": major
+"@jarviisha/davinci-tokens": minor
+"@jarviisha/davinci-react-ui": minor
+"@jarviisha/davinci-tailwind-preset": minor
 ---
 
 Overhaul color-token naming across the three layers (primitive, semantic, component). Breaking — no aliases kept.
