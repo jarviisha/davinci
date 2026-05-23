@@ -1,59 +1,8 @@
-# @jarviisha/davinci-react-ui
+# @jarviisha/davinci-tailwind-preset
 
-## 0.3.0
+## 0.2.0
 
 ### Minor Changes
-
-- 291da75: Extend AppShell with optional `AppShellTopBar` and `AppShellAside` slots, and add the new `DetailLayout` primitive (`DetailLayout`, `DetailLayoutMain`, `DetailLayoutAside`) for two-column page layouts.
-
-  - `AppShellTopBar` renders a full-width global header above the sidebar — use it for app branding, global search, notifications, and the workspace avatar.
-  - `AppShellAside` renders a right rail next to `AppShellMain` — use it for persistent metadata, online team, AI assistants, or anything that needs to stay alongside the primary content.
-  - The AppShell grid auto-switches between four configurations (no extras / top-bar only / aside only / both) via CSS `:has()`. No React child inspection, slots remain composable. Responsive: aside drops below main under 1024px, sidebar drops above under 768px.
-  - `DetailLayout` pairs a primary content column with a meta rail for issue / detail / settings pages. Props: `asidePlacement="end" | "start"` and `asideSticky` (keeps the rail in view while main scrolls). Collapses to a single column under 1024px.
-  - `AppShellAside` joins the auto-applied hover-reveal scrollbar set.
-
-- 291da75: Drop the `elevated` Card variant in favor of fully flat page-level surfaces.
-
-  After previous releases moved shadow off page-level cards, `elevated` and `surface` became near-duplicates (same `surfaceRaised` background, same `border`, only `shadow` differed). The system now keeps shadow strictly for floating panels and overlays — page-level surfaces use border + background tint only.
-
-  **Breaking changes**
-
-  - `CardVariant` no longer includes `"elevated"`. Callers using `<Card variant="elevated">` should switch to `<Card variant="default">`, which renders identically minus the shadow.
-  - The default Card variant is now `"default"` (previously `"elevated"`). The literal `"surface"` was never released — the name was avoided to prevent collision with the semantic `surface` color role.
-  - Token block `component.card.elevated.*` is removed from `@jarviisha/davinci-tokens`; the corresponding `--davinci-component-card-elevated-*` CSS variables no longer exist. Components that borrowed them (combobox listbox, dropdown menu, popover) now reference `--davinci-component-card-default-*` instead — same values, supported name.
-
-  **Why**
-
-  Aligns Card with Jira / Atlassian / Linear / GitHub conventions: shadow communicates true z-axis lift (overlays), not visual decoration on grouped content. Reduces visual noise on dense product UI and keeps dark-mode rendering predictable.
-
-- 17d646c: Expand Card with new variants, tones, and modifier props.
-
-  - Add three Card variants: `filled` (subtle `surface` background, no shadow), `flat` (no chrome — transparent), `floating` (raised surface plus the stronger `shadow.raised` — the only variant with a shadow).
-  - Drop shadow from `elevated` and `outlined` at the token level (`component.card.elevated.shadow` and `component.card.outlined.shadow` resolve to `semantic.shadow.none`); these variants now rely on background and border only.
-  - Add `tone` prop with `neutral` / `info` / `success` / `warning` / `danger`. Tints are computed via `color-mix` on background and border, mirroring the Alert pattern, so they follow light / dark themes automatically.
-  - Add `interactive` boolean prop for hover, focus ring, and pointer cursor. Composes with any variant; only `floating` raises the shadow on hover.
-  - Add `selected` boolean prop for highlighted state (border `border-focused` plus `color-mix` of `primary` on background). Composes with any variant or tone.
-  - New component tokens: `component.card.filled.background`, `component.card.filled.shadow`, `component.card.floating.background`, `component.card.floating.border`, `component.card.floating.shadow`.
-  - Internal refactor (no public API change): inline SVGs in `Checkbox`, `Nav`, `Toast`, and `SearchInput` are now sourced from internal `Check`, `Minus`, `ChevronRight`, `X`, `Search` icon components.
-
-- 5bbc317: Add shortcut props to `FormField` for the common label-on-top layout.
-
-  `FormField` now accepts `label`, `labelSize`, `helpText`, and `errorText` props. When provided, FormField renders the corresponding child components in fixed order (label → control → help → error) inside its existing context provider, so id / aria wiring still works:
-
-  ```tsx
-  <FormField label="Email" helpText="Use work email" required>
-    <Input type="email" />
-  </FormField>
-  ```
-
-  The composition API (`<Label>` / `<FormHelpText>` / `<FormErrorText>` as children) is unchanged and remains the right choice when the layout needs icons, custom slots, or non-standard ordering. Mixing the shortcut props with the corresponding composed child is not handled — pick one style per FormField.
-
-- f2a3636: Refine input hover affordance via a dedicated border-hovered token.
-
-  - New semantic token `semantic.color.borderHovered` (light: `color.neutral.700`, dark: `color.neutralDark.700`) sits between `borderBold` and the focused state, giving hover its own intensity step on top of the existing `border` / `borderBold` / `borderDisabled` / `borderFocused` scale.
-  - New component token `component.input.borderHovered` → `{semantic.color.borderHovered}`, consumed by `Input`, `Select`, `Textarea`, `Combobox`, `SearchInput`, and native date inputs.
-  - Default input border softened: `component.input.border` now points at `{semantic.color.border}` (`neutral.300`) instead of `{semantic.color.borderBold}` (`neutral.500`). The hover step from `border` → `borderHovered` is now visually distinct (300 → 700) rather than near-invisible (500 → background tint).
-  - Hover styles on `.davinci-input` / `.davinci-select` / `.davinci-textarea` / `.davinci-search-input` / `.davinci-combobox__input` swap their `background-color` change for a `border-color` change. The combobox input also gains a `transition: border-color 150ms ease` so the new state animates.
 
 - f70fab5: Token naming consistency refactor: align vocabulary, fix layer responsibilities, and tokenize values that were previously hardcoded in CSS.
 
@@ -166,19 +115,3 @@
   - New utilities: `border-subtle`, `border-selected`, `foreground-selected`, `link-hovered`, `link-pressed`, `overlay`.
 
   **Migration:** find-replace the old keys/CSS vars/Tailwind classes with the new ones — the value tables are unchanged, so visual output stays identical for consumers who only used the rebrandable tokens (i.e., not the now-renamed `borderStrong`/`darkNeutral.*` primitives directly).
-
-### Patch Changes
-
-- 534153c: Fix `Card variant="filled"` blending into the page canvas.
-
-  Since AppShell uses `semantic.color.surface` as the page canvas, `component.card.filled.background` (also `surface`) was rendering invisible. Re-point it to `semantic.color.backgroundSubtle` so the filled variant always sits one shade off the canvas in both light and dark.
-
-## 0.2.0
-
-### Minor Changes
-
-- 732f3ec: Add thin hover-reveal scrollbar styling.
-
-  - New `component.scrollbar.*` tokens (`size`, `radius`, `track.background`, `thumb.background`, `thumb.backgroundHovered`, `thumb.backgroundActive`) emitted to `--davinci-component-scrollbar-*` CSS variables.
-  - New `davinci-scrollbar` utility class in `@jarviisha/davinci-react-ui/styles.css` for opt-in use on any scroll container, plus a `davinci-scrollbar--always` modifier to keep the thumb visible at rest.
-  - The same hover-reveal styling is now auto-applied to `AppShellSidebar`, `AppShellMain`, `Dialog`, `Drawer`, `Combobox` listbox, and `TableContainer` — no class needed.
