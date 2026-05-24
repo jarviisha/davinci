@@ -18,6 +18,7 @@
   --color-background: var(--davinci-semantic-color-background);
   --color-surface: var(--davinci-semantic-color-surface);
   --color-surface-raised: var(--davinci-semantic-color-surface-raised);
+  --color-surface-sunken: var(--davinci-semantic-color-surface-sunken);
   --color-background-subtle: var(--davinci-semantic-color-background-subtle);
   --color-background-subtle-hovered: var(--davinci-semantic-color-background-subtle-hovered);
   --color-background-subtle-pressed: var(--davinci-semantic-color-background-subtle-pressed);

@@ -15,7 +15,7 @@ type PanelSectionProps = {
 
 export function PanelSection({ title, description, children }: PanelSectionProps) {
   return (
-    <Card variant="filled">
+    <Card variant="default">
       <CardHeader>
         <CardTitle>{title}</CardTitle>
         {description ? <CardDescription>{description}</CardDescription> : null}

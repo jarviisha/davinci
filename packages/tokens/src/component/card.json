@@ -18,7 +18,7 @@
         "$value": "{semantic.color.foreground}"
       },
       "default": {
-        "background": { "$type": "color", "$value": "{semantic.color.surfaceRaised}" },
+        "background": { "$type": "color", "$value": "{semantic.color.background}" },
         "border": { "$type": "color", "$value": "{semantic.color.border}" },
         "shadow": { "$type": "shadow", "$value": "{semantic.shadow.none}" }
       },

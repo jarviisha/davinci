@@ -103,15 +103,15 @@ export function WikiSidebar({
           </Inline>
           <div className="grid grid-cols-3 gap-2">
             <div
-              className="h-9 border border-border bg-surface-raised"
+              className="h-9 border border-border bg-background-subtle"
               style={{ borderRadius: "var(--davinci-semantic-radius-control)" }}
             />
             <div
-              className="h-9 border border-border bg-surface-raised"
+              className="h-9 border border-border bg-background-subtle"
               style={{ borderRadius: "var(--davinci-semantic-radius-card)" }}
             />
             <div
-              className="h-9 border border-border bg-surface-raised"
+              className="h-9 border border-border bg-background-subtle"
               style={{ borderRadius: "var(--davinci-semantic-radius-panel)" }}
             />
           </div>

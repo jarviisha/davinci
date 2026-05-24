@@ -6,7 +6,7 @@ export function TokenTable({ title, tokens }: { title: string; tokens: TokenEntr
       <h3 className="font-semibold" style={typographyStyle("heading-sm")}>
         {title}
       </h3>
-      <div className="overflow-hidden rounded-lg border border-border bg-surface-raised">
+      <div className="overflow-hidden rounded-lg border border-border">
         <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)] border-b border-border px-4 py-3 text-xs font-semibold uppercase text-foreground-subtlest">
           <span>Name</span>
           <span>Value</span>

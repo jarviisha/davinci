@@ -57,7 +57,7 @@ export function SpacingPanel() {
         <div className="grid gap-4 lg:grid-cols-3">
           {policyCategories.map((category) => (
             <article
-              className="flex flex-col gap-3 rounded-lg border border-border bg-surface-raised p-4"
+              className="flex flex-col gap-3 rounded-lg border border-border p-4"
               key={category.title}
             >
               <header>

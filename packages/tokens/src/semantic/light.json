@@ -7,11 +7,15 @@
       },
       "surface": {
         "$type": "color",
-        "$value": "{color.neutral.100}"
+        "$value": "{color.neutral.0}"
       },
       "surfaceRaised": {
         "$type": "color",
         "$value": "{color.neutral.0}"
+      },
+      "surfaceSunken": {
+        "$type": "color",
+        "$value": "{color.neutral.200}"
       },
       "backgroundSubtle": {
         "$type": "color",
@@ -67,11 +71,11 @@
       },
       "borderSubtle": {
         "$type": "color",
-        "$value": "{color.neutral.200}"
+        "$value": "{color.neutralAlpha.200}"
       },
       "border": {
         "$type": "color",
-        "$value": "{color.neutral.300}"
+        "$value": "{color.neutralAlpha.300}"
       },
       "borderBold": {
         "$type": "color",

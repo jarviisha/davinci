@@ -55,7 +55,7 @@ export function ColorPanel({ resolvedTheme, semanticEntries, semanticPrefix }: C
         title="Semantic mapping"
         description={`Active ${resolvedTheme} theme token names and their primitive references.`}
       >
-        <div className="overflow-hidden rounded-lg border border-border bg-surface-raised">
+        <div className="overflow-hidden rounded-lg border border-border">
           <div className="grid grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)_minmax(0,1fr)] border-b border-border px-4 py-3 text-xs font-semibold uppercase text-foreground-subtlest">
             <span>Name</span>
             <span>Reference</span>
@@ -89,7 +89,7 @@ export function ColorPanel({ resolvedTheme, semanticEntries, semanticPrefix }: C
             }
 
             return (
-              <article className="rounded-lg border border-border bg-surface-raised p-4" key={group.prefix}>
+              <article className="rounded-lg border border-border p-4" key={group.prefix}>
                 <div className="mb-3 flex items-center justify-between gap-3">
                   <h3 className="text-sm font-semibold">{group.label}</h3>
                   <span className="text-xs text-foreground-subtlest">{groupTokens.length} tokens</span>

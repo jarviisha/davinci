@@ -7,11 +7,15 @@
       },
       "surface": {
         "$type": "color",
-        "$value": "{color.neutralDark.200}"
+        "$value": "{color.neutralDark.0}"
       },
       "surfaceRaised": {
         "$type": "color",
         "$value": "{color.neutralDark.300}"
+      },
+      "surfaceSunken": {
+        "$type": "color",
+        "$value": "{color.neutralDark.deepest}"
       },
       "backgroundSubtle": {
         "$type": "color",

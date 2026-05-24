@@ -473,8 +473,8 @@
 }
 
 .davinci-combobox__listbox {
-  background: var(--davinci-component-card-default-background);
-  border: 1px solid var(--davinci-component-card-default-border);
+  background: var(--davinci-component-card-floating-background);
+  border: 1px solid var(--davinci-component-card-floating-border);
   border-radius: var(--davinci-radius-md);
   box-shadow: var(--davinci-semantic-shadow-overlay);
   display: flex;
@@ -633,7 +633,7 @@
 }
 
 .davinci-card--interactive:hover {
-  background: var(--davinci-semantic-color-background-hovered);
+  border-color: var(--davinci-semantic-color-border-bold);
 }
 
 .davinci-card--interactive.davinci-card--tone-info:hover {
@@ -1091,7 +1091,7 @@
  */
 
 .davinci-app-shell {
-  background: var(--davinci-semantic-color-surface);
+  background: var(--davinci-semantic-color-background);
   block-size: 100dvh;
   color: var(--davinci-semantic-color-foreground);
   display: grid;
@@ -2384,8 +2384,8 @@
 }
 
 .davinci-dropdown-menu__content {
-  background: var(--davinci-component-card-default-background);
-  border: 1px solid var(--davinci-component-card-default-border);
+  background: var(--davinci-component-card-floating-background);
+  border: 1px solid var(--davinci-component-card-floating-border);
   border-radius: var(--davinci-radius-md);
   box-shadow: var(--davinci-semantic-shadow-overlay);
   color: var(--davinci-semantic-color-foreground);
@@ -2450,8 +2450,8 @@
 /* ----- Popover ----- */
 
 .davinci-popover {
-  background: var(--davinci-component-card-default-background);
-  border: 1px solid var(--davinci-component-card-default-border);
+  background: var(--davinci-component-card-floating-background);
+  border: 1px solid var(--davinci-component-card-floating-border);
   border-radius: var(--davinci-radius-lg);
   box-shadow: var(--davinci-semantic-shadow-overlay);
   color: var(--davinci-semantic-color-foreground);

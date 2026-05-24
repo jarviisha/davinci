@@ -7,6 +7,7 @@ const preset = {
         background: "var(--davinci-semantic-color-background)",
         surface: "var(--davinci-semantic-color-surface)",
         "surface-raised": "var(--davinci-semantic-color-surface-raised)",
+        "surface-sunken": "var(--davinci-semantic-color-surface-sunken)",
         "background-subtle": "var(--davinci-semantic-color-background-subtle)",
         "background-subtle-hovered": "var(--davinci-semantic-color-background-subtle-hovered)",
         "background-subtle-pressed": "var(--davinci-semantic-color-background-subtle-pressed)",
@@ -126,7 +127,8 @@ const preset = {
       ringOffsetColor: {
         background: "var(--davinci-semantic-color-background)",
         surface: "var(--davinci-semantic-color-surface)",
-        "surface-raised": "var(--davinci-semantic-color-surface-raised)"
+        "surface-raised": "var(--davinci-semantic-color-surface-raised)",
+        "surface-sunken": "var(--davinci-semantic-color-surface-sunken)"
       },
       ringOffsetWidth: {
         focus: "var(--davinci-semantic-focus-ring-offset)"
