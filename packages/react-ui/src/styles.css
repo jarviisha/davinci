@@ -1092,6 +1092,7 @@
 
 .davinci-app-shell {
   background: var(--davinci-semantic-color-surface);
+  block-size: 100dvh;
   color: var(--davinci-semantic-color-foreground);
   display: grid;
   grid-template-areas:
@@ -1099,7 +1100,7 @@
     "sidebar main";
   grid-template-columns: minmax(var(--davinci-component-app-shell-sidebar-width-min), var(--davinci-component-app-shell-sidebar-width-max)) minmax(0, 1fr);
   grid-template-rows: auto minmax(0, 1fr);
-  min-block-size: 100dvh;
+  overflow: hidden;
 }
 
 .davinci-app-shell:has(> .davinci-app-shell__top-bar):not(:has(> .davinci-app-shell__aside)) {
@@ -1211,7 +1212,10 @@
   .davinci-app-shell:has(> .davinci-app-shell__top-bar):not(:has(> .davinci-app-shell__aside)),
   .davinci-app-shell:has(> .davinci-app-shell__aside):not(:has(> .davinci-app-shell__top-bar)),
   .davinci-app-shell:has(> .davinci-app-shell__top-bar):has(> .davinci-app-shell__aside) {
+    block-size: auto;
     grid-template-columns: minmax(0, 1fr);
+    min-block-size: 100dvh;
+    overflow: visible;
   }
 
   .davinci-app-shell {
