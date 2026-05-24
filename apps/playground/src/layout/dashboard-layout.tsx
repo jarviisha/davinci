@@ -33,7 +33,10 @@ const workspaceNav: NavEntry[] = [
   { to: "/accounts", label: "Accounts" }
 ];
 
-const systemNav: NavEntry[] = [{ to: "/settings", label: "Settings" }];
+const systemNav: NavEntry[] = [
+  { to: "/foundations", label: "Foundations" },
+  { to: "/settings", label: "Settings" }
+];
 
 const themes: Theme[] = ["light", "dark", "system"];
 
@@ -183,6 +186,9 @@ type PageMeta = { eyebrow: string; title: string };
 function resolvePageMeta(pathname: string): PageMeta {
   if (pathname.startsWith("/accounts")) {
     return { eyebrow: "Customers", title: "Account health" };
+  }
+  if (pathname.startsWith("/foundations")) {
+    return { eyebrow: "Design system", title: "Foundations" };
   }
   if (pathname.startsWith("/settings")) {
     return { eyebrow: "Workspace", title: "Settings" };
