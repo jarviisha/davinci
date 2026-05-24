@@ -1,5 +1,15 @@
 # @davinci/wiki
 
+## 0.0.2
+
+### Patch Changes
+
+- Updated dependencies [28b0b8e]
+- Updated dependencies
+  - @jarviisha/davinci-react-ui@0.4.0
+  - @jarviisha/davinci-tokens@0.4.0
+  - @jarviisha/davinci-tailwind-preset@0.3.0
+
 ## 0.0.1
 
 ### Patch Changes

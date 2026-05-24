@@ -1,5 +1,71 @@
 # @jarviisha/davinci-react-ui
 
+## 0.4.0
+
+### Minor Changes
+
+- Re-anchor the default theme around a **single-canvas, border-led** philosophy: the whole app reads as one color, borders do all the layering work, and a card has a background **only** when its content is intentionally emphasized.
+
+  ## Surface tokens collapsed onto one canvas
+
+  | Token                   | Light                       | Dark                        | Role                                                                                                                         |
+  | ----------------------- | --------------------------- | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+  | `background`            | `#FFFFFF`                   | `#18191A`                   | The canvas. Everything defaults here.                                                                                        |
+  | `surface`               | `#FFFFFF` _(was `#F8F8F8`)_ | `#18191A` _(was `#242528`)_ | Alias of `background`. Kept as a stable API; themes can break the alias to reintroduce elevation tiers.                      |
+  | `surfaceRaised`         | `#FFFFFF`                   | `#303134`                   | Reserved for true float overlays (popover, dropdown, dialog). Lifts via shadow in light, via lighter color + shadow in dark. |
+  | `surfaceSunken` _(new)_ | `#F0F1F2`                   | `#111213` _(was `#1F1F21`)_ | Structural inset wells (code blocks, comparison panes, zebra rows) — one step darker than canvas in both modes.              |
+
+  ## Borders — light mode switched to alpha
+
+  | Token          | Before                          | After                                 |
+  | -------------- | ------------------------------- | ------------------------------------- |
+  | `borderSubtle` | `color.neutral.200` (`#F0F1F2`) | `color.neutralAlpha.200` (~6% black)  |
+  | `border`       | `color.neutral.300` (`#DDDEE1`) | `color.neutralAlpha.300` (~14% black) |
+
+  `borderSubtle` no longer collides with `backgroundSubtle` (both were `#F0F1F2`), so subtle borders stay visible over any surface — including `tone-*` card backgrounds. Mirrors the alpha approach already in dark. `borderBold`, `borderBoldest`, and `borderHovered` stay solid — they're emphasis tokens, not structural.
+
+  ## Card emphasis ladder
+
+  `card.default.background` now maps to `semantic.color.background` (was `surfaceRaised`). On the single canvas this makes the default card **transparent-equivalent** — only the border separates it from surroundings. Emphasis is opt-in:
+
+  | Variant                                  | Background                                         | When to use                                                                 |
+  | ---------------------------------------- | -------------------------------------------------- | --------------------------------------------------------------------------- |
+  | `card--default`                          | canvas                                             | Default container. Border-only separation.                                  |
+  | `card--filled`                           | `backgroundSubtle`                                 | Mild emphasis (sub-panels, neutral callouts).                               |
+  | `card--tone-info/success/warning/danger` | `info/success/warning/danger` mixed 8% into canvas | Status **is the message** (blocked, succeeded, attention) — not decoration. |
+  | `card--selected`                         | `primary` mixed 8% into canvas                     | Selected item in a list/grid.                                               |
+  | `card--floating`                         | `surfaceRaised` + raised shadow                    | True float overlays (popover, menu).                                        |
+
+  `.davinci-card--interactive:hover` bumps `border-color` to `borderBold` instead of shifting background — gives a crisper "lift" signal without a muddy bg flash competing with the canvas.
+
+  ## AppShell — single canvas
+
+  All AppShell regions (sidebar, top-bar, header, main, aside) now share `background`. Separation comes from `border` lines between grid areas, not from color tiers.
+
+  ## Floating overlays use `card-floating` tokens
+
+  Combobox listbox, dropdown menu content, and Popover were coupled to `card.default` background/border tokens. With `card.default` now mapping to canvas, those overlays would have lost all color separation in dark mode (only a weak shadow on dark bg). Switched them to `card.floating` tokens so they always elevate:
+
+  - Light: same canvas color + overlay shadow (shadow does the lift).
+  - Dark: lighter `surfaceRaised` (`#303134`) + overlay shadow (visibly raised).
+
+  ## Tailwind preset
+
+  New utility: `bg-surface-sunken` / `ring-offset-surface-sunken`.
+
+  ## Migration notes
+
+  - Consumers who relied on `bg-surface` being visually distinct from `bg-background` will see them render identically in defaults. To bring tiered surfaces back in a custom theme, override `--davinci-semantic-color-surface` after importing the base CSS.
+  - Cards rendered with `<Card variant="default">` over a tinted parent no longer get an implicit white inset; if you needed that visual, switch to `<Card variant="filled">` or `<Card variant="floating">`.
+
+### Patch Changes
+
+- 28b0b8e: Lock AppShell sidebar, header, and aside in place when main content scrolls.
+
+  `.davinci-app-shell` now uses `block-size: 100dvh` (was `min-block-size`) plus `overflow: hidden` so the grid container fits the viewport exactly. Only the `__main`, `__sidebar`, and `__aside` slots scroll internally (they already had `overflow: auto`). At the mobile breakpoint (<768px) the lock is reset to `block-size: auto; min-block-size: 100dvh` so the stacked layout scrolls as one page.
+
+  Before: long page content pushed the shell taller than the viewport — sidebar and header scrolled away. Now they stay pinned.
+
 ## 0.3.0
 
 ### Minor Changes
