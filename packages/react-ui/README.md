@@ -10,7 +10,7 @@ Part of the [Davinci](https://github.com/jarviisha/davinci) design system.
 pnpm add @jarviisha/davinci-react-ui @jarviisha/davinci-tokens
 ```
 
-Peer dependencies: `react ^18.3.1 || ^19.0.0`, `react-dom ^18.3.1 || ^19.0.0`, `@jarviisha/davinci-tokens ^0.1.0`.
+Peer dependencies: `react ^18.3.1 || ^19.0.0`, `react-dom ^18.3.1 || ^19.0.0`, `@jarviisha/davinci-tokens >=0.1.0 <1.0.0`.
 
 ## Usage
 

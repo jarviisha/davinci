@@ -57,7 +57,7 @@ export default {
 
 The preset extends Tailwind's theme with token-backed utilities:
 
-- **Colors** — `background`, `surface`, `foreground` (with `foreground-subtle`/`foreground-subtlest`), `primary`, border roles (`border-subtle`, `border`, `border-bold`, `border-boldest`), status colors (`success`, `warning`, `danger`, `info`, `discovery`), `link` (+ hovered/pressed), `overlay`, and the usual `*-hovered` / `*-pressed` / `*-selected` / `*-foreground` variants.
+- **Colors** — `background`, surface tiers (`surface`, `surface-raised`, `surface-sunken`), `foreground` (with `foreground-subtle`/`foreground-subtlest`), `primary`, border roles (`border-subtle`, `border`, `border-bold`, `border-boldest`), status colors (`success`, `warning`, `danger`, `info`, `discovery`), `link` (+ hovered/pressed), `overlay`, and the usual `*-hovered` / `*-pressed` / `*-selected` / `*-foreground` variants.
 - **Spacing** — Davinci spacing scale (`gap-100`, `p-200`, `px-300`, … up to `1000`).
 - **Radius** — `rounded-card`, `rounded-control`, `rounded-pill`, plus standard `sm`/`md`/`lg`/`xl`/`full`.
 - **Typography** — `text-body`, `text-heading-md`, `font-sans`, `font-semibold`, `tracking-wide`, `leading-400`.
