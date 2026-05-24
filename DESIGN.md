@@ -247,5 +247,4 @@ Never patch primitive (`--davinci-color-*`) variables — those are the palette 
 ## See also
 
 - [USAGE.md](./USAGE.md) — installation, framework integration, troubleshooting.
-- [RELEASING.md](./RELEASING.md) — maintainer workflow.
 - Per-package READMEs — quick API surface for each package.

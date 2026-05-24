@@ -4,7 +4,7 @@
 
 Document này dành cho **người dùng cuối** muốn install các package `@jarviisha/davinci-*` từ npm và dùng trong dự án của họ (React app, Next.js, Vite, plain HTML, …).
 
-> Nếu bạn là maintainer muốn release một version mới, xem [RELEASING.md](./RELEASING.md).
+Để hiểu triết lý thiết kế đằng sau các package — khi nào dùng variant nào, mỗi token có ý nghĩa gì, anti-pattern — xem [DESIGN.md](./DESIGN.md).
 
 ---
 

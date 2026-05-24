@@ -2,7 +2,6 @@
 
 > **Using these packages in your own project?** See [USAGE.md](./USAGE.md) (English) or [USAGE.vn.md](./USAGE.vn.md) (Tiếng Việt).
 > **Want to know why the system is designed this way?** See [DESIGN.md](./DESIGN.md) — philosophy, decision rules, canonical patterns, anti-patterns.
-> **Cutting a release?** See [RELEASING.md](./RELEASING.md).
 
 Monorepo scaffold for a three-layer design token system:
 

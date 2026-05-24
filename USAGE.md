@@ -4,7 +4,7 @@
 
 This document is for **end users** who want to install the `@jarviisha/davinci-*` packages from npm and use them in their own project (React app, Next.js, Vite, plain HTML, …).
 
-> If you are a maintainer cutting a new release, see [RELEASING.md](./RELEASING.md).
+For the design philosophy behind these packages — when to use which variant, what each token means, anti-patterns — see [DESIGN.md](./DESIGN.md).
 
 ---
 
