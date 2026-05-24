@@ -1,6 +1,6 @@
 {
   "name": "@jarviisha/davinci-tailwind-preset",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Tailwind CSS v4 preset that maps Davinci design tokens to utility classes.",
   "license": "MIT",
   "author": "jarviisha",
@@ -11,9 +11,17 @@
   },
   "homepage": "https://github.com/jarviisha/davinci#readme",
   "bugs": "https://github.com/jarviisha/davinci/issues",
-  "keywords": ["tailwindcss", "tailwind-preset", "design-system", "design-tokens", "davinci"],
+  "keywords": [
+    "tailwindcss",
+    "tailwind-preset",
+    "design-system",
+    "design-tokens",
+    "davinci"
+  ],
   "type": "module",
-  "sideEffects": ["./dist/theme.css"],
+  "sideEffects": [
+    "./dist/theme.css"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -21,7 +29,10 @@
     },
     "./theme.css": "./dist/theme.css"
   },
-  "files": ["dist", "LICENSE"],
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
   "engines": {
     "node": ">=20"
   },
