@@ -2,7 +2,7 @@
 
 A small, SSR-safe React theme provider for the Davinci design system. Supports `light`, `dark`, and `system` themes, persists the choice in `localStorage`, and ships a tiny inline script to avoid theme flash on reload.
 
-Part of the [Davinci](https://github.com/jarviisha/davinci) design system.
+Part of the [Davinci](https://github.com/jarviisha/davinci) design system. See [DESIGN.md](https://github.com/jarviisha/davinci/blob/main/DESIGN.md) for the theming model these providers sit on top of.
 
 ## Install
 

@@ -2,7 +2,7 @@
 
 Headless-friendly React UI components styled with Davinci CSS tokens. No Tailwind required — the package ships its own stylesheet that only depends on the Davinci CSS variables.
 
-Part of the [Davinci](https://github.com/jarviisha/davinci) design system.
+Part of the [Davinci](https://github.com/jarviisha/davinci) design system. See [DESIGN.md](https://github.com/jarviisha/davinci/blob/main/DESIGN.md) for variant/tone decision rules and the canonical layout patterns.
 
 ## Install
 

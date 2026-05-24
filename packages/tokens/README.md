@@ -2,7 +2,7 @@
 
 Design tokens for the Davinci design system. Ships CSS variables for theming and a typed JavaScript export of every token.
 
-Part of the [Davinci](https://github.com/jarviisha/davinci) design system.
+Part of the [Davinci](https://github.com/jarviisha/davinci) design system. See [DESIGN.md](https://github.com/jarviisha/davinci/blob/main/DESIGN.md) for the philosophy behind the token decisions (single-canvas, border-led, emphasis-only).
 
 ## Install
 

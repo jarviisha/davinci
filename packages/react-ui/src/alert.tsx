@@ -1,6 +1,16 @@
 import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
 import { cn } from "./utils.js";
 
+/**
+ * Alert variant — the message itself is status-bearing.
+ *
+ * - `info` — passive notification ("This workspace is in read-only mode").
+ * - `success` — confirmation of a completed action ("Settings saved").
+ * - `warning` — caution ("Approaching API quota").
+ * - `danger` — error or blocking failure ("Deploy failed").
+ *
+ * If you want a non-status callout for marketing or onboarding, prefer `<Card variant="filled">` instead.
+ */
 export type AlertVariant = "info" | "success" | "warning" | "danger";
 
 export type AlertProps = HTMLAttributes<HTMLDivElement> & {

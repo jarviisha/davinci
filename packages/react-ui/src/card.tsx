@@ -1,8 +1,32 @@
 import { forwardRef, type HTMLAttributes } from "react";
 import { cn } from "./utils.js";
 
+/**
+ * Card emphasis ladder. Start at `default` and escalate only if intent demands it.
+ *
+ * - `default` — canvas + border. The baseline. Use for most grouped content (sections, lists, settings groups).
+ * - `outlined` — same shape as default, but lets you tune border weight via `outlineWeight`.
+ * - `filled` — `backgroundSubtle` fill. Mild emphasis for sub-panels nested inside another container or neutral callouts.
+ * - `flat` — no border, no fill. Use when the surrounding context already provides the frame.
+ * - `floating` — `surface-raised` background + raised shadow. Reserved for true overlays (popover, menu, command palette). Don't use to "make a card stand out" — that's what `filled` is for.
+ */
 export type CardVariant = "default" | "outlined" | "filled" | "flat" | "floating";
+
+/** Border emphasis for `variant="outlined"`. Default is `default`. Bumping to `bold` is for prominent groupings; `subtle` for nested rows. */
 export type CardOutlineWeight = "subtle" | "default" | "bold";
+
+/**
+ * Semantic tone — only for cards where **status IS the message** (build failed, deploy succeeded, approaching quota).
+ *
+ * Do not use as decoration. If the reader doesn't need to know the card is "informational",
+ * leave `tone` unset (= `neutral`) and rely on layout/typography instead.
+ *
+ * - `neutral` — default; no tint.
+ * - `info` — passive notification.
+ * - `success` — operation completed; healthy state.
+ * - `warning` — caution; partial degradation; non-blocking issue.
+ * - `danger` — error; destructive action; blocking failure.
+ */
 export type CardTone = "neutral" | "info" | "success" | "warning" | "danger";
 
 export type CardProps = HTMLAttributes<HTMLDivElement> & {

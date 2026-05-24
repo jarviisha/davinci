@@ -2,7 +2,7 @@
 
 Tailwind CSS v4 preset that maps Davinci design tokens to Tailwind utility classes (`bg-primary`, `text-foreground`, `rounded-card`, `gap-200`, etc.).
 
-Part of the [Davinci](https://github.com/jarviisha/davinci) design system.
+Part of the [Davinci](https://github.com/jarviisha/davinci) design system. See [DESIGN.md](https://github.com/jarviisha/davinci/blob/main/DESIGN.md) for the surface/border/spacing rules these utilities express.
 
 ## Install
 
