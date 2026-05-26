@@ -1610,6 +1610,7 @@
   cursor: pointer;
   display: inline-flex;
   gap: var(--davinci-component-switch-gap);
+  inline-size: fit-content;
   user-select: none;
 }
 
