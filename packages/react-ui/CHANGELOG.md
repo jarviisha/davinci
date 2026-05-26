@@ -1,5 +1,11 @@
 # @jarviisha/davinci-react-ui
 
+## 0.4.1
+
+### Patch Changes
+
+- c32b820: Fix Switch clickable area stretching to full parent width inside flex/grid containers. The label is now sized to `fit-content` so the actionable region matches the track + label instead of the entire row.
+
 ## 0.4.0
 
 ### Minor Changes
