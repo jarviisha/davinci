@@ -173,6 +173,36 @@ export function TablePanel() {
       </PanelSection>
 
       <PanelSection
+        title="Header tone"
+        description="tone on TableHeader recolors the header. default is the subtle baseline, primary is a branded fill, neutral is a quiet fill-free header."
+      >
+        <Stack gap="200">
+          {(["primary", "neutral"] as const).map((tone) => (
+            <TableContainer key={tone}>
+              <Table>
+                <TableHeader tone={tone}>
+                  <TableRow>
+                    <TableHead>Invoice</TableHead>
+                    <TableHead>Customer</TableHead>
+                    <TableHead style={{ textAlign: "right" }}>Amount</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {invoices.map((invoice) => (
+                    <TableRow key={invoice.id}>
+                      <TableCell style={{ fontWeight: 600 }}>{invoice.id}</TableCell>
+                      <TableCell>{invoice.customer}</TableCell>
+                      <TableCell style={{ textAlign: "right" }}>{invoice.amount}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          ))}
+        </Stack>
+      </PanelSection>
+
+      <PanelSection
         title="Selectable rows"
         description="interactive gives a row a clickable affordance; selected highlights the current pick. They compose — click a row to select it."
       >

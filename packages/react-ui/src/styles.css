@@ -2345,7 +2345,17 @@
 }
 
 .davinci-table__header {
-  background: var(--davinci-semantic-color-background-subtle);
+  background: var(--davinci-table-header-background, var(--davinci-semantic-color-background-subtle));
+}
+
+.davinci-table__header--primary {
+  --davinci-table-header-background: var(--davinci-semantic-color-primary);
+  --davinci-table-header-foreground: var(--davinci-semantic-color-primary-foreground);
+}
+
+.davinci-table__header--neutral {
+  --davinci-table-header-background: var(--davinci-semantic-color-background);
+  --davinci-table-header-foreground: var(--davinci-semantic-color-foreground);
 }
 
 .davinci-table__row {
@@ -2375,7 +2385,7 @@
 }
 
 .davinci-table__head {
-  color: var(--davinci-semantic-color-foreground-subtlest);
+  color: var(--davinci-table-header-foreground, var(--davinci-semantic-color-foreground-subtlest));
   font-size: var(--davinci-typography-label-font-size);
   font-weight: 600;
 }
@@ -2391,7 +2401,7 @@
 }
 
 .davinci-table--sticky-header .davinci-table__head {
-  background: var(--davinci-semantic-color-background-subtle);
+  background: var(--davinci-table-header-background, var(--davinci-semantic-color-background-subtle));
   box-shadow: inset 0 -1px 0 var(--davinci-semantic-color-border);
   inset-block-start: 0;
   position: sticky;

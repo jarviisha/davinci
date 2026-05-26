@@ -19,6 +19,15 @@ export type TableProps = HTMLAttributes<HTMLTableElement> & {
    */
   stickyHeader?: boolean;
 };
+/**
+ * Header color tone.
+ *
+ * - `default` — subtle fill with muted labels. The baseline.
+ * - `primary` — solid primary fill for a branded, emphasized header.
+ * - `neutral` — no fill with full-contrast labels for a quiet, plain header.
+ */
+export type TableHeaderTone = "default" | "primary" | "neutral";
+
 export type TableContainerProps = HTMLAttributes<HTMLDivElement> & {
   /** Drop the outer frame (border + rounded corners) for a flush, lines-only table. */
   borderless?: boolean;
@@ -29,7 +38,10 @@ export type TableContainerProps = HTMLAttributes<HTMLDivElement> & {
    */
   overlayScrollbar?: boolean;
 };
-export type TableHeaderProps = HTMLAttributes<HTMLTableSectionElement>;
+export type TableHeaderProps = HTMLAttributes<HTMLTableSectionElement> & {
+  /** Header color tone. Defaults to `default`. */
+  tone?: TableHeaderTone;
+};
 export type TableBodyProps = HTMLAttributes<HTMLTableSectionElement>;
 export type TableFooterProps = HTMLAttributes<HTMLTableSectionElement>;
 export type TableRowProps = HTMLAttributes<HTMLTableRowElement> & {
@@ -130,10 +142,16 @@ export const Table = forwardRef<HTMLTableElement, TableProps>(function Table(
 });
 
 export const TableHeader = forwardRef<HTMLTableSectionElement, TableHeaderProps>(function TableHeader(
-  { className, ...props },
+  { className, tone = "default", ...props },
   ref
 ) {
-  return <thead className={cn("davinci-table__header", className)} ref={ref} {...props} />;
+  return (
+    <thead
+      className={cn("davinci-table__header", tone !== "default" && `davinci-table__header--${tone}`, className)}
+      ref={ref}
+      {...props}
+    />
+  );
 });
 
 export const TableBody = forwardRef<HTMLTableSectionElement, TableBodyProps>(function TableBody(
