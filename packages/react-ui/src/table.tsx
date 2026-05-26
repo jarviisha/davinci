@@ -1,5 +1,6 @@
 import { forwardRef, type HTMLAttributes, type TdHTMLAttributes, type ThHTMLAttributes } from "react";
 import { cn } from "./utils.js";
+import { useOverlayScrollbar } from "./use-overlay-scrollbar.js";
 
 /**
  * Row padding density.
@@ -21,6 +22,12 @@ export type TableProps = HTMLAttributes<HTMLTableElement> & {
 export type TableContainerProps = HTMLAttributes<HTMLDivElement> & {
   /** Drop the outer frame (border + rounded corners) for a flush, lines-only table. */
   borderless?: boolean;
+  /**
+   * Replace the native scrollbar with a thumb that floats over the content and
+   * reserves zero layout space. Pairs with `Table`'s `stickyHeader` on a
+   * height-constrained container.
+   */
+  overlayScrollbar?: boolean;
 };
 export type TableHeaderProps = HTMLAttributes<HTMLTableSectionElement>;
 export type TableBodyProps = HTMLAttributes<HTMLTableSectionElement>;
@@ -42,17 +49,67 @@ export type TableCellProps = TdHTMLAttributes<HTMLTableCellElement> & {
 export type TableCaptionProps = HTMLAttributes<HTMLTableCaptionElement>;
 
 export const TableContainer = forwardRef<HTMLDivElement, TableContainerProps>(function TableContainer(
-  { className, borderless = false, ...props },
+  { className, borderless = false, overlayScrollbar = false, children, ...props },
   ref
 ) {
+  const containerClassName = cn(
+    "davinci-table-container",
+    borderless && "davinci-table-container--borderless",
+    overlayScrollbar && "davinci-table-container--overlay",
+    className
+  );
+
+  if (!overlayScrollbar) {
+    return (
+      <div className={containerClassName} ref={ref} {...props}>
+        {children}
+      </div>
+    );
+  }
+
   return (
-    <div
-      className={cn("davinci-table-container", borderless && "davinci-table-container--borderless", className)}
-      ref={ref}
-      {...props}
-    />
+    <OverlayTableContainer className={containerClassName} ref={ref} {...props}>
+      {children}
+    </OverlayTableContainer>
   );
 });
+
+const OverlayTableContainer = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
+  function OverlayTableContainer({ children, ...props }, ref) {
+    const { viewportRef, vertical, horizontal, onThumbPointerDown } = useOverlayScrollbar();
+    return (
+      <div ref={ref} {...props}>
+        <div className="davinci-table-container__viewport" ref={viewportRef}>
+          {children}
+        </div>
+        {vertical.visible ? (
+          <div
+            className="davinci-table-container__scrollbar davinci-table-container__scrollbar--vertical"
+            aria-hidden="true"
+          >
+            <div
+              className="davinci-table-container__thumb"
+              style={{ blockSize: vertical.size, transform: `translateY(${vertical.offset}px)` }}
+              onPointerDown={onThumbPointerDown("y")}
+            />
+          </div>
+        ) : null}
+        {horizontal.visible ? (
+          <div
+            className="davinci-table-container__scrollbar davinci-table-container__scrollbar--horizontal"
+            aria-hidden="true"
+          >
+            <div
+              className="davinci-table-container__thumb"
+              style={{ inlineSize: horizontal.size, transform: `translateX(${horizontal.offset}px)` }}
+              onPointerDown={onThumbPointerDown("x")}
+            />
+          </div>
+        ) : null}
+      </div>
+    );
+  }
+);
 
 export const Table = forwardRef<HTMLTableElement, TableProps>(function Table(
   { className, density = "comfortable", stickyHeader = false, ...props },

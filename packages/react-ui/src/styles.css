@@ -2264,6 +2264,70 @@
   border-radius: 0;
 }
 
+/* Overlay scrollbar: native bar is hidden (zero layout space); a custom thumb
+ * floats over the content, driven by useOverlayScrollbar. */
+.davinci-table-container--overlay {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.davinci-table-container__viewport {
+  flex: 1 1 auto;
+  inline-size: 100%;
+  min-block-size: 0;
+  min-inline-size: 0;
+  overflow: auto;
+  scrollbar-width: none;
+}
+
+.davinci-table-container__viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.davinci-table-container__scrollbar {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transition: opacity 200ms ease;
+  z-index: 1;
+}
+
+.davinci-table-container--overlay:hover .davinci-table-container__scrollbar,
+.davinci-table-container--overlay:focus-within .davinci-table-container__scrollbar {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.davinci-table-container__scrollbar--vertical {
+  inline-size: var(--davinci-component-scrollbar-size);
+  inset-block: 0;
+  inset-inline-end: 0;
+}
+
+.davinci-table-container__scrollbar--horizontal {
+  block-size: var(--davinci-component-scrollbar-size);
+  inset-block-end: 0;
+  inset-inline: 0;
+}
+
+.davinci-table-container__thumb {
+  background-clip: padding-box;
+  background-color: var(--davinci-component-scrollbar-thumb-background);
+  border: 2px solid transparent;
+  border-radius: var(--davinci-component-scrollbar-radius);
+  touch-action: none;
+}
+
+.davinci-table-container__scrollbar--vertical .davinci-table-container__thumb {
+  inline-size: 100%;
+}
+
+.davinci-table-container__scrollbar--horizontal .davinci-table-container__thumb {
+  block-size: 100%;
+}
+
 .davinci-table {
   border-collapse: collapse;
   color: var(--davinci-semantic-color-foreground);

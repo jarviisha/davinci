@@ -120,9 +120,9 @@ export function TablePanel() {
 
       <PanelSection
         title="Sticky header"
-        description="stickyHeader pins the header while the body scrolls — pair it with a height-constrained TableContainer."
+        description="stickyHeader pins the header while the body scrolls. overlayScrollbar floats the scrollbar over the content so it reserves zero width — hover to reveal it."
       >
-        <TableContainer style={{ maxHeight: "12rem" }}>
+        <TableContainer overlayScrollbar style={{ maxHeight: "12rem" }}>
           <Table stickyHeader>
             <TableHeader>
               <TableRow>
