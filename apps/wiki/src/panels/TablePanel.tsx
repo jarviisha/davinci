@@ -45,6 +45,27 @@ const ledger = Array.from({ length: 12 }, (_, i) => ({
   date: `May ${i + 1}, 2026`
 }));
 
+const wideColumns = [
+  "Invoice",
+  "Customer",
+  "Email",
+  "Status",
+  "Plan",
+  "Seats",
+  "Issued",
+  "Due",
+  "Subtotal",
+  "Tax",
+  "Total",
+  "Owner"
+];
+
+const wideRows = [
+  ["INV-1024", "Acme Inc.", "ap@acme.com", "Paid", "Enterprise", "120", "May 1, 2026", "May 31, 2026", "$2,200.00", "$200.00", "$2,400.00", "D. Okafor"],
+  ["INV-1025", "Northstar Labs", "billing@northstar.io", "Pending", "Growth", "45", "May 2, 2026", "Jun 1, 2026", "$820.00", "$70.00", "$890.00", "R. Singh"],
+  ["INV-1026", "Orbit Studio", "finance@orbit.studio", "Overdue", "Starter", "12", "May 3, 2026", "Jun 2, 2026", "$1,180.00", "$100.00", "$1,280.00", "M. Alvarez"]
+];
+
 export function TablePanel() {
   const [selectedId, setSelectedId] = useState("INV-1025");
 
@@ -83,6 +104,32 @@ export function TablePanel() {
                   </TableCell>
                   <TableCell>{invoice.date}</TableCell>
                   <TableCell style={{ textAlign: "right" }}>{invoice.amount}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </PanelSection>
+
+      <PanelSection
+        title="Wrapping cells"
+        description="Cells stay on one line by default. Add the wrap prop to let long-form content flow onto multiple lines."
+      >
+        <TableContainer>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Invoice</TableHead>
+                <TableHead wrap>Note</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {notes.map((row) => (
+                <TableRow key={row.id}>
+                  <TableCell style={{ fontWeight: 600 }}>{row.id}</TableCell>
+                  <TableCell wrap style={{ maxWidth: "32ch" }}>
+                    {row.note}
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -139,6 +186,34 @@ export function TablePanel() {
                   <TableCell>{row.account}</TableCell>
                   <TableCell>{row.date}</TableCell>
                   <TableCell style={{ textAlign: "right" }}>{row.amount}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </PanelSection>
+
+      <PanelSection
+        title="Horizontal scroll"
+        description="Cells stay on one line, so a wide table overflows its TableContainer and scrolls horizontally — the thin scrollbar reveals on hover. Add overlayScrollbar for a zero-space floating bar."
+      >
+        <TableContainer>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                {wideColumns.map((col) => (
+                  <TableHead key={col}>{col}</TableHead>
+                ))}
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {wideRows.map((row) => (
+                <TableRow key={row[0]}>
+                  {row.map((cell, i) => (
+                    <TableCell key={`${row[0]}-${i}`} style={i === 0 ? { fontWeight: 600 } : undefined}>
+                      {cell}
+                    </TableCell>
+                  ))}
                 </TableRow>
               ))}
             </TableBody>
