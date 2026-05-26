@@ -2398,6 +2398,12 @@
   z-index: 1;
 }
 
+/* The header row's own border would double up with the box-shadow divider that
+ * travels with the sticky header — drop it and let the box-shadow stand alone. */
+.davinci-table--sticky-header .davinci-table__header .davinci-table__row {
+  border-block-end: 0;
+}
+
 .davinci-table__row--selected,
 .davinci-table__body .davinci-table__row--selected:hover {
   background: var(--davinci-semantic-color-background-selected);
