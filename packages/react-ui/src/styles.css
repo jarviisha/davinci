@@ -2358,6 +2358,10 @@
   --davinci-table-header-foreground: var(--davinci-semantic-color-foreground);
 }
 
+.davinci-table__header--transparent {
+  --davinci-table-header-background: transparent;
+}
+
 .davinci-table__row {
   border-block-end: 1px solid var(--davinci-semantic-color-border);
 }

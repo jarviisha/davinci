@@ -249,10 +249,10 @@ export function TablePanel() {
 
       <PanelSection
         title="Header tone"
-        description="tone on TableHeader recolors the header. default is the subtle baseline, primary is a branded fill, neutral is a quiet fill-free header."
+        description="tone on TableHeader recolors the header. default is the subtle baseline, primary is a branded fill, neutral swaps in the base surface, and transparent drops the fill so whatever is behind the table shows through (not for use with stickyHeader — scrolling rows bleed through)."
       >
         <Stack gap="200">
-          {(["primary", "neutral"] as const).map((tone) => (
+          {(["primary", "neutral", "transparent"] as const).map((tone) => (
             <TableContainer key={tone}>
               <Table>
                 <TableHeader tone={tone}>

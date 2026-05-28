@@ -25,8 +25,10 @@ export type TableProps = HTMLAttributes<HTMLTableElement> & {
  * - `default` — subtle fill with muted labels. The baseline.
  * - `primary` — solid primary fill for a branded, emphasized header.
  * - `neutral` — no fill with full-contrast labels for a quiet, plain header.
+ * - `transparent` — no fill; the surface behind the table shows through, with muted labels.
+ *   Not suited for `stickyHeader`: with no fill, scrolling body rows bleed through the pinned header.
  */
-export type TableHeaderTone = "default" | "primary" | "neutral";
+export type TableHeaderTone = "default" | "primary" | "neutral" | "transparent";
 
 export type TableContainerProps = HTMLAttributes<HTMLDivElement> & {
   /** Drop the outer frame (border + rounded corners) for a flush, lines-only table. */
