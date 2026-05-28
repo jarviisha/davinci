@@ -1,5 +1,11 @@
 # @jarviisha/davinci-react-ui
 
+## 0.6.1
+
+### Patch Changes
+
+- 9a20388: Fix `Checkbox` and `Radio` stretching to fill the full width of a flex/grid parent (e.g. `Stack`, `RadioGroup`), which made the entire row clickable instead of just the control and its label. Both now set `inline-size: fit-content`, matching the existing `Switch` fix, so the clickable area hugs its content while still respecting the parent's cross-axis alignment in row layouts.
+
 ## 0.6.0
 
 ### Minor Changes
