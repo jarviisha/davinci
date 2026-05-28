@@ -1,5 +1,16 @@
 # @jarviisha/davinci-react-ui
 
+## 0.6.0
+
+### Minor Changes
+
+- 474b563: Add a `padding` prop to `AppShellMain` so consumers can opt out of the baked-in inline padding without reaching for `className`/style overrides. Accepts `"none" | "compact" | "default" | "spacious"`, mapped to the spacing scale (`0`, `spacing.200`, `spacing.300`, `spacing.400`). Defaults to `"default"` so existing call sites are unaffected. Modifier classes override the existing `--davinci-component-app-shell-main-padding` CSS variable, so theme overrides still cascade.
+- e2fcd52: Add a `transparent` option to `TableHeader`'s `tone`. It drops the header fill so the surface behind the table shows through, keeping the muted labels of the `default` tone. Additive and theme-aware like the other tones. Note: it isn't meant to be combined with `stickyHeader`, since the fill-free header lets scrolling body rows bleed through.
+
+### Patch Changes
+
+- e6e683f: Make the `Checkbox` check and indeterminate glyphs visually stronger. The shared tabler-style icons render with a sub-pixel stroke at the checkbox's small box sizes (~1px on a 16–18px box), so they looked anemic on the solid primary fill. The fix is scoped to `Checkbox`: the icon now occupies 85% of the box (up from 75%) and gets `stroke-width: 3` via CSS, leaving the shared icons untouched.
+
 ## 0.5.0
 
 ### Minor Changes
