@@ -1169,6 +1169,19 @@
   padding: var(--davinci-component-app-shell-main-padding);
 }
 
+/* Padding presets override the CSS var so theme overrides still cascade. */
+.davinci-app-shell__main--padding-none {
+  --davinci-component-app-shell-main-padding: 0;
+}
+
+.davinci-app-shell__main--padding-compact {
+  --davinci-component-app-shell-main-padding: var(--davinci-spacing-200);
+}
+
+.davinci-app-shell__main--padding-spacious {
+  --davinci-component-app-shell-main-padding: var(--davinci-spacing-400);
+}
+
 .davinci-app-shell__aside {
   background: var(--davinci-semantic-color-background);
   border-inline-start: 1px solid var(--davinci-semantic-color-border);
