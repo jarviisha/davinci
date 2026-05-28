@@ -1433,9 +1433,14 @@
 
 .davinci-checkbox__check,
 .davinci-checkbox__mixed {
-  block-size: 75%;
-  inline-size: 75%;
+  block-size: 85%;
+  inline-size: 85%;
   opacity: 0;
+  /* Source icons are tabler-style stroke=2 on a 24 viewBox — when scaled down to
+   * 14–16px the visible stroke drops to ~1px and looks anemic. Bumping to 3
+   * keeps the glyph readable on a solid primary fill. CSS overrides the
+   * presentation attribute on the <svg>. */
+  stroke-width: 3;
   transition: opacity 100ms ease;
 }
 
