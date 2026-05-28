@@ -1403,6 +1403,7 @@
   cursor: pointer;
   display: inline-flex;
   gap: var(--davinci-component-checkbox-gap);
+  inline-size: fit-content;
   user-select: none;
 }
 
@@ -1531,6 +1532,7 @@
   cursor: pointer;
   display: inline-flex;
   gap: var(--davinci-component-radio-gap);
+  inline-size: fit-content;
   user-select: none;
 }
 
