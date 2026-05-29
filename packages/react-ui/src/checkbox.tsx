@@ -3,6 +3,8 @@ import {
   useEffect,
   useImperativeHandle,
   useRef,
+  useState,
+  type ChangeEvent,
   type InputHTMLAttributes,
   type ReactNode
 } from "react";
@@ -27,11 +29,14 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Che
   {
     "aria-describedby": ariaDescribedBy,
     "aria-invalid": ariaInvalid,
+    checked,
     className,
+    defaultChecked,
     disabled,
     id,
     indeterminate = false,
     label,
+    onChange,
     required,
     size = "md",
     ...props
@@ -41,6 +46,20 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Che
   const ctx = useFormFieldContext();
   const inputRef = useRef<HTMLInputElement | null>(null);
   useImperativeHandle(ref, () => inputRef.current as HTMLInputElement, []);
+
+  // Track checked state so we can render only the matching icon. The input
+  // stays controlled/uncontrolled exactly as the caller specified; this state
+  // just mirrors it for the visual glyph.
+  const [uncontrolledChecked, setUncontrolledChecked] = useState(defaultChecked ?? false);
+  const isControlled = checked !== undefined;
+  const isChecked = isControlled ? checked : uncontrolledChecked;
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    if (!isControlled) {
+      setUncontrolledChecked(event.target.checked);
+    }
+    onChange?.(event);
+  };
 
   useEffect(() => {
     if (inputRef.current) {
@@ -58,17 +77,23 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Che
       <input
         aria-describedby={ariaDescribedBy ?? ctx?.describedBy}
         aria-invalid={resolvedInvalid}
+        checked={checked}
         className="davinci-checkbox__input"
+        defaultChecked={defaultChecked}
         disabled={resolvedDisabled}
         id={resolvedId}
+        onChange={handleChange}
         ref={inputRef}
         required={resolvedRequired}
         type="checkbox"
         {...props}
       />
       <span aria-hidden="true" className="davinci-checkbox__visual">
-        <CheckIcon className="davinci-checkbox__check" />
-        <MinusIcon className="davinci-checkbox__mixed" />
+        {indeterminate ? (
+          <MinusIcon className="davinci-checkbox__mixed" />
+        ) : isChecked ? (
+          <CheckIcon className="davinci-checkbox__check" />
+        ) : null}
       </span>
       {label !== undefined && <span className="davinci-checkbox__label">{label}</span>}
     </label>
