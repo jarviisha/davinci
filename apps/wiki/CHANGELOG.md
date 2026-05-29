@@ -1,5 +1,12 @@
 # @davinci/wiki
 
+## 0.0.6
+
+### Patch Changes
+
+- Updated dependencies [9a20388]
+  - @jarviisha/davinci-react-ui@0.6.1
+
 ## 0.0.5
 
 ### Patch Changes
