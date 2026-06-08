@@ -1,6 +1,6 @@
 {
   "name": "@jarviisha/davinci-react-ui",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "React UI components styled with Davinci CSS tokens (no Tailwind required).",
   "license": "MIT",
   "author": "jarviisha",
