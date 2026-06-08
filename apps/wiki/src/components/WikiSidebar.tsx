@@ -7,8 +7,13 @@ import {
   Nav,
   NavGroup,
   NavItem,
+  Select,
   Stack
 } from "@jarviisha/davinci-react-ui";
+import {
+  fontPresets,
+  type FontPreset
+} from "../hooks/useFontPreset";
 import {
   PRESET_LABELS,
   radiusPresets,
@@ -26,7 +31,9 @@ function nextTheme(theme: Theme): Theme {
 type WikiSidebarProps = {
   groups: ReadonlyArray<{ label: PanelGroup; panels: ReadonlyArray<PanelMeta> }>;
   activeId: string;
+  fontPreset: FontPreset;
   onNavigate: (id: string) => void;
+  onFontPresetChange: (preset: FontPreset) => void;
   radiusPreset: RadiusPreset;
   onRadiusPresetChange: (preset: RadiusPreset) => void;
 };
@@ -34,7 +41,9 @@ type WikiSidebarProps = {
 export function WikiSidebar({
   groups,
   activeId,
+  fontPreset,
   onNavigate,
+  onFontPresetChange,
   radiusPreset,
   onRadiusPresetChange
 }: WikiSidebarProps) {
@@ -77,6 +86,25 @@ export function WikiSidebar({
           <Button onClick={() => setTheme(nextTheme(theme))} tone="neutral" variant="outline">
             Switch to {nextTheme(theme)}
           </Button>
+        </Stack>
+
+        <Stack gap="200">
+          <Divider />
+          <Inline align="center" justify="between">
+            <span className="text-sm font-medium">Font</span>
+            <Badge variant="neutral">{fontPresets[fontPreset].label}</Badge>
+          </Inline>
+          <Select
+            aria-label="Font family"
+            onChange={(event) => onFontPresetChange(event.target.value as FontPreset)}
+            value={fontPreset}
+          >
+            {(Object.keys(fontPresets) as FontPreset[]).map((preset) => (
+              <option key={preset} value={preset}>
+                {fontPresets[preset].label}
+              </option>
+            ))}
+          </Select>
         </Stack>
 
         <Stack gap="200">

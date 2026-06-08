@@ -2,6 +2,7 @@ import { useTheme } from "@jarviisha/davinci-react-theme-provider";
 import { Stack } from "@jarviisha/davinci-react-ui";
 import { PanelHeader } from "./components/PanelHeader";
 import { WikiSidebar } from "./components/WikiSidebar";
+import { useFontPreset } from "./hooks/useFontPreset";
 import { useHashRoute } from "./hooks/useHashRoute";
 import { useRadiusPreset } from "./hooks/useRadiusPreset";
 import { themeTokenEntries } from "./lib/tokens";
@@ -12,6 +13,7 @@ const SEMANTIC_PREFIX = "semantic.color.";
 export default function App() {
   const { resolvedTheme } = useTheme();
   const [activeId, navigate] = useHashRoute(panelIds, DEFAULT_PANEL_ID);
+  const [fontPreset, setFontPreset] = useFontPreset();
   const [radiusPreset, setRadiusPreset] = useRadiusPreset();
 
   const semanticEntries = themeTokenEntries(resolvedTheme).filter(
@@ -24,7 +26,9 @@ export default function App() {
     <main className="min-h-screen bg-surface font-sans text-foreground">
       <WikiSidebar
         activeId={activeId}
+        fontPreset={fontPreset}
         groups={panelGroups}
+        onFontPresetChange={setFontPreset}
         onNavigate={navigate}
         onRadiusPresetChange={setRadiusPreset}
         radiusPreset={radiusPreset}
