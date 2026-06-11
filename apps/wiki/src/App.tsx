@@ -1,10 +1,9 @@
-import { useTheme } from "@jarviisha/davinci-react-theme-provider";
+import { useRadiusPreset, useTheme } from "@jarviisha/davinci-react-theme-provider";
 import { Stack } from "@jarviisha/davinci-react-ui";
 import { PanelHeader } from "./components/PanelHeader";
 import { WikiSidebar } from "./components/WikiSidebar";
 import { useFontPreset } from "./hooks/useFontPreset";
 import { useHashRoute } from "./hooks/useHashRoute";
-import { useRadiusPreset } from "./hooks/useRadiusPreset";
 import { themeTokenEntries } from "./lib/tokens";
 import { DEFAULT_PANEL_ID, findPanel, panelGroups, panelIds } from "./panels/registry";
 
@@ -14,7 +13,7 @@ export default function App() {
   const { resolvedTheme } = useTheme();
   const [activeId, navigate] = useHashRoute(panelIds, DEFAULT_PANEL_ID);
   const [fontPreset, setFontPreset] = useFontPreset();
-  const [radiusPreset, setRadiusPreset] = useRadiusPreset();
+  const [radiusValue, setRadiusValue] = useRadiusPreset();
 
   const semanticEntries = themeTokenEntries(resolvedTheme).filter(
     (token) => token.name.startsWith(SEMANTIC_PREFIX) && !token.name.endsWith("Foreground")
@@ -30,8 +29,8 @@ export default function App() {
         groups={panelGroups}
         onFontPresetChange={setFontPreset}
         onNavigate={navigate}
-        onRadiusPresetChange={setRadiusPreset}
-        radiusPreset={radiusPreset}
+        onRadiusChange={setRadiusValue}
+        radiusValue={radiusValue}
       />
 
       <section className="min-w-0 px-6 py-6 lg:ml-80 lg:px-8 lg:py-8">

@@ -171,6 +171,21 @@ export default function RootLayout({ children }) {
 
 Pass the same `defaultTheme` and `storageKey` to both `ThemeScript` and `ThemeProvider` so they agree.
 
+### Customize interface radius
+
+`useRadiusPreset` adjusts the radius scale at runtime — pass a named preset (`minimum`, `subtle`, `default`, `bold`) or a raw `{ sm, md, lg, xl }` scale in pixels. It writes the `--davinci-radius-*` custom properties and persists to `localStorage`. `getRadiusScript()` / `RadiusScript` prevent radius flash the same way `getThemeScript` / `ThemeScript` do for the palette.
+
+```tsx
+import { useRadiusPreset } from "@jarviisha/davinci-react-theme-provider";
+
+function RadiusControls() {
+  const [radius, setRadius] = useRadiusPreset();
+  return <button onClick={() => setRadius("bold")}>Bold corners</button>;
+}
+```
+
+See the [package README](packages/react-theme-provider/README.md#radius-customization) for the full API.
+
 Then use token-backed Tailwind classes:
 
 ```tsx

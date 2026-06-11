@@ -1,4 +1,13 @@
-import { useTheme, type Theme } from "@jarviisha/davinci-react-theme-provider";
+import {
+  matchPreset,
+  RADIUS_PRESET_LABELS,
+  radiusPresets,
+  resolveScale,
+  useTheme,
+  type RadiusPreset,
+  type RadiusValue,
+  type Theme
+} from "@jarviisha/davinci-react-theme-provider";
 import {
   Badge,
   Button,
@@ -14,11 +23,6 @@ import {
   fontPresets,
   type FontPreset
 } from "../hooks/useFontPreset";
-import {
-  PRESET_LABELS,
-  radiusPresets,
-  type RadiusPreset
-} from "../hooks/useRadiusPreset";
 import type { PanelGroup, PanelMeta } from "../panels/types";
 
 const themes: Theme[] = ["light", "dark", "system"];
@@ -34,8 +38,8 @@ type WikiSidebarProps = {
   fontPreset: FontPreset;
   onNavigate: (id: string) => void;
   onFontPresetChange: (preset: FontPreset) => void;
-  radiusPreset: RadiusPreset;
-  onRadiusPresetChange: (preset: RadiusPreset) => void;
+  radiusValue: RadiusValue;
+  onRadiusChange: (value: RadiusValue) => void;
 };
 
 export function WikiSidebar({
@@ -44,10 +48,12 @@ export function WikiSidebar({
   fontPreset,
   onNavigate,
   onFontPresetChange,
-  radiusPreset,
-  onRadiusPresetChange
+  radiusValue,
+  onRadiusChange
 }: WikiSidebarProps) {
   const { theme, setTheme } = useTheme();
+  const radiusScale = resolveScale(radiusValue);
+  const matchedPreset = matchPreset(radiusValue);
 
   return (
     <aside className="davinci-scrollbar border-b border-border px-6 py-6 lg:fixed lg:inset-y-0 lg:left-0 lg:z-10 lg:w-80 lg:overflow-y-auto lg:border-b-0 lg:border-r lg:bg-background lg:px-6 lg:py-8">
@@ -111,24 +117,46 @@ export function WikiSidebar({
           <Divider />
           <Inline align="center" justify="between">
             <span className="text-sm font-medium">Radius</span>
-            <Badge variant="neutral">{PRESET_LABELS[radiusPreset]}</Badge>
+            <Badge variant="neutral">
+              {matchedPreset ? RADIUS_PRESET_LABELS[matchedPreset] : "Custom"}
+            </Badge>
           </Inline>
           <Inline gap="100" wrap>
             {(Object.keys(radiusPresets) as RadiusPreset[]).map((preset) => {
-              const active = preset === radiusPreset;
+              const active = preset === matchedPreset;
               return (
                 <Button
                   key={preset}
-                  onClick={() => onRadiusPresetChange(preset)}
+                  onClick={() => onRadiusChange(preset)}
                   size="sm"
                   tone={active ? "primary" : "neutral"}
                   variant={active ? "solid" : "outline"}
                 >
-                  {PRESET_LABELS[preset]}
+                  {RADIUS_PRESET_LABELS[preset]}
                 </Button>
               );
             })}
           </Inline>
+          <Stack gap="100">
+            {(["sm", "md", "lg", "xl"] as const).map((key) => (
+              <label className="flex items-center gap-3 text-sm" key={key}>
+                <span className="w-6 uppercase text-foreground-subtle">{key}</span>
+                <input
+                  className="flex-1 accent-(--davinci-semantic-color-primary)"
+                  max={32}
+                  min={0}
+                  onChange={(event) =>
+                    onRadiusChange({ ...radiusScale, [key]: Number(event.target.value) })
+                  }
+                  type="range"
+                  value={radiusScale[key]}
+                />
+                <span className="w-10 text-right tabular-nums text-foreground-subtle">
+                  {radiusScale[key]}px
+                </span>
+              </label>
+            ))}
+          </Stack>
           <div className="grid grid-cols-3 gap-2">
             <div
               className="h-9 border border-border bg-background-subtle"

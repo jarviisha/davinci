@@ -1,5 +1,12 @@
-import { useEffect, useState } from "react";
-import { useTheme, type Theme } from "@jarviisha/davinci-react-theme-provider";
+import {
+  matchPreset,
+  RADIUS_PRESET_LABELS,
+  radiusPresets,
+  useRadiusPreset,
+  useTheme,
+  type RadiusPreset,
+  type Theme
+} from "@jarviisha/davinci-react-theme-provider";
 import {
   Badge,
   Button,
@@ -16,22 +23,6 @@ import {
 
 const RADIUS_STORAGE_KEY = "davinci-playground-radius";
 
-const radiusPresets = {
-  minimum: { sm: 4, md: 4, lg: 4, xl: 4 },
-  subtle: { sm: 4, md: 4, lg: 8, xl: 8 },
-  default: { sm: 4, md: 8, lg: 12, xl: 16 },
-  bold: { sm: 8, md: 12, lg: 16, xl: 24 }
-} as const;
-
-type RadiusPreset = keyof typeof radiusPresets;
-const DEFAULT_PRESET: RadiusPreset = "default";
-const PRESET_LABELS: Record<RadiusPreset, string> = {
-  minimum: "Minimum",
-  subtle: "Subtle",
-  default: "Default",
-  bold: "Bold"
-};
-
 const themeOptions: { value: Theme; label: string; hint: string }[] = [
   { value: "light", label: "Light", hint: "Always use the light palette." },
   { value: "dark", label: "Dark", hint: "Always use the dark palette." },
@@ -40,21 +31,8 @@ const themeOptions: { value: Theme; label: string; hint: string }[] = [
 
 export default function SettingsRoute() {
   const { theme, resolvedTheme, setTheme } = useTheme();
-  const [radiusPreset, setRadiusPreset] = useState<RadiusPreset>(readInitialPreset);
-
-  useEffect(() => {
-    const root = document.documentElement;
-    const values = radiusPresets[radiusPreset];
-
-    root.style.setProperty("--davinci-radius-sm", `${values.sm}px`);
-    root.style.setProperty("--davinci-radius-md", `${values.md}px`);
-    root.style.setProperty("--davinci-radius-lg", `${values.lg}px`);
-    root.style.setProperty("--davinci-radius-xl", `${values.xl}px`);
-    root.style.setProperty("--davinci-semantic-radius-control", "var(--davinci-radius-md)");
-    root.style.setProperty("--davinci-semantic-radius-card", "var(--davinci-radius-lg)");
-    root.style.setProperty("--davinci-semantic-radius-panel", "var(--davinci-radius-xl)");
-    window.localStorage.setItem(RADIUS_STORAGE_KEY, radiusPreset);
-  }, [radiusPreset]);
+  const [radiusValue, setRadiusValue] = useRadiusPreset({ storageKey: RADIUS_STORAGE_KEY });
+  const radiusPreset = matchPreset(radiusValue);
 
   return (
     <Stack gap="300">
@@ -100,7 +78,9 @@ export default function SettingsRoute() {
               <CardTitle>Interface radius</CardTitle>
               <CardDescription>Controls how rounded controls, cards, and panels appear.</CardDescription>
             </div>
-            <Badge variant="neutral">{PRESET_LABELS[radiusPreset]}</Badge>
+            <Badge variant="neutral">
+              {radiusPreset ? RADIUS_PRESET_LABELS[radiusPreset] : "Custom"}
+            </Badge>
           </Inline>
         </CardHeader>
         <CardContent>
@@ -110,12 +90,12 @@ export default function SettingsRoute() {
               return (
                 <Button
                   key={preset}
-                  onClick={() => setRadiusPreset(preset)}
+                  onClick={() => setRadiusValue(preset)}
                   size="sm"
                   tone={active ? "primary" : "neutral"}
                   variant={active ? "solid" : "outline"}
                 >
-                  {PRESET_LABELS[preset]}
+                  {RADIUS_PRESET_LABELS[preset]}
                 </Button>
               );
             })}
@@ -124,12 +104,4 @@ export default function SettingsRoute() {
       </Card>
     </Stack>
   );
-}
-
-function readInitialPreset(): RadiusPreset {
-  const stored = window.localStorage.getItem(RADIUS_STORAGE_KEY);
-  if (stored && stored in radiusPresets) {
-    return stored as RadiusPreset;
-  }
-  return DEFAULT_PRESET;
 }

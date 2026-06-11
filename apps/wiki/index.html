@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
       rel="stylesheet"
     />
     <script>
@@ -21,6 +21,34 @@
           var f = localStorage.getItem("davinci-wiki-font");
           if (f && fonts[f]) {
             document.documentElement.style.setProperty("--davinci-font-family-sans", fonts[f]);
+          }
+
+          // Mirrors getRadiusScript() from @jarviisha/davinci-react-theme-provider
+          var radii = {
+            minimum: [4, 4, 4, 4],
+            subtle: [4, 4, 8, 8],
+            default: [4, 8, 12, 16],
+            bold: [8, 12, 16, 24]
+          };
+          var rp = localStorage.getItem("davinci-radius");
+          var rv = radii[rp];
+          if (!rv && rp) {
+            try {
+              var parsed = JSON.parse(rp);
+              if (parsed && typeof parsed.sm === "number") {
+                rv = [parsed.sm, parsed.md, parsed.lg, parsed.xl];
+              }
+            } catch (e) {}
+          }
+          if (rv) {
+            var rs = document.documentElement.style;
+            rs.setProperty("--davinci-radius-sm", rv[0] + "px");
+            rs.setProperty("--davinci-radius-md", rv[1] + "px");
+            rs.setProperty("--davinci-radius-lg", rv[2] + "px");
+            rs.setProperty("--davinci-radius-xl", rv[3] + "px");
+            rs.setProperty("--davinci-semantic-radius-control", "var(--davinci-radius-md)");
+            rs.setProperty("--davinci-semantic-radius-card", "var(--davinci-radius-lg)");
+            rs.setProperty("--davinci-semantic-radius-panel", "var(--davinci-radius-xl)");
           }
 
           var s = localStorage.getItem("davinci-theme");

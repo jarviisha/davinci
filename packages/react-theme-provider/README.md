@@ -89,6 +89,39 @@ console.log(getThemeScript({ defaultTheme: "system" }));
 
 Pass the same `defaultTheme` and `storageKey` to `ThemeScript` (or `getThemeScript`) and `ThemeProvider` so they agree.
 
+## Radius customization
+
+`useRadiusPreset` adjusts the Davinci radius scale at runtime. It accepts a named preset (`minimum`, `subtle`, `default`, `bold`) **or** a raw `{ sm, md, lg, xl }` scale in pixels, writes the `--davinci-radius-*` (and derived `--davinci-semantic-radius-*`) custom properties on `<html>`, and persists the choice to `localStorage`.
+
+```tsx
+import { useRadiusPreset, matchPreset } from "@jarviisha/davinci-react-theme-provider";
+
+function RadiusControls() {
+  const [radius, setRadius] = useRadiusPreset();
+  const active = matchPreset(radius); // preset key, or null when custom
+
+  return (
+    <>
+      <button onClick={() => setRadius("bold")}>Bold</button>
+      {/* free-form: bump just one step */}
+      <button onClick={() => setRadius({ sm: 6, md: 10, lg: 14, xl: 20 })}>Custom</button>
+      <span>{active ?? "Custom"}</span>
+    </>
+  );
+}
+```
+
+| Export                  | Description                                                                 |
+| ----------------------- | --------------------------------------------------------------------------- |
+| `useRadiusPreset(opts)` | Hook returning `[value, setValue]`. Options: `storageKey`, `defaultValue`.  |
+| `radiusPresets`         | The named preset → scale map.                                               |
+| `resolveScale(value)`   | Resolve a preset key or scale to concrete `{ sm, md, lg, xl }` pixels.      |
+| `matchPreset(value)`    | The preset a value matches exactly, or `null` when it is custom.            |
+| `RADIUS_PRESET_LABELS`  | Human-readable labels for each preset.                                       |
+| `getRadiusScript(opts)` / `RadiusScript` | Flash-prevention script, same pattern as `getThemeScript` / `ThemeScript`. |
+
+The default `storageKey` is `"davinci-radius"`.
+
 ## License
 
 MIT

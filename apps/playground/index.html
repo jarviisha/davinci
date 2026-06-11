@@ -7,6 +7,34 @@
     <script>
       (function () {
         try {
+          // Mirrors getRadiusScript() from @jarviisha/davinci-react-theme-provider
+          var radii = {
+            minimum: [4, 4, 4, 4],
+            subtle: [4, 4, 8, 8],
+            default: [4, 8, 12, 16],
+            bold: [8, 12, 16, 24]
+          };
+          var rp = localStorage.getItem("davinci-playground-radius");
+          var rv = radii[rp];
+          if (!rv && rp) {
+            try {
+              var parsed = JSON.parse(rp);
+              if (parsed && typeof parsed.sm === "number") {
+                rv = [parsed.sm, parsed.md, parsed.lg, parsed.xl];
+              }
+            } catch (e) {}
+          }
+          if (rv) {
+            var rs = document.documentElement.style;
+            rs.setProperty("--davinci-radius-sm", rv[0] + "px");
+            rs.setProperty("--davinci-radius-md", rv[1] + "px");
+            rs.setProperty("--davinci-radius-lg", rv[2] + "px");
+            rs.setProperty("--davinci-radius-xl", rv[3] + "px");
+            rs.setProperty("--davinci-semantic-radius-control", "var(--davinci-radius-md)");
+            rs.setProperty("--davinci-semantic-radius-card", "var(--davinci-radius-lg)");
+            rs.setProperty("--davinci-semantic-radius-panel", "var(--davinci-radius-xl)");
+          }
+
           var s = localStorage.getItem("davinci-theme");
           var t = s || "system";
           var r =

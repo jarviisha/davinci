@@ -127,3 +127,18 @@ export function getThemeScript(options: ThemeScriptOptions = {}): string {
 export function ThemeScript(options: ThemeScriptOptions = {}) {
   return <script dangerouslySetInnerHTML={{ __html: getThemeScript(options) }} />;
 }
+
+export {
+  getRadiusScript,
+  matchPreset,
+  RADIUS_PRESET_LABELS,
+  RadiusScript,
+  radiusPresets,
+  resolveScale,
+  useRadiusPreset,
+  type RadiusPreset,
+  type RadiusScale,
+  type RadiusScriptOptions,
+  type RadiusValue,
+  type UseRadiusOptions
+} from "./radius";
