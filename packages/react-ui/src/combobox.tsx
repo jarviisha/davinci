@@ -124,7 +124,18 @@ export const Combobox = forwardRef<HTMLInputElement, ComboboxProps>(function Com
         {...props}
       />
       <span aria-hidden="true" className="davinci-combobox__chevron">
-        ⌄
+        <svg
+          fill="none"
+          height="16"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1.5"
+          viewBox="0 0 16 16"
+          width="16"
+        >
+          <path d="M4 6l4 4 4-4" />
+        </svg>
       </span>
       {open ? (
         <div className="davinci-combobox__listbox" id={listboxId} role="listbox">

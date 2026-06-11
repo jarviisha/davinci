@@ -7,7 +7,7 @@
       },
       "mono": {
         "$type": "fontFamily",
-        "$value": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
+        "$value": "'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
       }
     },
     "size": {
