@@ -208,7 +208,7 @@ export function Example() {
 
 Components có sẵn (xem chi tiết types khi import):
 
-- **Form**: `Button`, `IconButton`, `Input`, `Textarea`, `Select`, `Checkbox`, `Radio`, `Switch`, `Combobox`, `SearchInput`, `Label`, `FormField`, `FormHelpText`, `FormErrorText`.
+- **Form**: `Button`, `IconButton`, `Input`, `NumberInput`, `Textarea`, `Select`, `Checkbox`, `Radio`, `Switch`, `Combobox`, `SearchInput`, `Label`, `FormField`, `FormHelpText`, `FormErrorText`.
 - **Layout**: `AppShell` (slots: `AppShellTopBar`, `AppShellSidebar`, `AppShellHeader`, `AppShellMain`, `AppShellAside`), `DetailLayout` (`DetailLayoutMain` + `DetailLayoutAside`), `Container`, `Stack`, `Inline`, `Divider`, `Card`.
 - **Navigation**: `Nav`, `Breadcrumbs`, `Pagination`, `Tabs`, `DropdownMenu`.
 - **Overlay**: `Dialog`, `Drawer`, `Popover`, `Tooltip`, `Toast` (qua `ToastProvider` + `useToast`).

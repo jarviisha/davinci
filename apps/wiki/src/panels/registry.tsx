@@ -19,6 +19,7 @@ import { ElevationPanel, elevationPanelMeta } from "./ElevationPanel";
 import { EmptyStatePanel, emptyStatePanelMeta } from "./EmptyStatePanel";
 import { FormFieldPanel, formFieldPanelMeta } from "./FormFieldPanel";
 import { IconButtonPanel, iconButtonPanelMeta } from "./IconButtonPanel";
+import { NumberInputPanel, numberInputPanelMeta } from "./NumberInputPanel";
 import { PaginationPanel, paginationPanelMeta } from "./PaginationPanel";
 import { PopoverPanel, popoverPanelMeta } from "./PopoverPanel";
 import { RadioPanel, radioPanelMeta } from "./RadioPanel";
@@ -62,6 +63,7 @@ export const panels: readonly PanelEntry[] = [
   { ...radioPanelMeta, render: () => <RadioPanel /> },
   { ...switchPanelMeta, render: () => <SwitchPanel /> },
   { ...searchInputPanelMeta, render: () => <SearchInputPanel /> },
+  { ...numberInputPanelMeta, render: () => <NumberInputPanel /> },
   { ...comboboxPanelMeta, render: () => <ComboboxPanel /> },
 
   // Data display

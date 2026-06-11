@@ -74,6 +74,8 @@ export { FormFieldContext, useFormFieldContext } from "./form-field-context.js";
 export type { FormFieldContextValue } from "./form-field-context.js";
 export { Input } from "./input.js";
 export type { InputProps, InputSize } from "./input.js";
+export { NumberInput } from "./number-input.js";
+export type { NumberInputProps, NumberInputSize } from "./number-input.js";
 export { Label } from "./label.js";
 export type { LabelProps, LabelSize } from "./label.js";
 export { Container, Inline, Stack } from "./layout.js";

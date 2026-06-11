@@ -500,6 +500,140 @@
   color: var(--davinci-semantic-color-foreground);
 }
 
+/* ----- NumberInput ----- */
+
+.davinci-number-input {
+  align-items: stretch;
+  background-color: var(--davinci-component-input-background);
+  border: 1px solid var(--davinci-component-input-border);
+  border-radius: var(--davinci-component-input-radius);
+  color: var(--davinci-component-input-foreground);
+  display: inline-flex;
+  overflow: hidden;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+  width: 100%;
+}
+
+.davinci-number-input:hover:not(:focus-within) {
+  border-color: var(--davinci-component-input-border-hovered);
+}
+
+.davinci-number-input:focus-within {
+  border-color: var(--davinci-semantic-color-border-focused);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--davinci-semantic-focus-ring-color) 22%, transparent);
+}
+
+.davinci-number-input:has(.davinci-number-input__control:disabled) {
+  background-color: var(--davinci-component-input-disabled-background);
+  border-color: var(--davinci-component-input-disabled-border);
+  color: var(--davinci-component-input-disabled-foreground);
+}
+
+.davinci-number-input:has(.davinci-number-input__control[aria-invalid="true"]) {
+  border-color: var(--davinci-component-input-border-invalid);
+}
+
+.davinci-number-input:has(.davinci-number-input__control[aria-invalid="true"]):focus-within {
+  border-color: var(--davinci-component-input-border-invalid);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--davinci-component-input-border-invalid) 22%, transparent);
+}
+
+.davinci-number-input--sm {
+  font-size: var(--davinci-typography-body-small-font-size);
+  height: var(--davinci-component-input-height-sm);
+}
+
+.davinci-number-input--md {
+  height: var(--davinci-component-input-height-md);
+}
+
+.davinci-number-input--lg {
+  height: var(--davinci-component-input-height-lg);
+}
+
+.davinci-number-input__control {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  color: inherit;
+  flex: 1;
+  font: inherit;
+  line-height: var(--davinci-typography-body-line-height);
+  min-inline-size: 0;
+  outline: none;
+  padding-inline: var(--davinci-component-input-padding-x);
+}
+
+.davinci-number-input__control:disabled {
+  cursor: not-allowed;
+}
+
+.davinci-number-input__control::placeholder {
+  color: var(--davinci-component-input-placeholder);
+}
+
+/* Hide the native spinners — we render our own. */
+.davinci-number-input__control::-webkit-outer-spin-button,
+.davinci-number-input__control::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.davinci-number-input__control[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.davinci-number-input__steppers {
+  border-inline-start: 1px solid var(--davinci-component-input-border);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.davinci-number-input__stepper {
+  align-items: center;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: var(--davinci-semantic-color-foreground-subtlest);
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1;
+  inline-size: 1.5rem;
+  justify-content: center;
+  padding: 0;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease;
+}
+
+.davinci-number-input__stepper:first-child {
+  border-block-end: 1px solid var(--davinci-component-input-border);
+}
+
+.davinci-number-input__stepper:hover:not(:disabled) {
+  background-color: var(--davinci-semantic-color-background-hovered);
+  color: var(--davinci-semantic-color-foreground);
+}
+
+.davinci-number-input__stepper:active:not(:disabled) {
+  background-color: var(--davinci-semantic-color-background-pressed);
+}
+
+.davinci-number-input__stepper:disabled {
+  cursor: not-allowed;
+}
+
+.davinci-number-input__stepper svg {
+  block-size: 0.75rem;
+  inline-size: 0.75rem;
+}
+
 /* ----- Combobox ----- */
 
 .davinci-combobox {
