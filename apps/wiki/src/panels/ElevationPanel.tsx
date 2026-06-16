@@ -1,6 +1,6 @@
 import { Stack } from "@jarviisha/davinci-react-ui";
 import { PanelSection } from "../components/PanelSection";
-import { copyText, themeTokensByPrefix, tokensByPrefix, typographyStyle, varValue } from "../lib/tokens";
+import { copyText, themeTokensByPrefix, typographyStyle, varValue } from "../lib/tokens";
 import { TokenTable } from "./TokenTable";
 import type { PanelMeta } from "./types";
 
@@ -30,7 +30,6 @@ const elevationPreviews = [
 ];
 
 export function ElevationPanel() {
-  const primitiveShadowTokens = tokensByPrefix("shadow.");
   const semanticShadowTokens = themeTokensByPrefix("light", "semantic.shadow.");
 
   return (
@@ -62,12 +61,8 @@ export function ElevationPanel() {
         </div>
       </PanelSection>
 
-      <PanelSection title="Semantic shadow tokens" description="Active theme resolves these to primitive shadow values.">
+      <PanelSection title="Semantic shadow tokens" description="Active theme resolves these to themed shadow values.">
         <TokenTable title="Semantic shadow tokens" tokens={semanticShadowTokens} />
-      </PanelSection>
-
-      <PanelSection title="Primitive shadow tokens" description="Theme-agnostic source values.">
-        <TokenTable title="Primitive shadow tokens" tokens={primitiveShadowTokens} />
       </PanelSection>
     </Stack>
   );
