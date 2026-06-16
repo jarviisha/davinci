@@ -3,6 +3,7 @@ import {
   isValidElement,
   useEffect,
   useId,
+  useLayoutEffect,
   useRef,
   useState,
   type CSSProperties,
@@ -60,12 +61,21 @@ export function Popover({
 
   useEffect(() => setMounted(true), []);
 
-  useEffect(() => {
-    if (!open) return;
+  // Position before paint so the panel never flashes at the wrong spot, and keep it
+  // in sync while open. A ResizeObserver re-runs the flip logic when the panel's own
+  // height changes (e.g. the date picker toggling its time row).
+  useLayoutEffect(() => {
+    if (!open) {
+      setPosition(null);
+      return;
+    }
     updatePosition();
+    const observer = panelRef.current ? new ResizeObserver(updatePosition) : null;
+    if (panelRef.current) observer?.observe(panelRef.current);
     window.addEventListener("resize", updatePosition);
     window.addEventListener("scroll", updatePosition, true);
     return () => {
+      observer?.disconnect();
       window.removeEventListener("resize", updatePosition);
       window.removeEventListener("scroll", updatePosition, true);
     };
@@ -101,8 +111,16 @@ export function Popover({
   function updatePosition() {
     const rect = triggerRef.current?.getBoundingClientRect();
     if (!rect) return;
+    const gap = 8;
+    const panelHeight = panelRef.current?.offsetHeight ?? 0;
+    const spaceBelow = window.innerHeight - rect.bottom;
+    const spaceAbove = rect.top;
+    // Flip above only when the panel won't fit below and there is genuinely more room above.
+    const openUp = panelHeight > 0 && spaceBelow < panelHeight + gap && spaceAbove > spaceBelow;
     setPosition({
-      insetBlockStart: rect.bottom + 8,
+      ...(openUp
+        ? { insetBlockEnd: window.innerHeight - rect.top + gap }
+        : { insetBlockStart: rect.bottom + gap }),
       insetInlineStart: align === "end" ? undefined : rect.left,
       insetInlineEnd: align === "end" ? window.innerWidth - rect.right : undefined,
       minInlineSize: rect.width
@@ -133,14 +151,16 @@ export function Popover({
     : trigger;
 
   const panel =
-    mounted && open && position
+    mounted && open
       ? createPortal(
           <div
             className={cn("davinci-popover", className)}
             id={panelId}
             ref={panelRef}
             role="dialog"
-            style={position}
+            // Render (so the height is measurable) but stay invisible until positioned,
+            // otherwise the panel would flash below before a flip-above is applied.
+            style={position ?? { insetBlockStart: 0, insetInlineStart: 0, visibility: "hidden" }}
             {...props}
           >
             {children}

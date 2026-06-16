@@ -1,5 +1,7 @@
+export { CalendarIcon } from "./calendar.js";
 export { CheckIcon } from "./check.js";
 export { ChevronDownIcon } from "./chevron-down.js";
+export { ChevronLeftIcon } from "./chevron-left.js";
 export { ChevronRightIcon } from "./chevron-right.js";
 export { ChevronUpIcon } from "./chevron-up.js";
 export { MinusIcon } from "./minus.js";

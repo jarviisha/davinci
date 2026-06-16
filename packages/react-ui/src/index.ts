@@ -51,6 +51,8 @@ export { Checkbox } from "./checkbox.js";
 export type { CheckboxProps, CheckboxSize } from "./checkbox.js";
 export { Combobox } from "./combobox.js";
 export type { ComboboxOption, ComboboxProps, ComboboxSize } from "./combobox.js";
+export { DatePicker } from "./date-picker.js";
+export type { DatePickerProps, DatePickerSize } from "./date-picker.js";
 export {
   Dialog,
   DialogContent,

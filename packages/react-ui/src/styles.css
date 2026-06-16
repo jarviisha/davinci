@@ -500,6 +500,324 @@
   color: var(--davinci-semantic-color-foreground);
 }
 
+/* ----- DatePicker ----- */
+
+.davinci-date-picker {
+  display: block;
+  inline-size: 100%;
+  position: relative;
+}
+
+.davinci-date-picker__trigger {
+  align-items: center;
+  appearance: none;
+  background-color: var(--davinci-component-input-background);
+  border: 1px solid var(--davinci-component-input-border);
+  border-radius: var(--davinci-component-input-radius);
+  color: var(--davinci-component-input-foreground);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-size: var(--davinci-typography-body-font-size);
+  gap: var(--davinci-spacing-075);
+  inline-size: 100%;
+  line-height: var(--davinci-typography-body-line-height);
+  outline: none;
+  padding-inline: var(--davinci-component-input-padding-x);
+  text-align: start;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    color 150ms ease;
+}
+
+.davinci-date-picker__trigger:hover:not(:disabled) {
+  border-color: var(--davinci-component-input-border-hovered);
+}
+
+.davinci-date-picker__trigger:focus-visible {
+  border-color: var(--davinci-semantic-color-border-focused);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--davinci-semantic-focus-ring-color) 22%, transparent);
+}
+
+.davinci-date-picker__trigger[aria-invalid="true"] {
+  border-color: var(--davinci-semantic-color-danger);
+}
+
+.davinci-date-picker__trigger[aria-invalid="true"]:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--davinci-semantic-color-danger) 22%, transparent);
+}
+
+.davinci-date-picker__trigger:disabled {
+  background-color: var(--davinci-component-input-disabled-background);
+  border-color: var(--davinci-component-input-disabled-border);
+  color: var(--davinci-component-input-disabled-foreground);
+  cursor: not-allowed;
+}
+
+.davinci-date-picker--sm {
+  font-size: var(--davinci-typography-body-small-font-size);
+  height: var(--davinci-component-input-height-sm);
+}
+
+.davinci-date-picker--md {
+  height: var(--davinci-component-input-height-md);
+}
+
+.davinci-date-picker--lg {
+  height: var(--davinci-component-input-height-lg);
+}
+
+.davinci-date-picker__field-icon {
+  block-size: 1rem;
+  color: var(--davinci-semantic-color-foreground-subtlest);
+  flex-shrink: 0;
+  inline-size: 1rem;
+}
+
+.davinci-date-picker__value {
+  flex: 1;
+  min-inline-size: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.davinci-date-picker__trigger--placeholder .davinci-date-picker__value {
+  color: var(--davinci-component-input-placeholder);
+}
+
+/* Reserve room so the value text never slides under the clear button. */
+.davinci-date-picker__trigger--clearable {
+  padding-inline-end: var(--davinci-spacing-500);
+}
+
+.davinci-date-picker__clear {
+  align-items: center;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-radius: var(--davinci-radius-sm);
+  color: var(--davinci-semantic-color-foreground-subtlest);
+  cursor: pointer;
+  display: inline-flex;
+  inset-block-start: 50%;
+  inset-inline-end: var(--davinci-spacing-100);
+  justify-content: center;
+  min-block-size: 1.5rem;
+  min-inline-size: 1.5rem;
+  padding: 0;
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+.davinci-date-picker__clear:hover {
+  color: var(--davinci-semantic-color-foreground);
+}
+
+.davinci-date-picker__clear:focus-visible {
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--davinci-semantic-focus-ring-color) 40%, transparent);
+  outline: none;
+}
+
+.davinci-date-picker__clear-icon {
+  block-size: 0.875rem;
+  inline-size: 0.875rem;
+}
+
+.davinci-date-picker__panel {
+  /* Popover sets min-inline-size to the trigger width via inline style; override it
+     so the calendar stays compact instead of stretching to the full field width. */
+  inline-size: 20rem;
+  min-inline-size: 0 !important;
+  padding: var(--davinci-spacing-150);
+}
+
+.davinci-date-picker__header {
+  align-items: center;
+  display: flex;
+  gap: var(--davinci-spacing-050);
+  justify-content: space-between;
+  margin-block-end: var(--davinci-spacing-100);
+}
+
+.davinci-date-picker__selects {
+  display: flex;
+  flex: 1;
+  gap: var(--davinci-spacing-100);
+  min-inline-size: 0;
+}
+
+/* Override the form Select's full-width default so month/year sit inline. */
+.davinci-date-picker__select {
+  inline-size: auto;
+  min-inline-size: 0;
+}
+
+.davinci-date-picker__nav-group {
+  display: flex;
+  gap: var(--davinci-spacing-050);
+}
+
+.davinci-date-picker__nav {
+  align-items: center;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-radius: var(--davinci-radius-sm);
+  color: var(--davinci-semantic-color-foreground-subtle);
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  min-block-size: 1.75rem;
+  min-inline-size: 1.75rem;
+  outline: none;
+}
+
+.davinci-date-picker__nav:hover {
+  background: var(--davinci-semantic-color-background-hovered);
+  color: var(--davinci-semantic-color-foreground);
+}
+
+.davinci-date-picker__nav:focus-visible {
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--davinci-semantic-focus-ring-color) 40%, transparent);
+}
+
+.davinci-date-picker__nav-icon {
+  block-size: 1rem;
+  inline-size: 1rem;
+}
+
+.davinci-date-picker__nav-icon--next {
+  transform: rotate(180deg);
+}
+
+.davinci-date-picker__weekdays,
+.davinci-date-picker__grid {
+  column-gap: var(--davinci-spacing-150);
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.davinci-date-picker__weekday {
+  color: var(--davinci-semantic-color-foreground-subtlest);
+  font-size: var(--davinci-typography-label-font-size);
+  font-weight: 600;
+  padding-block: var(--davinci-spacing-050);
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.davinci-date-picker__grid {
+  row-gap: var(--davinci-spacing-050);
+}
+
+.davinci-date-picker__day {
+  align-items: center;
+  appearance: none;
+  aspect-ratio: 1;
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  color: var(--davinci-semantic-color-foreground);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-size: var(--davinci-font-size-75);
+  justify-content: center;
+  min-inline-size: 1.75rem;
+  outline: none;
+  position: relative;
+  transition:
+    background-color 120ms ease,
+    box-shadow 120ms ease,
+    color 120ms ease;
+}
+
+.davinci-date-picker__day:hover:not(:disabled) {
+  background: var(--davinci-semantic-color-background-hovered);
+}
+
+.davinci-date-picker__day:focus-visible {
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--davinci-semantic-focus-ring-color) 45%, transparent);
+}
+
+.davinci-date-picker__day--outside {
+  color: var(--davinci-semantic-color-foreground-subtlest);
+}
+
+/* Today is marked with a thin ring, matching the Material reference. */
+.davinci-date-picker__day--today {
+  box-shadow: inset 0 0 0 1px var(--davinci-semantic-color-border-bold);
+}
+
+.davinci-date-picker__day--selected,
+.davinci-date-picker__day--selected:hover:not(:disabled) {
+  background: var(--davinci-semantic-color-primary);
+  color: var(--davinci-semantic-color-primary-foreground);
+  font-weight: 600;
+}
+
+.davinci-date-picker__day:disabled {
+  color: var(--davinci-semantic-color-foreground-disabled);
+  cursor: not-allowed;
+}
+
+.davinci-date-picker__time {
+  align-items: center;
+  border-block-start: 1px solid var(--davinci-semantic-color-border);
+  display: flex;
+  gap: var(--davinci-spacing-050);
+  margin-block-start: var(--davinci-spacing-100);
+  padding-block-start: var(--davinci-spacing-100);
+}
+
+.davinci-date-picker__time .davinci-date-picker__select {
+  flex: 1;
+}
+
+.davinci-date-picker__time-colon {
+  color: var(--davinci-semantic-color-foreground-subtle);
+  font-weight: 600;
+}
+
+.davinci-date-picker__footer {
+  display: flex;
+  gap: var(--davinci-spacing-050);
+  justify-content: flex-end;
+  margin-block-start: var(--davinci-spacing-100);
+}
+
+.davinci-date-picker__action {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-radius: var(--davinci-radius-sm);
+  color: var(--davinci-semantic-color-primary);
+  cursor: pointer;
+  font: inherit;
+  font-size: var(--davinci-typography-body-small-font-size);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  outline: none;
+  padding: var(--davinci-spacing-075) var(--davinci-spacing-150);
+  text-transform: uppercase;
+}
+
+.davinci-date-picker__action:hover {
+  background: var(--davinci-semantic-color-background-hovered);
+}
+
+.davinci-date-picker__action:focus-visible {
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--davinci-semantic-focus-ring-color) 40%, transparent);
+}
+
+.davinci-date-picker__action:disabled {
+  color: var(--davinci-semantic-color-foreground-disabled);
+  cursor: not-allowed;
+}
+
 /* ----- NumberInput ----- */
 
 .davinci-number-input {

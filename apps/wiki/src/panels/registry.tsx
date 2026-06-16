@@ -12,6 +12,7 @@ import { CheckboxPanel, checkboxPanelMeta } from "./CheckboxPanel";
 import { ColorPanel, colorPanelMeta } from "./ColorPanel";
 import { ComboboxPanel, comboboxPanelMeta } from "./ComboboxPanel";
 import { DetailLayoutPanel, detailLayoutPanelMeta } from "./DetailLayoutPanel";
+import { DatePickerPanel, datePickerPanelMeta } from "./DatePickerPanel";
 import { DialogPanel, dialogPanelMeta } from "./DialogPanel";
 import { DrawerPanel, drawerPanelMeta } from "./DrawerPanel";
 import { DropdownMenuPanel, dropdownMenuPanelMeta } from "./DropdownMenuPanel";
@@ -65,6 +66,7 @@ export const panels: readonly PanelEntry[] = [
   { ...searchInputPanelMeta, render: () => <SearchInputPanel /> },
   { ...numberInputPanelMeta, render: () => <NumberInputPanel /> },
   { ...comboboxPanelMeta, render: () => <ComboboxPanel /> },
+  { ...datePickerPanelMeta, render: () => <DatePickerPanel /> },
 
   // Data display
   { ...cardPanelMeta, render: () => <CardPanel /> },

@@ -92,9 +92,6 @@ export function FormFieldPanel() {
           <FormField label="URL">
             <Input placeholder="https://example.com" type="url" />
           </FormField>
-          <FormField label="Date">
-            <Input type="date" />
-          </FormField>
         </div>
       </PanelSection>
 
