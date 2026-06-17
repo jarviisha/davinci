@@ -103,6 +103,7 @@
 
 .davinci-button:disabled {
   cursor: not-allowed;
+  opacity: var(--davinci-component-button-disabled-opacity);
 }
 
 .davinci-button--sm {
@@ -306,33 +307,10 @@
   background: color-mix(in srgb, var(--davinci-semantic-color-danger) 28%, var(--davinci-semantic-color-background));
 }
 
-/* Disabled — declared after every variant/tone rule so it overrides their
- * background, border, and text regardless of variant or tone (equal
- * specificity, later in source). Each variant keeps its own chrome shape:
- * solid/soft stay filled, outline keeps its border, ghost stays bare. */
-.davinci-button--solid:disabled {
-  background: var(--davinci-component-button-disabled-background);
-  border-color: var(--davinci-component-button-disabled-border);
-  color: var(--davinci-component-button-disabled-foreground);
-}
-
-.davinci-button--soft:disabled {
-  background: var(--davinci-component-button-disabled-background);
-  border-color: transparent;
-  color: var(--davinci-component-button-disabled-foreground);
-}
-
-.davinci-button--outline:disabled {
-  background: transparent;
-  border-color: var(--davinci-component-button-disabled-border);
-  color: var(--davinci-component-button-disabled-foreground);
-}
-
-.davinci-button--ghost:disabled {
-  background: transparent;
-  border-color: transparent;
-  color: var(--davinci-component-button-disabled-foreground);
-}
+/* Disabled — each variant keeps its own tone color (solid/soft stay filled,
+ * outline keeps its border, ghost stays bare); the button:disabled rule above
+ * just fades it via opacity so the tone identity reads through instead of
+ * collapsing every button to a flat neutral gray. */
 
 .davinci-input,
 .davinci-select,

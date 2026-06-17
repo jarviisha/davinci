@@ -48,9 +48,7 @@
         "foreground": { "$type": "color", "$value": "{semantic.color.foreground}" }
       },
       "disabled": {
-        "background": { "$type": "color", "$value": "{semantic.color.backgroundDisabled}" },
-        "border": { "$type": "color", "$value": "{semantic.color.borderDisabled}" },
-        "foreground": { "$type": "color", "$value": "{semantic.color.foregroundDisabled}" }
+        "opacity": { "$type": "number", "$value": 0.45 }
       }
     }
   }
