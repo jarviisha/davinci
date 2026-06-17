@@ -56,7 +56,7 @@ export function ButtonPanel() {
 
       <PanelSection
         title="Disabled states"
-        description="Every variant and tone shares the same disabled tokens, so the disabled treatment stays consistent while each variant keeps its own chrome shape."
+        description="Disabled buttons keep their variant and tone colors and are simply faded via a shared opacity token, so the tone identity reads through instead of collapsing to a flat neutral gray."
       >
         <Inline gap="150" wrap>
           <Button disabled>Solid primary</Button>
