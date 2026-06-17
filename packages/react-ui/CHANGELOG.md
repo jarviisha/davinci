@@ -1,5 +1,17 @@
 # @jarviisha/davinci-react-ui
 
+## 0.7.0
+
+### Minor Changes
+
+- 25a8844: Add `DatePicker` — a fully styled, theme-aware date picker that replaces the native `<input type="date">`. It renders a trigger styled like the other form fields plus a calendar popover (built on `Popover`): a header with separate month and year `<select>` dropdowns, grouped prev/next navigation, narrow weekday labels, a ringed "today" and filled selected day, and a Cancel/OK footer (selection is staged as a draft and committed on confirm). Includes keyboard support (arrow keys, Home/End, PageUp/PageDown, Enter), optional `min`/`max` range, `clearable`, an opt-in `showTime` mode (hour / minute / AM–PM selects with configurable `minuteStep`), locale-aware labels, and full `FormField` aria wiring. Zero runtime dependencies.
+- 31964f8: Add `NumberInput` — a number field with custom themed increment/decrement steppers replacing the native browser spinners. Hides the native `::-webkit` and Firefox spinners, renders stacked chevron buttons that respect `min`/`max`/`step` via the input's `stepUp`/`stepDown`, and fires `onChange` for both controlled and uncontrolled usage. Supports `sm`/`md`/`lg` sizes, form-field context (`disabled`/`invalid`/`required`/`aria-describedby` wiring with matching disabled, focus, and invalid border treatment), and `incrementLabel`/`decrementLabel`. Also exports `ChevronUpIcon` and `ChevronDownIcon`.
+
+### Patch Changes
+
+- 3b6da94: Refine form and combobox styling. Focus indication for input, select, textarea, search, and combobox now uses a border-color change plus a soft box-shadow ring instead of an outline, and the invalid state is driven solely by `aria-invalid` (suppressing the native browser `:invalid` glow). The combobox chevron renders as an SVG, `--sm` field variants use the body-small font size, and the primary mono font family token is now IBM Plex Mono.
+- 25a8844: `Popover` now flips above the trigger when there isn't enough room below it in the viewport (and more space exists above), instead of always opening downward. Positioning runs in a layout effect before paint and the panel stays hidden until placed, so there's no flash; a `ResizeObserver` re-evaluates the placement when the panel's own height changes (e.g. `DatePicker` toggling its time row). This affects every component built on `Popover`.
+
 ## 0.6.2
 
 ### Patch Changes
