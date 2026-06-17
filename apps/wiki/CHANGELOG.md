@@ -1,5 +1,13 @@
 # @davinci/wiki
 
+## 0.0.9
+
+### Patch Changes
+
+- Updated dependencies [45498e9]
+  - @jarviisha/davinci-react-ui@0.8.0
+  - @jarviisha/davinci-tokens@0.5.0
+
 ## 0.0.8
 
 ### Patch Changes
