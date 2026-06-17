@@ -1,5 +1,14 @@
 # @jarviisha/davinci-react-ui
 
+## 0.8.0
+
+### Minor Changes
+
+- 45498e9: Disabled buttons now keep their variant/tone colors and fade via opacity instead of collapsing to a flat neutral gray.
+
+  - `react-ui`: `:disabled` buttons apply `--davinci-component-button-disabled-opacity` and no longer override background/border/text with the neutral disabled tokens.
+  - `tokens`: replaced `component.button.disabled.{background,border,foreground}` with `component.button.disabled.opacity` (0.45).
+
 ## 0.7.0
 
 ### Minor Changes
