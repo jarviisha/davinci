@@ -1,6 +1,6 @@
 {
   "name": "@jarviisha/davinci-tokens",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Design tokens (CSS variables and typed JS export) for the Davinci design system.",
   "license": "MIT",
   "author": "jarviisha",
