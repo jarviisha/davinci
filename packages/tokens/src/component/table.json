@@ -1,0 +1,10 @@
+{
+  "component": {
+    "table": {
+      "radius": {
+        "$type": "dimension",
+        "$value": "{semantic.radius.card}"
+      }
+    }
+  }
+}

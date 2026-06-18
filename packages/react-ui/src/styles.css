@@ -2790,7 +2790,7 @@
 
 .davinci-table-container {
   border: 1px solid var(--davinci-semantic-color-border);
-  border-radius: var(--davinci-radius-lg);
+  border-radius: var(--davinci-component-table-radius);
   overflow: auto;
   width: 100%;
 }
