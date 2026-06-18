@@ -150,6 +150,7 @@ export type { SwitchProps, SwitchSize } from "./switch.js";
 export { Skeleton } from "./skeleton.js";
 export type { SkeletonProps, SkeletonVariant } from "./skeleton.js";
 export {
+  DataTable,
   Table,
   TableBody,
   TableCaption,
@@ -161,13 +162,19 @@ export {
   TableRow
 } from "./table.js";
 export type {
+  ColumnAlign,
+  DataTableColumn,
+  DataTableKey,
+  DataTableProps,
   TableBodyProps,
   TableCaptionProps,
   TableCellProps,
   TableContainerProps,
+  TableDensity,
   TableFooterProps,
-  TableHeadProps,
   TableHeaderProps,
+  TableHeaderTone,
+  TableHeadProps,
   TableProps,
   TableRowProps
 } from "./table.js";

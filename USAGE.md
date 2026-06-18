@@ -213,7 +213,7 @@ Available components (full props show up via TypeScript on import):
 - **Navigation**: `Nav`, `Breadcrumbs`, `Pagination`, `Tabs`, `DropdownMenu`.
 - **Overlay**: `Dialog`, `Drawer`, `Popover`, `Tooltip`, `Toast` (via `ToastProvider` + `useToast`).
 - **Feedback**: `Alert`, `Badge`, `Skeleton`, `EmptyState`, `Avatar`.
-- **Data**: `Table` (`TableHeader`, `TableBody`, `TableRow`, …).
+- **Data**: `DataTable` (data-driven — pass `columns` + `data`, optional checkbox `selectable`), `Table` (`TableHeader`, `TableBody`, `TableRow`, …) for full control.
 - **Hook**: `useFocusTrap`.
 
 ### Thin hover-reveal scrollbar

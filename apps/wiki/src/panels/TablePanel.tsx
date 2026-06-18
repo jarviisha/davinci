@@ -1,5 +1,6 @@
 import {
   Badge,
+  DataTable,
   Stack,
   Table,
   TableBody,
@@ -8,7 +9,9 @@ import {
   TableContainer,
   TableHead,
   TableHeader,
-  TableRow
+  TableRow,
+  type DataTableColumn,
+  type DataTableKey
 } from "@jarviisha/davinci-react-ui";
 import { useState } from "react";
 import { PanelSection } from "../components/PanelSection";
@@ -18,13 +21,28 @@ export const tablePanelMeta: PanelMeta = {
   id: "table",
   label: "Table",
   group: "Data display",
-  description: "Composable table primitives for dense SaaS dashboard data."
+  description: "DataTable plus composable table primitives for dense SaaS dashboard data."
 };
 
 const invoices = [
   { id: "INV-1024", customer: "Acme Inc.", status: "Paid", amount: "$2,400.00", date: "May 18, 2026" },
   { id: "INV-1025", customer: "Northstar Labs", status: "Pending", amount: "$890.00", date: "May 19, 2026" },
   { id: "INV-1026", customer: "Orbit Studio", status: "Overdue", amount: "$1,280.00", date: "May 20, 2026" }
+];
+
+type Invoice = (typeof invoices)[number];
+
+const statusVariant = (status: string) =>
+  status === "Paid" ? "success" : status === "Overdue" ? "danger" : "warning";
+
+// One column model, reused across the DataTable demos. Header order and cell
+// rendering live together, so a column can never drift out of alignment.
+const invoiceColumns: DataTableColumn<Invoice>[] = [
+  { key: "id", header: "Invoice", cell: (row) => <span style={{ fontWeight: 600 }}>{row.id}</span> },
+  { key: "customer", header: "Customer" },
+  { key: "status", header: "Status", cell: (row) => <Badge variant={statusVariant(row.status)}>{row.status}</Badge> },
+  { key: "date", header: "Date" },
+  { key: "amount", header: "Amount", align: "end" }
 ];
 
 const notes = [
@@ -68,9 +86,55 @@ const wideRows = [
 
 export function TablePanel() {
   const [selectedId, setSelectedId] = useState("INV-1025");
+  const [selectedKeys, setSelectedKeys] = useState<Set<DataTableKey>>(new Set(["INV-1025"]));
 
   return (
     <Stack gap="300">
+      <PanelSection
+        title="DataTable"
+        description="The data-driven layer over the primitives: pass columns + data instead of hand-wiring TableHead/TableCell pairs. Header and cells share one column model, so they can never drift out of alignment. Presentational only — sort, filter, and paginate the data yourself before passing it in."
+      >
+        <DataTable
+          data={invoices}
+          columns={invoiceColumns}
+          rowKey={(row) => row.id}
+          caption="Recent invoices synced from billing."
+        />
+      </PanelSection>
+
+      <PanelSection
+        title="DataTable — checkbox selection"
+        description="Pass selectable to add a leading checkbox column. Selection is controlled: hold the selected keys yourself and react to onSelectionChange. The header checkbox toggles all rows and shows an indeterminate state for a partial selection."
+      >
+        <Stack gap="200">
+          <DataTable
+            data={invoices}
+            columns={invoiceColumns}
+            rowKey={(row) => row.id}
+            selectable
+            selectedKeys={selectedKeys}
+            onSelectionChange={setSelectedKeys}
+            selectionLabel={(row) => `Select ${row.id}`}
+          />
+          <Badge variant="neutral">{selectedKeys.size} selected</Badge>
+        </Stack>
+      </PanelSection>
+
+      <PanelSection
+        title="DataTable — empty & clickable rows"
+        description="empty renders in place of the body when data is empty. onRowClick makes each row interactive and fires with the row — combine it with selected styling via the primitives when you need single-select."
+      >
+        <Stack gap="200">
+          <DataTable data={[]} columns={invoiceColumns} empty="No invoices match your filters." />
+          <DataTable
+            data={invoices}
+            columns={invoiceColumns}
+            rowKey={(row) => row.id}
+            onRowClick={(row) => setSelectedId(row.id)}
+          />
+        </Stack>
+      </PanelSection>
+
       <PanelSection title="Table" description="Composable table primitives for dense dashboard data.">
         <TableContainer>
           <Table>
@@ -90,17 +154,7 @@ export function TablePanel() {
                   <TableCell style={{ fontWeight: 600 }}>{invoice.id}</TableCell>
                   <TableCell>{invoice.customer}</TableCell>
                   <TableCell>
-                    <Badge
-                      variant={
-                        invoice.status === "Paid"
-                          ? "success"
-                          : invoice.status === "Overdue"
-                            ? "danger"
-                            : "warning"
-                      }
-                    >
-                      {invoice.status}
-                    </Badge>
+                    <Badge variant={statusVariant(invoice.status)}>{invoice.status}</Badge>
                   </TableCell>
                   <TableCell>{invoice.date}</TableCell>
                   <TableCell style={{ textAlign: "right" }}>{invoice.amount}</TableCell>

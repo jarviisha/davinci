@@ -2975,6 +2975,31 @@
   outline-offset: -2px;
 }
 
+/* Column alignment, driven by DataTable's `align` (also usable on raw cells). */
+.davinci-table__head--align-center,
+.davinci-table__cell--align-center {
+  text-align: center;
+}
+
+.davinci-table__head--align-end,
+.davinci-table__cell--align-end {
+  text-align: end;
+}
+
+/* Leading checkbox column: shrink to the control and stop row-click bubbling. */
+.davinci-table__head--select,
+.davinci-table__cell--select {
+  inline-size: 1px;
+  white-space: nowrap;
+}
+
+/* Empty-state cell spanning the whole table when there are no rows. */
+.davinci-table__empty {
+  color: var(--davinci-semantic-color-foreground-subtlest);
+  padding: var(--davinci-spacing-400) var(--davinci-spacing-200);
+  text-align: center;
+}
+
 /* ----- Tabs ----- */
 
 .davinci-tabs {

@@ -52,7 +52,7 @@ export function Example() {
 - **Navigation** — `Breadcrumbs`, `BreadcrumbsList`, `BreadcrumbsItem`, `BreadcrumbsLink`, `BreadcrumbsCurrent`, `Pagination`, `Nav`, `NavGroup`, `NavItem`, `Tabs`, `TabsList`, `TabsTrigger`, `TabsContent`
 - **Forms** — `FormField`, `Label`, `Input`, `NumberInput`, `SearchInput`, `Select`, `Combobox`, `DatePicker` (calendar popover with month/year selects, optional `showTime` for hour / minute / AM–PM), `Textarea`, `Checkbox`, `RadioGroup`, `Radio`, `Switch`
 - **Surfaces** — `Card` (variants: `default` / `outlined` / `filled` / `flat` / `floating`; `outlineWeight`: `subtle` / `default` / `bold`; tones: `info` / `success` / `warning` / `danger`; modifiers: `interactive`, `selected`), `CardHeader`, `CardTitle`, `CardDescription`, `CardContent`, `CardFooter`
-- **Data display** — `Avatar`, `EmptyState`, `Skeleton`, `Table`, `TableContainer`, `TableHeader`, `TableBody`, `TableFooter`, `TableRow`, `TableHead`, `TableCell`, `TableCaption`
+- **Data display** — `Avatar`, `EmptyState`, `Skeleton`, `DataTable` (data-driven: `columns` + `data`, optional checkbox `selectable`), `Table`, `TableContainer`, `TableHeader`, `TableBody`, `TableFooter`, `TableRow`, `TableHead`, `TableCell`, `TableCaption`
 - **Status** — `Alert`, `Badge` (variants: `neutral` / `primary` / `success` / `warning` / `danger` / `discovery`)
 - **Overlays** — `Dialog`, `Drawer`, `DropdownMenu`, `Popover`, `Tooltip`, `ToastProvider`, `useToast`
 - **Structure** — `Divider`

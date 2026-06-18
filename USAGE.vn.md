@@ -213,7 +213,7 @@ Components có sẵn (xem chi tiết types khi import):
 - **Navigation**: `Nav`, `Breadcrumbs`, `Pagination`, `Tabs`, `DropdownMenu`.
 - **Overlay**: `Dialog`, `Drawer`, `Popover`, `Tooltip`, `Toast` (qua `ToastProvider` + `useToast`).
 - **Feedback**: `Alert`, `Badge`, `Skeleton`, `EmptyState`, `Avatar`.
-- **Data**: `Table` (`TableHeader`, `TableBody`, `TableRow`, …).
+- **Data**: `DataTable` (data-driven — truyền `columns` + `data`, có thể bật cột checkbox bằng `selectable`), `Table` (`TableHeader`, `TableBody`, `TableRow`, …) khi cần kiểm soát chi tiết.
 - **Hook**: `useFocusTrap`.
 
 ### Thanh scrollbar thon, ẩn cho đến khi hover
