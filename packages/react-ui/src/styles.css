@@ -1898,6 +1898,13 @@
   gap: var(--davinci-component-form-field-gap);
 }
 
+/* Keep the label's clickable area to its content width — otherwise the flex
+ * column stretches the <label> full width and clicking empty space next to the
+ * text focuses the associated control. */
+.davinci-form-field > .davinci-label {
+  align-self: flex-start;
+}
+
 .davinci-form-field__help {
   color: var(--davinci-component-form-field-help-foreground);
   font-size: var(--davinci-typography-body-small-font-size);
