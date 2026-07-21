@@ -1,6 +1,6 @@
 {
   "name": "@jarviisha/davinci-tailwind-preset",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Tailwind CSS v4 preset that maps Davinci design tokens to utility classes.",
   "license": "MIT",
   "author": "jarviisha",
