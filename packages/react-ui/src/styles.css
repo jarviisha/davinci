@@ -388,6 +388,21 @@
   padding-inline: var(--davinci-component-input-padding-x);
 }
 
+/* The native number spinners are drawn by the browser, ignore our tokens and
+ * break the single-canvas look — hide them so type="number" reads as a plain
+ * field. Reach for NumberInput when the stepper affordance is wanted; keyboard
+ * arrow keys still step the value here. */
+.davinci-input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.davinci-input[type="number"]::-webkit-outer-spin-button,
+.davinci-input[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
 /* ----- SearchInput ----- */
 
 .davinci-search-input {

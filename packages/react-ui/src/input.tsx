@@ -14,6 +14,10 @@ const sizeClass: Record<InputSize, string> = {
   lg: "davinci-input--lg"
 };
 
+/**
+ * Single-line text field. `type="number"` renders without the native browser
+ * spinners (they ignore our tokens) — use NumberInput for a tokened stepper.
+ */
 export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
   { "aria-describedby": ariaDescribedBy, "aria-invalid": ariaInvalid, className, disabled, id, required, size = "md", ...props },
   ref
