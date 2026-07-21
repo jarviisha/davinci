@@ -193,8 +193,8 @@
 }
 
 .davinci-button--outline.davinci-button--tone-primary {
-  border-color: var(--davinci-semantic-color-primary);
-  color: var(--davinci-semantic-color-primary);
+  border-color: var(--davinci-semantic-color-primary-text);
+  color: var(--davinci-semantic-color-primary-text);
 }
 
 .davinci-button--outline.davinci-button--tone-neutral {
@@ -203,30 +203,33 @@
 }
 
 .davinci-button--outline.davinci-button--tone-danger {
-  border-color: var(--davinci-semantic-color-danger);
-  color: var(--davinci-semantic-color-danger);
+  border-color: var(--davinci-semantic-color-danger-text);
+  color: var(--davinci-semantic-color-danger-text);
 }
 
 /* Outline/ghost sit on a transparent rest background, so hover/active wash in
- * a faint tint of the tone (neutral keeps the plain neutral surface). */
+ * a faint tint of the tone over the canvas (neutral keeps the plain neutral
+ * surface). Mixing into `background` rather than `background-hovered` matters in
+ * dark: the neutral hover grey is a big jump off the canvas and would drag the
+ * tone label below 4.5:1 the moment you hover it. */
 .davinci-button--outline.davinci-button--tone-primary:hover:not(:disabled),
 .davinci-button--ghost.davinci-button--tone-primary:hover:not(:disabled) {
-  background: color-mix(in srgb, var(--davinci-semantic-color-primary) 8%, var(--davinci-semantic-color-background-hovered));
+  background: color-mix(in srgb, var(--davinci-semantic-color-primary-text) 10%, var(--davinci-semantic-color-background));
 }
 
 .davinci-button--outline.davinci-button--tone-primary:active:not(:disabled),
 .davinci-button--ghost.davinci-button--tone-primary:active:not(:disabled) {
-  background: color-mix(in srgb, var(--davinci-semantic-color-primary) 14%, var(--davinci-semantic-color-background-pressed));
+  background: color-mix(in srgb, var(--davinci-semantic-color-primary-text) 16%, var(--davinci-semantic-color-background));
 }
 
 .davinci-button--outline.davinci-button--tone-danger:hover:not(:disabled),
 .davinci-button--ghost.davinci-button--tone-danger:hover:not(:disabled) {
-  background: color-mix(in srgb, var(--davinci-semantic-color-danger) 8%, var(--davinci-semantic-color-background-hovered));
+  background: color-mix(in srgb, var(--davinci-semantic-color-danger-text) 10%, var(--davinci-semantic-color-background));
 }
 
 .davinci-button--outline.davinci-button--tone-danger:active:not(:disabled),
 .davinci-button--ghost.davinci-button--tone-danger:active:not(:disabled) {
-  background: color-mix(in srgb, var(--davinci-semantic-color-danger) 14%, var(--davinci-semantic-color-background-pressed));
+  background: color-mix(in srgb, var(--davinci-semantic-color-danger-text) 16%, var(--davinci-semantic-color-background));
 }
 
 .davinci-button--outline.davinci-button--tone-neutral:hover:not(:disabled) {
@@ -243,7 +246,7 @@
 }
 
 .davinci-button--ghost.davinci-button--tone-primary {
-  color: var(--davinci-semantic-color-primary);
+  color: var(--davinci-semantic-color-primary-text);
 }
 
 .davinci-button--ghost.davinci-button--tone-neutral {
@@ -251,7 +254,7 @@
 }
 
 .davinci-button--ghost.davinci-button--tone-danger {
-  color: var(--davinci-semantic-color-danger);
+  color: var(--davinci-semantic-color-danger-text);
 }
 
 .davinci-button--ghost.davinci-button--tone-neutral:hover:not(:disabled) {
@@ -267,8 +270,8 @@
 }
 
 .davinci-button--soft.davinci-button--tone-primary {
-  background: var(--davinci-semantic-color-background-selected);
-  color: var(--davinci-semantic-color-primary);
+  background: color-mix(in srgb, var(--davinci-semantic-color-primary-text) 12%, var(--davinci-semantic-color-background));
+  color: var(--davinci-semantic-color-primary-text);
 }
 
 .davinci-button--soft.davinci-button--tone-neutral {
@@ -277,18 +280,18 @@
 }
 
 .davinci-button--soft.davinci-button--tone-danger {
-  background: color-mix(in srgb, var(--davinci-semantic-color-danger) 12%, var(--davinci-semantic-color-background));
-  color: var(--davinci-semantic-color-danger);
+  background: color-mix(in srgb, var(--davinci-semantic-color-danger-text) 12%, var(--davinci-semantic-color-background));
+  color: var(--davinci-semantic-color-danger-text);
 }
 
 /* Soft already carries a tone tint at rest, so hover/active deepen that same
  * tint rather than collapsing to a neutral surface. */
 .davinci-button--soft.davinci-button--tone-primary:hover:not(:disabled) {
-  background: color-mix(in srgb, var(--davinci-semantic-color-primary) 16%, var(--davinci-semantic-color-background));
+  background: color-mix(in srgb, var(--davinci-semantic-color-primary-text) 16%, var(--davinci-semantic-color-background));
 }
 
 .davinci-button--soft.davinci-button--tone-primary:active:not(:disabled) {
-  background: color-mix(in srgb, var(--davinci-semantic-color-primary) 24%, var(--davinci-semantic-color-background));
+  background: color-mix(in srgb, var(--davinci-semantic-color-primary-text) 22%, var(--davinci-semantic-color-background));
 }
 
 .davinci-button--soft.davinci-button--tone-neutral:hover:not(:disabled) {
@@ -300,11 +303,11 @@
 }
 
 .davinci-button--soft.davinci-button--tone-danger:hover:not(:disabled) {
-  background: color-mix(in srgb, var(--davinci-semantic-color-danger) 20%, var(--davinci-semantic-color-background));
+  background: color-mix(in srgb, var(--davinci-semantic-color-danger-text) 16%, var(--davinci-semantic-color-background));
 }
 
 .davinci-button--soft.davinci-button--tone-danger:active:not(:disabled) {
-  background: color-mix(in srgb, var(--davinci-semantic-color-danger) 28%, var(--davinci-semantic-color-background));
+  background: color-mix(in srgb, var(--davinci-semantic-color-danger-text) 22%, var(--davinci-semantic-color-background));
 }
 
 /* Disabled — each variant keeps its own tone color (solid/soft stay filled,
@@ -535,11 +538,11 @@
 }
 
 .davinci-date-picker__trigger[aria-invalid="true"] {
-  border-color: var(--davinci-semantic-color-danger);
+  border-color: var(--davinci-semantic-color-danger-text);
 }
 
 .davinci-date-picker__trigger[aria-invalid="true"]:focus-visible {
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--davinci-semantic-color-danger) 22%, transparent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--davinci-semantic-color-danger-text) 22%, transparent);
 }
 
 .davinci-date-picker__trigger:disabled {
@@ -787,7 +790,7 @@
   background: transparent;
   border: 0;
   border-radius: var(--davinci-radius-sm);
-  color: var(--davinci-semantic-color-primary);
+  color: var(--davinci-semantic-color-primary-text);
   cursor: pointer;
   font: inherit;
   font-size: var(--davinci-typography-body-small-font-size);
@@ -1038,7 +1041,7 @@
 }
 
 .davinci-combobox__option[aria-selected="true"] {
-  color: var(--davinci-semantic-color-primary);
+  color: var(--davinci-semantic-color-primary-text);
   font-weight: 700;
 }
 
@@ -1448,19 +1451,19 @@
 }
 
 .davinci-alert--info {
-  --davinci-alert-accent: var(--davinci-semantic-color-info);
+  --davinci-alert-accent: var(--davinci-semantic-color-info-text);
 }
 
 .davinci-alert--success {
-  --davinci-alert-accent: var(--davinci-semantic-color-success);
+  --davinci-alert-accent: var(--davinci-semantic-color-success-text);
 }
 
 .davinci-alert--warning {
-  --davinci-alert-accent: var(--davinci-semantic-color-warning);
+  --davinci-alert-accent: var(--davinci-semantic-color-warning-text);
 }
 
 .davinci-alert--danger {
-  --davinci-alert-accent: var(--davinci-semantic-color-danger);
+  --davinci-alert-accent: var(--davinci-semantic-color-danger-text);
 }
 
 .davinci-alert__icon {
@@ -2539,7 +2542,7 @@
 .davinci-toast {
   align-items: flex-start;
   animation: davinci-toast-in 180ms ease-out;
-  --davinci-toast-accent: var(--davinci-semantic-color-info);
+  --davinci-toast-accent: var(--davinci-semantic-color-info-text);
   background: color-mix(in srgb, var(--davinci-toast-accent) 10%, var(--davinci-semantic-color-background));
   border: 1px solid color-mix(in srgb, var(--davinci-toast-accent) 34%, var(--davinci-semantic-color-border));
   border-radius: var(--davinci-component-toast-radius);
@@ -2557,15 +2560,15 @@
 }
 
 .davinci-toast--success {
-  --davinci-toast-accent: var(--davinci-semantic-color-success);
+  --davinci-toast-accent: var(--davinci-semantic-color-success-text);
 }
 
 .davinci-toast--warning {
-  --davinci-toast-accent: var(--davinci-semantic-color-warning);
+  --davinci-toast-accent: var(--davinci-semantic-color-warning-text);
 }
 
 .davinci-toast--error {
-  --davinci-toast-accent: var(--davinci-semantic-color-danger);
+  --davinci-toast-accent: var(--davinci-semantic-color-danger-text);
 }
 
 .davinci-toast__body {
@@ -3064,7 +3067,7 @@
 }
 
 .davinci-tabs__trigger[aria-selected="true"] {
-  border-block-end-color: var(--davinci-semantic-color-primary);
+  border-block-end-color: var(--davinci-semantic-color-primary-text);
   color: var(--davinci-semantic-color-foreground);
 }
 

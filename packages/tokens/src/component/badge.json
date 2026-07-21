@@ -23,8 +23,8 @@
         "border": { "$type": "color", "$value": "transparent" }
       },
       "primary": {
-        "background": { "$type": "color", "$value": "{semantic.color.backgroundSelected}" },
-        "foreground": { "$type": "color", "$value": "{semantic.color.link}" },
+        "background": { "$type": "color", "$value": "{semantic.color.primary}" },
+        "foreground": { "$type": "color", "$value": "{semantic.color.primaryForeground}" },
         "border": { "$type": "color", "$value": "transparent" }
       },
       "success": {

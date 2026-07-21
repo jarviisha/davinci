@@ -32,7 +32,7 @@
         "foreground": { "$type": "color", "$value": "{semantic.color.primaryForeground}" }
       },
       "invalid": {
-        "border": { "$type": "color", "$value": "{semantic.color.danger}" }
+        "border": { "$type": "color", "$value": "{semantic.color.dangerText}" }
       },
       "disabled": {
         "background": { "$type": "color", "$value": "{semantic.color.backgroundDisabled}" },

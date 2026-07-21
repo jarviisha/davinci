@@ -1,7 +1,7 @@
 {
   "semantic": {
     "focus": {
-      "ringColor": { "$type": "color", "$value": "{semantic.color.primary}" },
+      "ringColor": { "$type": "color", "$value": "{semantic.color.borderFocused}" },
       "ringWidth": { "$type": "dimension", "$value": "2px" },
       "ringOffset": { "$type": "dimension", "$value": "2px" },
       "ringStyle": { "$type": "strokeStyle", "$value": "solid" }

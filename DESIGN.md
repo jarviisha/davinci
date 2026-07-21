@@ -85,6 +85,21 @@ Tone tokens (`success`, `warning`, `danger`, `info`, `discovery`) communicate **
 
 **Anti-pattern:** A "neutral" badge or alert tinted blue or purple "for branding". Use `neutral` variant or rely on layout/typography hierarchy instead.
 
+### Fill token vs text token
+
+Every tone ships **two** tokens, and they are not interchangeable:
+
+| Token | Value | Use for |
+|---|---|---|
+| `<tone>` | The 700 step — **identical in light and dark** | Filled surfaces: solid Button, Badge, checked Checkbox/Switch, active pagination page, primary table header. Always paired with `<tone>-foreground`, which is white for every tone. |
+| `<tone>-text` | 800 in light, 300 in dark | Anything drawn *on the canvas*: labels of outline/ghost/soft Button, Alert/Toast icons, invalid borders, the active tab underline, tone tints (`color-mix(... <tone>-text N%, background)`). |
+
+**Rule: a tone fill always carries white text.** Both modes, every component — a blue Badge and a blue Button read the same. This is why the fill does not flip to a lighter step in dark the way most palettes do: a light fill would force dark text, and Button and Badge would then disagree with themselves across modes.
+
+The cost is that a tone fill on the dark canvas sits at ~3.4:1 rather than glowing, and hover/pressed go *darker* (800 → 850) instead of lighter — lightening would drop the white label below 4.5:1.
+
+Never use `<tone>` as a text or icon color: in dark it is a mid-tone fill (`#1868DB`) and lands around 2.4:1 on the canvas. Never use `<tone>-text` as a fill behind white text.
+
 ---
 
 ## Borders — ladder

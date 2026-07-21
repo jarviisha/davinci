@@ -123,11 +123,15 @@
       },
       "primaryPressed": {
         "$type": "color",
-        "$value": "{color.blue.900}"
+        "$value": "{color.blue.850}"
       },
       "primaryForeground": {
         "$type": "color",
         "$value": "{color.neutral.0}"
+      },
+      "primaryText": {
+        "$type": "color",
+        "$value": "{color.blue.800}"
       },
       "danger": {
         "$type": "color",
@@ -139,11 +143,15 @@
       },
       "dangerPressed": {
         "$type": "color",
-        "$value": "{color.red.900}"
+        "$value": "{color.red.850}"
       },
       "dangerForeground": {
         "$type": "color",
         "$value": "{color.neutral.0}"
+      },
+      "dangerText": {
+        "$type": "color",
+        "$value": "{color.red.800}"
       },
       "success": {
         "$type": "color",
@@ -153,13 +161,21 @@
         "$type": "color",
         "$value": "{color.neutral.0}"
       },
+      "successText": {
+        "$type": "color",
+        "$value": "{color.green.800}"
+      },
       "warning": {
         "$type": "color",
-        "$value": "{color.orange.400}"
+        "$value": "{color.orange.700}"
       },
       "warningForeground": {
         "$type": "color",
-        "$value": "{color.neutral.1100}"
+        "$value": "{color.neutral.0}"
+      },
+      "warningText": {
+        "$type": "color",
+        "$value": "{color.orange.800}"
       },
       "info": {
         "$type": "color",
@@ -169,6 +185,10 @@
         "$type": "color",
         "$value": "{color.neutral.0}"
       },
+      "infoText": {
+        "$type": "color",
+        "$value": "{color.blue.800}"
+      },
       "discovery": {
         "$type": "color",
         "$value": "{color.purple.700}"
@@ -176,6 +196,10 @@
       "discoveryForeground": {
         "$type": "color",
         "$value": "{color.neutral.0}"
+      },
+      "discoveryText": {
+        "$type": "color",
+        "$value": "{color.purple.800}"
       },
       "overlay": {
         "$type": "color",

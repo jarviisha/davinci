@@ -15,25 +15,25 @@
         "background": { "$type": "color", "$value": "{semantic.color.surfaceRaised}" },
         "foreground": { "$type": "color", "$value": "{semantic.color.foreground}" },
         "border": { "$type": "color", "$value": "{semantic.color.border}" },
-        "accent": { "$type": "color", "$value": "{semantic.color.info}" }
+        "accent": { "$type": "color", "$value": "{semantic.color.infoText}" }
       },
       "success": {
         "background": { "$type": "color", "$value": "{semantic.color.surfaceRaised}" },
         "foreground": { "$type": "color", "$value": "{semantic.color.foreground}" },
         "border": { "$type": "color", "$value": "{semantic.color.border}" },
-        "accent": { "$type": "color", "$value": "{semantic.color.success}" }
+        "accent": { "$type": "color", "$value": "{semantic.color.successText}" }
       },
       "warning": {
         "background": { "$type": "color", "$value": "{semantic.color.surfaceRaised}" },
         "foreground": { "$type": "color", "$value": "{semantic.color.foreground}" },
         "border": { "$type": "color", "$value": "{semantic.color.border}" },
-        "accent": { "$type": "color", "$value": "{semantic.color.warning}" }
+        "accent": { "$type": "color", "$value": "{semantic.color.warningText}" }
       },
       "danger": {
         "background": { "$type": "color", "$value": "{semantic.color.surfaceRaised}" },
         "foreground": { "$type": "color", "$value": "{semantic.color.foreground}" },
         "border": { "$type": "color", "$value": "{semantic.color.border}" },
-        "accent": { "$type": "color", "$value": "{semantic.color.danger}" }
+        "accent": { "$type": "color", "$value": "{semantic.color.dangerText}" }
       }
     }
   }

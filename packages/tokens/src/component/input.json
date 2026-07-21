@@ -40,7 +40,7 @@
       },
       "borderInvalid": {
         "$type": "color",
-        "$value": "{semantic.color.danger}"
+        "$value": "{semantic.color.dangerText}"
       },
       "foreground": {
         "$type": "color",

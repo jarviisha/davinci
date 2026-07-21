@@ -7,13 +7,13 @@
       },
       "label": {
         "foreground": { "$type": "color", "$value": "{semantic.color.foreground}" },
-        "requiredForeground": { "$type": "color", "$value": "{semantic.color.danger}" }
+        "requiredForeground": { "$type": "color", "$value": "{semantic.color.dangerText}" }
       },
       "help": {
         "foreground": { "$type": "color", "$value": "{semantic.color.foregroundSubtle}" }
       },
       "error": {
-        "foreground": { "$type": "color", "$value": "{semantic.color.danger}" }
+        "foreground": { "$type": "color", "$value": "{semantic.color.dangerText}" }
       }
     }
   }

@@ -41,7 +41,7 @@
         "active": {
           "background": { "$type": "color", "$value": "transparent" },
           "border": { "$type": "color", "$value": "transparent" },
-          "foreground": { "$type": "color", "$value": "{semantic.color.primary}" },
+          "foreground": { "$type": "color", "$value": "{semantic.color.primaryText}" },
           "fontWeight": { "$type": "fontWeight", "$value": "{font.weight.semibold}" }
         }
       }
