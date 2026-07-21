@@ -2924,8 +2924,14 @@
   border-block-end: 1px solid var(--davinci-semantic-color-border);
 }
 
+/* Half a step between canvas and `background-subtle` rather than the shared
+ * `background-hovered`. That token equals `background-subtle`, which is also the
+ * resting fill of neutral Badge, soft neutral Button, Switch tracks and the
+ * table's own header/footer — so a hovered row used to swallow its own content.
+ * Landing between the two keeps the row readable as hovered while everything
+ * sitting on it stays visible. */
 .davinci-table__body .davinci-table__row:hover {
-  background: var(--davinci-semantic-color-background-hovered);
+  background: var(--davinci-component-table-row-background-hovered);
 }
 
 .davinci-table__body .davinci-table__row:last-child,

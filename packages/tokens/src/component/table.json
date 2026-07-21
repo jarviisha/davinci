@@ -4,6 +4,12 @@
       "radius": {
         "$type": "dimension",
         "$value": "{semantic.radius.card}"
+      },
+      "row": {
+        "backgroundHovered": {
+          "$type": "color",
+          "$value": "color-mix(in srgb, {semantic.color.backgroundSubtle} 50%, {semantic.color.background})"
+        }
       }
     }
   }
